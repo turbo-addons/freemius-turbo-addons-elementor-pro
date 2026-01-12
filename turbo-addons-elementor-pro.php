@@ -6,14 +6,52 @@
  * Version: 1.3.2
  * Author: Turbo Addons Pro
  * Author URI: https://turbo-addons.com/pricing/
- * License: GPLv3
- * License URI: https://opensource.org/licenses/GPL-3.0
+ * License URI: https://wp-turbo.com/turbo-toolkit/
  * Text Domain: turbo-addons-elementor-pro
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
+//Freemious SDK integration
+
+if ( ! function_exists( 'taep_fs' ) ) {
+    // Create a helper function for easy SDK access.
+    function taep_fs() {
+        global $taep_fs;
+
+        if ( ! isset( $taep_fs ) ) {
+            // Include Freemius SDK.
+            require_once dirname( __FILE__ ) . '/vendor/freemius/start.php';
+
+            $taep_fs = fs_dynamic_init( array(
+                'id'                  => '22914',
+                'slug'                => 'turbo-addons-elementor-pro',
+                'type'                => 'plugin',
+                'public_key'          => 'pk_0e6b5f2ca5811c3826b680524e74e',
+                'is_premium'          => true,
+                'has_addons'          => false,
+                'has_paid_plans'      => true,
+                'is_org_compliant'    => false,
+                'menu'                => array(
+                    'slug'           => 'turbo_addons_pro',
+                    'first-path'     => 'admin.php?page=turbo_addons_pro',
+                    'support'        => false,
+                ),
+            ) );
+        }
+
+        return $taep_fs;
+    }
+
+    // Init Freemius.
+    taep_fs();
+    // Signal that SDK was initiated.
+    do_action( 'taep_fs_loaded' );
+}
+
+
+
 
 // wp-pulse integration
 if ( ! class_exists( 'WPPulse_SDK' ) ) {
