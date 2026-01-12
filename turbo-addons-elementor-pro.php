@@ -54,28 +54,28 @@ if ( ! function_exists( 'taep_fs' ) ) {
 
 
 // wp-pulse integration
-if ( ! class_exists( 'WPPulse_SDK' ) ) {
-    require_once __DIR__ . '/wppulse/wppulse-plugin-analytics-engine-sdk.php';
-}
+// if ( ! class_exists( 'WPPulse_SDK' ) ) {
+//     require_once __DIR__ . '/wppulse/wppulse-plugin-analytics-engine-sdk.php';
+// }
 
-// Fetch plugin data automatically
-$trad_turbo_pro_plugin_data = get_file_data( __FILE__, [
-    'Name'       => 'Plugin Name',
-    'Version'    => 'Version',
-    'TextDomain' => 'Text Domain',
-] );
+// // Fetch plugin data automatically
+// $trad_turbo_pro_plugin_data = get_file_data( __FILE__, [
+//     'Name'       => 'Plugin Name',
+//     'Version'    => 'Version',
+//     'TextDomain' => 'Text Domain',
+// ] );
 
-$trad_turbo_pro_plugin_slug = dirname( plugin_basename( __FILE__ ) );
+// $trad_turbo_pro_plugin_slug = dirname( plugin_basename( __FILE__ ) );
 
-// Initialize SDK
-if ( class_exists( 'WPPulse_SDK' ) ) {
-    WPPulse_SDK::init( __FILE__, [
-        'name'     => $trad_turbo_pro_plugin_data['Name'],
-        'slug'     => $trad_turbo_pro_plugin_slug,
-        'version'  => $trad_turbo_pro_plugin_data['Version'],
-        'endpoint' => 'https://wp-turbo.com/wp-json/wppulse/v1/collect',
-    ] );
-}
+// // Initialize SDK
+// if ( class_exists( 'WPPulse_SDK' ) ) {
+//     WPPulse_SDK::init( __FILE__, [
+//         'name'     => $trad_turbo_pro_plugin_data['Name'],
+//         'slug'     => $trad_turbo_pro_plugin_slug,
+//         'version'  => $trad_turbo_pro_plugin_data['Version'],
+//         'endpoint' => 'https://wp-turbo.com/wp-json/wppulse/v1/collect',
+//     ] );
+// }
 
 /**
  * Main Plugin Class
@@ -238,6 +238,37 @@ final class TRAD_Turbo_Addons_Pro {
      * @since 1.0.0
      */
     public function trad_init_widgets() {
+        // Only load widgets if Freemius exists
+        if ( ! function_exists( 'taep_fs' ) ) {
+            return; // Freemius not loaded
+        }
+    
+        $fs = taep_fs();
+    
+        // Check if user has valid license/access
+        $has_valid_access = false;
+    
+        // Check for active Pro license
+        if ( $fs->is_plan( 'pro', true ) ) {
+            $has_valid_access = true;
+        }
+        // Check if user is in trial
+        elseif ( $fs->is_trial() ) {
+            $has_valid_access = true;
+        }
+        // Check if user can use premium code (includes development mode, sandbox, etc.)
+        elseif ( $fs->can_use_premium_code() ) {
+            $has_valid_access = true;
+        }
+        // Check if it's a paying customer (has any paid plan)
+        elseif ( $fs->is_paying() ) {
+            $has_valid_access = true;
+        }
+    
+        if ( ! $has_valid_access ) {
+            return;
+        }
+
         // Retrieve the widget settings from the database
         $widgets = get_option('turbo_pro_addons_widgets', []);
     
