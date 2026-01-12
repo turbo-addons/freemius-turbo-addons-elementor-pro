@@ -3,7 +3,7 @@
  * Plugin Name: Turbo Addons Elementor Pro
  * Plugin URI: https://turbo-addons.com/
  * Description: Turbo Addons for Elementor gives you everything: 80+ advanced widgets, WooCommerce support, custom headers & footers, and 100+ prebuilt templates — all built for easy drag & drop design. Customize every part of your site, fast and code-free!
- * Version: 1.3.2
+ * Version: 1.3.3
  * Author: Turbo Addons Pro
  * Author URI: https://turbo-addons.com/pricing/
  * License URI: https://wp-turbo.com/turbo-toolkit/
