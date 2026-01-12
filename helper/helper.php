@@ -55,7 +55,7 @@ function trad_pro_enqueue_scripts_styles() {
     wp_enqueue_script( 'trad-pro-swiper-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/vendor/swiper/swiper-bundle.min.js', ['jquery'], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/vendor/swiper/swiper-bundle.min.js' ), true );
 
     // progress bar css
-    wp_enqueue_style( 'progress-milestone-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/progress-bar.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/progress-milestone.css' ), 'all' );
+    wp_enqueue_style( 'progress-milestone-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/progress-bar.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/progress-bar.css' ), 'all' );
     wp_enqueue_script( 'progress-milestone-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/progress-bar.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH, true );
     
     // Flip Box
@@ -114,7 +114,7 @@ function trad_pro_enqueue_scripts_styles() {
     wp_enqueue_script( 'category-filter-tab_script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/category-filter-tab.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH, true );
 
     // image-vertical-scrolling
-    wp_enqueue_style( 'trad-image-vertical-scrolling', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/image-vertical-scrolling.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/image-auto-scrolling.css' ), 'all' );
+    wp_enqueue_style( 'trad-image-vertical-scrolling', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/image-vertical-scrolling.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/image-vertical-scrolling.css' ), 'all' );
     wp_enqueue_script( 'trad-image-vertical-scroll-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/image_vertical-scroll.js',[ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
   
   
