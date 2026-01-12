@@ -1,0 +1,267 @@
+.trad_turbo_slider_pro_container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.trad_turbo_slider_pro_header {
+    line-height: 1.1;
+}
+
+.trad_turbo_slider_pro_hero-slider {
+    display: flex;
+    position: relative;
+    z-index: 0;
+    overflow: hidden; 
+}
+
+@media (max-width: 991px) {
+    .trad_turbo_slider_pro_hero-slider {
+        height: 600px;
+    }
+}
+
+@media (max-width: 767px) {
+    .trad_turbo_slider_pro_hero-slider {
+        height: 500px;
+    }
+}
+
+.trad_turbo_slider_pro_hero-slider .swiper-slide {
+    overflow: hidden;
+    color: #000000;
+}
+
+.trad_turbo_slider_pro_hero-slider .trad_turbo_slider_pro_swiper-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.trad_turbo_slider_pro_hero-slider .slide-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+
+
+.trad_turbo_slider_pro_hero-style {
+    height: 850px;
+    transition: all 0.4s ease;
+}
+
+@media (max-width: 991px) {
+    .trad_turbo_slider_pro_hero-style {
+        height: 600px;
+    }
+}
+
+@media (max-width: 767px) {
+    .trad_turbo_slider_pro_hero-style {
+        height: 500px;
+    }
+}
+/* // typography// */
+
+.trad_turbo_slider_pro_hero-style .trad_turbo_slider_pro_slide-title .trad_turbo_slider_pro_header {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    color: #000000;
+    transition: all 0.3s ease;
+}
+.trad_turbo_slider_pro_subtitle{
+    font-size: 64px;
+    line-height: 1;
+    color: #000000;
+    transition: all 0.3s ease;
+}
+
+.trad_turbo_slider_pro_hero-style .trad_turbo_slider_pro_slide-text .trad_turbo_slider_pro_paragraph {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: #000000;
+    margin: 0 0 40px;
+    opacity: 0.8;
+    transition: all 0.4s ease;
+}
+
+@media (max-width: 1199px) {
+    .trad_turbo_slider_pro_hero-style .trad_turbo_slider_pro_slide-title .trad_turbo_slider_pro_header {
+        font-size: 75px;
+    }
+}
+
+@media (max-width: 991px) {
+    .trad_turbo_slider_pro_hero-style .trad_turbo_slider_pro_slide-title .trad_turbo_slider_pro_header {
+        font-size: 50px;
+        margin: 0 0 35px;
+    }
+}
+
+@media (max-width: 767px) {
+    .trad_turbo_slider_pro_hero-style .trad_turbo_slider_pro_slide-title .trad_turbo_slider_pro_header {
+        font-size: 35px;
+        margin: 0 0 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .trad_turbo_slider_pro_hero-style .trad_turbo_slider_pro_slide-text .trad_turbo_slider_pro_paragraph {
+        font-size: 16px;
+        margin: 0 0 30px;
+    }
+}
+
+/* // -----------slider inner button----------------// */
+.trad_turbo_slider_pro_slide-btns{
+    display: flex;
+}
+.trad_turbo_slider_pro_slider-button-one {
+    background-color: #dddddd;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #2b3b95;
+    padding: 9px 32px;
+    border: none;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.trad_turbo_slider_pro_slider-button-two {
+    background-color: #dddddd;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #2b3b95;
+    padding: 9px 32px;
+    border: none;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.trad_turbo_slider_pro_slider-button-one:hover {
+    background-color: #2b3b95;
+    color: #fff;
+}
+
+/* ---------------------slider image-------------------- // */
+
+.trad_turbo_slider_pro_swiper-container .slide-bg-image{
+   display: flex !important;
+   justify-content: space-around;
+}
+.trad_turbo_slider_pro_swiper-container .trad_turbo_slider_slide_image img{
+    width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+ .trad_turbo_slider_pro_swiper-container .slide-bg-image{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+/* -----------------Navigation button + icon------------------// */
+
+.trad_turbo_slider_pro_hero-slider .swiper-button-prev,
+.trad_turbo_slider_pro_hero-slider .swiper-button-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    line-height: 53px;
+    text-align: center;
+    border-radius: 55px;
+    transition: all 0.3s ease;
+}
+.trad_turbo_slider_pro_hero-slider .swiper-button-prev,
+.trad_turbo_slider_pro_hero-slider .swiper-button-next {
+    flex-direction: column !important;
+}
+
+.trad_turbo_slider_pro_hero-slider:hover .swiper-button-prev,
+.trad_turbo_slider_pro_hero-slider:hover .swiper-button-next {
+    opacity: 1;
+    visibility: visible;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    content: none !important;
+}
+
+@media (max-width: 767px) {
+    .trad_turbo_slider_pro_hero-slider .swiper-button-prev,
+    .trad_turbo_slider_pro_hero-slider .swiper-button-next {
+        display: none;
+    }
+}
+
+
+/* ----------------------------Navigation bullet points------------------ // */
+.trad_turbo_slider_pro_hero-slider .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    opacity: 0.3;
+    transition: all 0.2s ease;
+}
+
+.trad_turbo_slider_pro_hero-slider .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.trad_turbo_slider_pro_hero-slider .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .trad_turbo_slider_pro_hero-slider .swiper-container-horizontal > .swiper-pagination-bullets {
+        bottom: 30px;
+    }
+}
+
+
+/* // short code// gap controller button column responisve// */
+
+.slide-inner.slide-bg-image{
+    position: relative;
+    z-index: 1;
+}
+.trad_turbo_slider_pro_container{
+    z-index: 1;
+}
+.trad_turbo_slider_slide_image{
+    z-index: 1;
+}
+
+.slide-inner.slide-bg-image::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}

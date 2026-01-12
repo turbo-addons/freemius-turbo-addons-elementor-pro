@@ -1,0 +1,46 @@
+.trad-pdf-viewer-widget-container{
+    display: flex;
+}
+
+.trad-pdf-ifram-section {
+    width: 100%;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+.pdf-side-sidebar-section {
+    display: flex;
+    width: 30%;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+}
+.pdf-side-sidebar-section li{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  min-width: 80px;
+}
+
+.pdf-side-sidebar-section li img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.pdf-side-sidebar-section li:hover {
+    background: #f1f1f1;
+}
+
+.trad-flip-book-pdf-ifram{
+    min-height: 600px;
+}
+
+.pdf-side-sidebar-section li.active {
+    background: #e0e0e0;
+}

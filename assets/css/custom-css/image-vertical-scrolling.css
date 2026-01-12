@@ -1,0 +1,133 @@
+/* Continuous infinite loop */
+@keyframes scrollBTT {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); } /* move through half (since duplicated) */
+}
+
+@keyframes scrollTTB {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+/* Default styling */
+.trad-image-grid-scrolling {
+    overflow: hidden;
+    position: relative;
+    max-height: 300px;
+}
+
+/* For bottom-to-top: normal order & upward animation */
+.scroll-direction-btt .trad-image-grid-scrolling-wrapper {
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+    animation: scrollBTT var(--speed, 10s) linear infinite;
+}
+
+/* For top-to-bottom: reverse order & downward animation */
+.scroll-direction-ttb .trad-image-grid-scrolling-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    will-change: transform;
+    animation: scrollTTB var(--speed, 10s) linear infinite;
+}
+
+/* Grid layout for vertical scrolling */
+.trad-image-grid-scrolling-inner {
+    display: grid;
+    grid-template-columns: repeat(var(--columns, 4), 1fr);
+    gap: var(--gap, 10px);
+    width: 100%;
+}
+
+/* Apply extra gap only for single image in ttb; for multiple images no extra gap */
+.scroll-direction-ttb .trad-image-grid-scrolling-wrapper > .trad-image-grid-scrolling-inner:first-child {
+    margin-bottom: var(--repeat-gap, 0);
+}
+
+/* Horizontal layout (unchanged) */
+.scroll-direction-ltr .trad-image-grid-scrolling-wrapper,
+.scroll-direction-rtl .trad-image-grid-scrolling-wrapper {
+    flex-direction: row;
+}
+
+.scroll-direction-ltr .trad-image-grid-scrolling-inner,
+.scroll-direction-rtl .trad-image-grid-scrolling-inner {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+@keyframes scrollLTR {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(50%); }
+}
+
+@keyframes scrollRTL {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.scroll-direction-ltr .trad-image-grid-scrolling-wrapper {
+    animation: scrollLTR var(--speed, 10s) linear infinite;
+}
+.scroll-direction-rtl .trad-image-grid-scrolling-wrapper {
+    animation: scrollRTL var(--speed, 10s) linear infinite;
+}
+
+.trad-image-grid-scrolling {
+    position: relative; /* Needed for absolute positioning of pseudo-elements */
+}
+
+/* Create a top pseudo-element for the top shadow */
+.trad-image-grid-scrolling::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px; /* Adjust height as needed */
+    pointer-events: none;
+}
+
+/* Create a bottom pseudo-element for the bottom shadow */
+.trad-image-grid-scrolling::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px; /* Adjust height as needed */
+    pointer-events: none;
+}
+
+.trad-image-grid-scrolling-wrapper {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.trad-image-grid-scrolling:hover .trad-image-grid-scrolling-wrapper {
+  animation-play-state: paused;
+}
+
+
+
+.trad-image-grid-scrolling-inner {
+  display: grid;
+  grid-template-columns: repeat(var(--columns, 4), 1fr);
+  gap: var(--gap, 10px);
+  width: 100%;
+}
+
+.trad-image-grid-scrolling-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* When few images, stretch clones to fill container */
+.trad-image-grid-scrolling-inner img {
+  flex-shrink: 0;
+  min-height: 100%;
+  object-fit: contain;
+}
+

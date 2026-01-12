@@ -1,0 +1,37 @@
+/* Category Card Styles */
+.trad_category_post_count_card {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    display: flex;
+    background: #f3f3f3;
+    /* align-items: center; */
+}
+.trad_category_post_count_card_img{
+    width: 40%;
+}
+.trad_category_post_count_card_img img{
+    width: 100%;
+}
+
+.trad_category_post_count_card_content_wrapper{
+    width: auto;
+}
+
+.trad_category_post_count_card_title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+}
+
+.trad_category_post_count_card_count {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.trad_category_post_count_card_button {
+    background-color: #1f2194;
+    border: none;
+}

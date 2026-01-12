@@ -1,0 +1,10 @@
+/* Turbo Addons Elementor Pro - WooCommerce Warning */
+.trad-woo-warning {
+    background-color: #e7dab1; /* Light yellow background */
+    color: #856404; /* Dark text color for contrast */
+    padding: 12px;
+    border: 1px solid #e7dab1;
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: center;
+}

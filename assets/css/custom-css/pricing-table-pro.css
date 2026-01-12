@@ -1,0 +1,346 @@
+/* -------------------------------------------------style 01------------------------------------------------- */
+.trad_pricing_table_pro_plans__container {
+  padding: 1rem 0 2rem;
+}
+
+.trad_pricing_table_pro_plans {
+  width: 96%;
+  max-width: 1128px;
+  margin: 0 auto;
+}
+
+.trad_pricing_table_pro_plansHero {
+  text-align: center;
+  padding: 5rem 0 4.5rem;
+  line-height: 1.21;
+}
+
+.trad_pricing_table_pro_plansHero__title {
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  color: #000;
+}
+
+.trad_pricing_table_pro_plansHero__subtitle {
+  margin: 0;
+}
+
+.trad_pricing_table_pro_planItem {
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.trad_pricing_table_pro_planItem--free {
+  border: 1px solid #e6e6e6;
+}
+
+.trad_pricing_table_pro_planItem__container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.trad_pricing_table_pro_planItem--pro {
+  border: 0;
+  box-shadow: 0px 14px 30px rgba(204, 204, 204, 0.32);
+}
+
+.trad_pricing_table_pro_planItem--entp {
+  background-color: #864cbd;
+}
+
+.trad_pricing_table_pro_planItem .trad_pricing_table_pro_button {
+  margin-top: auto;
+}
+
+.trad_pricing_table_pro_card {
+  color: #656c7c;
+}
+
+.trad_pricing_table_pro_card__header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.trad_pricing_table_pro_card__icon {
+  width: 90px;
+}
+
+.trad_pricing_table_pro_card h2 {
+  color: #000;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 400;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.trad_pricing_table_pro_card__desc {
+  margin: 1.5rem 0 0;
+  color: #656c7c;
+}
+
+.trad_pricing_table_pro_label {
+  font-weight: 600;
+  line-height: 1.25;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.625rem 1.125rem;
+  border-radius: 2rem;
+  user-select: none;
+  background-color: #e5e5e5;
+  color: #656c7c;
+}
+
+.trad_pricing_table_pro_price {
+  display: flex;
+  color: #000;
+  align-items: center;
+  gap: 0.5625rem;
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.trad_pricing_table_pro_price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #656c7c;
+}
+
+.trad_pricing_table_pro_featureList {
+  color: #000;
+  /* --icon: var(--redTick); */
+  margin: 0 0 2.75rem;
+  padding: 0;
+  font-weight: 500;
+}
+
+.trad_pricing_table_pro_featureList li {
+  color: #000;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* .trad_pricing_table_pro_featureList li:before {
+  content: "";
+  background-image: var(--icon);
+  background-size: cover;
+  display: block;
+  width: 1.125rem;
+  height: 1.125rem;
+} */
+
+.trad_pricing_table_pro_featureList li.disabled {
+  color: #b1b8c9;
+  height: 1.125rem;
+}
+
+.trad_pricing_table_pro_button {
+  box-shadow: 0px 0px 0px rgb(234 76 137 / 30%);
+  outline: #ea4c89;
+  border-radius: 0.5rem;
+  display: block;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 0;
+  line-height: inherit;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #ffecf0;
+  color: #ea4c89;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  user-select: none;
+  text-align: center;
+}
+
+.trad_pricing_table_pro_button--pink {
+  background-color: #ea4c89;
+  color: #fff;
+  box-shadow: 0px 1px 5px rgb(234 76 137 / 50%);
+}
+
+.trad_pricing_table_pro_button:hover {
+  /* transform: translateY(-2px);
+  box-shadow: 0px 6px 10px rgb(255 255 255 / 30%);
+  background-color: #ea4c89; */
+}
+
+.trad_pricing_table_pro_button:focus-visible {
+  outline-offset: 2px;
+  outline: 2px solid #fff;
+}
+
+
+/* tab version/// */
+@media only screen and (min-width: 767px) and (max-width: 1024px) {
+  .trad_pricing_table_pro_planItem__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .trad_pricing_table_pro_planItem {
+    width: 40% !important;
+  }
+}
+
+/* mobile version/// */
+@media only screen and (max-width:600px){
+  .trad_pricing_table_pro_planItem__container{
+    display: flex;
+    flex-direction: column;
+  }
+  .trad_pricing_table_pro_planItem{
+    width: 100%;
+  }
+}
+
+/* -------------------------------------------------style 02------------------------------------------------- */
+
+.trad-pricing-table-pro-style-two-pricing-section {
+        padding: 50px 20px;
+}
+
+.trad-pricing-table-pro-style-two-pricing-section h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+}
+
+.trad-pricing-table-pro-style-two-pricing-section p {
+      color: #6c6c6c;
+      margin-bottom: 40px;
+}
+
+.trad-pricing-table-pro-style-two-pricing-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+}
+
+.trad-pricing-table-pro-style-two-pricing-card {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+}
+
+.trad-pricing-table-pro-style-two-pricing-card:hover {
+      transform: translateY(-10px);
+}
+
+.trad-pricing-table-pro-style-two-pricing-card.trad-pricing-table-pro-style-two-featured {
+      background-color: #2e3192;
+      color: #ffffff;
+      position: relative;
+      top: -40px;
+}
+
+.trad-pricing-table-pro-style-two-pricing-card h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+}
+
+.trad-pricing-table-pro-style-two-divider-main {
+      height: 1px;
+      width: 100%;
+      margin: 10px auto;
+      background-color: #ddd;
+}
+
+.trad-pricing-table-pro-style-two-divider {
+  height: 5px;
+  width: 8%;
+  margin: 10px auto;
+  background-color: #ddd;
+}
+
+.trad-pricing-table-pro-style-two-pricing-card.trad-pricing-table-pro-style-two-featured .trad-pricing-table-pro-style-two-divider {
+      background-color: #ffffff;
+}
+
+.trad-pricing-table-pro-style-two-price {
+      font-size: 2.5em;
+      margin: 10px 0;
+}
+
+.trad-pricing-table-pro-style-two-price span {
+      display: block;
+      font-size: 0.8em;
+      color: #6c6c6c;
+}
+
+.trad-pricing-table-pro-style-two-pricing-card.trad-pricing-table-pro-style-two-featured .trad-pricing-table-pro-style-two-price span {
+      color: #ffffff;
+}
+
+.trad-pricing-table-pro-style-two-pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+}
+
+.trad-pricing-table-pro-style-two-pricing-card ul li {
+      margin: 10px 0;
+      color: inherit;
+}
+
+.trad-pricing-table-pro-style-two-pricing-card ul li i {
+      margin-right: 10px;
+}
+
+/* .trad-pricing-table-pro-style-two-pricing-card ul li.trad-pricing-table-pro-style-two-unavailable {
+      text-decoration: line-through;
+      color: #aaa;
+} */
+
+.trad-pricing-table-pro-style-two-pricing-card .trad_pricing_table_pro_style_two_starter_button {
+      background-color: #ff4d4d;
+      border: none;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+}
+
+.trad-pricing-table-pro-style-two-pricing-card .trad_pricing_table_pro_style_two_starter_button:hover {
+      background-color: #e33b3b;
+}
+.trad-pricing-table-pro-style-two-pricing-card.trad-pricing-table-pro-style-two-featured button {
+      background-color: #ff4623eb;
+}
+
+.trad-pricing-table-pro-style-two-pricing-card.trad-pricing-table-pro-style-two-featured button:hover {
+      background-color: #e37000;
+} 
+
+.trad-pricing-table-pro-heading-style-two {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.trad-pricing-table-pro-style-two-pricing-item-alignment {
+  text-align: left;
+}
+
+/* mobile version/// */
+@media only screen and (max-width:600px){
+  .trad-pricing-table-pro-style-two-featured{
+    margin-top: 40px;
+  }
+}

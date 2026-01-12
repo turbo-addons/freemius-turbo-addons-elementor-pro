@@ -1,0 +1,53 @@
+
+.trad-woo-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.trad-woo-product-grid {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.trad-woo-product-card {
+    width: 100%; 
+    max-width: 100%;
+    background:#fafafa;
+    overflow: hidden;
+    transition: all .3s;
+    border: 1px solid #DBD4D4;
+    border-radius: 5px;
+}
+.trad-woo-product-img{
+    overflow: hidden;
+}
+.trad-woo-product-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    
+}
+
+.trad-woo-product-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.trad-woo-product_list_btn {
+    display: inline-block;
+    background: #4a55f5;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all .3s;
+    text-align: center;
+}
+
+.trad-woo-product-rating {
+    display: flex !important;
+    justify-content: center;
+    margin-top:-10px;
+}

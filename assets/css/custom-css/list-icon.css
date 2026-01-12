@@ -1,0 +1,26 @@
+.trad-icon-list-container .trad-icon-list-content {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.trad-icon-list-container .trad-icon-list-content li{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.trad-icon-list-container .trad-icon-list-content .trad-icon-list-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.trad-icon-list-title{
+    transition: ease-in-out .2s;
+}
+.trad-icon-list-content li{
+    display: flex;
+    align-items: left;
+    justify-content: start;
+}

@@ -1,0 +1,103 @@
+
+ /* Default styles for the button */
+.trad-advance-post-filter-left-btn {
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Add active styles */
+.trad-advance-post-filter-left-btn.active::after {
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: " ";
+  background-color: #d87403; /* Active color */
+  transition: all 0.5s ease-in-out;
+}
+
+
+/* Hover state */
+.trad-advance-post-filter-left-btn:hover::after {
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: " ";
+  background-color: #d87403; /* Hover color */
+  transition: all 0.5s ease-in-out;
+}
+
+  .trad-advance-post-filter-container{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+  }
+
+  .trad-advance-post-filter-left-column{
+    display: flex;
+    width: 250px;
+  }
+
+  .trad-advance-post-filter-container{
+    background-color: rgb(230, 229, 228);
+    flex-direction: row;
+  }
+  .trad-advance-post-filter-left-column{
+    flex-direction: column;
+    width: 250px;
+    background-color: rgb(230, 229, 228);
+  }
+
+  .trad-post-filter-content-post-list {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* Default to 3 columns */
+}
+.trad-post-filter-post-item{
+  background: rgb(230, 229, 228);
+}
+.trad-post-filter-post-content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.trad-post-filter-post-title{
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+}
+.trad-post-filter-post-read-more{
+  width: 110px;
+  text-align: center;
+}
+.trad-advance-post-filter-right-column{
+  width: 100%;
+}
+@media only screen and (max-width:667px){
+  .trad-post-filter-content-post-list {
+    grid-gap: 15px;
+    grid-template-columns: repeat(1, 1fr); 
+}
+.trad-advance-post-filter-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.trad-advance-post-filter-left-column{
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  padding: 10px;
+  overflow: hidden;
+  width: 60px;
+}
+.trad-advance-post-filter-left-btn_text{
+  display: none;
+}
+
+}

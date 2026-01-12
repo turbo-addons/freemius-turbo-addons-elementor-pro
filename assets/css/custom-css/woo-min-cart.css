@@ -1,0 +1,206 @@
+/* Woo Add to cart css Start */
+.trad-woo-mini-cart{
+    display: flex;
+}
+.trad-woo-mini-cart.cart-icon-left{
+    justify-content: flex-start;
+}
+.trad-woo-mini-cart.cart-icon-center{
+    justify-content: center;
+}
+.trad-woo-mini-cart.cart-icon-right{
+    justify-content: flex-end;
+}
+.trad-woo-cart-bag ul.woocommerce-mini-cart{
+    padding: 0;
+    margin: 0;
+}
+.trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item{
+    list-style: none;
+    overflow: hidden;
+}
+.trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item .remove_from_cart_button{
+    float: right;
+}
+.trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item a{
+    display: block;
+    transition: all .3s ease;
+}
+.trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item a img{
+    float: left;
+    object-fit: cover;
+    -o-object-fit: cover;
+}
+.trad-woo-cart-icon{
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+}
+.trad-woo-mini-cart-wrapper{
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.trad-woo-mini-cart-wrapper.trad-cart-icon-box-yes .trad-woo-cart-icon{
+    position: relative;
+}
+.trad-woo-mini-cart-wrapper.trad-cart-icon-box-yes .trad-woo-cart-icon i,
+.trad-woo-mini-cart-wrapper.trad-cart-icon-box-yes .trad-woo-cart-icon svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.trad-cart-items-count-number{
+    position: absolute;
+    display: block;
+    line-height: 1;
+    text-align: center;
+}
+.trad-woo-cart-bag{
+    position: absolute;
+    top: 100%;
+    width: 400px;
+    /* transform: translateY(10px); */
+    z-index: 111;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+}
+.trad-woo-mini-cart.slide-up .trad-woo-cart-bag{
+    transform: translateY(-10px);
+}
+.trad-woo-mini-cart.slide-down .trad-woo-cart-bag{
+    transform: translateY(10px);
+}
+.trad-woo-mini-cart.zoom-down .trad-woo-cart-bag{
+    transform: scaleY(0);
+    transform-origin: top;
+}
+.trad-woo-mini-cart.cart-bag-position-left .trad-woo-cart-bag{
+    right: 0;
+}
+.trad-woo-mini-cart.cart-bag-position-right .trad-woo-cart-bag{
+    left: 0;
+}
+.trad-woo-mini-cart-wrapper.hover-active .trad-woo-cart-bag{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+.trad-woo-mini-cart.zoom-down .trad-woo-mini-cart-wrapper.hover-active .trad-woo-cart-bag{
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+.trad-woo-mini-cart-wrapper.click-active .trad-woo-cart-bag{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+.trad-woo-mini-cart.zoom-down .trad-woo-mini-cart-wrapper.click-active .trad-woo-cart-bag{
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+.trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item .quantity{
+    display: block;
+}
+.trad-woo-cart-bag .woocommerce-mini-cart__total{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+.trad-woo-cart-bag .woocommerce-mini-cart__buttons{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.trad-woo-mini-cart-wrapper.button-full-width .trad-woo-cart-bag .woocommerce-mini-cart__buttons{
+    flex-direction: column;
+}
+.trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward{
+    width: 100%;
+    text-align: center;
+    transition: all .3s ease;
+}
+.trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:not(:last-child){
+    margin-right: 10px;
+}
+
+.trad-woo-mini-cart.fly-out .trad-woo-mini-cart-wrapper .trad-woo-cart-bag {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    transform: unset;
+    z-index: 9999;
+}
+.trad-woo-mini-cart.fly-out .trad-woo-mini-cart-wrapper .trad-woo-cart-bag.fly-out-active {
+    opacity: 1;
+    visibility: visible;
+    overflow: scroll;
+}
+.trad-woo-mini-cart.fly-out .trad-woo-mini-cart-wrapper .trad-woo-cart-bag.fly-out-active::-webkit-scrollbar {
+    display: none;
+}
+.trad-woo-mini-cart.fly-out.fly-out-appear-position-left .trad-woo-mini-cart-wrapper .trad-woo-cart-bag.fly-out-active{
+    left: 0;
+}
+.trad-woo-mini-cart.fly-out.fly-out-appear-position-right .trad-woo-mini-cart-wrapper .trad-woo-cart-bag.fly-out-active{
+    right: 0;
+}
+.trad-woo-cart-bag-fly-out-close-icon{
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+}
+.trad-woo-cart-bag-fly-out-close-icon:before, .trad-woo-cart-bag-fly-out-close-icon:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+    top: 50%;
+    left: 50%;
+}
+.trad-woo-cart-bag-fly-out-close-icon:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.trad-woo-cart-bag-fly-out-close-icon:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.trad-cart-items-heading{
+    display: block;
+}
+.trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item .remove_from_cart_button {
+    line-height: 1;
+    text-align: center;
+}
+body.admin-bar .trad-woo-mini-cart.fly-out .trad-woo-mini-cart-wrapper .trad-woo-cart-bag.fly-out-active {
+    top: 32px;
+}
+
+.trad-woo-cart-bag-fly-out-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #333;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    visibility: hidden;
+    transition: all .3s ease;
+}
+.trad-woo-cart-bag-fly-out-overlay.fly-out-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Woo Add to cart css End */

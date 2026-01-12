@@ -1,0 +1,26 @@
+.trad-woo-category-item{
+    transition: all .3s;
+    background: #f5f5f5;
+}
+
+.trad-woo-cat-content-wrapper{
+    display: flex;
+}
+
+.trad-woo-category-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* Desktop default */
+}
+
+@media (max-width: 1024px) {
+    .trad-woo-category-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablet default */
+    }
+}
+
+@media (max-width: 767px) {
+    .trad-woo-category-grid {
+        grid-template-columns: repeat(1, 1fr); /* Mobile default */
+    }
+}

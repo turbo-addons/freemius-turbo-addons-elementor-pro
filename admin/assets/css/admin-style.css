@@ -1,0 +1,495 @@
+.trad-turbo-addon-pro-admin-dashboard-icon {
+    padding: 0 0 0 !important;
+}
+/* Dashboard nav bar */
+#turbo-dashboard-navbar{
+   width: calc(100% +20px);
+   height:60px; 
+   background-color:#ffffff;
+   margin-left:-20px; 
+   padding:10px 40px; 
+   color:#fff;
+   font-size:20px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.088);
+   position: sticky;
+   top: 30px;
+   z-index: 9;
+}
+
+.turbo-dashboard-navbar-logo {
+    width: 200px;
+}
+
+/* Toggle Button */
+#turbo-dashboard-navbar-theme-input {
+    display: none;
+}
+
+/* Style the label as the toggle switch */
+#turbo-dashboard-navbar-theme-label {
+    display: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 55px;
+    height: 55px;
+    background-color: #dfd9d9;
+    border-radius: 50px;
+    right: 30px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0px 4px -5px rgba(0, 0, 0, 0.445);
+}
+
+/* Style for the toggle knob */
+#turbo-dashboard-navbar-theme-label::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 55px;
+    height: 55px;
+    background-color: #c7c7c7a4; /* Sun color */
+    border-radius: 100%;
+    transition: 0.3s;
+    box-shadow: 0 0px 4px -5px rgba(0, 0, 0, 0.445);
+}
+
+/* Icons */
+#turbo-dashboard-navbar-theme-sun {
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    top: 15px;
+    left: 14px;
+    /* transition: opacity 0.3s; */
+    opacity: 1;
+}
+
+#turbo-dashboard-navbar-theme-moon {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+/* Move the knob and show the moon icon when checked */
+#turbo-dashboard-navbar-theme-input:checked + #turbo-dashboard-navbar-theme-label::before {
+    display: none;
+    transform: translateX(74px);
+    background-color: #333; /* Moon color */
+}
+
+#turbo-dashboard-navbar-theme-input:checked + #turbo-dashboard-navbar-theme-label #turbo-dashboard-navbar-theme-sun {
+    opacity: 0;
+}
+
+#turbo-dashboard-navbar-theme-input:checked + #turbo-dashboard-navbar-theme-label #turbo-dashboard-navbar-theme-moon {
+    opacity: 1;
+}
+
+
+/* Existing Styles */
+.turbo-addons-dashboard {
+    display: flex;
+    font-family: Arial, sans-serif;
+    margin-top: 24px !important;
+}
+.trad-widget-card input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Tab functionality styling */
+.trad-tab-content {
+    display: none;
+}
+
+.trad-tab-content.active {
+    display: block; 
+}
+
+.trad-tab-link a {
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.trad-tab-link a:hover {
+    background-color: #eee;
+    color: #333 !important;
+}
+
+
+.trad-alert-updated-div {
+    margin: 5px 2px 11px 1px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trad-alert-dismiss-button {
+    padding: 3px 8px !important;
+    border: 1px solid #555;
+    background-color: #2e3192;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    
+}
+
+/*============================================ Dashboard style// 
+==============================================================================================*/
+
+
+.trad-header-section h1{
+    margin: 0 !important;
+}
+
+.turbo-addons-dashboard{
+    background-color: transparent !important;
+    margin: 30px !important;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap:30px ;
+    background-color: transparent;
+    position: relative;
+
+    
+}
+
+.turbo-addons-sidebar{
+    background-color: rgba(134, 146, 199, 0.356) !important;
+    border-radius: 10px;
+    min-height: 80vh;
+    width: 200px;
+    position: sticky;
+    top: 100px;
+    margin: 0 !important;
+    padding: 20px 20px !important;
+}
+.turbo-addons-sidebar{
+    background-color: rgba(134, 146, 199, 0.192) !important;
+    border-radius: 10px;
+    min-height: 80vh;
+    width: 200px;
+    position: sticky;
+    top: 100px;
+}
+.trad-turbo-dashboard-menu-list .trad-tab-link.active a{
+    background-color: rgb(0, 3, 124) !important;
+    border-radius: 10px;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 18px !important;
+    font-weight: 500;
+    color: #ddd !important;
+    outline: none;
+}
+.trad-turbo-dashboard-menu-list .trad-tab-link a{
+    border-radius: 10px;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 18px !important;
+    font-weight: 500;
+    outline: none;
+}
+
+.turbo-addons-content {
+    width: 100% !important;
+    min-height: 100vh ;
+    background-color: transparent !important;
+    margin-top: 0 !important;
+    padding-top: 0;
+    top: 0 !important;
+    top: 0 !important;
+    padding: 0;
+}
+/* =================================general sections
+================================================================// */
+*{
+    list-style: none;
+    text-decoration:none ;
+}
+.trad-dashboard-tab-general-wraper{
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    align-items: start;
+    width:100%;
+    display: flex !important;
+    justify-content: space-between;
+    gap: 30px;
+}
+.trad-dashboard-tab-general-left{
+    /* background-color: rgb(255, 255, 255) !important; */
+    width: 80%;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 2px hsla(0, 0%, 70%, 0.226);
+}
+.trad-dashboard-tab-general-right{
+    background-color: transparent !important;
+}
+.trad-dashboard-tab-general-right img{
+    border-radius: 10px;
+    width: 250px;
+}
+.trad-general-p p{
+    font-size: 18px;
+    color: #757474 !important;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.trad-general-p h1{
+    font-size: 2rem;
+    color: #383737 !important;
+    font-weight: 500;
+    line-height: 1;
+}
+.trad-widgets-section button{
+    padding: 10px 20px;
+    background-color: #2e3192;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.trad-dashboard-general-tabs-top-btn{
+    font-size: 1.2rem;
+    background-color: #08007e;
+    border-radius:8px;
+    padding: 10px 20px;
+    color: #eee !important;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    width: 250px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+/* =====================Elements Tab sections style
+==================================================================/// */
+.trad-dashboard-elements-tab{
+    background-color: rgb(255, 255, 255) !important;
+    width: 90%;
+    padding: 40px 30px;
+    padding-bottom: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 2px hsla(0, 0%, 70%, 0.226);
+}
+
+.trad-widgets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.trad-widget-card {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: #c5d7f3;
+    border-radius: 10px;
+    height: 60px;
+    padding: 0px 20px;
+    width: 180px;
+    margin-bottom: 0px;
+}
+
+.trad-elements-tab-icon-text> {
+    display: flex;
+    flex-direction: row;
+}
+.trad-elements-tab-icon-text> input{
+   display: inline-block;
+}
+
+.trad-elements-tab-icon-text>input:checked {
+    border: none;
+    outline: 2px solid rgb(2, 20, 122);
+    background-color: #ffffff96;
+  }
+.trad-elements-tab-icon-text>input{
+    border: none;
+    outline: 2px solid rgb(233, 234, 240);
+    background-color: #08007e;
+  }
+
+  
+.trad-elements-tab-icon-text> span{
+     font-size: 17px;
+     color: #1d1d1d;
+     font-weight: 500;
+}
+.trad-dashboard-elements-btn-submit{
+    padding: 6px 20px !important;
+    margin-top: 20px !important;
+    border-radius: 10px !important;
+    background-color: #2e3192 !important;
+    color: #f0f0f0 !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+}
+
+/* =================================Premium sections
+================================================================// */
+.trad-dashboard-premium-tab{
+    background-color: rgb(255, 255, 255) !important;
+    width: 90%;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 2px hsla(0, 0%, 70%, 0.226);
+}
+.trad-dashboard-pro-tabs-top>h2{
+    color: #4b4a4a !important;
+    background-color: #85e6f744;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 10px;
+}
+.trad-dashboard-pro-tabs-top h1{
+    color: #4b4a4a;
+    line-height: 40px;
+    font-size: 2rem;
+    width: auto;
+}
+
+.trad-dashboard-pro-tabs-top p{
+    color: #333;
+    font-size: 1rem !important;
+    padding-top: 20px;
+}
+.trad-dashboard-pro-tabs-top-btn{
+    font-size: 1.2rem;
+    background-color: #08007e;
+    border-radius:8px;
+    padding: 10px 20px;
+    color: #eee !important;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* Tab Content Free ----------------------------------------------------------------------------------------------------- */
+
+/* Tab Content ----------------------------------------------------------------------------------------------------- */
+
+    /* Basic styling for tabs and content */
+    .trad-widget-tabs-container-pro .trad-widget-tabs-list-pro {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        list-style: none;
+        padding: 10px 0;
+        background-color: #2e3194;
+        width: 100%;
+        position: sticky;
+        top: 110px;
+        padding-left: 20px;
+        gap: 20px;
+    }
+
+    .trad-widget-tabs-container-pro .trad-widget-tabs-list-pro .trad-widget-tab-item-pro {
+        padding:7px 12px;
+        cursor: pointer;
+        background-color: rgba(194, 154, 231, 0.233);
+        border: 1px solid #ddd;
+        margin: 0;
+        color: #ddd;
+        font-weight: 600;
+        border-radius: 5px;
+    }
+
+    .trad-widget-tabs-container-pro .trad-widget-tabs-list-pro .trad-widget-tab-item-pro:hover {
+        background-image: linear-gradient(to left, #4b0ac2, rgb(206, 8, 179));
+        color: #ffffff;
+    }
+
+    .trad-widget-tabs-container-pro .trad-widget-tabs-list-pro .trad-widget-tab-item-pro.active {
+        background-image: linear-gradient(to left, #4b0ac2, rgba(194, 63, 176, 0.459));
+        color: white;
+        font-weight: bold;
+    }
+    .trad-widget-tabs-container-pro .trad-widget-tabs-content-pro .trad-widget-tab-content-pro {
+        display: block; /* Show all content by default */
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 10px;
+        background-image: linear-gradient(to right, #f686fa3b, rgba(44, 210, 252, 0.137));
+    }
+
+    .trad-widget-tabs-container-pro .trad-widget-tabs-content-pro .trad-widget-tab-content-pro.active {
+        display: block; /* Ensure content remains visible */
+    }
+
+    .trad-widget-list-pro{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: start;
+        gap: 20px;
+    }
+    /* .trad-tab-filter-save-btn{
+        position: sticky;
+        bottom: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        background-color: red;
+    } */
+
+    .trad-tab-filter-save-btn-pro{
+        position: sticky;
+        bottom: 10px;
+        padding-top: 10px;
+        display: block;
+        align-items: center;
+        justify-content: end;
+        width: 120px;
+        float: right;
+        /* margin-bottom: 20px; */
+        margin-right: 27px;
+    }
+
+    .trad-dashboard-elements-btn-submit{
+        padding: 0px 20px !important;
+        border-radius: 7px !important;
+        background-color: #2e3194 !important;
+        color: #f0f0f0 !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        
+    }
+    .trad-tfb .trad-dashboard-elements-btn-submit{
+        margin-top: 0px !important;
+    }
+
+ /* custom template icon sections../ */
+  /* .toplevel_page_ta_templates> a> .wp-menu-image img{
+    width: 20px !important;
+    height: 20px !important;
+    margin-top: -3px !important;
+  }
+
+   .toplevel_page_ta_templates> a> .wp-menu-image img{
+    width: 20px !important;
+    height: 20px !important;
+    margin-top: -3px !important;
+  } */
+
+
+ 

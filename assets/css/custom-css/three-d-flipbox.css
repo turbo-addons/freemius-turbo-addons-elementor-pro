@@ -1,0 +1,240 @@
+/*==========================
+  FRONT & BACK COLORS
+==========================*/
+.trad-flip-box-front {
+    background-color: rgb(190, 127, 10);
+    padding: 20px;
+}
+
+.trad-flip-box-back {
+    background-color: rgb(4, 124, 139);
+    padding: 20px;
+}
+
+/*==========================
+  ICON / SVG SIZING
+==========================*/
+/* .flip-box-media i,
+.flip-box-media svg {
+    font-size: 48px;
+    width: 48px;
+} */
+.flip-box-media {
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+/* .flip-box-media i,
+.flip-box-media svg {
+    line-height: 1;
+} */
+
+/*==========================
+  MAIN CONTAINERS
+==========================*/
+.trad-3d-flip-box-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+.trad-3d-flip-box-item {
+    width: 100%;
+    position: relative;
+}
+
+/*==========================
+  3D FLIP WRAPPER
+==========================*/
+.trad_3dflip-box {
+    position: relative;
+    width: 100%;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/*==========================
+  FRONT & BACK PANELS
+==========================*/
+.trad-flip-box-front,
+.trad-flip-box-back {
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    min-height: 200px;
+    /* transition */
+    transition: transform 0.7s cubic-bezier(.4, .2, .2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    backface-visibility: hidden;
+}
+
+/*==========================
+  FRONT FACE ROTATION
+==========================*/
+.trad-flip-box-front {
+    transform: rotateY(0deg);
+}
+
+.trad_3dflip-box:hover .trad-flip-box-front {
+    transform: rotateY(-180deg);
+}
+
+/*==========================
+  BACK FACE ROTATION
+==========================*/
+.trad-flip-box-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+}
+
+.trad_3dflip-box:hover .trad-flip-box-back {
+    transform: rotateY(0deg);
+}
+
+/*==========================
+  INNER CONTENT (3D POP)
+==========================*/
+.trad_3dflip-box .trad-flip-inner {
+    width: 100%;
+    text-align: center;
+    transform: translateZ(60px) scale(.94);
+}
+
+/*==========================
+  TYPOGRAPHY
+==========================*/
+.trad-flip-box-header {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.trad_3dflip-box p {
+    font-size: 16px;
+    line-height: 1.5em;
+    margin: 10px 0;
+}
+
+.flip-box-img {
+    margin-bottom: 20px;
+}
+
+/*==========================
+  BUTTON
+==========================*/
+.trad-flip-box-button {
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 8px 15px;
+    display: inline-block;
+}
+
+
+/* flip style css// */
+/* ============================
+   FLIP RIGHT (default)
+===============================*/
+.trad-flip-right .trad-flip-box-front {
+    transform: rotateY(0deg);
+}
+.trad-flip-right:hover .trad-flip-box-front {
+    transform: rotateY(-180deg);
+}
+.trad-flip-right .trad-flip-box-back {
+    transform: rotateY(180deg);
+}
+.trad-flip-right:hover .trad-flip-box-back {
+    transform: rotateY(0deg);
+}
+
+/* ============================
+   FLIP LEFT
+===============================*/
+.trad-flip-left .trad-flip-box-front {
+    transform: rotateY(0deg);
+}
+.trad-flip-left:hover .trad-flip-box-front {
+    transform: rotateY(180deg);
+}
+.trad-flip-left .trad-flip-box-back {
+    transform: rotateY(-180deg);
+}
+.trad-flip-left:hover .trad-flip-box-back {
+    transform: rotateY(0deg);
+}
+
+/* ============================
+   FLIP TOP
+===============================*/
+.trad-flip-top .trad-flip-box-front {
+    transform: rotateX(0deg);
+}
+.trad-flip-top:hover .trad-flip-box-front {
+    transform: rotateX(180deg);
+}
+.trad-flip-top .trad-flip-box-back {
+    transform: rotateX(-180deg);
+}
+.trad-flip-top:hover .trad-flip-box-back {
+    transform: rotateX(0deg);
+}
+
+/* ============================
+   FLIP BOTTOM
+===============================*/
+.trad-flip-bottom .trad-flip-box-front {
+    transform: rotateX(0deg);
+}
+.trad-flip-bottom:hover .trad-flip-box-front {
+    transform: rotateX(-180deg);
+}
+.trad-flip-bottom .trad-flip-box-back {
+    transform: rotateX(180deg);
+}
+.trad-flip-bottom:hover .trad-flip-box-back {
+    transform: rotateX(0deg);
+}
+
+/* ============================
+   3D DEPTH ON (REAL 3D EFFECT)
+===============================*/
+.trad-has-depth {
+    perspective: 1200px;
+    -webkit-perspective: 1200px;
+    transform-style: preserve-3d;
+}
+
+.trad-has-depth .trad-flip-box-front,
+.trad-has-depth .trad-flip-box-back {
+    transform-style: preserve-3d;
+}
+
+/* POP OUT THE CONTENT IN REAL 3D */
+.trad-has-depth .trad-flip-inner {
+    transform: translateZ(60px);
+    -webkit-transform: translateZ(60px);
+}
+
+/* ============================
+   3D DEPTH OFF
+===============================*/
+.trad-no-depth {
+    perspective: none;
+}
+
+.trad-no-depth .trad-flip-inner {
+    transform: none;
+}

@@ -1,0 +1,29 @@
+.trad-guided-tour-btn {
+    padding: 12px 24px;
+    background-color: #3049d3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.trad-guided-tour-btn:hover {
+    background-color: #2080e7;
+    transform: scale(1.05);
+}
+.introjs-skipbutton{
+    position: absolute;
+
+}
+.introjs-skipbutton::before{
+position: absolute;
+content: "Skip";
+/* height: 40px; */
+/* width: 100px; */
+font-size: 14px;
+color: black;
+right: 35px;
+font-weight: 400;
+}

@@ -1,0 +1,51 @@
+/* skin - 1 */
+.trad-text-gradient-skin-one-content {
+    margin: auto;
+    text-align: center;
+    font-family: 'Goldman', cursive;
+    font-weight: 800;
+    letter-spacing: -0.3333em;
+    background: url('../../images/tard-default-image.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.trad-text-gradient-skin-one-content h1 {
+    line-height: 1em;
+}
+
+.trad-text-gradient-skin-one-top-line {
+    font-size: 120px;
+}
+
+/* skin - 2 */
+
+.trad-text-gradient-skin-two-container {
+    width: 100%; 
+    background-color: rgb(197, 196, 196);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.trad-text-gradient-skin-animated {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 4rem;
+    background: url('../../images/tard-default-image.png') repeat;
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: tradAnimationMoveBg 30s linear infinite !important; /* Slower animation speed */
+    -webkit-animation: tradAnimationMoveBg 30s linear infinite !important;  /* Slower animation speed */
+}
+
+@keyframes tradAnimationMoveBg {
+    0% {
+        background-position: 0% 30%;
+    }
+    100% {
+        background-position: -200% 30%;
+    }
+}

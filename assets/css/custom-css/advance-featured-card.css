@@ -1,0 +1,54 @@
+/* all container/ card - common*/
+.trad_advance_features_card {
+    width: 100%; 
+    overflow: hidden;  
+    border: 1px solid #888; 
+    border-radius: 10px; 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    position: relative; 
+    transition: all .3s ;
+}
+.trad_advance_features_card_content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* - common */
+.trad_advance_features_card_content_image{
+    width: 80%;
+}
+/* - common */
+.trad_advance_features_card_content_title{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ----------------------------------------------conditional or functional// */
+ .trad_advance_features_card_badge_text_global{
+    color: #fff;
+    transform: rotate(45deg);
+    top: 25px;
+    right: -35px;
+    padding: 5px 20px;
+    position: absolute;
+    background: rgb(29, 43, 238);
+    height: 25px;
+}
+
+
+/* image badge-------------------------------------- */
+.trad_advance_features_card_badge_image{
+    width:50px ;
+    position: absolute;
+}
+
+.trad_advance_features_card_badge_image{
+    bottom: 10px;
+    right: 10px;
+}
