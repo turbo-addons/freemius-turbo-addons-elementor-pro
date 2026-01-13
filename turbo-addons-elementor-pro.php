@@ -13,69 +13,6 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
-//Freemious SDK integration
-
-if ( ! function_exists( 'taep_fs' ) ) {
-    // Create a helper function for easy SDK access.
-    function taep_fs() {
-        global $taep_fs;
-
-        if ( ! isset( $taep_fs ) ) {
-            // Include Freemius SDK.
-            require_once dirname( __FILE__ ) . '/vendor/freemius/start.php';
-
-            $taep_fs = fs_dynamic_init( array(
-                'id'                  => '22914',
-                'slug'                => 'turbo-addons-elementor-pro',
-                'type'                => 'plugin',
-                'public_key'          => 'pk_0e6b5f2ca5811c3826b680524e74e',
-                'is_premium'          => true,
-                'has_addons'          => false,
-                'has_paid_plans'      => true,
-                'is_org_compliant'    => false,
-                'menu'                => array(
-                    'slug'           => 'turbo_addons_pro',
-                    'first-path'     => 'admin.php?page=turbo_addons_pro',
-                    'support'        => false,
-                ),
-            ) );
-        }
-
-        return $taep_fs;
-    }
-
-    // Init Freemius.
-    taep_fs();
-    // Signal that SDK was initiated.
-    do_action( 'taep_fs_loaded' );
-}
-
-
-
-
-// wp-pulse integration
-// if ( ! class_exists( 'WPPulse_SDK' ) ) {
-//     require_once __DIR__ . '/wppulse/wppulse-plugin-analytics-engine-sdk.php';
-// }
-
-// // Fetch plugin data automatically
-// $trad_turbo_pro_plugin_data = get_file_data( __FILE__, [
-//     'Name'       => 'Plugin Name',
-//     'Version'    => 'Version',
-//     'TextDomain' => 'Text Domain',
-// ] );
-
-// $trad_turbo_pro_plugin_slug = dirname( plugin_basename( __FILE__ ) );
-
-// // Initialize SDK
-// if ( class_exists( 'WPPulse_SDK' ) ) {
-//     WPPulse_SDK::init( __FILE__, [
-//         'name'     => $trad_turbo_pro_plugin_data['Name'],
-//         'slug'     => $trad_turbo_pro_plugin_slug,
-//         'version'  => $trad_turbo_pro_plugin_data['Version'],
-//         'endpoint' => 'https://wp-turbo.com/wp-json/wppulse/v1/collect',
-//     ] );
-// }
 
 /**
  * Main Plugin Class
@@ -106,6 +43,43 @@ final class TRAD_Turbo_Addons_Pro {
      */
     public function __construct() {
         $this->define_constants();
+        //Freemious SDK integration
+        if($this->is_free_version_active()){
+            if ( ! function_exists( 'taep_fs' ) ) {
+                // Create a helper function for easy SDK access.
+                function taep_fs() {
+                    global $taep_fs;
+
+                    if ( ! isset( $taep_fs ) ) {
+                        // Include Freemius SDK.
+                        require_once dirname( __FILE__ ) . '/vendor/freemius/start.php';
+
+                        $taep_fs = fs_dynamic_init( array(
+                            'id'                  => '22914',
+                            'slug'                => 'turbo-addons-elementor-pro',
+                            'type'                => 'plugin',
+                            'public_key'          => 'pk_0e6b5f2ca5811c3826b680524e74e',
+                            'is_premium'          => true,
+                            'has_addons'          => false,
+                            'has_paid_plans'      => true,
+                            'is_org_compliant'    => false,
+                            'menu'                => array(
+                                'slug'           => 'turbo_addons_pro',
+                                'first-path'     => 'admin.php?page=turbo_addons_pro',
+                                'support'        => false,
+                            ),
+                        ) );
+                    }
+
+                    return $taep_fs;
+                }
+
+                // Init Freemius.
+                taep_fs();
+                // Signal that SDK was initiated.
+                do_action( 'taep_fs_loaded' );
+            }
+        }
         // Include the helper file
         include_once plugin_dir_path(__FILE__) . 'helper/helper.php';
         include_once plugin_dir_path(__FILE__) . 'helper/ajax-handlers.php';
@@ -393,11 +367,11 @@ final class TRAD_Turbo_Addons_Pro {
     }
 
     public function trad_admin_pro_notice_missing_main_plugin() {
-        if ( ! is_plugin_active( 'turbo-addons-elementor/turbo-addons-elementor.php' ) ) {
-            echo '<div class="notice notice-error">
-                <p><strong>Turbo Addons Elementor Pro</strong> requires the <strong>Turbo Addons Elementor Free Version</strong> plugin to be installed and activated. Please activate the Free version to use the Pro features.</p>
-            </div>';
-        }
+
+        echo '<div class="notice notice-error">
+            <p><strong>Turbo Addons Elementor Pro</strong> requires the <strong>Turbo Addons Elementor Free Version</strong> plugin to be installed and activated. Please activate the Free version to use the Pro features.</p>
+        </div>';
+
     }
 
     /**
