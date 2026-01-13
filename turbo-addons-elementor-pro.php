@@ -137,9 +137,23 @@ final class TRAD_Turbo_Addons_Pro {
      * @return bool
      */
     private function is_free_version_active() {
-        // Replace 'turbo-addons-elementor/turbo-addons-elementor.php' with the actual main file of the free version
-        include_once ABSPATH . 'wp-admin/includes/plugin.php';
-        return is_plugin_active( 'turbo-addons-elementor/turbo-addons-elementor.php' );
+        if ( ! function_exists( 'get_plugins' ) ) {
+            require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        }
+        
+        $active_plugins = get_option( 'active_plugins' );
+        $all_plugins = get_plugins();
+        
+        foreach ( $all_plugins as $plugin_file => $plugin_data ) {
+            if ( in_array( $plugin_file, $active_plugins ) ) {
+                // Check by plugin name instead of folder path
+                if ( isset( $plugin_data['Name'] ) && $plugin_data['Name'] === 'Turbo Addons Elementor' ) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
     }
 
     /**
@@ -224,7 +238,7 @@ final class TRAD_Turbo_Addons_Pro {
         if ( is_admin() ) {
             include_once ABSPATH . 'wp-admin/includes/plugin.php';
             // Check if the Free version is active
-            if ( is_plugin_active( 'turbo-addons-elementor-pro/turbo-addons-elementor-pro.php' ) ) {
+            if ( is_plugin_active( plugin_basename( __FILE__ ) ) ) {
                 require_once plugin_dir_path( __FILE__ ) . 'admin/admin-page.php';
             } else {
                 add_action( 'admin_notices', [ $this, 'trad_admin_pro_notice_missing_main_plugin' ] );
@@ -353,10 +367,28 @@ final class TRAD_Turbo_Addons_Pro {
      * @since 1.0.0
      */
     public function check_free_version_active() {
-        // Check if the Free version is active
-        if ( ! is_plugin_active( 'turbo-addons-elementor/turbo-addons-elementor.php' ) ) {
-            add_action( 'admin_notices', [ $this, 'trad_admin_pro_notice_missing_main_plugin' ] );
-            deactivate_plugins( plugin_basename( __FILE__ ) ); // Deactivate the Pro plugin if Free plugin is missing
+        // Check if the Free version is active by name
+        $free_active = false;
+        
+        if ( function_exists( 'get_plugins' ) ) {
+            require_once ABSPATH . 'wp-admin/includes/plugin.php';
+            
+            $active_plugins = get_option( 'active_plugins' );
+            $all_plugins = get_plugins();
+            
+            foreach ( $all_plugins as $plugin_file => $plugin_data ) {
+                if ( in_array( $plugin_file, $active_plugins ) ) {
+                    if ( isset( $plugin_data['Name'] ) && $plugin_data['Name'] === 'Turbo Addons Elementor' ) {
+                        $free_active = true;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        if ( ! $free_active ) {
+            add_action( 'admin_notices', [$this, 'trad_admin_pro_notice_missing_main_plugin'] );
+            deactivate_plugins( plugin_basename( __FILE__ ) );
         }
     }
 
