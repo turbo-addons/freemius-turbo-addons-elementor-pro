@@ -269,7 +269,7 @@ final class TRAD_Turbo_Addons_Pro {
                 'progress-bar',  
                 'review-template',  
                 'testimonial',  
-                'flip-box',  
+                'three-d-flip-box',  
                 'polygon3Dcarousel', 
                 'turbo-date-time',
                 'turbo-post-date',
@@ -304,6 +304,7 @@ final class TRAD_Turbo_Addons_Pro {
                 'woo-product-image',
                 'woo-product-button',
                 'woo-product-cart',
+                'table',
             ];
         }
         // Include each widget based on the stored settings

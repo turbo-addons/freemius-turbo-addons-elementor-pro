@@ -253,6 +253,7 @@ function turbo_addons_pro_admin_page() {
                                 'woo-product-image',
                                 'woo-product-button',
                                 'woo-product-cart',
+                                'table',
                                 // 'hr-slider',
                             ];
                         }
@@ -300,6 +301,7 @@ function turbo_addons_pro_admin_page() {
                             'woo-product-image'      => 'WOO Product Image',
                             'woo-product-button'     => 'WOO BuyNow Button',
                             'woo-product-cart'       => 'WOO Product Add to Cart',
+                            'table'                  => 'Table',
                 
                         ];
                         // $widget_pro_data = Turbo_Addons_Pro\Pro_Helper_Widgets_Class::get_the_pro_widget_lists();
