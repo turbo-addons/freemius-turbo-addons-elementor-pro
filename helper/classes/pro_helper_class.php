@@ -53,6 +53,7 @@ class Pro_Helper_Widgets_Class {
                 'woo-product-button',
                 'woo-product-cart',
                 'table',
+                'advanced-search',
                 // 'hr-slider',
             ];
         }
@@ -103,11 +104,12 @@ class Pro_Helper_Widgets_Class {
             'woo-product-button'     => 'WOO BuyNow Button',
             'woo-product-cart'       => 'WOO Product Add to Cart',
             'table'                  => 'Table',
+            'advanced-search'        => 'Advanced Search Pro',
             // 'hr-slider'              => 'HR Slider',
         ];
 
         $widget_pro_categories = [
-            'Contact' => ['timeline-story', 'progress-bar', 'review-template', 'visitor-count', 'dynamic-table', 'table'],
+            'Contact' => ['timeline-story', 'progress-bar', 'review-template', 'visitor-count', 'dynamic-table', 'table', 'advanced-search'],
             'Slider' => ['hero-slider', 'tuor-guide'],
             'Post & Content' => ['testimonial', 'three-d-flip-box', 'polygon3Dcarousel', 'pdf-flip-book'],
             'UI & Effects' => ['post-category', 'list-icon', 'advance-featured-card', 'post-list', 'post-filter-tab', 'text-gradient'],

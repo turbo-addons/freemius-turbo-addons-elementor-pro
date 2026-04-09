@@ -305,6 +305,7 @@ final class TRAD_Turbo_Addons_Pro {
                 'woo-product-button',
                 'woo-product-cart',
                 'table',
+                'advanced-search',
             ];
         }
         // Include each widget based on the stored settings

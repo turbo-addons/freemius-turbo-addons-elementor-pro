@@ -44,6 +44,7 @@ function get_widget_pro_lists() {
         'woo-product-button'    => 'woo-product-button.php',
         'woo-product-cart'      => 'woo-product-cart.php',
         'table'                 => 'table.php',
+        'advanced-search'       => 'advanced-search.php',
     ];
 }
 
@@ -176,6 +177,14 @@ function trad_pro_enqueue_scripts_styles() {
     //Table Widget
     wp_enqueue_style( 'trad-table-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-table.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-table.css' ), 'all' );
     wp_enqueue_script( 'trad-table-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/trad-table.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
+
+    //Advanced Search Widget
+    wp_enqueue_style( 'trad-advanced-search-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-advanced-search.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-advanced-search.css' ), 'all' );
+    wp_enqueue_script( 'trad-advanced-search-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/trad-advanced-search.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
+    wp_localize_script( 'trad-advanced-search-script', 'tradSearchData', [
+        'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+        'nonce'   => wp_create_nonce( 'trad_search_nonce' )
+    ]);
 
 }
 

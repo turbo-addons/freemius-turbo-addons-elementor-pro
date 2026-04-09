@@ -22,7 +22,7 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-upload';
+        return 'eicon-upload trad-icon';
     }
 
     public function get_categories() {
