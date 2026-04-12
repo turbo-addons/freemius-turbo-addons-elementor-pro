@@ -114,6 +114,9 @@ Follow these steps to install Turbo Addons Pro for Elementor on your WordPress w
 
 ## Changelog
 
+## Upcoming.....
+### Version 1.3.3
+
 ### Version 1.3.2
    1. Upadte flip box widgets
    2. Updated all templates
