@@ -47,6 +47,7 @@ function get_widget_pro_lists() {
         'advanced-search'       => 'advanced-search.php',
         'gravity-forms-styler'  => 'gravity-forms-styler.php',
         'off-canvas'            => 'off-canvas.php',
+        'whatsapp'              => 'whatsapp.php',
     ];
 }
 
@@ -194,6 +195,10 @@ function trad_pro_enqueue_scripts_styles() {
     //Off-Canvas Widget
     wp_enqueue_style( 'trad-off-canvas-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-off-canvas.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-off-canvas.css' ), 'all' );
     wp_enqueue_script( 'trad-off-canvas', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/trad-off-canvas.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
+
+    // WhatsApp Widget
+    wp_enqueue_style( 'trad-whatsapp-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-whatsapp.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-whatsapp.css' ), 'all' );
+    wp_enqueue_script( 'trad-whatsapp-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/trad-whatsapp.js', [ 'jquery', 'elementor-frontend' ], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/js/trad-whatsapp.js' ), true );
 
 }
 
