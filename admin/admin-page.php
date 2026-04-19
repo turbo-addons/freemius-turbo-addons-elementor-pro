@@ -257,6 +257,7 @@ function turbo_addons_pro_admin_page() {
                                 'advanced-search',
                                 'off-canvas',
                                 'whatsapp',
+                                'hotspot',
                                 // 'hr-slider',
                             ];
                         }
@@ -308,6 +309,7 @@ function turbo_addons_pro_admin_page() {
                             'advanced-search'        => 'Advanced Search Pro',
                             'off-canvas'             => 'Off-Canvas',
                             'whatsapp'               => 'WhatsApp Chat',
+                            'hotspot'                => 'Image Hotspot',
                         ];
                         // $widget_pro_data = Turbo_Addons_Pro\Pro_Helper_Widgets_Class::get_the_pro_widget_lists();
                         // $widgets_pro = $widget_pro_data['widgets_pro'];

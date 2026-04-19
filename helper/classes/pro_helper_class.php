@@ -1,6 +1,4 @@
-<?php
-namespace Turbo_Addons_Pro;
-
+﻿<?php
 if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
@@ -56,6 +54,7 @@ class Pro_Helper_Widgets_Class {
                 'advanced-search',
                 'off-canvas',
                 'whatsapp',
+                'hotspot',
                 // 'hr-slider',
             ];
         }
@@ -109,6 +108,7 @@ class Pro_Helper_Widgets_Class {
             'advanced-search'        => 'Advanced Search Pro',
             'off-canvas'             => 'Off-Canvas',
             'whatsapp'               => 'WhatsApp Chat',
+            'hotspot'                => 'Image Hotspot',
             // 'hr-slider'              => 'HR Slider',
         ];
 
@@ -116,7 +116,7 @@ class Pro_Helper_Widgets_Class {
             'Contact' => ['timeline-story', 'progress-bar', 'review-template', 'visitor-count', 'dynamic-table', 'table', 'advanced-search', 'off-canvas', 'whatsapp'],
             'Slider' => ['hero-slider', 'tuor-guide'],
             'Post & Content' => ['testimonial', 'three-d-flip-box', 'polygon3Dcarousel', 'pdf-flip-book'],
-            'UI & Effects' => ['post-category', 'list-icon', 'advance-featured-card', 'post-list', 'post-filter-tab', 'text-gradient'],
+            'UI & Effects' => ['post-category', 'list-icon', 'advance-featured-card', 'post-list', 'post-filter-tab', 'text-gradient', 'hotspot'],
             'E-commerce & Features' => ['pricing-table-pro', 'image-scrolling_animatin-vr'],
             'Date & Time' => ['turbo-date-time', 'turbo-post-date'],
             'WOOCOMMERCE' => ['woo-product-card', 'woo-product-pagination', 'woo-category', 'woo-mini-cart', 'woo-product-title',

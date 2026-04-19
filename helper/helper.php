@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // helper.php
 
 function get_widget_pro_lists() {
@@ -48,6 +48,7 @@ function get_widget_pro_lists() {
         'gravity-forms-styler'  => 'gravity-forms-styler.php',
         'off-canvas'            => 'off-canvas.php',
         'whatsapp'              => 'whatsapp.php',
+        'hotspot'               => 'hotspot.php',
     ];
 }
 
@@ -200,7 +201,11 @@ function trad_pro_enqueue_scripts_styles() {
     wp_enqueue_style( 'trad-whatsapp-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-whatsapp.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-whatsapp.css' ), 'all' );
     wp_enqueue_script( 'trad-whatsapp-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/trad-whatsapp.js', [ 'jquery', 'elementor-frontend' ], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/js/trad-whatsapp.js' ), true );
 
-}
+    // Image Hotspot Widget
+    wp_enqueue_style( 'trad-hotspot-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/hotspot.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/hotspot.css' ), 'all' );
+    wp_enqueue_script( 'trad-hotspot-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/hotspot.js', [ 'jquery', 'elementor-frontend' ], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/js/hotspot.js' ), true );
 
+}
     
+
 
