@@ -308,6 +308,8 @@ final class TRAD_Turbo_Addons_Pro {
                 'advanced-search',
                 'gravity-forms-styler',
                 'off-canvas',
+                'whatsapp',
+                'hotspot',
             ];
         }
         // Include each widget based on the stored settings

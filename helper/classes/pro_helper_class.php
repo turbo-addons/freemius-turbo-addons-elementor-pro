@@ -1,6 +1,4 @@
-<?php
-namespace Turbo_Addons_Pro;
-
+﻿<?php
 if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
@@ -54,8 +52,9 @@ class Pro_Helper_Widgets_Class {
                 'woo-product-cart',
                 'table',
                 'advanced-search',
-                'gravity-forms-styler',
                 'off-canvas',
+                'whatsapp',
+                'hotspot',
                 // 'hr-slider',
             ];
         }
@@ -107,16 +106,17 @@ class Pro_Helper_Widgets_Class {
             'woo-product-cart'       => 'WOO Product Add to Cart',
             'table'                  => 'Table',
             'advanced-search'        => 'Advanced Search Pro',
-            'gravity-forms-styler'   => 'Gravity Forms Styler',
             'off-canvas'             => 'Off-Canvas',
+            'whatsapp'               => 'WhatsApp Chat',
+            'hotspot'                => 'Image Hotspot',
             // 'hr-slider'              => 'HR Slider',
         ];
 
         $widget_pro_categories = [
-            'Contact' => ['timeline-story', 'progress-bar', 'review-template', 'visitor-count', 'dynamic-table', 'table', 'advanced-search', 'gravity-forms-styler', 'off-canvas'],
+            'Contact' => ['timeline-story', 'progress-bar', 'review-template', 'visitor-count', 'dynamic-table', 'table', 'advanced-search', 'off-canvas', 'whatsapp'],
             'Slider' => ['hero-slider', 'tuor-guide'],
             'Post & Content' => ['testimonial', 'three-d-flip-box', 'polygon3Dcarousel', 'pdf-flip-book'],
-            'UI & Effects' => ['post-category', 'list-icon', 'advance-featured-card', 'post-list', 'post-filter-tab', 'text-gradient'],
+            'UI & Effects' => ['post-category', 'list-icon', 'advance-featured-card', 'post-list', 'post-filter-tab', 'text-gradient', 'hotspot'],
             'E-commerce & Features' => ['pricing-table-pro', 'image-scrolling_animatin-vr'],
             'Date & Time' => ['turbo-date-time', 'turbo-post-date'],
             'WOOCOMMERCE' => ['woo-product-card', 'woo-product-pagination', 'woo-category', 'woo-mini-cart', 'woo-product-title',

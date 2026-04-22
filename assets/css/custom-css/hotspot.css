@@ -1,0 +1,335 @@
+﻿/* ============================================================
+ * Turbo Addons - Image Hotspot Widget
+ * ============================================================ */
+
+/* Wrapper */
+.trad-hotspot-wrapper { width: 100%; display: block; }
+.trad-hotspot-image-container { position: relative; display: block; width: 100%; }
+.trad-hotspot-image { width: 100%; height: auto; display: block; }
+
+/* Marker */
+.trad-hotspot-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    cursor: pointer;
+}
+.trad-hotspot-marker-icon {
+    width: 36px;
+    height: 36px;
+    background-color: #4054b2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+.trad-hotspot-marker:hover .trad-hotspot-marker-icon,
+.trad-hotspot-marker.trad-active .trad-hotspot-marker-icon {
+    transform: scale(1.15);
+}
+
+/* Pulse animation */
+.trad-pulse .trad-hotspot-marker-icon::before,
+.trad-pulse .trad-hotspot-marker-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(64, 84, 178, 0.4);
+    animation: trad-pulse-anim 2s ease-out infinite;
+    z-index: -1;
+}
+.trad-pulse .trad-hotspot-marker-icon::after {
+    animation-delay: 1s;
+}
+@keyframes trad-pulse-anim {
+    0%   { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Glow animation */
+.trad-glow .trad-hotspot-marker-icon {
+    animation: trad-glow-anim 1.5s ease-in-out infinite alternate;
+}
+@keyframes trad-glow-anim {
+    from { box-shadow: 0 0 5px rgba(64, 84, 178, 0.5); }
+    to   { box-shadow: 0 0 20px rgba(64, 84, 178, 0.9), 0 0 40px rgba(64, 84, 178, 0.5); }
+}
+
+/* Bounce animation */
+.trad-bounce .trad-hotspot-marker-icon {
+    animation: trad-bounce-anim 1s ease infinite;
+}
+@keyframes trad-bounce-anim {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-6px); }
+}
+
+/* Tooltip */
+.trad-hotspot-tooltip {
+    position: absolute;
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    width: 220px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    z-index: 100;
+    pointer-events: none;
+}
+.trad-hotspot-tooltip.trad-tooltip-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Tooltip positions */
+.trad-tooltip-top {
+    bottom: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+}
+.trad-tooltip-top.trad-tooltip-visible {
+    transform: translateX(-50%) translateY(0);
+}
+.trad-tooltip-bottom {
+    top: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+}
+.trad-tooltip-bottom.trad-tooltip-visible {
+    transform: translateX(-50%) translateY(0);
+}
+.trad-tooltip-left {
+    right: calc(100% + 14px);
+    top: 50%;
+    transform: translateY(-50%) translateX(6px);
+}
+.trad-tooltip-left.trad-tooltip-visible {
+    transform: translateY(-50%) translateX(0);
+}
+.trad-tooltip-right {
+    left: calc(100% + 14px);
+    top: 50%;
+    transform: translateY(-50%) translateX(-6px);
+}
+.trad-tooltip-right.trad-tooltip-visible {
+    transform: translateY(-50%) translateX(0);
+}
+
+/* Arrow */
+.trad-tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+.trad-tooltip-top .trad-tooltip-arrow {
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #fff;
+}
+.trad-tooltip-bottom .trad-tooltip-arrow {
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+}
+.trad-tooltip-left .trad-tooltip-arrow {
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid #fff;
+}
+.trad-tooltip-right .trad-tooltip-arrow {
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #fff;
+}
+
+/* Tooltip content */
+.trad-hotspot-tooltip-title {
+    margin: 0 0 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+.trad-hotspot-tooltip-desc {
+    margin: 0 0 10px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+}
+.trad-hotspot-tooltip-image {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: block;
+}
+.trad-hotspot-tooltip-link {
+    display: inline-block;
+    padding: 6px 14px;
+    background: #4054b2;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.trad-hotspot-tooltip-link:hover {
+    opacity: 0.85;
+    color: #fff;
+}
+.trad-hotspot-marker-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+}
+
+/* ============================================================
+ * Line Style Tooltip
+ * ============================================================ */
+.trad-line-tooltip {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 100;
+}
+.trad-line-tooltip.trad-line-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Horizontal line */
+.trad-line-h {
+    position: absolute;
+    height: 2px;
+    background-color: #f0a500;
+    width: 0;
+    transition: width 0.35s ease;
+    transform-origin: left center;
+}
+
+/* Vertical line */
+.trad-line-v {
+    position: absolute;
+    width: 2px;
+    background-color: #f0a500;
+    height: 0;
+    transition: height 0.35s ease 0.3s;
+    transform-origin: top center;
+}
+
+/* Label at end of lines */
+.trad-line-label {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.55s;
+    white-space: nowrap;
+    text-align: left;
+    display: inline-block;
+}
+.trad-line-tooltip.trad-line-visible .trad-line-label {
+    opacity: 1;
+}
+.trad-line-label .trad-hotspot-tooltip-title {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+.trad-line-label .trad-hotspot-tooltip-desc {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+}
+
+/* ---- Direction: right-down ---- */
+/* H line goes right from dot, V line goes down from end of H */
+.trad-line-tooltip[data-dir="right-down"] .trad-line-h {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.trad-line-tooltip[data-dir="right-down"] .trad-line-v {
+    top: 50%;
+    /* left set by JS = line_len */
+}
+.trad-line-tooltip[data-dir="right-down"] .trad-line-label {
+    /* positioned by JS below V line end */
+    transform: translateX(-50%);
+}
+
+/* ---- Direction: right-up ---- */
+.trad-line-tooltip[data-dir="right-up"] .trad-line-h {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.trad-line-tooltip[data-dir="right-up"] .trad-line-v {
+    bottom: 50%;
+    transform-origin: bottom center;
+}
+.trad-line-tooltip[data-dir="right-up"] .trad-line-label {
+    transform: translateX(-50%);
+}
+
+/* ---- Direction: left-down ---- */
+.trad-line-tooltip[data-dir="left-down"] .trad-line-h {
+    top: 50%;
+    right: 0;
+    left: auto;
+    transform: translateY(-50%);
+    transform-origin: right center;
+}
+.trad-line-tooltip[data-dir="left-down"] .trad-line-v {
+    top: 50%;
+}
+.trad-line-tooltip[data-dir="left-down"] .trad-line-label {
+    transform: translateX(-50%);
+}
+
+/* ---- Direction: left-up ---- */
+.trad-line-tooltip[data-dir="left-up"] .trad-line-h {
+    top: 50%;
+    right: 0;
+    left: auto;
+    transform: translateY(-50%);
+    transform-origin: right center;
+}
+.trad-line-tooltip[data-dir="left-up"] .trad-line-v {
+    bottom: 50%;
+    transform-origin: bottom center;
+}
+.trad-line-tooltip[data-dir="left-up"] .trad-line-label {
+    transform: translateX(-50%);
+}
+
+/* Animate lines when active */
+.trad-line-tooltip.trad-line-visible .trad-line-h {
+    width: var(--trad-line-len, 80px);
+}
+.trad-line-tooltip.trad-line-visible .trad-line-v {
+    height: var(--trad-line-len, 80px);
+}
