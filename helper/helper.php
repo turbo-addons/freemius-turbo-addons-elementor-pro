@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // helper.php
 
 function get_widget_pro_lists() {
@@ -45,7 +45,6 @@ function get_widget_pro_lists() {
         'woo-product-cart'      => 'woo-product-cart.php',
         'table'                 => 'table.php',
         'advanced-search'       => 'advanced-search.php',
-        'gravity-forms-styler'  => 'gravity-forms-styler.php',
         'off-canvas'            => 'off-canvas.php',
         'whatsapp'              => 'whatsapp.php',
         'hotspot'               => 'hotspot.php',
@@ -189,9 +188,6 @@ function trad_pro_enqueue_scripts_styles() {
         'ajaxUrl' => admin_url( 'admin-ajax.php' ),
         'nonce'   => wp_create_nonce( 'trad_search_nonce' )
     ]);
-
-    //Gravity Forms Styler Widget
-    wp_enqueue_style( 'trad-gravity-forms-styler-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-gravity-forms-styler.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-gravity-forms-styler.css' ), 'all' );
 
     //Off-Canvas Widget
     wp_enqueue_style( 'trad-off-canvas-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-off-canvas.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-off-canvas.css' ), 'all' );

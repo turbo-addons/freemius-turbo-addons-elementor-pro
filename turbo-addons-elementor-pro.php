@@ -306,7 +306,6 @@ final class TRAD_Turbo_Addons_Pro {
                 'woo-product-cart',
                 'table',
                 'advanced-search',
-                'gravity-forms-styler',
                 'off-canvas',
                 'whatsapp',
                 'hotspot',
