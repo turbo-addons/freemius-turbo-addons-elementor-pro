@@ -60,6 +60,43 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
         );
 
         $this->add_control(
+            'mobile_layout',
+            [
+                'label' => __('Mobile Layout', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'scroll' => __('Horizontal Scroll', 'turbo-addons-elementor-pro'),
+                    'cards' => __('Stacked Cards', 'turbo-addons-elementor-pro'),
+                ],
+                'default' => 'scroll',
+                'condition' => [
+                    'display_format' => 'table',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'mobile_breakpoint',
+            [
+                'label' => __('Mobile Breakpoint (px)', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 320,
+                        'max' => 1024,
+                    ],
+                ],
+                'default' => [
+                    'size' => 768,
+                ],
+                'condition' => [
+                    'display_format' => 'table',
+                ],
+            ]
+        );
+
+        $this->add_control(
             'enable_search',
             [
                 'label' => __('Enable Search', 'turbo-addons-elementor-pro'),
@@ -648,6 +685,8 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
         $settings = $this->get_settings_for_display();
         $csv_file = $settings['csv_upload']['url'] ?? '';
         $display_format = $settings['display_format'] ?? 'list';
+        $mobile_layout = $settings['mobile_layout'] ?? 'scroll';
+        $mobile_breakpoint = $settings['mobile_breakpoint']['size'] ?? 768;
         $enable_search = $settings['enable_search'] ?? 'no';
         $search_placeholder = $settings['search_placeholder'] ?? 'Search...';
         $enable_pagination = $settings['enable_pagination'] ?? 'no';
@@ -663,7 +702,7 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
         $csv_data = $this->parse_csv($csv_file);
 
         if (!empty($csv_data)) {
-            echo '<div class="csv-container" id="' . esc_attr($widget_id) . '" data-rows-per-page="' . esc_attr($rows_per_page) . '">';
+            echo '<div class="csv-container csv-mobile-' . esc_attr($mobile_layout) . '" id="' . esc_attr($widget_id) . '" data-rows-per-page="' . esc_attr($rows_per_page) . '" data-mobile-breakpoint="' . esc_attr($mobile_breakpoint) . '">';
             
             // Search Field (no toggle button)
             if ($enable_search === 'yes') {
@@ -703,25 +742,33 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
                 }
                 echo '</ul>';
             } else {
-                echo '<table class="csv-table csv-searchable" border="1" cellpadding="5" cellspacing="0" style="width:100%; border-collapse: collapse;">';
+                // Table wrapper for responsive scroll
+                echo '<div class="csv-table-wrapper">';
+                echo '<table class="csv-table csv-searchable" border="1" cellpadding="5" cellspacing="0">';
                 echo '<thead><tr>';
                 foreach ($csv_data[0] as $header) {
-                    echo '<th>' . esc_html($header) . '</th>';
+                    echo '<th data-label="' . esc_attr($header) . '">' . esc_html($header) . '</th>';
                 }
                 echo '</tr></thead>';
                 echo '<tbody>';
                 for ($i = 1; $i < count($csv_data); $i++) {
                     echo '<tr class="csv-row" data-index="' . esc_attr($i) . '">';
+                    $col_index = 0;
                     foreach ($csv_data[$i] as $cell) {
+                        $header_label = isset($csv_data[0][$col_index]) ? $csv_data[0][$col_index] : '';
+                        echo '<td data-label="' . esc_attr($header_label) . '">';
                         if ($this->is_image_url($cell)) {
-                            echo '<td><img src="' . esc_url($cell) . '" alt="Image" style="max-width:100px;"></td>';
+                            echo '<img src="' . esc_url($cell) . '" alt="Image" style="max-width:100px;">';
                         } else {
-                            echo '<td>' . esc_html($cell) . '</td>';
+                            echo esc_html($cell);
                         }
+                        echo '</td>';
+                        $col_index++;
                     }
                     echo '</tr>';
                 }
                 echo '</tbody></table>';
+                echo '</div>';
             }
             
             // Pagination
@@ -926,6 +973,85 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
             .csv-container {
                 margin: 20px 0;
             }
+            
+            /* Table Wrapper for Horizontal Scroll */
+            .csv-table-wrapper {
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .csv-table {
+                width: 100%;
+                border-collapse: collapse;
+                min-width: 600px;
+            }
+            
+            /* Mobile Responsive - Horizontal Scroll (Default) */
+            @media screen and (max-width: <?php echo intval($mobile_breakpoint); ?>px) {
+                .csv-mobile-scroll .csv-table-wrapper {
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                }
+                
+                .csv-mobile-scroll .csv-table {
+                    margin: 0;
+                }
+            }
+            
+            /* Mobile Responsive - Stacked Cards */
+            @media screen and (max-width: <?php echo intval($mobile_breakpoint); ?>px) {
+                .csv-mobile-cards .csv-table-wrapper {
+                    overflow-x: visible;
+                }
+                
+                .csv-mobile-cards .csv-table {
+                    min-width: 100%;
+                }
+                
+                .csv-mobile-cards .csv-table thead {
+                    display: none;
+                }
+                
+                .csv-mobile-cards .csv-table tbody tr {
+                    display: block;
+                    margin-bottom: 15px;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    padding: 15px;
+                    background: #fff;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                }
+                
+                .csv-mobile-cards .csv-table tbody td {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 0;
+                    border: none;
+                    border-bottom: 1px solid #f0f0f0;
+                    text-align: right;
+                }
+                
+                .csv-mobile-cards .csv-table tbody td:last-child {
+                    border-bottom: none;
+                }
+                
+                .csv-mobile-cards .csv-table tbody td:before {
+                    content: attr(data-label);
+                    font-weight: bold;
+                    text-align: left;
+                    flex: 0 0 40%;
+                    padding-right: 10px;
+                }
+                
+                .csv-mobile-cards .csv-table tbody td img {
+                    max-width: 60px !important;
+                }
+            }
+            
+            /* Pagination Styles */
             .csv-pagination {
                 display: flex;
                 align-items: center;
@@ -955,6 +1081,15 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
             .csv-pagination button:disabled {
                 opacity: 0.5;
                 cursor: not-allowed;
+            }
+            
+            /* Mobile Pagination */
+            @media screen and (max-width: 480px) {
+                .csv-pagination button {
+                    padding: 6px 10px;
+                    margin: 2px;
+                    font-size: 12px;
+                }
             }
             </style>
             <?php
