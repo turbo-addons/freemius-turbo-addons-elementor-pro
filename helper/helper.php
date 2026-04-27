@@ -189,7 +189,10 @@ function trad_pro_enqueue_scripts_styles() {
     ]);
 
     //Gravity Forms Styler Widget
-    wp_enqueue_style( 'trad-gravity-forms-styler-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-gravity-forms-styler.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-gravity-forms-styler.css' ), 'all' );
+    $gf_styler_css = TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-gravity-forms-styler.css';
+    if ( file_exists( $gf_styler_css ) ) {
+        wp_enqueue_style( 'trad-gravity-forms-styler-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-gravity-forms-styler.css', [], filemtime( $gf_styler_css ), 'all' );
+    }
 
     //Off-Canvas Widget
     wp_enqueue_style( 'trad-off-canvas-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-off-canvas.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-off-canvas.css' ), 'all' );
