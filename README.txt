@@ -4,7 +4,7 @@ Tags: elementor, addons, turbo-addons-pro, elementor-widgets, turbo-plugins
 Requires at least: 3.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.3.2
+Stable tag: 1.3.4
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0  
 
@@ -22,7 +22,7 @@ Turbo Addons Pro provides exclusive, high-performance widgets that are fast, lig
 
 ## Key Features of Turbo Addons Pro for Elementor
 
-Turbo Addons Pro includes **25+ advanced widgets** for Elementor, each crafted to extend Elementor’s capabilities and enrich your website:
+Turbo Addons Pro includes **40+ advanced widgets** for Elementor, each crafted to extend Elementor’s capabilities and enrich your website:
 
 1. **Time Line** - Create a visually appealing timeline or roadmap in a single click.
 2. **Progress bar** – Visualize project/skill progress with percentage progress bars.
@@ -114,8 +114,18 @@ Follow these steps to install Turbo Addons Pro for Elementor on your WordPress w
 
 ## Changelog
 
-## Upcoming.....
+
+### Version 1.3.4
+   1. Include new widgets: Off Canvas
+   2. Include new widgets: Advance Search
+   3. Include new widgets: Table
+   4. Updated widgets: CSV Uploader
+
 ### Version 1.3.3
+   1. Updated Widgets: Progressbar
+   2. Updated Widgets: Time Line
+   3. Updated Widgets: 3D Slider
+   4. Include Templates: Cattle farme, Service, Technology
 
 ### Version 1.3.2
    1. Upadte flip box widgets
