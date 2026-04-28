@@ -72,20 +72,13 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_control( 'search_icon', [
-			'label'   => esc_html__( 'Search Icon', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Placeholder Icon', 'turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::ICONS,
 			'default' => [ 'value' => 'fas fa-search', 'library' => 'fa-solid' ],
 		] );
 
-		$this->add_control( 'button_icon', [
-			'label'     => esc_html__( 'Button Icon', 'turbo-addons-elementor-pro' ),
-			'type'      => Controls_Manager::ICONS,
-			'default'   => [ 'value' => 'fas fa-search', 'library' => 'fa-solid' ],
-			'condition' => [ 'layout' => 'input-button' ],
-		] );
-
 		$this->add_control( 'icon_position', [
-			'label'   => esc_html__( 'Icon Position', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Placeholder Icon Position', 'turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::SELECT,
 			'default' => 'left',
 			'options' => [
@@ -95,8 +88,15 @@ class TRAD_Advanced_Search extends Widget_Base {
 			'condition' => [ 'layout!' => 'icon-only' ],
 		] );
 
+		$this->add_control( 'button_icon', [
+			'label'     => esc_html__( 'Button Icon', 'turbo-addons-elementor-pro' ),
+			'type'      => Controls_Manager::ICONS,
+			'default'   => [ 'value' => 'fas fa-search', 'library' => 'fa-solid' ],
+			'condition' => [ 'layout' => 'input-button' ],
+		] );
+
 		$this->add_control( 'close_icon', [
-			'label'   => esc_html__( 'Close Icon', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Search Close Icon', 'turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::ICONS,
 			'default' => [ 'value' => 'fas fa-times', 'library' => 'fa-solid' ],
 		] );
@@ -506,7 +506,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── STYLE: Search Icon ────────────────────────────────────────────────
 		$this->start_controls_section( 'section_style_icon', [
-			'label' => esc_html__( 'Search Icon', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Placeholder Search Icon', 'turbo-addons-elementor-pro' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
@@ -534,10 +534,11 @@ class TRAD_Advanced_Search extends Widget_Base {
 			'label'     => esc_html__( 'Spacing', 'turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [ 'px' => [ 'min' => 0, 'max' => 50 ] ],
-			'default'   => [ 'size' => 10 ],
+			'default'   => [ 'size' => 40 ],
 			'selectors' => [
-				'{{WRAPPER}} .trad-icon-left .trad-search-icon'  => 'margin-right: {{SIZE}}{{UNIT}};',
-				'{{WRAPPER}} .trad-icon-right .trad-search-icon' => 'margin-left: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .trad-search-input'  => 'padding-left: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .trad-search-icon-right'  => 'padding-left: {{SIZE}}{{UNIT}};',
+				// '{{WRAPPER}} .trad-icon-right .trad-search-icon' => 'margin-left: {{SIZE}}{{UNIT}};',
 			],
 		] );
 
@@ -545,7 +546,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── STYLE: Close Icon ─────────────────────────────────────────────────
 		$this->start_controls_section( 'section_style_close_icon', [
-			'label' => esc_html__( 'Close Icon', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Search Close Icon', 'turbo-addons-elementor-pro' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
@@ -776,7 +777,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 				
 				<div class="trad-search-input-wrapper">
 					<?php if ( 'left' === $icon_position ) : ?>
-						<span class="trad-search-icon">
+						<span class="trad-search-icon trad-search-icon-left">
 							<?php Icons_Manager::render_icon( $s['search_icon'], [ 'aria-hidden' => 'true' ] ); ?>
 						</span>
 					<?php endif; ?>
@@ -788,7 +789,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 					</span>
 					
 					<?php if ( 'right' === $icon_position ) : ?>
-						<span class="trad-search-icon">
+						<span class="trad-search-icon trad-search-icon-right">
 							<?php Icons_Manager::render_icon( $s['search_icon'], [ 'aria-hidden' => 'true' ] ); ?>
 						</span>
 					<?php endif; ?>
