@@ -1,8 +1,8 @@
 === Turbo Addons Elementor Pro ===  
 Contributors: TurboAddons, sharifok, wpanik, siraji2017
 Tags: elementor, addons, turbo-addons-pro, elementor-widgets, turbo-plugins  
-Requires at least: 3.0
-Tested up to: 6.8
+Requires at least: 5.0
+Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 1.3.4
 License: GPLv3
@@ -139,9 +139,9 @@ Follow these steps to install Turbo Addons Pro for Elementor on your WordPress w
 
 ### Version 1.3.0
 * Include Turbo Addons Template Sections
-   1. Custom Header Builder
-   2. Custom Footer Builder 
-   3. Custom Single Product Page
+  1. Custom Header Builder
+  2. Custom Footer Builder 
+  3. Custom Single Product Page
 
 * Added 15 woocommerce widgets are.
   1. WOO Product Add to Cart

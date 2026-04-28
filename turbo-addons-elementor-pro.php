@@ -2,12 +2,17 @@
 /**
  * Plugin Name: Turbo Addons Elementor Pro
  * Plugin URI: https://turbo-addons.com/
- * Description: Turbo Addons for Elementor gives you everything: 80+ advanced widgets, WooCommerce support, custom headers & footers, and 100+ prebuilt templates — all built for easy drag & drop design. Customize every part of your site, fast and code-free!
+ * Description: Turbo Addons for Elementor gives you everything: 90+ advanced widgets, WooCommerce support, and 200+ prebuilt templates — all built for easy drag & drop design. Customize every part of your site, fast and code-free!
  * Version: 1.3.4
+ * Requires at least: 5.0
+ * Requires PHP: 7.4
+ * Tested up to: 6.9
  * Author: Turbo Addons Pro
  * Author URI: https://turbo-addons.com/pricing/
+ * License: GPL v2 or later
  * License URI: https://wp-turbo.com/turbo-toolkit/
  * Text Domain: turbo-addons-elementor-pro
+ * Domain Path: /languages
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -85,6 +90,7 @@ final class TRAD_Turbo_Addons_Pro {
         include_once plugin_dir_path(__FILE__) . 'helper/ajax-handlers.php';
         include_once plugin_dir_path(__FILE__) . 'helper/classes/woo_helper.php';
         include_once plugin_dir_path(__FILE__) . 'includes/woo-add-cart-helper.php';
+        include_once plugin_dir_path(__FILE__) . 'includes/plugin-information.php';
         add_action( 'wp_enqueue_scripts', 'trad_pro_enqueue_scripts_styles' );
         add_action( 'init', [ $this, 'trad_load_textdomain' ] );
         add_action( 'plugins_loaded', [ $this, 'init' ] );
@@ -426,6 +432,7 @@ final class TRAD_Turbo_Addons_Pro {
             ) )
         );
     }
+
 }
 
 /**
