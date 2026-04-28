@@ -109,6 +109,18 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
         );
 
         $this->add_control(
+            'enable_search',
+            [
+                'label' => __('Enable Search', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'turbo-addons-elementor-pro'),
+                'label_off' => __('No', 'turbo-addons-elementor-pro'),
+                'return_value' => 'yes',
+                'default' => 'no',
+            ]
+        );
+
+        $this->add_control(
             'search_placeholder',
             [
                 'label' => __('Search Placeholder', 'turbo-addons-elementor-pro'),
@@ -152,6 +164,40 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
 
         $this->end_controls_section();
 
+        // ---------------heading and description----------------
+         $this->start_controls_section(
+            'heading_and_description',
+            [
+                'label' => __('Heading & Descriptin', 'turbo-addons-elementor-pro'),
+                'tab' => Controls_Manager::TAB_CONTENT,
+            ]
+        );
+
+        $this->add_control(
+            'table_heading_text',
+            [
+                'label' => __('Table Heading', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::TEXT,
+                'default' => __('Data Table', 'turbo-addons-elementor-pro'),
+                'placeholder' => __('Enter table heading', 'turbo-addons-elementor-pro'),
+                'label_block' => true,
+            ]
+        );
+
+        $this->add_control(
+            'table_description',
+            [
+                'label' => __('Table Description', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => __('View and search through the data below. Use the search field to filter results.', 'turbo-addons-elementor-pro'),
+                'placeholder' => __('Enter table description', 'turbo-addons-elementor-pro'),
+                'rows' => 3,
+            ]
+        );
+
+
+        $this->end_controls_section();
+
         // Pagination Section
         $this->start_controls_section(
             'pagination_section',
@@ -181,35 +227,6 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
                 'default' => 10,
                 'min' => 1,
                 'max' => 100,
-                'condition' => [
-                    'enable_pagination' => 'yes',
-                ],
-            ]
-        );
-
-        $this->add_responsive_control(
-            'pagination_alignment',
-            [
-                'label' => __('Alignment', 'turbo-addons-elementor-pro'),
-                'type' => Controls_Manager::CHOOSE,
-                'options' => [
-                    'left' => [
-                        'title' => __('Left', 'turbo-addons-elementor-pro'),
-                        'icon' => 'eicon-text-align-left',
-                    ],
-                    'center' => [
-                        'title' => __('Center', 'turbo-addons-elementor-pro'),
-                        'icon' => 'eicon-text-align-center',
-                    ],
-                    'right' => [
-                        'title' => __('Right', 'turbo-addons-elementor-pro'),
-                        'icon' => 'eicon-text-align-right',
-                    ],
-                ],
-                'default' => 'center',
-                'selectors' => [
-                    '{{WRAPPER}} .csv-pagination' => 'text-align: {{VALUE}};',
-                ],
                 'condition' => [
                     'enable_pagination' => 'yes',
                 ],
@@ -441,12 +458,199 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
 
         $this->end_controls_section();
 
+        // Heading & Description Style Section
+        $this->start_controls_section(
+            'heading_style_section',
+            [
+                'label' => __('Heading & Description', 'turbo-addons-elementor-pro'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'heading_style_heading',
+            [
+                'label' => __('Heading', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::HEADING,
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'heading_typography',
+                'selector' => '{{WRAPPER}} .csv-table-heading',
+            ]
+        );
+
+        $this->add_control(
+            'heading_color',
+            [
+                'label' => __('Color', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#333333',
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table-heading' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'heading_align',
+            [
+                'label' => __('Alignment', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                ],
+                'default' => 'left',
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table-heading' => 'text-align: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'heading_margin',
+            [
+                'label' => __('Margin', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'default' => [
+                    'top' => '0',
+                    'right' => '0',
+                    'bottom' => '15',
+                    'left' => '0',
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table-heading' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'description_style_heading',
+            [
+                'label' => __('Description', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'description_typography',
+                'selector' => '{{WRAPPER}} .csv-table-description',
+            ]
+        );
+
+        $this->add_control(
+            'description_color',
+            [
+                'label' => __('Color', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#666666',
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table-description' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'description_align',
+            [
+                'label' => __('Alignment', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                ],
+                'default' => 'left',
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table-description' => 'text-align: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'description_margin',
+            [
+                'label' => __('Margin', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'default' => [
+                    'top' => '0',
+                    'right' => '0',
+                    'bottom' => '15',
+                    'left' => '0',
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table-description' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
         // Pagination Style Section
         $this->start_controls_section(
             'pagination_style_section',
             [
                 'label' => __('Pagination Style', 'turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'enable_pagination' => 'yes',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'pagination_alignment',
+            [
+                'label' => __('Alignment', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                ],
+                'default' => 'center',
+                'selectors' => [
+                    '{{WRAPPER}} .csv-pagination' => 'justify-content: {{VALUE}};',
+                ],
                 'condition' => [
                     'enable_pagination' => 'yes',
                 ],
@@ -679,6 +883,299 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
         );
 
         $this->end_controls_section();
+
+        // Table Style Section
+        $this->start_controls_section(
+            'table_style_section',
+            [
+                'label' => __('Table Style', 'turbo-addons-elementor-pro'),
+                'tab' => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'display_format' => 'table',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'table_heading',
+            [
+                'label' => __('Table', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::HEADING,
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'table_border',
+                'selector' => '{{WRAPPER}} .csv-table-wrapper, {{WRAPPER}} .csv-table',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'table_border_radius',
+            [
+                'label' => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; overflow: hidden;',
+                    '{{WRAPPER}} .csv-table' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'table_bg_color',
+            [
+                'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'cell_border_heading',
+            [
+                'label' => __('Cell Borders', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'cell_border',
+                'selector' => '{{WRAPPER}} .csv-table th, {{WRAPPER}} .csv-table td',
+            ]
+        );
+
+        // Table Header Styles
+        $this->add_control(
+            'header_heading',
+            [
+                'label' => __('Table Header', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'header_typography',
+                'selector' => '{{WRAPPER}} .csv-table thead th',
+            ]
+        );
+
+        $this->add_control(
+            'header_text_color',
+            [
+                'label' => __('Text Color', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table thead th' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'header_bg_color',
+            [
+                'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#6040e0',
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table thead th' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'header_padding',
+            [
+                'label' => __('Padding', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em'],
+                'default' => [
+                    'top' => '12',
+                    'right' => '15',
+                    'bottom' => '12',
+                    'left' => '15',
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table thead th' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'header_align',
+            [
+                'label' => __('Text Align', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                ],
+                'default' => 'left',
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table thead th' => 'text-align: {{VALUE}};',
+                ],
+            ]
+        );
+
+        // Table Body/Data Styles
+        $this->add_control(
+            'body_heading',
+            [
+                'label' => __('Table Body (Data)', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'body_typography',
+                'selector' => '{{WRAPPER}} .csv-table tbody td',
+            ]
+        );
+
+        $this->add_control(
+            'body_text_color',
+            [
+                'label' => __('Text Color', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#333333',
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table tbody td' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'body_bg_color',
+            [
+                'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table tbody td' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'body_padding',
+            [
+                'label' => __('Padding', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em'],
+                'default' => [
+                    'top' => '10',
+                    'right' => '15',
+                    'bottom' => '10',
+                    'left' => '15',
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table tbody td' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'body_align',
+            [
+                'label' => __('Text Align', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                ],
+                'default' => 'left',
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table tbody td' => 'text-align: {{VALUE}};',
+                ],
+            ]
+        );
+
+        // Row Styles
+        $this->add_control(
+            'row_heading',
+            [
+                'label' => __('Table Rows', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_control(
+            'row_stripe',
+            [
+                'label' => __('Striped Rows', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'turbo-addons-elementor-pro'),
+                'label_off' => __('No', 'turbo-addons-elementor-pro'),
+                'return_value' => 'yes',
+                'default' => 'no',
+            ]
+        );
+
+        $this->add_control(
+            'row_stripe_color',
+            [
+                'label' => __('Stripe Color', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#f9f9f9',
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table tbody tr:nth-child(even) td' => 'background-color: {{VALUE}};',
+                ],
+                'condition' => [
+                    'row_stripe' => 'yes',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'row_hover_color',
+            [
+                'label' => __('Row Hover Color', 'turbo-addons-elementor-pro'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#f0f0f0',
+                'selectors' => [
+                    '{{WRAPPER}} .csv-table tbody tr:hover td' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
     }
 
     protected function render() {
@@ -703,6 +1200,16 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
 
         if (!empty($csv_data)) {
             echo '<div class="csv-container csv-mobile-' . esc_attr($mobile_layout) . '" id="' . esc_attr($widget_id) . '" data-rows-per-page="' . esc_attr($rows_per_page) . '" data-mobile-breakpoint="' . esc_attr($mobile_breakpoint) . '">';
+            
+            // Table Heading
+            if (!empty($settings['table_heading_text'])) {
+                echo '<h2 class="csv-table-heading">' . esc_html($settings['table_heading_text']) . '</h2>';
+            }
+            
+            // Table Description
+            if (!empty($settings['table_description'])) {
+                echo '<div class="csv-table-description">' . wp_kses_post(nl2br($settings['table_description'])) . '</div>';
+            }
             
             // Search Field (no toggle button)
             if ($enable_search === 'yes') {
@@ -879,19 +1386,25 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
                         if (clearIcon) clearIcon.style.display = 'none';
                     }
                     
-                    // Filter rows - mark them but don't hide yet
+                    // Filter rows
                     rows.forEach(function(row) {
                         const text = row.textContent || row.innerText;
                         if (text.toLowerCase().indexOf(filter) > -1) {
                             row.removeAttribute('data-search-hidden');
+                            if (!enablePagination) {
+                                row.style.display = '';
+                            }
                         } else {
                             row.setAttribute('data-search-hidden', 'true');
+                            row.style.display = 'none';
                         }
                     });
                     
-                    // Reset to page 1 and reinit pagination
-                    currentPage = 1;
-                    initPagination();
+                    // Reset to page 1 and reinit pagination if enabled
+                    if (enablePagination) {
+                        currentPage = 1;
+                        initPagination();
+                    }
                 };
 
                 window['clearSearch_' + widgetId.replace(/-/g, '_')] = function() {
@@ -907,14 +1420,19 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
                     const rows = document.querySelectorAll('#' + widgetId + ' .csv-row');
                     rows.forEach(function(row) {
                         row.removeAttribute('data-search-hidden');
+                        if (!enablePagination) {
+                            row.style.display = '';
+                        }
                     });
                     
                     // Focus back on input
                     input.focus();
                     
-                    // Reset to page 1 and reinit pagination
-                    currentPage = 1;
-                    initPagination();
+                    // Reset to page 1 and reinit pagination if enabled
+                    if (enablePagination) {
+                        currentPage = 1;
+                        initPagination();
+                    }
                 };
 
                 // Initialize pagination on load
@@ -930,6 +1448,19 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
             })();
             </script>
             <style>
+            .csv-table-heading {
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 1.3;
+                margin: 0 0 15px 0;
+            }
+            
+            .csv-table-description {
+                font-size: 14px;
+                line-height: 1.6;
+                margin: 0 0 15px 0;
+            }
+            
             .csv-search-wrapper {
                 margin-bottom: 20px;
             }
@@ -979,12 +1510,24 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
                 width: 100%;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
+                border-collapse: separate;
             }
             
             .csv-table {
                 width: 100%;
                 border-collapse: collapse;
                 min-width: 600px;
+                border-spacing: 0;
+                margin: 0;
+                margin-bottom: 0 !important;
+            }
+            
+            .csv-table tbody {
+                margin: 0;
+            }
+            
+            .csv-table tbody tr:last-child td {
+                margin-bottom: 0;
             }
             
             /* Mobile Responsive - Horizontal Scroll (Default) */
