@@ -13,15 +13,15 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 class TRAD_3D_Carousel_Widget extends Widget_Base {
 
     public function get_name() {
-        return 'trad_3d_carousel';
+        return 'three-d-slider';
     }
 
     public function get_title() {
-        return __('3D Carousel', 'turbo-addons-elementor-pro');
+        return __('3D Slider', 'turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
-        return 'eicon-carousel trad-icon';
+        return 'eicon-slider-3d trad-icon';
     }
 
     public function get_categories() {

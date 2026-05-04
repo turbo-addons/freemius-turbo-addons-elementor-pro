@@ -22,7 +22,7 @@ class TRAD_Post_list extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-posts-masonry trad-icon';
+        return 'eicon-post-list trad-icon';
     }
 
     public function get_categories() {

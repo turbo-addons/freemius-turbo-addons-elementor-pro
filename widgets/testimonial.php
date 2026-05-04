@@ -16,7 +16,7 @@ class TRAD_Testimonial_Slider extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-post-slider trad-icon';
+        return 'eicon-review trad-icon';
     }
 
     public function get_categories() {

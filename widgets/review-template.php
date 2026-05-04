@@ -20,7 +20,7 @@ class TRAD_Review_Archive extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-post-list trad-icon';
+        return 'eicon-archive-title trad-icon';
     }
 
     public function get_categories() {

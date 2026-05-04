@@ -112,16 +112,6 @@ class Pro_Helper {
                 'contact-form-7'           => 'Contact Form 7',
             ];
 
-            // $widget_categories = [
-            //     'Contact' => ['contact-info', 'Heading', 'popular-post'],
-            //     'Post & Content' => ['preview-card', 'pricing-table', 'animated_text_effects', 'icon-button'],
-            //     'UI & Effects' => ['section-shape-divider', 'countdown-timer', 'social-bar', 'review-star', 'most-top-bar', 'team-slider'],
-            //     'E-commerce & Features' => ['fancy-card', 'fancy-alert', 'dual-header', 'info-box', 'business-hour'],
-            //     'Layout & Navigation' => ['carousel', 'call-to-action', 'accordion', 'tooltip', 'floating-effect', 'image-overlay-effects'],
-            //     'Footer' => ['food-menu', 'coupon-code', 'single-testimonial', 'data-table'],
-            //     'Miscellaneous' => ['photo-stack', 'debit-card', 'icon_card', 'image_icon_card', 'copy-right-footer'],
-            //     'Other' => ['read-more', 'google-map', 'event-calender', 'image-compare', 'advance-search', 'scroll-to-top', 'scroll-navigation', 'nav-menu'],  // Added two more
-            // ];
             $widget_categories = [
                 'CONTENT' => [
                     'advanced-heading',
@@ -168,18 +158,14 @@ class Pro_Helper {
                     'fancy-alert',
                     'image-overlay-effects',
                     'floating-effect',
-                    // 'fancy-card',
                     'countdown-timer',
                     'animated_text_effects',
-                    // 'flipbook-img',
                 ],
                 'SOCIAL' => [
                     'most-top-bar',
                     'social-bar',
                     'cookie-consent',
                 ],
-                // 'WOOCOMMERCE' => [
-                // ],
             ];
 
             // Return widgets data

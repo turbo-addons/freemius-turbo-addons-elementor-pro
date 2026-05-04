@@ -20,7 +20,7 @@ class TRAD_Post_Filter_Tab extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-filter trad-icon';
+        return 'eicon-kit-parts trad-icon';
     }
 
     public function get_categories() {
