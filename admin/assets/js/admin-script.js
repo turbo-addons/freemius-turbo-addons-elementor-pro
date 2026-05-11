@@ -1,239 +1,343 @@
-jQuery(document).ready(function($) {
-    // Tab switching logic
-    $('.trad-tab-link').on('click', function(e) {
+/**
+ * Turbo Addons Pro — Admin Dashboard Script
+ * Mirrors the free plugin's admin-script.js but targets taep- prefixed elements.
+ */
+
+jQuery(document).ready(function ($) {
+
+    // ---- Tab switching ----
+    $('.taep-tab-link').on('click', function (e) {
         e.preventDefault();
 
-        // Remove active class from all tabs and content
-        $('.trad-tab-link').removeClass('active');
-        $('.trad-tab-content').removeClass('active');
+        $('.taep-tab-link').removeClass('active');
+        $('.taep-tab-content').removeClass('active');
 
-        // Add active class to the clicked tab and corresponding content
         $(this).addClass('active');
         $('#' + $(this).data('tab')).addClass('active');
 
-        // Set the current tab in the hidden input field
-        $('#current_tab').val($(this).data('tab'));
-        
+        // Keep all hidden current_tab inputs in sync
+        $('input[name="current_tab"]').val($(this).data('tab'));
     });
 
-    // On page load, set the active tab from the hidden input value (if exists)
-    var savedTab = $('#current_tab').val();
-    console.log(savedTab);
-    if (savedTab) {
-        // Remove active class from all tabs and content
-        $('.trad-tab-link').removeClass('active');
-        $('.trad-tab-content').removeClass('active');
-
-        // Add active class to the saved tab and corresponding content
-        $('.trad-tab-link[data-tab="' + savedTab + '"]').addClass('active');
+    // Restore active tab on page load (after form save)
+    var savedTab = $('input[name="current_tab"]').first().val();
+    if (savedTab && savedTab !== '') {
+        $('.taep-tab-link').removeClass('active');
+        $('.taep-tab-content').removeClass('active');
+        $('.taep-tab-link[data-tab="' + savedTab + '"]').addClass('active');
         $('#' + savedTab).addClass('active');
     }
-});
 
-// jQuery(document).ready(function ($) {
-//     // Double reload logic using sessionStorage
-//     if (sessionStorage.getItem('formReloaded') === null) {
-//         // Save the current tab to sessionStorage before the reload
-//         var currentTab = $('#current_tab').val();
-//         sessionStorage.setItem('formReloaded', 'true'); // Set flag to indicate first reload
-//         sessionStorage.setItem('savedTab', currentTab); // Save the current tab
-//         location.reload(); // Perform the first reload
-//     } else {
-//         sessionStorage.removeItem('formReloaded'); // Clear the flag after the second reload
-//     }
-
-//     // Tab switching logic
-//     $('.trad-tab-link').on('click', function (e) {
-//         e.preventDefault();
-
-//         // Remove active class from all tabs and content
-//         $('.trad-tab-link').removeClass('active');
-//         $('.trad-tab-content').removeClass('active');
-
-//         // Add active class to the clicked tab and corresponding content
-//         $(this).addClass('active');
-//         $('#' + $(this).data('tab')).addClass('active');
-
-//         // Set the current tab in the hidden input field
-//         $('#current_tab').val($(this).data('tab'));
-
-//         // Update sessionStorage with the newly selected tab
-//         sessionStorage.setItem('savedTab', $(this).data('tab'));
-//     });
-
-//     // On page load, set the active tab from the hidden input value or sessionStorage
-//     var savedTab = sessionStorage.getItem('savedTab') || $('#current_tab').val();
-//     console.log(savedTab);
-//     if (savedTab) {
-//         // Remove active class from all tabs and content
-//         $('.trad-tab-link').removeClass('active');
-//         $('.trad-tab-content').removeClass('active');
-
-//         // Add active class to the saved tab and corresponding content
-//         $('.trad-tab-link[data-tab="' + savedTab + '"]').addClass('active');
-//         $('#' + savedTab).addClass('active');
-
-//         // Update the hidden input with the saved tab
-//         $('#current_tab').val(savedTab);
-//     }
-// });
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.getElementById("turbo-dashboard-navbar");
-    const contentDetails = document.getElementById("turbo-addons-content-details");
-    const sidebarMenu = document.getElementById("turbo-addons-sidebar-menu");
-    const toggleInput = document.getElementById("turbo-dashboard-navbar-theme-input");
-    const storedTheme = localStorage.getItem("dashboardNavbarTheme");
-
-    // Function to set text color based on background color
-    function updateTextColor(element, backgroundColor) {
-        if (backgroundColor === "dark") {
-            element.style.color = "#eeeeee"; // White text for dark background
-        } else {
-            element.style.color = "#444444"; // Black text for light background
-        }
-    }
-
-    // Function to update background and text color for all elements
-    function updateColors(backgroundColor) {
-        const bgColor = backgroundColor === "dark" ? "#333" : "#ffffff"; // Set background color
-        navbar.style.backgroundColor = bgColor;
-        contentDetails.style.backgroundColor = bgColor;
-        const sidebgColor = backgroundColor === "dark" ? "#101112" : "#d7d7d761";
-        sidebarMenu.style.backgroundColor = sidebgColor;
-
-        // Update the text color for the navbar and content details
-        updateTextColor(navbar, backgroundColor);
-        updateTextColor(contentDetails, backgroundColor);
-
-        // Update the text color for all anchor tags in the sidebar menu
-        const anchors = sidebarMenu.querySelectorAll("a");
-        anchors.forEach(anchor => updateTextColor(anchor, backgroundColor));
-
-        // Update text color for <h1> and <p> tags in content details
-        const headings = contentDetails.querySelectorAll("h1, p, a");
-        headings.forEach(heading => updateTextColor(heading, backgroundColor));
-    }
-
-    // Apply the stored background color and text color on page load
-    if (storedTheme) {
-        updateColors(storedTheme); // Apply colors based on stored theme
-        toggleInput.checked = storedTheme === "dark";
-    }
-
-    // Event listener for toggle change
-    toggleInput.addEventListener("change", function () {
-        if (toggleInput.checked) {
-            // Set dark theme
-            localStorage.setItem("dashboardNavbarTheme", "dark");
-            updateColors("dark"); // Update colors for dark theme
-        } else {
-            // Set light theme
-            localStorage.setItem("dashboardNavbarTheme", "light");
-            updateColors("light"); // Update colors for light theme
-        }
-    });
-});
-
-jQuery(document).ready(function($) {
-    $('.trad-alert-dismiss-button').on('click', function() {
-        $(this).closest('.trad-alert-updated-div').fadeOut();
-    });
-});
-
-jQuery(document).ready(function ($) {
-    $('#adminmenu .toplevel_page_turbo_addons_pro .wp-menu-image img').addClass('trad-turbo-addon-pro-admin-dashboard-icon');
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.trad-widget-tabs-list-pro .trad-widget-tab-item-pro');
-    const tabContents = document.querySelectorAll('.trad-widget-tabs-content-pro .trad-widget-tab-content-pro');
-
-    // Ensure all tabs are visible by default
-    tabContents.forEach(content => {
-        content.classList.add('active');
+    // ---- Alert dismiss ----
+    $('.taep-alert-dismiss-button').on('click', function () {
+        $(this).closest('.taep-alert-updated-div').fadeOut();
     });
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const targetTab = tab.getAttribute('data-tab');
+    // ---- Admin menu icon class ----
+    $('#adminmenu .toplevel_page_turbo_addons_pro .wp-menu-image img').addClass('taep-turbo-addon-pro-admin-dashboard-icon');
 
-            // Remove active class from all tabs
-            tabs.forEach(t => t.classList.remove('active'));
+});
 
-            // Add active class to clicked tab
-            tab.classList.add('active');
 
-            // Scroll to the corresponding tab content
-            const targetContent = document.getElementById(targetTab);
-            
-            // Calculate offset to stop at the title
-            const scrollOffset = targetContent.getBoundingClientRect().top + window.scrollY - 175; // Adjust the `-100` for a comfortable margin
-            window.scrollTo({
-                top: scrollOffset,
-                behavior: 'smooth'
+// ---- Widget category scroll-filter tabs (Free + Pro share same logic) ----
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Helper: init a filter tab group
+    function initFilterTabs(tabListSelector, tabContentSelector, offset) {
+        var tabs        = document.querySelectorAll(tabListSelector);
+        var tabContents = document.querySelectorAll(tabContentSelector);
+
+        if (!tabs.length) return;
+
+        // Show all sections by default (scroll-based navigation)
+        tabContents.forEach(function (content) {
+            content.style.display = 'block';
+        });
+
+        tabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                var targetId      = tab.getAttribute('data-tab');
+                var targetContent = document.getElementById(targetId);
+
+                tabs.forEach(function (t) { t.classList.remove('active'); });
+                tab.classList.add('active');
+
+                if (targetContent) {
+                    var scrollOffset = targetContent.getBoundingClientRect().top + window.scrollY - (offset || 140);
+                    window.scrollTo({ top: scrollOffset, behavior: 'smooth' });
+                }
             });
         });
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const selectAllCheckbox = document.getElementById('select-all-free-widgets');
-    const widgetCheckboxes = document.querySelectorAll('.widget-checkbox');
-
-    // Function to update the "Select All" checkbox state
-    function updateSelectAllCheckbox() {
-        selectAllCheckbox.checked = Array.from(widgetCheckboxes).every(checkbox => checkbox.checked);
     }
 
-    // Function to update individual checkboxes based on "Select All"
-    function toggleAllCheckboxes(state) {
-        widgetCheckboxes.forEach(checkbox => {
-            checkbox.checked = state;
-        });
-    }
+    // Free widgets tab
+    initFilterTabs(
+        '.taep-widget-tabs-list .taep-widget-filter-tab-item',
+        '.taep-widget-tabs-content .taep-widget-tab-content',
+        140
+    );
 
-    // Set initial state on page load
-    updateSelectAllCheckbox();
-
-    // Add event listener to "Select All" checkbox
-    selectAllCheckbox.addEventListener('change', function () {
-        toggleAllCheckboxes(selectAllCheckbox.checked);
-    });
-
-    // Add event listener to each individual checkbox
-    widgetCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', updateSelectAllCheckbox);
-    });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const selectAllProExtensions = document.getElementById('select-all-pro-extensions');
-    const extensionCheckboxes = document.querySelectorAll('.pro-extension-checkbox');
 
-    if (selectAllProExtensions && extensionCheckboxes.length > 0) {
-        function updateSelectAllExtension() {
-            selectAllProExtensions.checked = Array.from(extensionCheckboxes).every(chk => chk.checked);
+// ---- Select All — Free widgets ----
+document.addEventListener('DOMContentLoaded', function () {
+    var selectAll        = document.getElementById('taep-select-all-free-widgets');
+    var widgetCheckboxes = document.querySelectorAll('.taep-widget-checkbox');
+
+    if (!selectAll || !widgetCheckboxes.length) return;
+
+    function updateSelectAll() {
+        selectAll.checked = Array.from(widgetCheckboxes).every(function (cb) { return cb.checked; });
+    }
+
+    function toggleAll(state) {
+        widgetCheckboxes.forEach(function (cb) { cb.checked = state; });
+    }
+
+    updateSelectAll();
+
+    selectAll.addEventListener('change', function () { toggleAll(selectAll.checked); });
+    widgetCheckboxes.forEach(function (cb) { cb.addEventListener('change', updateSelectAll); });
+});
+
+
+// ---- Select All — Pro widgets ----
+document.addEventListener('DOMContentLoaded', function () {
+    var selectAll        = document.getElementById('taep-select-all-pro-widgets');
+    var widgetCheckboxes = document.querySelectorAll('.taep-pro-widget-checkbox');
+
+    if (!selectAll || !widgetCheckboxes.length) return;
+
+    function updateSelectAll() {
+        selectAll.checked = Array.from(widgetCheckboxes).every(function (cb) { return cb.checked; });
+    }
+
+    function toggleAll(state) {
+        widgetCheckboxes.forEach(function (cb) { cb.checked = state; });
+    }
+
+    updateSelectAll();
+
+    selectAll.addEventListener('change', function () { toggleAll(selectAll.checked); });
+    widgetCheckboxes.forEach(function (cb) { cb.addEventListener('change', updateSelectAll); });
+});
+
+
+// ---- Select All — Extensions ----
+document.addEventListener('DOMContentLoaded', function () {
+    var selectAll  = document.getElementById('taep-select-all-extensions');
+    var extBoxes   = document.querySelectorAll('.taep-extension-checkbox');
+
+    if (!selectAll || !extBoxes.length) return;
+
+    function updateSelectAll() {
+        selectAll.checked = Array.from(extBoxes).every(function (cb) { return cb.checked; });
+    }
+
+    function toggleAll(state) {
+        extBoxes.forEach(function (cb) { cb.checked = state; });
+    }
+
+    updateSelectAll();
+
+    selectAll.addEventListener('change', function () { toggleAll(selectAll.checked); });
+    extBoxes.forEach(function (cb) { cb.addEventListener('change', updateSelectAll); });
+});
+
+
+/* ============================================================
+   Realtime Latest Template Polling
+   - Polls the AJAX endpoint every 30 seconds
+   - Compares template name with what's currently shown
+   - If different → smoothly updates the card in place (no reload)
+   ============================================================ */
+(function ($) {
+    'use strict';
+
+    // Only run on the pro dashboard page
+    if ( typeof taepAdmin === 'undefined' ) return;
+    if ( ! document.getElementById('taep-template-card') ) return;
+
+    var POLL_INTERVAL = 30000; // 30 seconds
+    var currentName   = ( document.getElementById('taep-tpl-name') || {} ).textContent || '';
+
+    function capitalize( str ) {
+        return str ? str.charAt(0).toUpperCase() + str.slice(1) : '';
+    }
+
+    function buildDesc( name ) {
+        return 'A brand-new "' + name + '" template is now available in the Turbo Addons template library. Import it in one click and go live faster.';
+    }
+
+    function flashCard() {
+        var card = document.getElementById('taep-template-card');
+        if ( ! card ) return;
+        card.classList.add('taep-card-updated');
+        setTimeout(function () { card.classList.remove('taep-card-updated'); }, 1200);
+    }
+
+    function updateCard( data ) {
+        var name     = data.name     || '';
+        var category = data.category || '';
+        var type     = data.type     || '';
+        var preview  = data.preview  || '#';
+        var thumb    = data.thumb    || '';
+        var isPro    = ( data.pro === 'on' );
+
+        // Thumbnail
+        var thumbEl = document.getElementById('taep-tpl-thumb');
+        if ( thumbEl && thumb ) {
+            thumbEl.src = thumb;
+            thumbEl.alt = name;
         }
 
-        function toggleAllExtensions(state) {
-            extensionCheckboxes.forEach(chk => { chk.checked = state; });
-        }
+        // PRO badge
+        var badgeEl = document.getElementById('taep-tpl-pro-badge');
+        if ( badgeEl ) badgeEl.style.display = isPro ? '' : 'none';
 
-        updateSelectAllExtension();
+        // Category pill
+        var catEl = document.getElementById('taep-tpl-category');
+        if ( catEl ) catEl.textContent = capitalize( category );
 
-        selectAllProExtensions.addEventListener('change', function () {
-            toggleAllExtensions(selectAllProExtensions.checked);
-        });
+        // Type pill
+        var typeEl = document.getElementById('taep-tpl-type');
+        if ( typeEl ) typeEl.textContent = capitalize( type );
 
-        extensionCheckboxes.forEach(chk => {
-            chk.addEventListener('change', updateSelectAllExtension);
+        // Name
+        var nameEl = document.getElementById('taep-tpl-name');
+        if ( nameEl ) nameEl.textContent = name;
+
+        // Description
+        var descEl = document.getElementById('taep-tpl-desc');
+        if ( descEl ) descEl.textContent = buildDesc( name );
+
+        // Preview button href
+        var previewBtn = document.getElementById('taep-tpl-preview-btn');
+        if ( previewBtn ) previewBtn.href = preview;
+
+        // Update tracked name
+        currentName = name;
+
+        // Flash the card to signal update
+        flashCard();
+    }
+
+    function poll() {
+        $.ajax({
+            url:      taepAdmin.ajaxUrl,
+            type:     'POST',
+            dataType: 'json',
+            data: {
+                action: 'taep_fetch_latest_template',
+                nonce:  taepAdmin.nonce,
+            },
+            success: function ( response ) {
+                if ( response.success && response.data && response.data.name ) {
+                    // Only update DOM if the template actually changed
+                    if ( response.data.name !== currentName ) {
+                        updateCard( response.data );
+                    }
+                }
+            },
+            // Silently ignore errors — next poll will retry
         });
     }
+
+    // Start polling after 5 s (let the page settle first)
+    setTimeout(function () {
+        poll(); // immediate first check
+        setInterval( poll, POLL_INTERVAL );
+    }, 5000);
+
+}(jQuery));
+
+
+/* ============================================================
+   Template Slider — dot navigation + auto-advance
+   ============================================================ */
+(function () {
+    'use strict';
+
+    var templates = window.taepTemplates || [];
+    if ( templates.length < 2 ) return; // nothing to slide
+
+    var currentIdx   = 0;
+    var autoTimer    = null;
+    var AUTO_DELAY   = 4000; // 4 s auto-advance
+
+    // DOM refs
+    var slides      = document.querySelectorAll('#taep-tpl-slides .taep-tpl-slide');
+    var dots        = document.querySelectorAll('#taep-tpl-dots .taep-tpl-dot');
+    var nameEl      = document.getElementById('taep-tpl-name');
+    var descEl      = document.getElementById('taep-tpl-desc');
+    var categoryEl  = document.getElementById('taep-tpl-category');
+    var typeEl      = document.getElementById('taep-tpl-type');
+    var previewBtn  = document.getElementById('taep-tpl-preview-btn');
+    var currentEl   = document.getElementById('taep-tpl-current');
+
+    function goTo( idx ) {
+        if ( idx < 0 ) idx = templates.length - 1;
+        if ( idx >= templates.length ) idx = 0;
+
+        // Slides
+        slides.forEach(function (s, i) {
+            s.classList.toggle('active', i === idx);
+        });
+
+        // Dots
+        dots.forEach(function (d, i) {
+            d.classList.toggle('active', i === idx);
+        });
+
+        // Info panel
+        var tpl = templates[idx];
+        if ( nameEl )     nameEl.textContent     = tpl.title || '';
+        if ( descEl )     descEl.textContent     = tpl.desc  ||
+            'A brand-new "' + (tpl.title||'') + '" template is now available. Import it in one click and go live faster.';
+        if ( categoryEl ) categoryEl.textContent = tpl.category ? tpl.category.charAt(0).toUpperCase() + tpl.category.slice(1) : '';
+        if ( typeEl )     typeEl.textContent     = tpl.type     ? tpl.type.charAt(0).toUpperCase()     + tpl.type.slice(1)     : '';
+        if ( previewBtn ) previewBtn.href        = tpl.link || '#';
+        if ( currentEl )  currentEl.textContent  = idx + 1;
+
+        currentIdx = idx;
+    }
+
+    // Dot click
+    dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+            resetAuto();
+            goTo( parseInt( dot.getAttribute('data-index'), 10 ) );
+        });
+    });
+
+    // Auto-advance
+    function startAuto() {
+        autoTimer = setInterval(function () {
+            goTo( currentIdx + 1 );
+        }, AUTO_DELAY);
+    }
+    function resetAuto() {
+        clearInterval( autoTimer );
+        startAuto();
+    }
+
+    startAuto();
+}());
+
+
+/* ============================================================
+   "How to Use" button — smooth scroll to video section
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', function () {
+    var btn     = document.querySelector('.taep-scroll-to-video');
+    var target  = document.getElementById('watch-guide-video');
+    if ( ! btn || ! target ) return;
+
+    btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var offset     = 80; // account for sticky WP admin bar
+        var targetTop  = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+    });
 });
-
-
-
-
-

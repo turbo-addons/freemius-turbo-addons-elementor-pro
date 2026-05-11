@@ -23,7 +23,7 @@ class TRAD_Text_Gradient extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-notes trad-icon';
+        return 'eicon-colors-typography trad-icon';
     }
 
     public function get_categories() {

@@ -23,7 +23,7 @@ class TRAD_Post_Category extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-my-account trad-icon';
+        return 'eicon-kit-details trad-icon';
     }
 
     public function get_categories() {

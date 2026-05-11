@@ -11,14 +11,14 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-class TRAD_Dynamic_Table_Widget extends Widget_Base {
+class TRAD_CSV_Data_Table_Widget extends Widget_Base {
 
     public function get_name() {
-        return 'csv-upload-widget';
+        return 'csv-data-table';
     }
 
     public function get_title() {
-        return __('CSV Upload & Display', 'turbo-addons-elementor-pro');
+        return __('CSV Data Table', 'turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -33,14 +33,14 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
         $this->start_controls_section(
             'csv_section',
             [
-                'label' => __('CSV Upload', 'turbo-addons-elementor-pro'),
+                'label' => __('CSV Data Table', 'turbo-addons-elementor-pro'),
             ]
         );
 
         $this->add_control(
             'csv_upload',
             [
-                'label' => __('Upload CSV File', 'turbo-addons-elementor-pro'),
+                'label' => __('CSV Data Table', 'turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::MEDIA,
                 'media_types' => ['text/csv'],
             ]
@@ -1675,4 +1675,4 @@ class TRAD_Dynamic_Table_Widget extends Widget_Base {
     }
 }
 
-Plugin::instance()->widgets_manager->register_widget_type(new TRAD_Dynamic_Table_Widget());
+Plugin::instance()->widgets_manager->register_widget_type(new TRAD_CSV_Data_Table_Widget());

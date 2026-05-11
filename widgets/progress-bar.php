@@ -378,7 +378,6 @@ class TRAD_Progress_bar extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
         $milestone_value = absint( $settings['milestone_value']['size'] );
-        $milestone_color = sanitize_hex_color( $settings['milestone_color'] );
         $progress_bar_height = isset( $settings['progress_bar_height']['size'] ) ? esc_attr( $settings['progress_bar_height']['size'] ) : '20';
 
         ?>

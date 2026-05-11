@@ -25,7 +25,7 @@ class TRAD_Timeline_Story extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-post-list trad-icon';
+        return 'eicon-time-line trad-icon';
     }
 
     public function get_categories() {

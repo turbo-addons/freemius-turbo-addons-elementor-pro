@@ -3,10 +3,10 @@
  * Plugin Name: Turbo Addons Elementor Pro
  * Plugin URI: https://turbo-addons.com/
  * Description: Turbo Addons for Elementor gives you everything: 90+ advanced widgets, WooCommerce support, and 200+ prebuilt templates — all built for easy drag & drop design. Customize every part of your site, fast and code-free!
- * Version: 1.3.4
+ * Version: 1.3.5
  * Requires at least: 5.0
  * Requires PHP: 7.4
- * Tested up to: 6.9
+ * Tested up to: 7.0
  * Author: Turbo Addons Pro
  * Author URI: https://turbo-addons.com/pricing/
  * License: GPL v2 or later
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class TRAD_Turbo_Addons_Pro {
 
-    const TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION = '1.3.4';
+    const TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION = '1.3.5';
     const TRAD_TURBO_ADDONS_PRO_MIN_ELEMENTOR_VERSION = '3.0.0';
     const TRAD_TURBO_ADDONS_PRO_MIN_PHP_VERSION = '7.4';
     
@@ -174,7 +174,7 @@ final class TRAD_Turbo_Addons_Pro {
     private function define_constants() {
         define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_URL', trailingslashit( plugins_url( '/', __FILE__ ) ) );
         define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
-        define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION', '1.3.4' );
+        define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION', '1.3.5' );
     }
 
     /**
@@ -276,7 +276,7 @@ final class TRAD_Turbo_Addons_Pro {
                 'review-template',  
                 'testimonial',  
                 'three-d-flip-box',  
-                'polygon3Dcarousel', 
+                'three-d-slider', // not found
                 'turbo-date-time',
                 'turbo-post-date',
                 'post-category',
@@ -284,37 +284,38 @@ final class TRAD_Turbo_Addons_Pro {
                 'advance-featured-card',
                 'post-list',
                 'post-filter-tab',
-                'pricing-table-pro',
                 'image-scrolling_animatin-vr',
                 'hero-slider',
                 'tuor-guide',
                 'pdf-flip-book',
                 'text-gradient',
                 'visitor-count',
-                'woo-product-card',
-                'woo-product-pagination',
-                'woo-category',
-                'dynamic-table',
-                'woo-mini-cart',
-                'woo-product-title',
-                'woo-product-short-description',
-                'woo-product-description',
-                'woo-product-price',
-                'woo-product-meta',
-                'woo-product-related',
-                'woo-product-breadcrumb',
-                'woo-product-rating',
-                'woo-product-stock',
-                'woo-product-navigation',
-                'woo-product-tab',
-                'woo-product-image',
-                'woo-product-button',
-                'woo-product-cart',
+                'csv-data-table',
                 'table',
                 'advanced-search',
                 'off-canvas',
                 'whatsapp',
-                'hotspot',
+                'hotspot',   //----------------25 widgets-----------
+
+                //------------woocommerce---- 18 widgets------------18+25=43
+                'woo-category',
+                'woo-mini-cart',
+                'woo-product-breadcrumb',
+                'woo-product-button',
+                'woo-product-card',
+                'woo-product-cart',
+                'woo-product-description',
+                'woo-product-image',
+                'woo-product-meta',
+                'woo-product-navigation',
+                'woo-product-pagination',
+                'woo-product-price',
+                'woo-product-rating',
+                'woo-product-related',
+                'woo-product-short-description',
+                'woo-product-stock',
+                'woo-product-tab',
+                'woo-product-title',       
             ];
         }
         // Include each widget based on the stored settings
