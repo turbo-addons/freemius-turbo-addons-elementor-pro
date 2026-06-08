@@ -7,6 +7,10 @@ use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Plugin;
 
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
 class TRAD_Testimonial_Slider extends Widget_Base {
 
     public function get_name() {

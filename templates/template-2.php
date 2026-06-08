@@ -1,3 +1,10 @@
+<?php
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+} 
+?>
+
 <div class="trad-review-archive-container">
         <div class="trad-review-archive-image-section">
             <img src="<?php echo esc_url($settings['template_two_card_logo']['url']); ?>" 

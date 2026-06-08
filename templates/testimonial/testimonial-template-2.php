@@ -6,6 +6,11 @@
  *            $nav_position, $nav_type
  */
 
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+} 
+
+
 $widget_id   = $this->get_id();
 $total       = count( $testimonials );
 $per_desktop = max( 1, min( 5, (int) $slides_per_view ) );

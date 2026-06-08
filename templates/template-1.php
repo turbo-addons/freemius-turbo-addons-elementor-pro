@@ -1,3 +1,10 @@
+<?php
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+} 
+?>
+
 <div class="trad-review-archive">
     <div class="trad-review-archive-logo">
         <img src="<?php echo esc_url($settings['trad_review_archive_logo']['url']); ?>" 

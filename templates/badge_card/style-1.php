@@ -1,3 +1,10 @@
+<?php
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+} 
+?>
+
 <a class="trad-advance-featured-card-post-link"
    href="<?php echo esc_url( $card_link ); ?>"
    <?php if ( ! empty( $link_target ) ) : ?>

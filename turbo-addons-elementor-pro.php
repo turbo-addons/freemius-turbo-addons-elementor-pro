@@ -9,7 +9,7 @@
  * Tested up to: 7.0
  * Author: Turbo Addons Pro
  * Author URI: https://turbo-addons.com/pricing/
- * License: GPL v2 or later
+ * License: GPLv3
  * License URI: https://wp-turbo.com/turbo-toolkit/
  * Text Domain: turbo-addons-elementor-pro
  * Domain Path: /languages

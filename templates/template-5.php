@@ -1,3 +1,10 @@
+<?php
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+} 
+?>
+
 <div class="trad-template-five-card">
     <div class="trad-template-five-left-section">
         <div class="trad-template-five-icon-wrapper">
