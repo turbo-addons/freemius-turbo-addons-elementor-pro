@@ -167,7 +167,7 @@ function turbo_addons_pro_admin_page() {
                 <!-- ---------------------------Section 1: What's New + New Templates ----------------->
                 <div class="taep-dashboard-sec-one">
                     <div class="taep-dashboard-sec-one-left">
-                        <h3 class="taep-dashboard-sub-heading"><?php esc_html_e( "What's New in Version 1.3.4", 'turbo-addons-elementor-pro' ); ?></h3>
+                        <h3 class="taep-dashboard-sub-heading"><?php esc_html_e( "What's New in Version 1.3.5", 'turbo-addons-elementor-pro' ); ?></h3>
                         <hr>
                         <div class="taep-updated-list">
                             <img src="<?php echo esc_url( TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'admin/assets/images/turbo-logo-update.webp' ); ?>" alt="<?php echo esc_attr( 'update icon' ); ?>">

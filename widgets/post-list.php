@@ -743,7 +743,8 @@ class TRAD_Post_list extends Widget_Base {
                     'size' => 100,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .trad-post-feature-image' => 'width: {{SIZE}}{{UNIT}};', // Dynamically apply size
+                    '{{WRAPPER}} .trad-post-image-wrapper' => 'width: {{SIZE}}{{UNIT}};', // Dynamically apply size
+                    '{{WRAPPER}} .trad-post-feature-image' => 'width: 100%;', // image fills wrapper
                 ],
             ]
         );
@@ -1315,18 +1316,19 @@ class TRAD_Post_list extends Widget_Base {
 
     
                 echo '<div class="trad-post-list">';
-               
-                echo '<div>';
-                    if ($image) {
-                            echo '<a href="' . esc_url(get_permalink()) . '" class="trad-post-image-link">';
-                                echo '<img src="' . esc_url($image) . '" alt="' . esc_attr($title) . '" class="trad-post-feature-image">';
-                            echo '</a>';
-                        }
                 
-                    // show_post_category_badge//
-                    if (!empty($primary_cat) && $settings['show_post_category_badge'] === 'yes' ) {
-                        echo '<a href="' . esc_url($primary_link) . '" class="trad-post-category-badge">' . esc_html($primary_cat) . '</a>';
-                    }
+                // Full card link — stretched over entire card for clickability
+                echo '<a href="' . esc_url(get_permalink()) . '" class="trad-post-card-link" aria-label="' . esc_attr($title) . '"></a>';
+
+                // Badge — direct child of card, absolute positioned on card corners
+                if (!empty($primary_cat) && $settings['show_post_category_badge'] === 'yes' ) {
+                    echo '<a href="' . esc_url($primary_link) . '" class="trad-post-category-badge" aria-label="' . esc_attr($primary_cat) . '">' . esc_html($primary_cat) . '</a>';
+                }
+               
+                echo '<div class="trad-post-image-wrapper">';
+                    if ($image) {
+                            echo '<img src="' . esc_url($image) . '" alt="' . esc_attr($title) . '" class="trad-post-feature-image">';
+                        }
                 echo '</div>';
 
                 echo '<div class="trad-post-list-content">';
@@ -1347,14 +1349,14 @@ class TRAD_Post_list extends Widget_Base {
                     }
         
                     if (!empty($settings['show_read_more']) && $settings['show_read_more'] === 'yes') {
-                        echo '<a href="' . esc_url(get_permalink()) . '" class="trad-post-read-more-button">' . esc_html($read_more_text) . '</a>';
+                        echo '<a href="' . esc_url(get_permalink()) . '" class="trad-post-read-more-button" aria-label="' . esc_attr($read_more_text . ' ' . $title) . '">' . esc_html($read_more_text) . '</a>';
                     }
                 echo '</div>';
     
                 echo '</div>';
             }
     
-            echo '</div>'; // End .trad-product-display
+            echo '</div>'; // End .trad-post-grid
     
             // Show Load More if enabled and more posts exist
             if ($enable_load_more && $total_posts > $post_limit) {

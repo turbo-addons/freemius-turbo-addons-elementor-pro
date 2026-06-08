@@ -68,9 +68,8 @@ function trad_pro_enqueue_scripts_styles() {
     wp_enqueue_style( 'review-template-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/review-template.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/review-template.css' ), 'all' );
     wp_enqueue_script( 'review-template-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/review-template.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH, true );
 
-    // testimonial template
+    // testimonial template (JS is inline per-widget in templates)
     wp_enqueue_style( 'testimonial-template-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/testimonial.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/testimonial.css' ), 'all' );
-    wp_enqueue_script( 'testimonial-template-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/testimonial/testimonial.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH, true );
     
     // 3D Carousel
     wp_enqueue_style( 'three-d-carousel', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/polygon3Dcarousel.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/polygon3Dcarousel.css' ), 'all' );
