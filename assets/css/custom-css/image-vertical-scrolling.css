@@ -20,6 +20,7 @@
 .scroll-direction-btt .trad-image-grid-scrolling-wrapper {
     display: flex;
     flex-direction: column;
+    gap: var(--gap, 10px);
     will-change: transform;
     animation: scrollBTT var(--speed, 10s) linear infinite;
 }
@@ -28,6 +29,7 @@
 .scroll-direction-ttb .trad-image-grid-scrolling-wrapper {
     display: flex;
     flex-direction: column-reverse;
+    gap: var(--gap, 10px);
     will-change: transform;
     animation: scrollTTB var(--speed, 10s) linear infinite;
 }

@@ -1,6 +1,10 @@
 <?php
 // helper.php
 
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
 function get_widget_pro_lists() {
     return [
         'timeline-story'                => 'timeline-story.php',

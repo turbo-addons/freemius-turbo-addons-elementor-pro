@@ -18,7 +18,7 @@ class TRAD_Tuor_Guide_Pro extends Widget_Base {
     }
 
     public function get_title() {
-        return __('Tuor Guide', 'turbo-addons-elementor-pro');
+        return __('Tuor Guide', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -41,7 +41,7 @@ class TRAD_Tuor_Guide_Pro extends Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => __( 'Content', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Content', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -49,27 +49,27 @@ class TRAD_Tuor_Guide_Pro extends Widget_Base {
         $this->add_control(
             'steps',
             [
-                'label' => __( 'Tour Steps', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Tour Steps', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => [
                     [
                         'name' => 'element_selector',
-                        'label' => __( 'Element Selector', 'turbo-addons-elementor-pro' ),
+                        'label' => __( 'Element Selector', 'freemius-turbo-addons-elementor-pro' ),
                         'type' => Controls_Manager::TEXT,
                         'default' => '#element-id',
-                        'description' => __( 'CSS selector of the element to highlight.', 'turbo-addons-elementor-pro' ),
+                        'description' => __( 'CSS selector of the element to highlight.', 'freemius-turbo-addons-elementor-pro' ),
                     ],
                     [
                         'name' => 'step_title',
-                        'label' => __( 'Step Title', 'turbo-addons-elementor-pro' ),
+                        'label' => __( 'Step Title', 'freemius-turbo-addons-elementor-pro' ),
                         'type' => Controls_Manager::TEXT,
-                        'default' => __( 'Step Title', 'turbo-addons-elementor-pro' ),
+                        'default' => __( 'Step Title', 'freemius-turbo-addons-elementor-pro' ),
                     ],
                     [
                         'name' => 'step_description',
-                        'label' => __( 'Step Description', 'turbo-addons-elementor-pro' ),
+                        'label' => __( 'Step Description', 'freemius-turbo-addons-elementor-pro' ),
                         'type' => Controls_Manager::TEXTAREA,
-                        'default' => __( 'This is a description for the step.', 'turbo-addons-elementor-pro' ),
+                        'default' => __( 'This is a description for the step.', 'freemius-turbo-addons-elementor-pro' ),
                     ],
                 ],
                 'title_field' => '{{{ step_title }}}',
@@ -82,7 +82,7 @@ class TRAD_Tuor_Guide_Pro extends Widget_Base {
         $this->start_controls_section(
             'tour_style_sections',
             [
-                'label' => __( 'Style', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Style', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -91,7 +91,7 @@ class TRAD_Tuor_Guide_Pro extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'container_background',
-                'label' => esc_html__( 'Container Background', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Container Background', 'freemius-turbo-addons-elementor-pro' ),
                 'types' => [ 'classic', 'gradient', 'video' ],
                 'selector' => '{{WRAPPER}} .trad-guided-tour-btn',
             ]
@@ -100,7 +100,7 @@ class TRAD_Tuor_Guide_Pro extends Widget_Base {
         $this->add_control(
             'padding_control_tour_guide',
             [
-                'label' => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ], // Units you can control the padding in
                 'selectors' => [
@@ -113,7 +113,7 @@ class TRAD_Tuor_Guide_Pro extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'tour_guide_btn_border',
-                    'label' => esc_html__( 'Border', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                     'selector' => '{{WRAPPER}} .trad-guided-tour-btn',
                 ]
             );  
@@ -121,7 +121,7 @@ class TRAD_Tuor_Guide_Pro extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'tour_guide_btn_box_shadow',
-                'label' => esc_html__( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-guided-tour-btn',
             ]
         );

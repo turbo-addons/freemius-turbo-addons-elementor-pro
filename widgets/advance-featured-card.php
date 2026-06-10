@@ -18,7 +18,7 @@ class TRAD_advance_featured_card extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__('Advance Feature Card', 'turbo-addons-elementor-pro');
+        return esc_html__('Advance Feature Card', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -33,18 +33,18 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->start_controls_section(
             'advance_featured_cardard',
             [
-                'label' => __( 'Advance Featured Card', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Advance Featured Card', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 
         $this->add_control(
             'style_select',
             [
-                'label' => esc_html__( 'Select Style', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Select Style', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'style-1' => esc_html__( 'style 1', 'turbo-addons-elementor-pro' ),
-                    'style-2' => esc_html__( 'style 2', 'turbo-addons-elementor-pro' ),
+                    'style-1' => esc_html__( 'style 1', 'freemius-turbo-addons-elementor-pro' ),
+                    'style-2' => esc_html__( 'style 2', 'freemius-turbo-addons-elementor-pro' ),
                 ],
                 'default' => 'style-1',
             ]
@@ -53,7 +53,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_control(
             'trad_advance_featured_card_image',
             [
-                'label' => esc_html__( 'Image', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Image', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -68,7 +68,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_control(
             'trad_advance_featured_card_badge_image',
             [
-                'label' => esc_html__( 'Badge', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Badge', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -85,9 +85,9 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_control(
             'trad_advance_featured_card_badge_title',
             [
-                'label' => esc_html__('Title', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Title', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Advance Feature Card', 'turbo-addons-elementor-pro'),
+                'default' => esc_html__('Advance Feature Card', 'freemius-turbo-addons-elementor-pro'),
                 'dynamic' => [
                     'active' => true,
                 ],
@@ -97,9 +97,9 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_control(
             'trad_advance_featured_card_badge_text',
             [
-                'label' => esc_html__('Badge Text', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Badge Text', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Popular', 'turbo-addons-elementor-pro'),
+                'default' => esc_html__('Popular', 'freemius-turbo-addons-elementor-pro'),
                 'dynamic' => [
                     'active' => true,
                 ],
@@ -112,7 +112,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->start_controls_section(
             'section_card_link',
             [
-                'label' => __('Card Link', 'turbo-addons-elementor-pro'),
+                'label' => __('Card Link', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -120,14 +120,14 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_control(
             'card_link_type',
             [
-                'label' => __('Link Type', 'turbo-addons-elementor-pro'),
+                'label' => __('Link Type', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'options' => [
-                    'custom' => __('Custom URL', 'turbo-addons-elementor-pro'),
-                    'site_url' => __('Site URL', 'turbo-addons-elementor-pro'),
-                    'post_url' => __('Post URL', 'turbo-addons-elementor-pro'),
-                    'home_url' => __('Home Page URL', 'turbo-addons-elementor-pro'),
-                    'category_url' => __('Category URL', 'turbo-addons-elementor-pro'),
+                    'custom' => __('Custom URL', 'freemius-turbo-addons-elementor-pro'),
+                    'site_url' => __('Site URL', 'freemius-turbo-addons-elementor-pro'),
+                    'post_url' => __('Post URL', 'freemius-turbo-addons-elementor-pro'),
+                    'home_url' => __('Home Page URL', 'freemius-turbo-addons-elementor-pro'),
+                    'category_url' => __('Category URL', 'freemius-turbo-addons-elementor-pro'),
                 ],
                 'default' => 'custom',
             ]
@@ -136,12 +136,12 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_control(
             'custom_card_link',
             [
-                'label' => __('Custom URL', 'turbo-addons-elementor-pro'),
+                'label' => __('Custom URL', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::URL,
                 'condition' => [
                     'card_link_type' => 'custom',
                 ],
-                'placeholder' => __('https://your-custom-link.com', 'turbo-addons-elementor-pro'),
+                'placeholder' => __('https://your-custom-link.com', 'freemius-turbo-addons-elementor-pro'),
                 'dynamic' => [
                     'active' => true,
                 ],
@@ -159,7 +159,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->start_controls_section(
             'section_style',
             [
-                'label' => esc_html__('Box', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Box', 'freemius-turbo-addons-elementor-pro'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -167,19 +167,19 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'card_content_alignment',
             [
-                'label'        => esc_html__('Alignment', 'turbo-addons-elementor-pro'),
+                'label'        => esc_html__('Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type'         => \Elementor\Controls_Manager::CHOOSE,
                 'options'      => [
                     'start' => [
-                        'title' => esc_html__('Left', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon'  => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon'  => 'eicon-text-align-center',
                     ],
                     'end' => [
-                        'title' => esc_html__('Right', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon'  => 'eicon-text-align-right',
                     ],
                 ],
@@ -194,7 +194,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'card_padding',
             [
-                'label'      => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
@@ -206,7 +206,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'card_width',
             [
-                'label'      => esc_html__('Width', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Width', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em'],
                 'range'      => [
@@ -233,7 +233,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'card_height',
             [
-                'label'      => esc_html__('Height', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Height', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range'      => [
@@ -254,7 +254,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->start_controls_tab(
             'trad_advance_post_filter_style_normal',
             [
-                'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 
@@ -263,7 +263,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'     => 'card_background',
-                'label'    => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad_advance_features_card',
             ]
@@ -274,7 +274,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'card_border',
-                'label'    => esc_html__('Border', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad_advance_features_card',
             ]
         );
@@ -283,7 +283,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'card_border_radius',
             [
-                'label'      => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -297,7 +297,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'card_box_shadow',
-                'label'    => esc_html__('Box Shadow', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad_advance_features_card',
             ]
         );
@@ -307,7 +307,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->start_controls_tab(
             'trad_advance_post_filter_style_hover',
             [
-                'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
         // Background Group (Hover)
@@ -315,7 +315,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'     => 'trad_card_background_hover',
-                'label'    => esc_html__('Background (Hover)', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Background (Hover)', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad_advance_features_card:hover',
             ]
@@ -326,7 +326,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_card_border_hover',
-                'label'    => esc_html__('Border (Hover)', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Border (Hover)', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad_advance_features_card:hover',
             ]
         );
@@ -335,7 +335,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_card_border_radius_hover',
             [
-                'label'      => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -349,7 +349,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'trad_card_box_shadow_hover',
-                'label'    => esc_html__('Box Shadow', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad_advance_features_card:hover',
             ]
         );
@@ -362,7 +362,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->start_controls_section(
             'section_badege_card_image_style',
             [
-                'label' => esc_html__('Image Style', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Image Style', 'freemius-turbo-addons-elementor-pro'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );  
@@ -370,7 +370,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_card_image_margin',
             [
-                'label'      => esc_html__('Image Margin', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Image Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -382,7 +382,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_card_image_padding',
             [
-                'label'      => esc_html__('Image Padding', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Image Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -394,7 +394,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_card_image_size_width',
             [
-                'label'      => esc_html__('Image Width', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Image Width', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range'      => [
@@ -423,7 +423,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->start_controls_tab(
             'trad_advance_post_filter_image_style_normal',
             [
-                'label' => esc_html__('Normal', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Normal', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
         
@@ -432,7 +432,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'     => 'trad_card_image_background_normal',
-                'label'    => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad_advance_features_card_content_image',
             ]
@@ -443,7 +443,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_card_image_border',
-                'label'    => esc_html__('Border', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad_advance_features_card_content_image',
             ]
         );
@@ -451,7 +451,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_card_image_border_radius',
             [
-                'label'      => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -464,10 +464,10 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_control(
             'trad_card_image_card_filter_grayscale',
             [
-                'label'      => esc_html__('Enable Grayscale Filter', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Enable Grayscale Filter', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SWITCHER,
-                'label_on'   => esc_html__('On', 'turbo-addons-elementor-pro'),
-                'label_off'  => esc_html__('Off', 'turbo-addons-elementor-pro'),
+                'label_on'   => esc_html__('On', 'freemius-turbo-addons-elementor-pro'),
+                'label_off'  => esc_html__('Off', 'freemius-turbo-addons-elementor-pro'),
                 'default'    => '',
                 'selectors'  => [
                     '{{WRAPPER}} .trad_advance_features_card_content_image' => 'filter: grayscale(100%); transition: filter 0.3s ease-in-out;',
@@ -481,7 +481,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->start_controls_tab(
             'trad_advance_post_filter_image_style_hover',
             [
-                'label' => esc_html__('Hover', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Hover', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
          // Background Group for Hover
@@ -489,7 +489,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'     => 'trad_card_image_background_hover',
-                'label'    => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad_advance_features_card_content_image:hover',
             ]
@@ -500,7 +500,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_card_image_border_hover',
-                'label'    => esc_html__('Border', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad_advance_features_card:hover .trad_advance_features_card_content_image',
             ]
         );
@@ -508,7 +508,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_card_image_border_radius_hover',
             [
-                'label'      => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -523,7 +523,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_control(
             'trad_advance_post_filter_card_filter_grayscale_start',
             [
-                'label'      => esc_html__('Grayscale (Normal State)', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Grayscale (Normal State)', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['%'],
                 'range'      => [
@@ -547,7 +547,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_control(
             'trad_advance_post_filter_card_filter_grayscale_hover',
             [
-                'label'      => esc_html__('Grayscale (Hover State)', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Grayscale (Hover State)', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['%'],
                 'range'      => [
@@ -576,7 +576,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->start_controls_section(
             'section_badege_card_title_style',
             [
-                'label' => esc_html__('Title Style', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Title Style', 'freemius-turbo-addons-elementor-pro'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -586,7 +586,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_card_title_typography', // Unique name for the control
-                'label'    => esc_html__( 'Title Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Title Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad_advance_features_card_content_title',
             ]
         );
@@ -594,7 +594,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_card_title_padding',
             [
-                'label'      => esc_html__('Title Padding', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Title Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -609,7 +609,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->start_controls_tab(
             'trad_advance_post_filter_title_style_normal',
             [
-                'label' => esc_html__('Normal', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Normal', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
         
@@ -617,7 +617,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_control(
             'trad_card_title_color',
             [
-                'label'     => esc_html__('Text Color', 'turbo-addons-elementor-pro'),
+                'label'     => esc_html__('Text Color', 'freemius-turbo-addons-elementor-pro'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad_advance_features_card_content_title' => 'color: {{VALUE}};',
@@ -631,7 +631,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->start_controls_tab(
             'trad_advance_post_filter_title_style_hover',
             [
-                'label' => esc_html__('Hover', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Hover', 'freemius-turbo-addons-elementor-pro'),
             ]
             );
         
@@ -639,7 +639,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_control(
             'trad_card_title_color_hover',
             [
-                'label'     => esc_html__('Text Color', 'turbo-addons-elementor-pro'),
+                'label'     => esc_html__('Text Color', 'freemius-turbo-addons-elementor-pro'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad_advance_features_card_content_title:hover' => 'color: {{VALUE}};',
@@ -655,7 +655,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->start_controls_section(
             'trad_advance_features_card_badge_text_style',
             [
-                'label' => esc_html__('Badge Style', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Badge Style', 'freemius-turbo-addons-elementor-pro'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition'  => [
                     'style_select' => 'style-1', // Only show if the switcher is enabled
@@ -668,7 +668,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'     => 'trad_badge_text_background',
-                'label'    => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad_advance_features_card_badge_text_global',
             ]
@@ -678,7 +678,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_control(
             'trad_badge_text_color',
             [
-                'label'     => esc_html__('Text Color', 'turbo-addons-elementor-pro'),
+                'label'     => esc_html__('Text Color', 'freemius-turbo-addons-elementor-pro'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad_advance_features_card_badge_text_global' => 'color: {{VALUE}};',
@@ -691,7 +691,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_card_title_badge_typography', // Unique name for the control
-                'label'    => esc_html__( 'Title Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Title Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad_advance_features_card_badge_text_global',
             ]
         );
@@ -700,7 +700,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_badge_text_padding',
             [
-                'label'      => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'default'    => [
@@ -719,7 +719,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_badge_text_margin',
             [
-                'label'      => esc_html__('Margin', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
@@ -732,7 +732,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_badge_text_width',
             [
-                'label'      => esc_html__('Width', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Width', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em'],
                 'range'      => [
@@ -758,7 +758,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_badge_text_height',
             [
-                'label'      => esc_html__('Height', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Height', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em'],
                 'range'      => [
@@ -785,7 +785,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_badge_text_border_radius',
             [
-                'label'      => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
@@ -798,7 +798,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_badge_text_rotation',
             [
-                'label'      => esc_html__('Rotation (Degrees)', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Rotation (Degrees)', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => [], 
                 'range'      => [
@@ -821,7 +821,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_badge_text_horizontal_position',
             [
-                'label'      => esc_html__('Horizontal Position', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Horizontal Position', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em'],
                 'default'    => [
@@ -848,7 +848,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_badge_text_vertical_position',
             [
-                'label'      => esc_html__('Vertical Position', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Vertical Position', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em'],
                 'default'    => [
@@ -877,7 +877,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->start_controls_section(
             'trad_advance_features_card_badge_logo_style',
             [
-                'label' => esc_html__('Badge Image Style', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Badge Image Style', 'freemius-turbo-addons-elementor-pro'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition'  => [
                     'style_select' => 'style-2', // Only show if the switcher is enabled
@@ -888,7 +888,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_badge_logo_width',
             [
-                'label'      => esc_html__('Width', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Width', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em'],
                 'range'      => [
@@ -912,7 +912,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'     => 'trad_badge_text_border_logo_background',
-                'label'    => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad_advance_features_card',
             ]
@@ -923,7 +923,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_card_border_logo',
-                'label'    => esc_html__('Border', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad_advance_features_card_badge_image',
             ]
         );
@@ -932,7 +932,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_badge_text_border_logo_radius',
             [
-                'label'      => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
@@ -946,7 +946,7 @@ class TRAD_advance_featured_card extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'trad_badge_text_border_logo_shadow',
-                'label'    => esc_html__('Box Shadow', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad_advance_features_card_badge_image',
             ]
         );
@@ -955,7 +955,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_badge_logo_horizontal_position',
             [
-                'label'      => esc_html__('Horizontal Position', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Horizontal Position', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em'],
                 'range'      => [
@@ -978,7 +978,7 @@ class TRAD_advance_featured_card extends Widget_Base {
         $this->add_responsive_control(
             'trad_badge_logo_vertical_position',
             [
-                'label'      => esc_html__('Vertical Position', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Vertical Position', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em'],
                 'range'      => [

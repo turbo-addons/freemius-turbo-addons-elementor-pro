@@ -4,11 +4,16 @@
  * 1. TA Templates Admin Menu
  * ============================
  */
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
 add_action('admin_menu', function () {
     if ( class_exists( 'WooCommerce' ) ) {
         add_menu_page(
-            __('WOO Single Page', 'turbo-addons-elementor-pro'),
-            __('WOO Single Page', 'turbo-addons-elementor-pro'),
+            __('WOO Single Page', 'freemius-turbo-addons-elementor-pro'),
+            __('WOO Single Page', 'freemius-turbo-addons-elementor-pro'),
             'manage_options',
             'woo_single_page',
             '__return_null',
@@ -27,9 +32,9 @@ add_action('init', function () {
     if ( class_exists( 'WooCommerce' ) ) {
     register_post_type('trad_single_template', [
         'labels' => [
-            'name' => __('Create Template', 'turbo-addons-elementor-pro'),
-            'singular_name' => __('Single Product Template', 'turbo-addons-elementor-pro'),
-            'menu_name' => __('Single Product Page', 'turbo-addons-elementor-pro'),
+            'name' => __('Create Template', 'freemius-turbo-addons-elementor-pro'),
+            'singular_name' => __('Single Product Template', 'freemius-turbo-addons-elementor-pro'),
+            'menu_name' => __('Single Product Page', 'freemius-turbo-addons-elementor-pro'),
         ],
         'public' => true,
         'show_ui' => true,
@@ -48,7 +53,7 @@ add_action('init', function () {
  */
 
 add_filter('post_type_labels_trad_single_template', function ($labels) {
-    $labels->add_new_item = __('Add New Template', 'turbo-addons-elementor-pro');
+    $labels->add_new_item = __('Add New Template', 'freemius-turbo-addons-elementor-pro');
     return $labels;
 });
 
@@ -89,7 +94,7 @@ add_action('admin_init', function () {
 add_action( 'admin_notices', function () {
     // phpcs:ignore WordPress.Security.NonceVerification.Recommended
     if ( isset( $_GET['template_saved'] ) && '1' === sanitize_text_field( wp_unslash( $_GET['template_saved'] ) ) ) {
-        echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( 'Template saved successfully!', 'turbo-addons-elementor-pro' ) . '</p></div>';
+        echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( 'Template saved successfully!', 'freemius-turbo-addons-elementor-pro' ) . '</p></div>';
     }
 } );
 

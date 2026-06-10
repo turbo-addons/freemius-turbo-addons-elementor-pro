@@ -4,7 +4,7 @@ Tags: elementor, addons, turbo-addons-pro, elementor-widgets, turbo-plugins
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.3.5
+Stable tag: 1.9.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0  
 
@@ -114,6 +114,12 @@ Follow these steps to install Turbo Addons Pro for Elementor on your WordPress w
 
 ## Changelog
 
+
+### Version 1.9.0 
+   1. Update all widgets tex-domain
+   2. Make the plugin version same as turbo addons free 
+   3. Replace new testimonial slider
+   4. Update wocommerce widgets - mini-cart, add to cart and buy now button
 
 ### Version 1.3.5
    1. Include new Templates & Widgets

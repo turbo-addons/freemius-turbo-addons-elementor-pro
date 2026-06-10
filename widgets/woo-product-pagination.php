@@ -18,7 +18,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
     }
 
     public function get_title() {
-        return __('WOO Product Pagination', 'turbo-addons-elementor-pro');
+        return __('WOO Product Pagination', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -39,14 +39,14 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->start_controls_section(
             'section_content',
             [
-                'label' => __('Content', 'turbo-addons-elementor-pro'),
+                'label' => __('Content', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
         $this->add_control(
             'product_category',
             [
-                'label' => __('Select Category', 'turbo-addons-elementor-pro'),
+                'label' => __('Select Category', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT2,
                 'options' => $this->trad_get_product_categories(),
                 'multiple' => true,
@@ -57,7 +57,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_control(
             'posts_per_page',
             [
-                'label' => __('Products Per Page', 'turbo-addons-elementor-pro'),
+                'label' => __('Products Per Page', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::NUMBER,
                 'min' => 1,
                 'max' => 50,
@@ -69,10 +69,10 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_control(
             'show_pagination_cart_btn',
             [
-                'label' => esc_html__('Cart Button', 'turbo-addons-elementor-pro'), 
+                'label' => esc_html__('Cart Button', 'freemius-turbo-addons-elementor-pro'), 
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'turbo-addons-elementor-pro'),
-                'label_off' => esc_html__('Hide', 'turbo-addons-elementor-pro'),
+                'label_on' => esc_html__('Show', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => esc_html__('Hide', 'freemius-turbo-addons-elementor-pro'),
                 'return_value' => 'block',  // When ON, it sets display to block
                 'default' => '',  // Default is empty to apply initial CSS
                 'selectors' => [
@@ -84,10 +84,10 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         // $this->add_control(
         //     'show_pagination_link',
         //     [
-        //         'label' => esc_html__('Pagination Button', 'turbo-addons-elementor-pro'), 
+        //         'label' => esc_html__('Pagination Button', 'freemius-turbo-addons-elementor-pro'), 
         //         'type' => Controls_Manager::SWITCHER,
-        //         'label_on' => esc_html__('Show', 'turbo-addons-elementor-pro'),
-        //         'label_off' => esc_html__('Hide', 'turbo-addons-elementor-pro'),
+        //         'label_on' => esc_html__('Show', 'freemius-turbo-addons-elementor-pro'),
+        //         'label_off' => esc_html__('Hide', 'freemius-turbo-addons-elementor-pro'),
         //         'return_value' => 'block',  
         //         'default' => '',  
         //         'selectors' => [
@@ -103,7 +103,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->start_controls_section(
             'box_wrapper_section',
             [
-                'label' => esc_html__( 'Box', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Box', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -111,7 +111,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_product_grid_columns',
             [
-                'label' => esc_html__('Columns', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Columns', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::NUMBER,
                 'min' => 1,
                 'max' => 10,
@@ -128,7 +128,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'trad_woo_pagination_product_items_background',
-                'label' => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-woo-pagination-product-items',
             ]
@@ -138,7 +138,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_pagination_product_items_margin',
             [
-                'label' => esc_html__('Margin', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -150,7 +150,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_pagination_product_items_padding',
             [
-                'label' => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -164,7 +164,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->start_controls_section(
             'trad_img_section',
             [
-                'label' => esc_html__( 'Image', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Image', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -177,14 +177,14 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'style_card_normal_tab',
 			[
-				'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
 			]
 		);
       // Image Width (default 100%)
         $this->add_responsive_control(
             'trad_woo_card_image_width',
             [
-                'label' => esc_html__('Width', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Width', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em'],
                 'range' => [
@@ -206,7 +206,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_card_image_height',
             [
-                'label' => esc_html__('Height', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Height', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em'],
                 'range' => [
@@ -225,7 +225,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_woo_pagination_border',
-                'label'    => __('Border', 'turbo-addons-elementor-pro'),
+                'label'    => __('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-woo-pagination_link_card img',
             ]
         );
@@ -233,7 +233,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_image_border_radius',
             [
-                'label'      => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
@@ -247,7 +247,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->start_controls_tab(
 			'trd_astyle_image_hover_tab',
 			[
-				'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
 			]
 		);
     
@@ -255,7 +255,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_card_image_width_hover',
             [
-                'label' => esc_html__('Width (Hover)', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Width (Hover)', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em'],
                 'range' => [
@@ -273,7 +273,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_pagination_image_height_hover',
             [
-                'label' => esc_html__('Height (Hover)', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Height (Hover)', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em'],
                 'range' => [
@@ -300,7 +300,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_image_border_radius_hover',
             [
-                'label' => esc_html__('Border Radius (Hover)', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Border Radius (Hover)', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -317,7 +317,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
          $this->start_controls_section(
             'trad_woo_product_pagination_typography_style',
             [
-                'label' => esc_html__('Typography', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Typography', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -325,19 +325,19 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_pagination_text_align',
             [
-                'label' => esc_html__( 'Alignment', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Alignment', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
+                        'title' => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__( 'Center', 'turbo-addons-elementor-pro' ),
+                        'title' => esc_html__( 'Center', 'freemius-turbo-addons-elementor-pro' ),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
+                        'title' => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -353,7 +353,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_control(
 			'category_pagination_product_name',
 			[
-				'label' => esc_html__( 'Name', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Name', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -363,7 +363,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_woo_pagination_product_typography',
-                'label'    => __( 'Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-woo-pagination_link_card h3',
             ]
         );
@@ -371,7 +371,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_control(
             'trad_category_text_color',
             [
-                'label' => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000',
                 'selectors' => [
@@ -383,7 +383,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_control(
 			'product_pagination_product_price',
 			[
-				'label' => esc_html__( 'Price', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Price', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -392,7 +392,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_woo_product_price_typography',
-                'label'    => __( 'Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-woo-pagination_link_card span .woocommerce-Price-amount',
             ]
         );
@@ -400,7 +400,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_control(
             'trad_product_price_text_color',
             [
-                'label' => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000',
                 'selectors' => [
@@ -417,26 +417,26 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->start_controls_section(
            'trad_woo_product_pagination_atc',
            [
-               'label' => esc_html__('Add To Cart Button', 'turbo-addons-elementor-pro'),
+               'label' => esc_html__('Add To Cart Button', 'freemius-turbo-addons-elementor-pro'),
                'tab' => Controls_Manager::TAB_STYLE,
            ]
        );
        $this->add_responsive_control(
         'trad_woo_pagination_alignment',
         [
-            'label' => esc_html__('Button Alignment', 'turbo-addons-elementor-pro'),
+            'label' => esc_html__('Button Alignment', 'freemius-turbo-addons-elementor-pro'),
             'type' => \Elementor\Controls_Manager::CHOOSE,
             'options' => [
                 'flex-start' => [
-                    'title' => esc_html__('Left', 'turbo-addons-elementor-pro'),
+                    'title' => esc_html__('Left', 'freemius-turbo-addons-elementor-pro'),
                     'icon' => 'eicon-text-align-left',
                 ],
                 'center' => [
-                    'title' => esc_html__('Center', 'turbo-addons-elementor-pro'),
+                    'title' => esc_html__('Center', 'freemius-turbo-addons-elementor-pro'),
                     'icon' => 'eicon-text-align-center',
                 ],
                 'flex-end' => [
-                    'title' => esc_html__('Right', 'turbo-addons-elementor-pro'),
+                    'title' => esc_html__('Right', 'freemius-turbo-addons-elementor-pro'),
                     'icon' => 'eicon-text-align-right',
                 ],
             ],
@@ -450,7 +450,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
        $this->add_responsive_control(
         'trad_woo_product_pagination_atc_width',
         [
-            'label' => esc_html__('Width', 'turbo-addons-elementor-pro'),
+            'label' => esc_html__('Width', 'freemius-turbo-addons-elementor-pro'),
             'type' => \Elementor\Controls_Manager::SLIDER,
             'size_units' => ['px', '%', 'em'],
             'range' => [
@@ -472,7 +472,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         \Elementor\Group_Control_Typography::get_type(),
         [
             'name'     => 'trad_woo_pagination_product_atc_typography',
-            'label'    => __( 'Typography', 'turbo-addons-elementor-pro' ),
+            'label'    => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
             'selector' => '{{WRAPPER}} .trad-woo-pagination-cart-btn',
         ]
         );
@@ -480,7 +480,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_control(
             'trad_woo_pagination_product_atc_color',
             [
-                'label' => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
@@ -493,7 +493,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'trad_woo_pagination_product_atc_background',
-                'label' => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-woo-pagination-cart-btn',
             ]
@@ -503,7 +503,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_pagination_product_atc_margin',
             [
-                'label' => esc_html__('Margin', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -515,7 +515,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_pagination_product_atc_padding',
             [
-                'label' => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -528,7 +528,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_woo_pagination_product_atc_border',
-                'label'    => __('Border', 'turbo-addons-elementor-pro'),
+                'label'    => __('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-woo-pagination-cart-btn',
             ]
         );
@@ -536,7 +536,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_pagination_product_atc_radius',
             [
-                'label'      => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
@@ -551,26 +551,26 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->start_controls_section(
             'trad_woo_product_pagination_btn',
             [
-                'label' => esc_html__('Pagination', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Pagination', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_responsive_control(
          'trad_woo_pagination_button_alignment',
          [
-             'label' => esc_html__('Alignment', 'turbo-addons-elementor-pro'),
+             'label' => esc_html__('Alignment', 'freemius-turbo-addons-elementor-pro'),
              'type' => \Elementor\Controls_Manager::CHOOSE,
              'options' => [
                  'flex-start' => [
-                     'title' => esc_html__('Left', 'turbo-addons-elementor-pro'),
+                     'title' => esc_html__('Left', 'freemius-turbo-addons-elementor-pro'),
                      'icon' => 'eicon-text-align-left',
                  ],
                  'center' => [
-                     'title' => esc_html__('Center', 'turbo-addons-elementor-pro'),
+                     'title' => esc_html__('Center', 'freemius-turbo-addons-elementor-pro'),
                      'icon' => 'eicon-text-align-center',
                  ],
                  'flex-end' => [
-                     'title' => esc_html__('Right', 'turbo-addons-elementor-pro'),
+                     'title' => esc_html__('Right', 'freemius-turbo-addons-elementor-pro'),
                      'icon' => 'eicon-text-align-right',
                  ],
              ],
@@ -584,7 +584,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
          'trad_woo_product_pagination_number_button_width',
          [
-             'label' => esc_html__('Width', 'turbo-addons-elementor-pro'),
+             'label' => esc_html__('Width', 'freemius-turbo-addons-elementor-pro'),
              'type' => \Elementor\Controls_Manager::SLIDER,
              'size_units' => ['px', '%', 'em'],
              'range' => [
@@ -607,7 +607,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         \Elementor\Group_Control_Typography::get_type(),
         [
             'name'     => 'trad_woo_product_pagination_number_button_typography',
-            'label'    => __( 'Typography', 'turbo-addons-elementor-pro' ),
+            'label'    => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
             'selector' => '{{WRAPPER}} .trad-woo-pagination .trad-woo-pagination-link',
         ]
         );
@@ -617,7 +617,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
          $this->add_responsive_control(
             'trad_woo_product_pagination_number_button_margin',
             [
-                'label' => esc_html__('Margin', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -629,7 +629,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_product_pagination_number_button_padding',
             [
-                'label' => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -646,13 +646,13 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->start_controls_tab(
             'pagination_normal_style_mood',
             [
-                'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
         $this->add_responsive_control(
             'trad_woo_product_pagination_number_button_color',
             [
-                'label' => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#222',
                 'selectors' => [
@@ -665,7 +665,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'trad_woo_product_pagination_number_button_background',
-                'label' => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-woo-pagination .trad-woo-pagination-link',
             ]
@@ -676,7 +676,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_woo_product_pagination_number_button_border',
-                'label'    => __('Border', 'turbo-addons-elementor-pro'),
+                'label'    => __('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-woo-pagination .trad-woo-pagination-link',
             ]
         );
@@ -684,7 +684,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_product_pagination_number_button_radius',
             [
-                'label'      => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
@@ -699,13 +699,13 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->start_controls_tab(
             'pagination_active_style_mood',
             [
-                'label' => esc_html__( 'Active', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Active', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
         $this->add_responsive_control(
             'trad_woo_product_pagination_number_button_color_active',
             [
-                'label' => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#eee',
                 'selectors' => [
@@ -718,7 +718,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'trad_woo_product_pagination_number_button_background_active',
-                'label' => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-woo-pagination .trad-woo-pagination-link.active',
             ]
@@ -728,7 +728,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_woo_product_pagination_number_button_border_active',
-                'label'    => __('Border', 'turbo-addons-elementor-pro'),
+                'label'    => __('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-woo-pagination .trad-woo-pagination-link.active',
             ]
         );
@@ -736,7 +736,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_product_pagination_number_button_radius_active',
             [
-                'label'      => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
@@ -751,7 +751,7 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
 
     private function trad_get_product_categories() {
         $categories = get_terms(['taxonomy' => 'product_cat', 'hide_empty' => false]);
-        $options = ['all' => __('All Categories', 'turbo-addons-elementor-pro')];
+        $options = ['all' => __('All Categories', 'freemius-turbo-addons-elementor-pro')];
 
         if (!empty($categories) && !is_wp_error($categories)) {
             foreach ($categories as $category) {
@@ -767,11 +767,11 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
     protected function trad_init_content_wc_notice_controls() {
         if (!class_exists('woocommerce')) {
             $this->start_controls_section('trad_global_warning', [
-                'label' => __('Warning!', 'turbo-addons-elementor-pro'),
+                'label' => __('Warning!', 'freemius-turbo-addons-elementor-pro'),
             ]);
             $this->add_control('trad_global_warning_text', [
                 'type' => Controls_Manager::RAW_HTML,
-                'raw' => __('WooCommerce is not installed/activated. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a>.', 'turbo-addons-elementor-pro'),
+                'raw' => __('WooCommerce is not installed/activated. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a>.', 'freemius-turbo-addons-elementor-pro'),
                 'content_classes' => 'trad-woo-warning',
             ]);
             $this->end_controls_section();

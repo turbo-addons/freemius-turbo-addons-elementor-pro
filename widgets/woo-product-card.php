@@ -17,7 +17,7 @@ class TRAD_WOO_Product_Card extends Widget_Base {
     }
 
     public function get_title() {
-        return __('WOO Products Card', 'turbo-addons-elementor-pro');
+        return __('WOO Products Card', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -39,7 +39,7 @@ class TRAD_WOO_Product_Card extends Widget_Base {
         $this->start_controls_section(
             'trad_pro_woo_product_content_layout',
             [
-                'label' => esc_html__( 'Layout Setting', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Layout Setting', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 
@@ -48,7 +48,7 @@ class TRAD_WOO_Product_Card extends Widget_Base {
         $this->add_responsive_control(
             'product_columns',
             [
-                'label' => esc_html__('Columns', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Columns', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [''],
                 'range' => [
@@ -76,7 +76,7 @@ class TRAD_WOO_Product_Card extends Widget_Base {
         $this->add_control(
             'product_limit',
             [
-                'label' => esc_html__( 'Product Limit', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Product Limit', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => \Elementor\Controls_Manager::NUMBER,
                 'label_block' => false,
                 'default' => 10
@@ -87,14 +87,14 @@ class TRAD_WOO_Product_Card extends Widget_Base {
         $this->add_control(
             'product_type',
             [
-                'label' => esc_html__( 'Product Type', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Product Type', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'label_block' => false,
                 'default' => 'recent_product',
                 'options' => [
-                    'recent_product' => esc_html__( 'Recent Product', 'turbo-addons-elementor-pro' ),
-                    'featured_product' => esc_html__( 'Featured', 'turbo-addons-elementor-pro' ),
-                    'on_sale' => esc_html__( 'On Sale', 'turbo-addons-elementor-pro' )
+                    'recent_product' => esc_html__( 'Recent Product', 'freemius-turbo-addons-elementor-pro' ),
+                    'featured_product' => esc_html__( 'Featured', 'freemius-turbo-addons-elementor-pro' ),
+                    'on_sale' => esc_html__( 'On Sale', 'freemius-turbo-addons-elementor-pro' )
                 ]
             ]
         );
@@ -105,7 +105,7 @@ class TRAD_WOO_Product_Card extends Widget_Base {
                 'hide_empty' => true,
             ]);
 
-            $category_options = ['' => esc_html__('All Categories', 'turbo-addons-elementor-pro')];
+            $category_options = ['' => esc_html__('All Categories', 'freemius-turbo-addons-elementor-pro')];
 
             if (!empty($categories) && !is_wp_error($categories)) {
                 foreach ($categories as $category) {
@@ -117,7 +117,7 @@ class TRAD_WOO_Product_Card extends Widget_Base {
             $this->add_control(
                 'product_category',
                 [
-                    'label' => esc_html__('Product Category', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Product Category', 'freemius-turbo-addons-elementor-pro'),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'options' => $category_options,
                     'default' => '',
@@ -134,17 +134,17 @@ class TRAD_WOO_Product_Card extends Widget_Base {
         $this->start_controls_section(
             'trad_pro_woo_product_content_setting',
             [
-                'label' => esc_html__( 'Content Setting', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Content Setting', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 
         $this->add_control(
             'show_button',
             [
-                'label' => esc_html__('Show Button', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Show Button', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Yes', 'turbo-addons-elementor-pro'),
-                'label_off' => esc_html__('No', 'turbo-addons-elementor-pro'),
+                'label_on' => esc_html__('Yes', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => esc_html__('No', 'freemius-turbo-addons-elementor-pro'),
                 'return_value' => 'yes',
                 'default' => '',
             ]
@@ -153,10 +153,10 @@ class TRAD_WOO_Product_Card extends Widget_Base {
         $this->add_control(
         'show_category',
         [
-            'label' => esc_html__('Show Category', 'turbo-addons-elementor-pro'),
+            'label' => esc_html__('Show Category', 'freemius-turbo-addons-elementor-pro'),
             'type' => \Elementor\Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Yes', 'turbo-addons-elementor-pro'),
-            'label_off' => esc_html__('No', 'turbo-addons-elementor-pro'),
+            'label_on' => esc_html__('Yes', 'freemius-turbo-addons-elementor-pro'),
+            'label_off' => esc_html__('No', 'freemius-turbo-addons-elementor-pro'),
             'return_value' => 'yes',
             'default' => '',
         ]
@@ -165,10 +165,10 @@ class TRAD_WOO_Product_Card extends Widget_Base {
 $this->add_control(
     'show_rating',
     [
-        'label' => esc_html__('Show Rating', 'turbo-addons-elementor-pro'),
+        'label' => esc_html__('Show Rating', 'freemius-turbo-addons-elementor-pro'),
         'type' => \Elementor\Controls_Manager::SWITCHER,
-        'label_on' => esc_html__('Yes', 'turbo-addons-elementor-pro'),
-        'label_off' => esc_html__('No', 'turbo-addons-elementor-pro'),
+        'label_on' => esc_html__('Yes', 'freemius-turbo-addons-elementor-pro'),
+        'label_off' => esc_html__('No', 'freemius-turbo-addons-elementor-pro'),
         'return_value' => 'yes',
         'default' => '',
     ]
@@ -177,10 +177,10 @@ $this->add_control(
 $this->add_control(
     'show_sale_price',
     [
-        'label' => esc_html__('Show On Sale Price', 'turbo-addons-elementor-pro'),
+        'label' => esc_html__('Show On Sale Price', 'freemius-turbo-addons-elementor-pro'),
         'type' => \Elementor\Controls_Manager::SWITCHER,
-        'label_on' => esc_html__('Yes', 'turbo-addons-elementor-pro'),
-        'label_off' => esc_html__('No', 'turbo-addons-elementor-pro'),
+        'label_on' => esc_html__('Yes', 'freemius-turbo-addons-elementor-pro'),
+        'label_off' => esc_html__('No', 'freemius-turbo-addons-elementor-pro'),
         'return_value' => 'yes',
         'default' => '',
     ]
@@ -196,7 +196,7 @@ $this->add_control(
         $this->start_controls_section(
             'trad_pro_woo_product_carousel_style',
             [
-                'label' => esc_html__('Poduct Cards', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Poduct Cards', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -205,19 +205,19 @@ $this->add_control(
           $this->add_responsive_control(
             'woo_content_alignment',
             [
-                'label'        => __('Alignment', 'turbo-addons-elementor-pro'),
+                'label'        => __('Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type'         => \Elementor\Controls_Manager::CHOOSE,
                 'options'      => [
                     'left'   => [
-                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'title' => __('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon'  => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'title' => __('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon'  => 'eicon-text-align-center',
                     ],
                     'right'  => [
-                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'title' => __('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon'  => 'eicon-text-align-right',
                     ],
                 ],
@@ -238,7 +238,7 @@ $this->add_control(
         $this->add_responsive_control(
             'trad_woo_card_padding',
             [
-                'label' => __('Padding', 'turbo-addons-elementor-pro'),
+                'label' => __('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'default' => [
@@ -262,7 +262,7 @@ $this->add_control(
 		$this->start_controls_tab(
 			'style_card_normal_tab',
 			[
-				'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
 			]
 		);
         // Background
@@ -270,7 +270,7 @@ $this->add_control(
             \Elementor\Group_Control_Background::get_type(),
             [
                 'name'     => 'product_card_background',
-                'label'    => __('Background', 'turbo-addons-elementor-pro'),
+                'label'    => __('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-woo-product-card',
             ]
@@ -286,7 +286,7 @@ $this->add_control(
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_woo_card_border',
-                'label'    => __('Border', 'turbo-addons-elementor-pro'),
+                'label'    => __('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-woo-product-card',
             ]
         );
@@ -294,7 +294,7 @@ $this->add_control(
         $this->add_responsive_control(
             'trad_woo_card_border_radius',
             [
-                'label'      => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
@@ -308,7 +308,7 @@ $this->add_control(
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'trad_woo_card_box_shadow',
-                'label'    => __('Box Shadow', 'turbo-addons-elementor-pro'),
+                'label'    => __('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-woo-product-card',
             ]
         );
@@ -318,7 +318,7 @@ $this->add_control(
         $this->start_controls_tab(
 			'style_card_hover_tab',
 			[
-				'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
 			]
 		);
          // Background
@@ -326,7 +326,7 @@ $this->add_control(
             \Elementor\Group_Control_Background::get_type(),
             [
                 'name'     => 'product_card_background_hover',
-                'label'    => __('Background', 'turbo-addons-elementor-pro'),
+                'label'    => __('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-woo-product-card:hover',
             ]
@@ -342,7 +342,7 @@ $this->add_control(
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_woo_card_border_hover',
-                'label'    => __('Border', 'turbo-addons-elementor-pro'),
+                'label'    => __('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-woo-product-card:hover',
             ]
         );
@@ -350,7 +350,7 @@ $this->add_control(
         $this->add_responsive_control(
             'trad_woo_card_border_radius_hover',
             [
-                'label'      => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
@@ -364,7 +364,7 @@ $this->add_control(
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'trad_woo_card_box_shadow_hover',
-                'label'    => __('Box Shadow', 'turbo-addons-elementor-pro'),
+                'label'    => __('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-woo-product-card:hover',
             ]
         );
@@ -377,7 +377,7 @@ $this->add_control(
  $this->start_controls_section(
     'trad_woo_product_list_image_style',
     [
-        'label' => esc_html__('Image', 'turbo-addons-elementor-pro'),
+        'label' => esc_html__('Image', 'freemius-turbo-addons-elementor-pro'),
         'tab' => Controls_Manager::TAB_STYLE,
     ]
 );
@@ -386,7 +386,7 @@ $this->add_control(
         $this->add_responsive_control(
             'trad_woo_image_width',
             [
-                'label' => __('Width', 'turbo-addons-elementor-pro'),
+                'label' => __('Width', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['%', 'px', 'em'],
                 'range' => [
@@ -421,7 +421,7 @@ $this->add_control(
         $this->start_controls_tab(
             'style_image_normal_tab',
             [
-                'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 
@@ -430,7 +430,7 @@ $this->add_control(
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_woo_card_image_border',
-                'label'    => __('Border', 'turbo-addons-elementor-pro'),
+                'label'    => __('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-woo-product-img img',
             ]
         );
@@ -438,7 +438,7 @@ $this->add_control(
         $this->add_responsive_control(
             'trad_woo_list_image_border_radius',
             [
-                'label'      => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
@@ -452,7 +452,7 @@ $this->add_control(
         $this->start_controls_tab(
             'style_card_image_hover_tab',
             [
-                'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
         // Border
@@ -460,7 +460,7 @@ $this->add_control(
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_woo_card_image_border_hover',
-                'label'    => __('Border', 'turbo-addons-elementor-pro'),
+                'label'    => __('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-woo-product-img:hover .trad-woo-product-img img',
             ]
         );
@@ -468,7 +468,7 @@ $this->add_control(
         $this->add_responsive_control(
             'trad_woo_list_image_border_radius_hover',
             [
-                'label'      => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
@@ -486,7 +486,7 @@ $this->add_control(
         $this->start_controls_section(
             'trad_woo_product_typography_style',
             [
-                'label' => esc_html__('Typography', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Typography', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -495,7 +495,7 @@ $this->add_control(
         $this->add_control(
 			'category_heading_more_options',
 			[
-				'label' => esc_html__( 'Category', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Category', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
                 'condition' => [
@@ -508,7 +508,7 @@ $this->add_control(
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_woo_category_name_typography',
-                'label'    => __( 'Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-woo-product-category',
                 'condition' => [
                     'show_category' => 'yes',
@@ -519,7 +519,7 @@ $this->add_control(
         $this->add_control(
             'trad_category_text_color',
             [
-                'label' => esc_html__( 'Text Color','turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Text Color','freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000',
                 'selectors' => [
@@ -534,7 +534,7 @@ $this->add_control(
         $this->add_control(
 			'product_name_options',
 			[
-				'label' => esc_html__( 'Product Name', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Product Name', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -543,7 +543,7 @@ $this->add_control(
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_woo_product_name_typography',
-                'label'    => __( 'Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-woo-product-name',
             ]
         );
@@ -551,7 +551,7 @@ $this->add_control(
         $this->add_control(
             'trad_product_name_text_color',
             [
-                'label' => esc_html__( 'Text Color','turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Text Color','freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000',
                 'selectors' => [
@@ -563,7 +563,7 @@ $this->add_control(
         $this->add_control(
 			'regular_price_options',
 			[
-				'label' => esc_html__( 'Regular Price', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Regular Price', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -572,7 +572,7 @@ $this->add_control(
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_woo_regular-price_typography',
-                'label'    => __( 'Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-woo-regular-price',
             ]
         );
@@ -580,7 +580,7 @@ $this->add_control(
         $this->add_control(
             'trad_regular-price_text_color',
             [
-                'label' => esc_html__( 'Text Color','turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Text Color','freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ff5500',
                 'selectors' => [
@@ -593,7 +593,7 @@ $this->add_control(
         $this->add_control(
 			'price_options',
 			[
-				'label' => esc_html__( 'Price', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Price', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
                 
@@ -603,7 +603,7 @@ $this->add_control(
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name'     => 'price_typography',
-                'label'    => __( 'Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-woo-sale-price',
             ]
         );
@@ -611,7 +611,7 @@ $this->add_control(
         $this->add_control(
             'price_text_color',
             [
-                'label' => esc_html__( 'Text Color','turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Text Color','freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000000',
                 'selectors' => [
@@ -624,7 +624,7 @@ $this->add_control(
 
         $this->start_controls_section(
             'trad_pro_woo_product_rating_style', [
-                'label' => esc_html__( 'Rating', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Rating', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'show_rating' => 'yes',
@@ -634,7 +634,7 @@ $this->add_control(
         $this->add_control(
             'trad_pro_woo_product_rating_color',
             [
-                'label' => esc_html__('Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#E4B500',
                 'selectors' => [
@@ -647,7 +647,7 @@ $this->add_control(
         $this->add_responsive_control(
             'trad_pro_woo_product_rating_icon_size',
             [
-                'label' => esc_html__('Icon Size', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Icon Size', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'em' ],
                 'range' => [
@@ -669,7 +669,7 @@ $this->add_control(
         $this->add_responsive_control(
             'trad_pro_woo_product_rating_margin',
             [
-                'label' => esc_html__( 'Rating Margin', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Rating Margin', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'devices' => [ 'desktop', 'tablet', 'mobile' ],
                 'size_units' => [ 'px', '%', 'em' ],
@@ -681,7 +681,7 @@ $this->add_control(
         $this->add_responsive_control(
             'trad_pro_woo_product_rating_padding',
             [
-                'label' => esc_html__( 'Rating Padding', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Rating Padding', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'devices' => [ 'desktop', 'tablet', 'mobile' ],
                 'size_units' => [ 'px', '%', 'em' ],
@@ -697,7 +697,7 @@ $this->add_control(
         $this->start_controls_section(
             'trad_woo_product_add_to_card_button_style',
             [
-                'label' => esc_html__('Button', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Button', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'show_button' => 'yes',
@@ -709,7 +709,7 @@ $this->add_control(
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name'     => 'button_typography',
-                'label'    => __( 'Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-woo-product_list_btn',
             ]
         );
@@ -718,7 +718,7 @@ $this->add_control(
         $this->add_responsive_control(
             'trad_woo_card_button_width',
             [
-                'label' => __('Width', 'turbo-addons-elementor-pro'),
+                'label' => __('Width', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['%', 'px', 'em'],
                 'range' => [
@@ -748,7 +748,7 @@ $this->add_control(
         $this->add_responsive_control(
             'trad_woo_card_button_padding',
             [
-                'label' => __('Padding', 'turbo-addons-elementor-pro'),
+                'label' => __('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'default' => [
@@ -772,7 +772,7 @@ $this->add_control(
         $this->start_controls_tab(
             'style_addto_cart_btn_normal_tab',
             [
-                'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
         //--------------------------background
@@ -780,7 +780,7 @@ $this->add_control(
             \Elementor\Group_Control_Background::get_type(),
             [
                 'name'     => 'addtocart_background',
-                'label'    => __('Background', 'turbo-addons-elementor-pro'),
+                'label'    => __('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-woo-product_list_btn',
             ]
@@ -789,7 +789,7 @@ $this->add_control(
         $this->add_control(
             'trad_button_text_color',
             [
-                'label' => esc_html__( 'Text Color','turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Text Color','freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
@@ -803,7 +803,7 @@ $this->add_control(
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_addtocart_border',
-                'label'    => __('Border', 'turbo-addons-elementor-pro'),
+                'label'    => __('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-woo-product_list_btn',
             ]
         );
@@ -811,7 +811,7 @@ $this->add_control(
         $this->add_responsive_control(
             'trad_addtocart_radius',
             [
-                'label'      => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
@@ -824,7 +824,7 @@ $this->add_control(
         $this->start_controls_tab(
             'style_addto_cart_btn_normal_tab_hover',
             [
-                'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
         //--------------------------background
@@ -832,7 +832,7 @@ $this->add_control(
             \Elementor\Group_Control_Background::get_type(),
             [
                 'name'     => 'addtocart_background_hover',
-                'label'    => __('Background', 'turbo-addons-elementor-pro'),
+                'label'    => __('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-woo-product_list_btn:hover',
             ]
@@ -841,7 +841,7 @@ $this->add_control(
         $this->add_control(
             'trad_category_text_color_hover',
             [
-                'label' => esc_html__( 'Text Color','turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Text Color','freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#555',
                 'selectors' => [
@@ -855,7 +855,7 @@ $this->add_control(
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_addtocart_border_hover',
-                'label'    => __('Border', 'turbo-addons-elementor-pro'),
+                'label'    => __('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-woo-product_list_btn:hover',
             ]
         );
@@ -863,7 +863,7 @@ $this->add_control(
         $this->add_responsive_control(
             'trad_addtocart_radius_hover',
             [
-                'label'      => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
@@ -883,11 +883,11 @@ $this->add_control(
     protected function trad_init_content_wc_notice_controls() {
 		if ( ! class_exists( 'woocommerce' ) ) {
 			$this->start_controls_section( 'trad_global_warning', [
-				'label' => __( 'Warning!', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Warning!', 'freemius-turbo-addons-elementor-pro' ),
 			] );
 			$this->add_control( 'trad_global_warning_text', [
 				'type'            => Controls_Manager::RAW_HTML,
-				'raw'             => __( '<strong>WooCommerce</strong> is not installed/activated on your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> first.', 'turbo-addons-elementor-pro' ),
+				'raw'             => __( '<strong>WooCommerce</strong> is not installed/activated on your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> first.', 'freemius-turbo-addons-elementor-pro' ),
 				'content_classes' => 'trad-woo-warning',
 			] );
 			$this->end_controls_section();
@@ -1058,7 +1058,7 @@ $this->add_control(
                 <?php
                     endforeach;
                  else: 
-                    echo '<p>'.esc_html__( 'No product found.', 'turbo-addons-elementor-pro' ).'</p>';
+                    echo '<p>'.esc_html__( 'No product found.', 'freemius-turbo-addons-elementor-pro' ).'</p>';
                 endif;
                 ?>
             </div>

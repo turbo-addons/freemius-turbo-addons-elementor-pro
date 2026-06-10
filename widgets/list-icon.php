@@ -18,7 +18,7 @@ class Trad_Icon_List extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__('Icon List', 'turbo-addons-elementor-pro');
+        return esc_html__('Icon List', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -33,11 +33,11 @@ class Trad_Icon_List extends Widget_Base {
 		return [
 			'condition' => ! Utils::has_pro(),
 			'image' => esc_url( ELEMENTOR_ASSETS_URL . 'images/go-pro.svg' ),
-			'image_alt' => esc_attr__( 'Upgrade', 'turbo-addons-elementor-pro' ),
-			'title' => esc_html__( "Hey Grab your visitors' attention", 'turbo-addons-elementor-pro' ),
-			'description' => esc_html__( 'Get the widget and grow website with Turbo Addons Elementor Pro.', 'turbo-addons-elementor-pro' ),
+			'image_alt' => esc_attr__( 'Upgrade', 'freemius-turbo-addons-elementor-pro' ),
+			'title' => esc_html__( "Hey Grab your visitors' attention", 'freemius-turbo-addons-elementor-pro' ),
+			'description' => esc_html__( 'Get the widget and grow website with Turbo Addons Elementor Pro.', 'freemius-turbo-addons-elementor-pro' ),
 			'upgrade_url' => esc_url( 'https://turbo-addons.com/pricing/' ),
-			'upgrade_text' => esc_html__( 'Upgrade Now', 'turbo-addons-elementor-pro' ),
+			'upgrade_text' => esc_html__( 'Upgrade Now', 'freemius-turbo-addons-elementor-pro' ),
 		];
 	}
 
@@ -45,7 +45,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->start_controls_section(
             'list_section',
             [
-                'label' => __( 'Icon List', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Icon List', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 
@@ -54,9 +54,9 @@ class Trad_Icon_List extends Widget_Base {
         $repeater->add_control(
             'title',
             [
-                'label' => __( 'Title', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Title', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __( 'List Item', 'turbo-addons-elementor-pro' ),
+                'default' => __( 'List Item', 'freemius-turbo-addons-elementor-pro' ),
                 'label_block' => true,
             ]
         );
@@ -64,7 +64,7 @@ class Trad_Icon_List extends Widget_Base {
         $repeater->add_control(
             'icon',
             [
-                'label' => __( 'Icon', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Icon', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => \Elementor\Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-check',
@@ -76,9 +76,9 @@ class Trad_Icon_List extends Widget_Base {
         $repeater->add_control(
             'link',
             [
-                'label' => __( 'URL', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'URL', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => __( 'https://your-link.com', 'turbo-addons-elementor-pro' ),
+                'placeholder' => __( 'https://your-link.com', 'freemius-turbo-addons-elementor-pro' ),
                 'default' => [
                     'url' => '',
                 ],
@@ -88,7 +88,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_control(
             'list_items',
             [
-                'label' => __( 'List Items', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'List Items', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'title_field' => '{{{ title }}}',
@@ -120,7 +120,7 @@ class Trad_Icon_List extends Widget_Base {
          */
         $this->start_controls_section(
             'style_section', [
-                'label' => esc_html__( 'List Alignment', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'List Alignment', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -129,16 +129,16 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_responsive_control(
             'flex_direction',
             [
-                'label' => esc_html__('Direction', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Direction', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'default' => 'column',
                 'options' => [
                     'row' => [
-                        'title' => esc_html__('Row', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Row', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-arrow-right',
                     ],
                     'column' => [
-                        'title' => esc_html__('Column', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Column', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-arrow-down',
                     ],
                 ],
@@ -153,27 +153,27 @@ class Trad_Icon_List extends Widget_Base {
          $this->add_responsive_control(
             'trad_icon_list_justify_content',
             [
-                'label' => esc_html__('Alignment', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'flex-start' => [
-                        'title' => esc_html__('Left', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-justify-start-h',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-justify-center-h',
                     ],
                     'space-around'=>[
-                        'title' => esc_html__('Space Around', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Space Around', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-justify-space-around-h',
                     ],
                     'space-between'=>[
-                        'title' => esc_html__('Space Between', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Space Between', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-justify-space-between-h',
                     ],
                     'flex-end' => [
-                        'title' => esc_html__('Right', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-justify-end-h',
                     ],
                 ],
@@ -190,7 +190,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_control(
             'list_gap',
             [
-                'label'   => __( 'Gap Between Items', 'turbo-addons-elementor-pro' ),
+                'label'   => __( 'Gap Between Items', 'freemius-turbo-addons-elementor-pro' ),
                 'type'    => \Elementor\Controls_Manager::SLIDER,
                 'default' => [
                     'size' => 5,
@@ -216,7 +216,7 @@ class Trad_Icon_List extends Widget_Base {
          */
         $this->start_controls_section(
             'trad_list_item_style_section', [
-                'label' => esc_html__( 'List Item', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'List Item', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -224,7 +224,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_responsive_control(
             'trad_list_item_padding',
             [
-                'label' => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -245,7 +245,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_responsive_control(
             'trad_list_item_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -258,7 +258,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_responsive_control(
             'trad_list_item_gap',
             [
-                'label' => esc_html__('Gap Between Items', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Gap Between Items', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'default' => [
                     'size' => 10,
@@ -280,7 +280,7 @@ class Trad_Icon_List extends Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_list_item_typography',
-                'label'    => __('Typography', 'turbo-addons-elementor-pro'),
+                'label'    => __('Typography', 'freemius-turbo-addons-elementor-pro'),
                 'selectors' => [
                     '{{WRAPPER}} .trad-icon-list-container .trad-icon-list-content .trad-icon-list-title',
                 ]
@@ -291,7 +291,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->start_controls_tab(
             'trad_icon_list_item_style_normal',
             [
-                'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 
@@ -299,7 +299,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_control(
             'trad_icon_list_title_heading',
             [
-                'label' => esc_html__('Text Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Text Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -308,7 +308,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_control(
             'trad_icon_list_title_color',
             [
-                'label' => esc_html__( 'Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#000',
                 'selectors' => [
@@ -320,7 +320,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_control(
             'trad_icon_list_item_heading',
             [
-                'label' => esc_html__('List Box', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('List Box', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -330,7 +330,7 @@ class Trad_Icon_List extends Widget_Base {
             \Elementor\Group_Control_Background::get_type(),
             [
                 'name'     => 'trad_list_title_background',
-                'label'    => __( 'Background', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Background', 'freemius-turbo-addons-elementor-pro' ),
                 'types'    => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .trad-icon-list-content li',
             ]
@@ -341,7 +341,7 @@ class Trad_Icon_List extends Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_list_title_border',
-                'label'    => __( 'Border', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-icon-list-content li',
             ]
         );
@@ -351,7 +351,7 @@ class Trad_Icon_List extends Widget_Base {
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'trad_list_title_box_shadow',
-                'label'    => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-icon-list-content li',
             ]
         );
@@ -362,14 +362,14 @@ class Trad_Icon_List extends Widget_Base {
         $this->start_controls_tab(
             'trad_icon_list_item_style_hover',
             [
-                'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
             ]
         ); 
           // text heading
         $this->add_control(
             'trad_icon_list_title_heading_hover',
             [
-                'label' => esc_html__('Text Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Text Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -378,7 +378,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_control(
             'trad_icon_list_title_color_hover',
             [
-                'label' => esc_html__( 'Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                  'selectors' => [
                     '{{WRAPPER}} .trad-icon-list-content li:hover .trad-icon-list-title' => 'color: {{VALUE}};',
@@ -389,7 +389,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_control(
             'trad_icon_list_item_heading_hover',
             [
-                'label' => esc_html__('List Box', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('List Box', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -399,7 +399,7 @@ class Trad_Icon_List extends Widget_Base {
             \Elementor\Group_Control_Background::get_type(),
             [
                 'name'     => 'trad_list_title_background_hover',
-                'label'    => __( 'Background', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Background', 'freemius-turbo-addons-elementor-pro' ),
                 'types'    => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .trad-icon-list-content li:hover',
             ]
@@ -410,7 +410,7 @@ class Trad_Icon_List extends Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_list_title_border_hover',
-                'label'    => __( 'Border', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-icon-list-content li:hover',
             ]
         );
@@ -420,7 +420,7 @@ class Trad_Icon_List extends Widget_Base {
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'trad_list_title_box_shadow_hover',
-                'label'    => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-icon-list-content li:hover',
             ]
         );
@@ -439,7 +439,7 @@ class Trad_Icon_List extends Widget_Base {
          */
         $this->start_controls_section(
             'trad_list_item_style_icon_section', [
-                'label' => esc_html__( 'Icon ', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Icon ', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -448,19 +448,19 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_control(
             'icon_alignment',
             [
-                'label' => esc_html__('Icon Alignment', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Icon Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'start' => [
-                        'title' => esc_html__('Top', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Top', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-v-align-top',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-v-align-middle',
                     ],
                     'end' => [
-                        'title' => esc_html__('Bottom', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Bottom', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-v-align-bottom',
                     ],
                 ],
@@ -475,7 +475,7 @@ class Trad_Icon_List extends Widget_Base {
           $this->add_responsive_control(
             'icon_size',
             [
-                'label' => esc_html__('Icon Size', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Icon Size', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -496,7 +496,7 @@ class Trad_Icon_List extends Widget_Base {
            $this->add_responsive_control(
             'icon_padding',
             [
-                'label' => esc_html__('Icon Padding', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Icon Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -509,7 +509,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_responsive_control(
             'trad_icon_list_style_icon_border_radius',
             [
-                'label'      => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+                'label'      => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default'    => [
@@ -531,14 +531,14 @@ class Trad_Icon_List extends Widget_Base {
         $this->start_controls_tab(
             'trad_icon_list_style_normal',
             [
-                'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
             ]
         ); 
         // Background color control
         $this->add_control(
             'trad_icon_list_style_icon_bg_color',
             [
-                'label'     => __( 'Background Color', 'turbo-addons-elementor-pro' ),
+                'label'     => __( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-icon-list-style-icon' => 'background-color: {{VALUE}};',
@@ -548,7 +548,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_responsive_control(
             'icon_color',
             [
-                'label' => esc_html__('Icon Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Icon Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .elementor-icon i' => 'color: {{VALUE}};', // Font Awesome or other font-based icons
@@ -562,7 +562,7 @@ class Trad_Icon_List extends Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_icon_list_style_icon_border',
-                'label'    => __( 'Border', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-icon-list-style-icon',
             ]
         );
@@ -571,7 +571,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->start_controls_tab(
             'trad_icon_list_style_hover',
             [
-                'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
             ]
         ); 
 
@@ -579,7 +579,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_control(
             'trad_icon_list_style_icon_bg_color_hover',
             [
-                'label'     => __( 'Background Color', 'turbo-addons-elementor-pro' ),
+                'label'     => __( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-icon-list-content li:hover  .trad-icon-list-style-icon' => 'background-color: {{VALUE}};',
@@ -590,7 +590,7 @@ class Trad_Icon_List extends Widget_Base {
         $this->add_control(
             'icon_color_hover',
             [
-                'label' => esc_html__('Icon Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Icon Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-icon-list-content li:hover .elementor-icon i' => 'color: {{VALUE}};',
@@ -604,7 +604,7 @@ class Trad_Icon_List extends Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_icon_list_style_icon_border_hover',
-                'label'    => __( 'Border', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-icon-list-content li:hover .trad-icon-list-style-icon',
             ]
         );

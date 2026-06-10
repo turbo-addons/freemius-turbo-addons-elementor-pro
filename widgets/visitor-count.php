@@ -11,7 +11,7 @@ class TRAD_Visitor_Count_Pro extends Widget_Base {
     }
 
     public function get_title() {
-        return __('Active Visitor Count', 'turbo-addons-elementor-pro');
+        return __('Active Visitor Count', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {

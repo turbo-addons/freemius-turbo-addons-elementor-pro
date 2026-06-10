@@ -3,7 +3,7 @@
  * Plugin Name: Turbo Addons Elementor Pro
  * Plugin URI: https://turbo-addons.com/
  * Description: Turbo Addons for Elementor gives you everything: 90+ advanced widgets, WooCommerce support, and 200+ prebuilt templates — all built for easy drag & drop design. Customize every part of your site, fast and code-free!
- * Version: 1.3.5
+ * Version: 1.9.0
  * Requires at least: 5.0
  * Requires PHP: 7.4
  * Tested up to: 7.0
@@ -11,8 +11,7 @@
  * Author URI: https://turbo-addons.com/pricing/
  * License: GPLv3
  * License URI: https://wp-turbo.com/turbo-toolkit/
- * Text Domain: turbo-addons-elementor-pro
- * Domain Path: /languages
+ * Text Domain: freemius-turbo-addons-elementor-pro
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class TRAD_Turbo_Addons_Pro {
 
-    const TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION = '1.3.5';
+    const TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION = '1.9.0';
     const TRAD_TURBO_ADDONS_PRO_MIN_ELEMENTOR_VERSION = '3.0.0';
     const TRAD_TURBO_ADDONS_PRO_MIN_PHP_VERSION = '7.4';
     
@@ -52,8 +51,9 @@ final class TRAD_Turbo_Addons_Pro {
         if($this->is_free_version_active()){
             if ( ! function_exists( 'taep_fs' ) ) {
                 // Create a helper function for easy SDK access.
+                // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- taep_ is this plugin's prefix
                 function taep_fs() {
-                    global $taep_fs;
+                    global $taep_fs; // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- taep_ is this plugin's prefix
 
                     if ( ! isset( $taep_fs ) ) {
                         // Include Freemius SDK.
@@ -82,7 +82,7 @@ final class TRAD_Turbo_Addons_Pro {
                 // Init Freemius.
                 taep_fs();
                 // Signal that SDK was initiated.
-                do_action( 'taep_fs_loaded' );
+                do_action( 'taep_fs_loaded' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHookname -- taep_ is this plugin's prefix
             }
         }
         // Include the helper file
@@ -174,7 +174,7 @@ final class TRAD_Turbo_Addons_Pro {
     private function define_constants() {
         define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_URL', trailingslashit( plugins_url( '/', __FILE__ ) ) );
         define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
-        define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION', '1.3.5' );
+        define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION', '1.9.0' );
     }
 
     /**
@@ -337,13 +337,13 @@ final class TRAD_Turbo_Addons_Pro {
         Elementor\Plugin::instance()->elements_manager->add_category (
             'turbo-addons-pro',
             [
-                'title' => esc_html__( 'Turbo Addons Pro', 'turbo-addons-elementor-pro' )
+                'title' => esc_html__( 'Turbo Addons Pro', 'freemius-turbo-addons-elementor-pro' )
             ]
         );
         Elementor\Plugin::instance()->elements_manager->add_category (
             'turbo-addons-woo-pro',
             [
-                'title' => esc_html__( 'Turbo Woo', 'turbo-addons-elementor-pro' )
+                'title' => esc_html__( 'Turbo Woo', 'freemius-turbo-addons-elementor-pro' )
             ]
         );
     }
@@ -426,9 +426,9 @@ final class TRAD_Turbo_Addons_Pro {
             '<div class="notice notice-warning is-dismissible"><p>%s</p></div>',
             wp_kses_post( sprintf(
                 /* translators: 1: Plugin name (Turbo Addons), 2: Software name (PHP), 3: Minimum required PHP version */
-                esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'turbo-addons-elementor-pro' ),
-                '<strong>' . esc_html__( 'Turbo Addons Elementor Pro', 'turbo-addons-elementor-pro' ) . '</strong>',
-                '<strong>' . esc_html__( 'PHP', 'turbo-addons-elementor-pro' ) . '</strong>',
+                esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'freemius-turbo-addons-elementor-pro' ),
+                '<strong>' . esc_html__( 'Turbo Addons Elementor Pro', 'freemius-turbo-addons-elementor-pro' ) . '</strong>',
+                '<strong>' . esc_html__( 'PHP', 'freemius-turbo-addons-elementor-pro' ) . '</strong>',
                 esc_html( self::TRAD_TURBO_ADDONS_PRO_MIN_PHP_VERSION )
             ) )
         );

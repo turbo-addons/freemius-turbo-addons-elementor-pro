@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
 add_action('wp_ajax_trad_load_products', 'trad_load_products_callback');
 add_action('wp_ajax_nopriv_trad_load_products', 'trad_load_products_callback');
 
@@ -73,7 +78,7 @@ function trad_load_products_callback() {
         // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo ob_get_clean();
     } else {
-        echo '<div class="trad-woo-no-products">' . esc_html__('No products found.', 'turbo-addons-elementor-pro') . '</div>';
+        echo '<div class="trad-woo-no-products">' . esc_html__('No products found.', 'freemius-turbo-addons-elementor-pro') . '</div>';
     }
 
     wp_die();
@@ -111,7 +116,7 @@ function trad_advanced_search_callback() {
     $search_query = new WP_Query( $args );
 
     if ( ! $search_query->have_posts() ) {
-        wp_send_json_success( [ 'html' => '<div class="trad-no-results">' . esc_html__( 'No results found', 'turbo-addons-elementor-pro' ) . '</div>' ] );
+        wp_send_json_success( [ 'html' => '<div class="trad-no-results">' . esc_html__( 'No results found', 'freemius-turbo-addons-elementor-pro' ) . '</div>' ] );
     }
 
     $html = '';

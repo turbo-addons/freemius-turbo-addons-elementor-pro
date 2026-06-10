@@ -184,19 +184,19 @@ class WOOHelper {
                 }
     
                 // Get SKU
-                $product_data['sku'] = $product->get_sku() ? wp_kses_post( $product->get_sku() ) : __( 'N/A', 'turbo-addons-elementor-pro' );
+                $product_data['sku'] = $product->get_sku() ? wp_kses_post( $product->get_sku() ) : __( 'N/A', 'freemius-turbo-addons-elementor-pro' );
     
                 // Get Categories
                 $category_list = get_the_term_list( $product_id, 'product_cat', '', ', ' );
-                $product_data['categories'] = $category_list ? wp_kses_post( $category_list ) : __( 'No categories', 'turbo-addons-elementor-pro' );
+                $product_data['categories'] = $category_list ? wp_kses_post( $category_list ) : __( 'No categories', 'freemius-turbo-addons-elementor-pro' );
     
                 // Get Tags
                 $tag_list = get_the_term_list( $product_id, 'product_tag', '', ', ' );
-                $product_data['tags'] = $tag_list ? wp_kses_post( $tag_list ) : __( 'No tags', 'turbo-addons-elementor-pro' );
+                $product_data['tags'] = $tag_list ? wp_kses_post( $tag_list ) : __( 'No tags', 'freemius-turbo-addons-elementor-pro' );
     
                 // Get Brand (assuming the brand is stored as a custom taxonomy)
                 $brand_list = get_the_term_list( $product_id, 'product_brand', '', ', ' );
-                $product_data['brand'] = $brand_list ? wp_kses_post( $brand_list ) : __( 'No brand', 'turbo-addons-elementor-pro' );
+                $product_data['brand'] = $brand_list ? wp_kses_post( $brand_list ) : __( 'No brand', 'freemius-turbo-addons-elementor-pro' );
     
                 // Break the loop after the first product
                 break;
@@ -222,7 +222,7 @@ class WOOHelper {
 
         // Extract and sanitize categories
         $categories = sanitize_text_field( wp_strip_all_tags( $first_product_data['categories'] ) );
-        if (empty($categories) || $categories === __('No categories', 'turbo-addons-elementor-pro')) {
+        if (empty($categories) || $categories === __('No categories', 'freemius-turbo-addons-elementor-pro')) {
             return []; // No categories found
         }
 

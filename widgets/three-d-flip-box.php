@@ -19,7 +19,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__('3D Flip Box', 'turbo-addons-elementor-pro');
+        return esc_html__('3D Flip Box', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -40,7 +40,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->start_controls_section(
             'trad_flip_box_content_section_front',
             [
-                'label' => esc_html__( 'Front Side', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Front Side', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 
@@ -48,11 +48,11 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'front_media_type',
             [
-                'label' => esc_html__( 'Media Type', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Media Type', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'icon'  => esc_html__( 'Icon', 'turbo-addons-elementor-pro' ),
-                    'image' => esc_html__( 'Image', 'turbo-addons-elementor-pro' ),
+                    'icon'  => esc_html__( 'Icon', 'freemius-turbo-addons-elementor-pro' ),
+                    'image' => esc_html__( 'Image', 'freemius-turbo-addons-elementor-pro' ),
                 ],
                 'default' => 'icon',
             ]
@@ -62,7 +62,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'front_icon',
             [
-                'label' => esc_html__( 'Select Icon', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Select Icon', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => Controls_Manager::ICONS,
                 'default' => [
                     'value'    => 'eicon-star',
@@ -78,7 +78,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'front_image',
             [
-                'label' => esc_html__( 'Select Image', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Select Image', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -93,9 +93,9 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'front_title',
             [
-                'label' => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( '3D Flipbox for Elementor', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( '3D Flipbox for Elementor', 'freemius-turbo-addons-elementor-pro' ),
                 'label_block' => true,
             ]
         );
@@ -104,9 +104,9 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'front_description',
             [
-                'label' => esc_html__( 'Description', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Description', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => esc_html__( 'Make your website more eye catching using 3d flipbox.', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Make your website more eye catching using 3d flipbox.', 'freemius-turbo-addons-elementor-pro' ),
                 'rows' => 4,
             ]
         );
@@ -118,7 +118,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->start_controls_section(
             'trad_flip_box_content_section_back',
             [
-                'label' => esc_html__( 'Back Side', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Back Side', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 
@@ -126,9 +126,9 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'back_title',
             [
-                'label' => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Do the Action', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Do the Action', 'freemius-turbo-addons-elementor-pro' ),
                 'label_block' => true,
             ]
         );
@@ -137,9 +137,9 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'back_description',
             [
-                'label' => esc_html__( 'Description', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Description', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => esc_html__( 'Make your action more user friendly.', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Make your action more user friendly.', 'freemius-turbo-addons-elementor-pro' ),
                 'rows' => 4,
             ]
         );
@@ -147,9 +147,9 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'back_button_text',
             [
-                'label' => esc_html__( 'Button Text', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Text', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Click For Action', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Click For Action', 'freemius-turbo-addons-elementor-pro' ),
                 'label_block' => true,
             ]
         );
@@ -158,9 +158,9 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'back_button_link',
             [
-                'label' => esc_html__( 'Button Link', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Link', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://your-link.com', 'turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'https://your-link.com', 'freemius-turbo-addons-elementor-pro' ),
                 'show_external' => true, // this enables new tab + nofollow checkbox
                 'default' => [
                     'url' => '',
@@ -176,14 +176,14 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->start_controls_section(
             'flip_box_settings_section',
             [
-                'label' => esc_html__('Settings', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Settings', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
         // HEIGHT
         $this->add_responsive_control(
             'flip_box_height',
             [
-                'label' => esc_html__('Height', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Height', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'vh'],
                 'range' => [
@@ -211,7 +211,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_responsive_control(
             'flip_box_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -235,23 +235,23 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_direction',
             [
-                'label' => esc_html__('Flip Direction', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Flip Direction', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-arrow-left',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-arrow-right',
                     ],
                     'top' => [
-                        'title' => esc_html__('Top', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Top', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-arrow-up',
                     ],
                     'bottom' => [
-                        'title' => esc_html__('Bottom', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Bottom', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-arrow-down',
                     ],
                 ],
@@ -263,10 +263,10 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_3d_depth',
             [
-                'label' => esc_html__('3D Depth', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('3D Depth', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('On', 'turbo-addons-elementor-pro'),
-                'label_off' => esc_html__('Off', 'turbo-addons-elementor-pro'),
+                'label_on' => esc_html__('On', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => esc_html__('Off', 'freemius-turbo-addons-elementor-pro'),
                 'return_value' => 'yes',
                 'default' => '',
             ]
@@ -274,7 +274,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_responsive_control(
             'flip_box_depth_amount',
             [
-                'label' => esc_html__( '3D Depth Value', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( '3D Depth Value', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -305,7 +305,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->start_controls_section(
             'flip_box_style_section_front',
             [
-                'label' => esc_html__('Front Side', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Front Side', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
             );
@@ -314,7 +314,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name'     => 'flip_box_front_bg',
-                    'label'    => esc_html__( 'Background', 'turbo-addons-elementor-pro' ),
+                    'label'    => esc_html__( 'Background', 'freemius-turbo-addons-elementor-pro' ),
                     'types'    => [ 'classic', 'gradient', 'video' ],
                     'selector' => '{{WRAPPER}} .trad-flip-box-front',
                 ]
@@ -330,7 +330,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
             $this->add_responsive_control(
                 'flip_box_front_padding',
                 [
-                    'label' => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                     'type' => \Elementor\Controls_Manager::DIMENSIONS,
                     'size_units' => ['px', '%', 'em'],
                     'selectors' => [
@@ -343,19 +343,19 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
             $this->add_responsive_control(
                 'flip_box_front_alignment',
                 [
-                    'label' => esc_html__('Alignment', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Alignment', 'freemius-turbo-addons-elementor-pro'),
                     'type' => \Elementor\Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => esc_html__('Left', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Left', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => esc_html__('Center', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Center', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => esc_html__('Right', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Right', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -370,19 +370,19 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
             $this->add_responsive_control(
                 'flip_box_front_vertical_alignment',
                 [
-                    'label' => esc_html__('Vertical Alignment', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Vertical Alignment', 'freemius-turbo-addons-elementor-pro'),
                     'type' => \Elementor\Controls_Manager::CHOOSE,
                     'options' => [
                         'flex-start' => [
-                            'title' => esc_html__('Top', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Top', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-align-start-v',
                         ],
                         'center' => [
-                            'title' => esc_html__('Center', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Center', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-align-center-v',
                         ],
                         'flex-end' => [
-                            'title' => esc_html__('Bottom', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Bottom', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-align-end-v',
                         ],
                     ],
@@ -412,7 +412,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_front_image_heading',
             [
-                'label' => esc_html__('Image', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Image', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => [
@@ -424,7 +424,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_front_icon_heading',
             [
-                'label' => esc_html__('Icon', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Icon', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
                 //condition
@@ -437,7 +437,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_responsive_control(
             'flip_box_front_image_gap',
             [
-                'label' => esc_html__('Gap', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Gap', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -455,7 +455,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_responsive_control(
             'flip_box_front_image_size',
             [
-                'label' => esc_html__('Size', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Size', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px','%'],
                 'range' => [
@@ -491,7 +491,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_front_image_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -507,7 +507,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_front_icon_color',
             [
-                'label' => esc_html__('Icon Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Icon Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .flip-box-media i' => 'color: {{VALUE}};',
@@ -522,7 +522,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_front_icon_background_color',
             [
-                'label' => esc_html__('Icon Background', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Icon Background', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .flip-box-media' => 'background-color: {{VALUE}};',
@@ -537,7 +537,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_responsive_control(
             'flip_box_front_icon_padding',
             [
-                'label' => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -564,7 +564,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_front_icon_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -579,7 +579,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_front_title_heading',
             [
-                'label' => esc_html__('Title', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Title', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -596,7 +596,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_front_title_color',
             [
-                'label' => esc_html__('Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-flip-box-front .trad-flip-inner .trad-flip-box-header' => 'color: {{VALUE}};',
@@ -607,7 +607,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_front_description',
             [
-                'label' => esc_html__('Description', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Description', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -624,7 +624,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_front_description_color',
             [
-                'label' => esc_html__('Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-flip-box-front .trad-flip-inner .trad-flip-box-desc' => 'color: {{VALUE}};',
@@ -638,7 +638,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->start_controls_section(
             'flip_box_style_section_Back',
             [
-                'label' => esc_html__('Back Side', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Back Side', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -647,7 +647,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name'     => 'flip_box_back_bg',
-                    'label'    => esc_html__( 'Background', 'turbo-addons-elementor-pro' ),
+                    'label'    => esc_html__( 'Background', 'freemius-turbo-addons-elementor-pro' ),
                     'types'    => [ 'classic', 'gradient', 'video' ],
                     'selector' => '{{WRAPPER}} .trad-flip-box-back',
                 ]
@@ -663,7 +663,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
             $this->add_responsive_control(
                 'flip_box_back_padding',
                 [
-                    'label' => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                     'type' => \Elementor\Controls_Manager::DIMENSIONS,
                     'size_units' => ['px', '%', 'em'],
                     'selectors' => [
@@ -675,19 +675,19 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_responsive_control(
          'flip_box_back_alignment',
             [
-                'label' => esc_html__('Alignment', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                 'left' => [
-                        'title' => esc_html__('Left', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                         ],
                 'center' => [
-                            'title' => esc_html__('Center', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Center', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-text-align-center',
                         ],
                 'right' => [
-                            'title' => esc_html__('Right', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Right', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -701,19 +701,19 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
             $this->add_responsive_control(
                 'flip_box_back_vertical_alignment',
                 [
-                    'label' => esc_html__('Vertical Alignment', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Vertical Alignment', 'freemius-turbo-addons-elementor-pro'),
                     'type' => \Elementor\Controls_Manager::CHOOSE,
                     'options' => [
                         'flex-start' => [
-                            'title' => esc_html__('Top', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Top', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-align-start-v',
                         ],
                         'center' => [
-                            'title' => esc_html__('Center', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Center', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-align-center-v',
                         ],
                         'flex-end' => [
-                            'title' => esc_html__('Bottom', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Bottom', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-align-end-v',
                         ],
                     ],
@@ -743,7 +743,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_back_title_heading',
             [
-                'label' => esc_html__('Title', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Title', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -760,7 +760,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_back_title_color',
             [
-                'label' => esc_html__('Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-flip-box-back .trad-flip-inner .trad-flip-box-header' => 'color: {{VALUE}};',
@@ -771,7 +771,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_back_description',
             [
-                'label' => esc_html__('Description', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Description', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -780,7 +780,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_responsive_control(
             'flip_box_back_description_margin',
             [
-                'label' => esc_html__('Margin', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -802,7 +802,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_back_description_color',
             [
-                'label' => esc_html__('Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-flip-box-back .trad-flip-inner .trad-flip-box-desc' => 'color: {{VALUE}};',
@@ -814,7 +814,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_back_button_heading',
             [
-                'label' => esc_html__('Button', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Button', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -831,7 +831,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_back_button_color',
             [
-                'label' => esc_html__('Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-flip-box-back .trad-flip-inner .trad-flip-box-button' => 'color: {{VALUE}};',
@@ -843,7 +843,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'flip_box_back_button_bg',
-                'label' => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-flip-box-back .trad-flip-inner .trad-flip-box-button',
             ]
@@ -860,7 +860,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_back_button_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -872,7 +872,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
         $this->add_responsive_control(
             'flip_box_back_button_padding',
             [
-                'label' => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -914,9 +914,9 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
             //------------------backside button---------//
             $button_text = !empty($settings['back_button_text']) ? $settings['back_button_text'] : '';
             $link = $settings['back_button_link'];
-            $target = $link['is_external'] ? ' target="_blank"' : '';
+            $target   = $link['is_external'] ? ' target="_blank"' : '';
             $nofollow = $link['nofollow'] ? ' rel="nofollow"' : '';
-            $url = !empty($link['url']) ? esc_url($link['url']) : '#';
+            $url      = ! empty( $link['url'] ) ? esc_url( $link['url'] ) : '#';
 
             //------------animation style------------
             $direction = $settings['flip_box_direction'];
@@ -933,7 +933,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
                             <div class="trad-flip-inner">
                                 
                                 <?php if ( $front_media_html ) : ?>
-                                    <div class="flip-box-media"><?php echo $front_media_html; ?></div>
+                                    <div class="flip-box-media"><?php echo $front_media_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built from esc_url/Icons_Manager ?></div>
                                 <?php endif; ?>
 
                                 <?php if ( !empty($settings['front_title']) ) : ?>
@@ -959,7 +959,7 @@ class TURBO_three_d_Flip_Box extends Widget_Base {
                                 <?php endif; ?>
 
                                 <?php if ( $button_text ) : ?>
-                                    <a href="<?php echo $url; ?>" class="trad-flip-box-button"<?php echo $target . $nofollow; ?>>
+                                    <a href="<?php echo esc_url( $url ); ?>" class="trad-flip-box-button"<?php echo esc_attr( $target ) . esc_attr( $nofollow ); ?>>
                                         <?php echo esc_html($button_text); ?>
                                     </a>
                                 <?php endif; ?>

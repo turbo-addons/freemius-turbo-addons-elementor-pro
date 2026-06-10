@@ -18,7 +18,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
     }
 
     public function get_title() {
-        return __('CSV Data Table', 'turbo-addons-elementor-pro');
+        return __('CSV Data Table', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -33,14 +33,14 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->start_controls_section(
             'csv_section',
             [
-                'label' => __('CSV Data Table', 'turbo-addons-elementor-pro'),
+                'label' => __('CSV Data Table', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
         $this->add_control(
             'csv_upload',
             [
-                'label' => __('CSV Data Table', 'turbo-addons-elementor-pro'),
+                'label' => __('CSV Data Table', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::MEDIA,
                 'media_types' => ['text/csv'],
             ]
@@ -49,11 +49,11 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'display_format',
             [
-                'label' => __('Display Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Display Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'list' => __('List (ul>li)', 'turbo-addons-elementor-pro'),
-                    'table' => __('Table', 'turbo-addons-elementor-pro'),
+                    'list' => __('List (ul>li)', 'freemius-turbo-addons-elementor-pro'),
+                    'table' => __('Table', 'freemius-turbo-addons-elementor-pro'),
                 ],
                 'default' => 'list',
             ]
@@ -62,11 +62,11 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'mobile_layout',
             [
-                'label' => __('Mobile Layout', 'turbo-addons-elementor-pro'),
+                'label' => __('Mobile Layout', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'scroll' => __('Horizontal Scroll', 'turbo-addons-elementor-pro'),
-                    'cards' => __('Stacked Cards', 'turbo-addons-elementor-pro'),
+                    'scroll' => __('Horizontal Scroll', 'freemius-turbo-addons-elementor-pro'),
+                    'cards' => __('Stacked Cards', 'freemius-turbo-addons-elementor-pro'),
                 ],
                 'default' => 'scroll',
                 'condition' => [
@@ -78,7 +78,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'mobile_breakpoint',
             [
-                'label' => __('Mobile Breakpoint (px)', 'turbo-addons-elementor-pro'),
+                'label' => __('Mobile Breakpoint (px)', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -99,10 +99,10 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'enable_search',
             [
-                'label' => __('Enable Search', 'turbo-addons-elementor-pro'),
+                'label' => __('Enable Search', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'turbo-addons-elementor-pro'),
-                'label_off' => __('No', 'turbo-addons-elementor-pro'),
+                'label_on' => __('Yes', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => __('No', 'freemius-turbo-addons-elementor-pro'),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -111,10 +111,10 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'enable_search',
             [
-                'label' => __('Enable Search', 'turbo-addons-elementor-pro'),
+                'label' => __('Enable Search', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'turbo-addons-elementor-pro'),
-                'label_off' => __('No', 'turbo-addons-elementor-pro'),
+                'label_on' => __('Yes', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => __('No', 'freemius-turbo-addons-elementor-pro'),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -123,9 +123,9 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'search_placeholder',
             [
-                'label' => __('Search Placeholder', 'turbo-addons-elementor-pro'),
+                'label' => __('Search Placeholder', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::TEXT,
-                'default' => __('Search...', 'turbo-addons-elementor-pro'),
+                'default' => __('Search...', 'freemius-turbo-addons-elementor-pro'),
                 'condition' => [
                     'enable_search' => 'yes',
                 ],
@@ -135,7 +135,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'search_icon',
             [
-                'label' => __('Search Icon', 'turbo-addons-elementor-pro'),
+                'label' => __('Search Icon', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-search',
@@ -150,7 +150,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'clear_icon',
             [
-                'label' => __('Clear Icon', 'turbo-addons-elementor-pro'),
+                'label' => __('Clear Icon', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-times',
@@ -168,7 +168,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
          $this->start_controls_section(
             'heading_and_description',
             [
-                'label' => __('Heading & Descriptin', 'turbo-addons-elementor-pro'),
+                'label' => __('Heading & Descriptin', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -176,10 +176,10 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'table_heading_text',
             [
-                'label' => __('Table Heading', 'turbo-addons-elementor-pro'),
+                'label' => __('Table Heading', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::TEXT,
-                'default' => __('Data Table', 'turbo-addons-elementor-pro'),
-                'placeholder' => __('Enter table heading', 'turbo-addons-elementor-pro'),
+                'default' => __('Data Table', 'freemius-turbo-addons-elementor-pro'),
+                'placeholder' => __('Enter table heading', 'freemius-turbo-addons-elementor-pro'),
                 'label_block' => true,
             ]
         );
@@ -187,10 +187,10 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'table_description',
             [
-                'label' => __('Table Description', 'turbo-addons-elementor-pro'),
+                'label' => __('Table Description', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => __('View and search through the data below. Use the search field to filter results.', 'turbo-addons-elementor-pro'),
-                'placeholder' => __('Enter table description', 'turbo-addons-elementor-pro'),
+                'default' => __('View and search through the data below. Use the search field to filter results.', 'freemius-turbo-addons-elementor-pro'),
+                'placeholder' => __('Enter table description', 'freemius-turbo-addons-elementor-pro'),
                 'rows' => 3,
             ]
         );
@@ -202,7 +202,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->start_controls_section(
             'pagination_section',
             [
-                'label' => __('Pagination', 'turbo-addons-elementor-pro'),
+                'label' => __('Pagination', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -210,10 +210,10 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'enable_pagination',
             [
-                'label' => __('Enable Pagination', 'turbo-addons-elementor-pro'),
+                'label' => __('Enable Pagination', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'turbo-addons-elementor-pro'),
-                'label_off' => __('No', 'turbo-addons-elementor-pro'),
+                'label_on' => __('Yes', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => __('No', 'freemius-turbo-addons-elementor-pro'),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -222,7 +222,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'rows_per_page',
             [
-                'label' => __('Rows Per Page', 'turbo-addons-elementor-pro'),
+                'label' => __('Rows Per Page', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 10,
                 'min' => 1,
@@ -239,7 +239,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->start_controls_section(
             'search_style_section',
             [
-                'label' => __('Search Field Style', 'turbo-addons-elementor-pro'),
+                'label' => __('Search Field Style', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'enable_search' => 'yes',
@@ -258,7 +258,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'search_text_color',
             [
-                'label' => __('Text Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Text Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .csv-search-input' => 'color: {{VALUE}};',
@@ -269,7 +269,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'search_bg_color',
             [
-                'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Background Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
@@ -289,7 +289,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'search_border_radius',
             [
-                'label' => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -301,7 +301,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'search_padding',
             [
-                'label' => __('Padding', 'turbo-addons-elementor-pro'),
+                'label' => __('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em'],
                 'selectors' => [
@@ -313,7 +313,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'search_margin',
             [
-                'label' => __('Margin Bottom', 'turbo-addons-elementor-pro'),
+                'label' => __('Margin Bottom', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -334,7 +334,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'toggle_button_bg',
             [
-                'label' => __('Toggle Button Background', 'turbo-addons-elementor-pro'),
+                'label' => __('Toggle Button Background', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#6040e0',
                 'selectors' => [
@@ -346,7 +346,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'toggle_button_color',
             [
-                'label' => __('Toggle Button Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Toggle Button Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
@@ -358,7 +358,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'search_icon_heading',
             [
-                'label' => __('Search Icon', 'turbo-addons-elementor-pro'),
+                'label' => __('Search Icon', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -367,7 +367,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'search_icon_size',
             [
-                'label' => __('Icon Size', 'turbo-addons-elementor-pro'),
+                'label' => __('Icon Size', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -389,7 +389,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'search_icon_color',
             [
-                'label' => __('Icon Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Icon Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#666',
                 'selectors' => [
@@ -402,7 +402,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'clear_icon_heading',
             [
-                'label' => __('Clear Icon', 'turbo-addons-elementor-pro'),
+                'label' => __('Clear Icon', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -411,7 +411,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'clear_icon_size',
             [
-                'label' => __('Icon Size', 'turbo-addons-elementor-pro'),
+                'label' => __('Icon Size', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -433,7 +433,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'clear_icon_color',
             [
-                'label' => __('Icon Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Icon Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#999',
                 'selectors' => [
@@ -446,7 +446,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'clear_icon_hover_color',
             [
-                'label' => __('Icon Hover Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Icon Hover Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#333',
                 'selectors' => [
@@ -462,7 +462,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->start_controls_section(
             'heading_style_section',
             [
-                'label' => __('Heading & Description', 'turbo-addons-elementor-pro'),
+                'label' => __('Heading & Description', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -470,7 +470,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'heading_style_heading',
             [
-                'label' => __('Heading', 'turbo-addons-elementor-pro'),
+                'label' => __('Heading', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -486,7 +486,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'heading_color',
             [
-                'label' => __('Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#333333',
                 'selectors' => [
@@ -498,19 +498,19 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'heading_align',
             [
-                'label' => __('Alignment', 'turbo-addons-elementor-pro'),
+                'label' => __('Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'title' => __('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'title' => __('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'title' => __('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -524,7 +524,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'heading_margin',
             [
-                'label' => __('Margin', 'turbo-addons-elementor-pro'),
+                'label' => __('Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'default' => [
@@ -543,7 +543,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'description_style_heading',
             [
-                'label' => __('Description', 'turbo-addons-elementor-pro'),
+                'label' => __('Description', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -560,7 +560,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'description_color',
             [
-                'label' => __('Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#666666',
                 'selectors' => [
@@ -572,19 +572,19 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'description_align',
             [
-                'label' => __('Alignment', 'turbo-addons-elementor-pro'),
+                'label' => __('Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'title' => __('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'title' => __('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'title' => __('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -598,7 +598,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'description_margin',
             [
-                'label' => __('Margin', 'turbo-addons-elementor-pro'),
+                'label' => __('Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'default' => [
@@ -620,7 +620,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->start_controls_section(
             'pagination_style_section',
             [
-                'label' => __('Pagination Style', 'turbo-addons-elementor-pro'),
+                'label' => __('Pagination Style', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'enable_pagination' => 'yes',
@@ -631,19 +631,19 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'pagination_alignment',
             [
-                'label' => __('Alignment', 'turbo-addons-elementor-pro'),
+                'label' => __('Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'title' => __('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'title' => __('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'title' => __('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -668,7 +668,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'pagination_spacing',
             [
-                'label' => __('Spacing Between Buttons', 'turbo-addons-elementor-pro'),
+                'label' => __('Spacing Between Buttons', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -689,7 +689,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'pagination_margin_top',
             [
-                'label' => __('Margin Top', 'turbo-addons-elementor-pro'),
+                'label' => __('Margin Top', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -713,14 +713,14 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->start_controls_tab(
             'pagination_normal',
             [
-                'label' => __('Normal', 'turbo-addons-elementor-pro'),
+                'label' => __('Normal', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
         $this->add_control(
             'pagination_text_color',
             [
-                'label' => __('Text Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Text Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#333',
                 'selectors' => [
@@ -732,7 +732,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'pagination_bg_color',
             [
-                'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Background Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#f5f5f5',
                 'selectors' => [
@@ -755,14 +755,14 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->start_controls_tab(
             'pagination_hover',
             [
-                'label' => __('Hover', 'turbo-addons-elementor-pro'),
+                'label' => __('Hover', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
         $this->add_control(
             'pagination_hover_text_color',
             [
-                'label' => __('Text Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Text Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#333',
                 'selectors' => [
@@ -774,7 +774,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'pagination_hover_bg_color',
             [
-                'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Background Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#e0e0e0',
                 'selectors' => [
@@ -786,7 +786,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'pagination_hover_border_color',
             [
-                'label' => __('Border Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Border Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .csv-pagination button:hover' => 'border-color: {{VALUE}};',
@@ -800,14 +800,14 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->start_controls_tab(
             'pagination_active',
             [
-                'label' => __('Active', 'turbo-addons-elementor-pro'),
+                'label' => __('Active', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
         $this->add_control(
             'pagination_active_text_color',
             [
-                'label' => __('Text Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Text Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
@@ -819,7 +819,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'pagination_active_bg_color',
             [
-                'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Background Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#6040e0',
                 'selectors' => [
@@ -831,7 +831,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'pagination_active_border_color',
             [
-                'label' => __('Border Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Border Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#6040e0',
                 'selectors' => [
@@ -846,7 +846,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'pagination_padding',
             [
-                'label' => __('Padding', 'turbo-addons-elementor-pro'),
+                'label' => __('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em'],
                 'default' => [
@@ -866,7 +866,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'pagination_border_radius',
             [
-                'label' => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'default' => [
@@ -888,7 +888,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->start_controls_section(
             'table_style_section',
             [
-                'label' => __('Table Style', 'turbo-addons-elementor-pro'),
+                'label' => __('Table Style', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'display_format' => 'table',
@@ -899,7 +899,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'table_heading',
             [
-                'label' => __('Table', 'turbo-addons-elementor-pro'),
+                'label' => __('Table', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -915,7 +915,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'table_border_radius',
             [
-                'label' => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -928,7 +928,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'table_bg_color',
             [
-                'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Background Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .csv-table' => 'background-color: {{VALUE}};',
@@ -939,7 +939,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'cell_border_heading',
             [
-                'label' => __('Cell Borders', 'turbo-addons-elementor-pro'),
+                'label' => __('Cell Borders', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -957,7 +957,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'header_heading',
             [
-                'label' => __('Table Header', 'turbo-addons-elementor-pro'),
+                'label' => __('Table Header', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -974,7 +974,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'header_text_color',
             [
-                'label' => __('Text Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Text Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
@@ -986,7 +986,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'header_bg_color',
             [
-                'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Background Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#6040e0',
                 'selectors' => [
@@ -998,7 +998,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'header_padding',
             [
-                'label' => __('Padding', 'turbo-addons-elementor-pro'),
+                'label' => __('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em'],
                 'default' => [
@@ -1017,19 +1017,19 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'header_align',
             [
-                'label' => __('Text Align', 'turbo-addons-elementor-pro'),
+                'label' => __('Text Align', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'title' => __('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'title' => __('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'title' => __('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -1044,7 +1044,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'body_heading',
             [
-                'label' => __('Table Body (Data)', 'turbo-addons-elementor-pro'),
+                'label' => __('Table Body (Data)', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -1061,7 +1061,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'body_text_color',
             [
-                'label' => __('Text Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Text Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#333333',
                 'selectors' => [
@@ -1073,7 +1073,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'body_bg_color',
             [
-                'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Background Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .csv-table tbody td' => 'background-color: {{VALUE}};',
@@ -1084,7 +1084,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'body_padding',
             [
-                'label' => __('Padding', 'turbo-addons-elementor-pro'),
+                'label' => __('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em'],
                 'default' => [
@@ -1103,19 +1103,19 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_responsive_control(
             'body_align',
             [
-                'label' => __('Text Align', 'turbo-addons-elementor-pro'),
+                'label' => __('Text Align', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'title' => __('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'title' => __('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'title' => __('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -1130,7 +1130,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'row_heading',
             [
-                'label' => __('Table Rows', 'turbo-addons-elementor-pro'),
+                'label' => __('Table Rows', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -1139,10 +1139,10 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'row_stripe',
             [
-                'label' => __('Striped Rows', 'turbo-addons-elementor-pro'),
+                'label' => __('Striped Rows', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'turbo-addons-elementor-pro'),
-                'label_off' => __('No', 'turbo-addons-elementor-pro'),
+                'label_on' => __('Yes', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => __('No', 'freemius-turbo-addons-elementor-pro'),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -1151,7 +1151,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'row_stripe_color',
             [
-                'label' => __('Stripe Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Stripe Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#f9f9f9',
                 'selectors' => [
@@ -1166,7 +1166,7 @@ class TRAD_CSV_Data_Table_Widget extends Widget_Base {
         $this->add_control(
             'row_hover_color',
             [
-                'label' => __('Row Hover Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Row Hover Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#f0f0f0',
                 'selectors' => [

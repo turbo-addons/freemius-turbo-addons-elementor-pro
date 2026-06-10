@@ -21,7 +21,7 @@ class TRAD_Timeline_Story extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__('Turbo Timeline', 'turbo-addons-elementor-pro');
+        return esc_html__('Turbo Timeline', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -38,7 +38,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->start_controls_section(
             'timeline_story_content',
             [
-                'label' => esc_html__('Timeline Items', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Timeline Items', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -50,19 +50,19 @@ class TRAD_Timeline_Story extends Widget_Base {
         $repeater->add_responsive_control(
             'time_line_text_align',
             [
-                'label' => esc_html__( 'Text Alignment', 'turbo-addons-elementor' ),
+                'label' => esc_html__( 'Text Alignment', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__( 'Left', 'turbo-addons-elementor' ),
+                        'title' => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'  => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__( 'Center', 'turbo-addons-elementor' ),
+                        'title' => esc_html__( 'Center', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'  => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__( 'Right', 'turbo-addons-elementor' ),
+                        'title' => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'  => 'eicon-text-align-right',
                     ],
                 ],
@@ -78,9 +78,9 @@ class TRAD_Timeline_Story extends Widget_Base {
         $repeater->add_control(
             'title',
             [
-                'label' => esc_html__('Title', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Title', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Timeline Title', 'turbo-addons-elementor-pro'),
+                'default' => esc_html__('Timeline Title', 'freemius-turbo-addons-elementor-pro'),
                 'label_block' => true,
             ]
         );
@@ -89,9 +89,9 @@ class TRAD_Timeline_Story extends Widget_Base {
         $repeater->add_control(
             'description',
             [
-                'label' => esc_html__('Description', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Description', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => esc_html__('Timeline Description', 'turbo-addons-elementor-pro'),
+                'default' => esc_html__('Timeline Description', 'freemius-turbo-addons-elementor-pro'),
                 'label_block' => true,
             ]
         );
@@ -99,12 +99,12 @@ class TRAD_Timeline_Story extends Widget_Base {
         $repeater->add_control(
             'media_type',
             [
-                'label' => esc_html__('Choose Media Type', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Choose Media Type', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'image',
                 'options' => [
-                    'image' => esc_html__('Image', 'turbo-addons-elementor-pro'),
-                    'icon' => esc_html__('Icon', 'turbo-addons-elementor-pro'),
+                    'image' => esc_html__('Image', 'freemius-turbo-addons-elementor-pro'),
+                    'icon' => esc_html__('Icon', 'freemius-turbo-addons-elementor-pro'),
                 ],
             ]
         );
@@ -113,7 +113,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $repeater->add_control(
             'image',
             [
-                'label' => esc_html__('Image', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Image', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -127,19 +127,19 @@ class TRAD_Timeline_Story extends Widget_Base {
         $repeater->add_control(
             'image_alignment',
             [
-                'label' => __( 'Image Alignment', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Image Alignment', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __( 'Left', 'turbo-addons-elementor-pro' ),
+                        'title' => __( 'Left', 'freemius-turbo-addons-elementor-pro' ),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __( 'Center', 'turbo-addons-elementor-pro' ),
+                        'title' => __( 'Center', 'freemius-turbo-addons-elementor-pro' ),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __( 'Right', 'turbo-addons-elementor-pro' ),
+                        'title' => __( 'Right', 'freemius-turbo-addons-elementor-pro' ),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -158,7 +158,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $repeater->add_control(
             'icon',
             [
-                'label' => esc_html__( 'Icon', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Icon', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-chevron-down', // Default to a down arrow
@@ -173,19 +173,19 @@ class TRAD_Timeline_Story extends Widget_Base {
        $repeater->add_control(
             'icon_alignment',
             [
-                'label' => esc_html__( 'Icon Alignment', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Icon Alignment', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'flex-start' => [
-                        'title' => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
+                        'title' => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'  => 'eicon-h-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__( 'Center', 'turbo-addons-elementor-pro' ),
+                        'title' => esc_html__( 'Center', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'  => 'eicon-h-align-center',
                     ],
                     'flex-end' => [
-                        'title' => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
+                        'title' => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'  => 'eicon-h-align-right',
                     ],
                 ],
@@ -203,12 +203,12 @@ class TRAD_Timeline_Story extends Widget_Base {
         $repeater->add_control(
             'position',
             [
-                'label' => esc_html__('Position', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Position', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'left',
                 'options' => [
-                    'left' => esc_html__('Left', 'turbo-addons-elementor-pro'),
-                    'right' => esc_html__('Right', 'turbo-addons-elementor-pro'),
+                    'left' => esc_html__('Left', 'freemius-turbo-addons-elementor-pro'),
+                    'right' => esc_html__('Right', 'freemius-turbo-addons-elementor-pro'),
                 ],
             ]
         );
@@ -217,21 +217,21 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'timeline_items',
             [
-                'label' => esc_html__('Timeline Items', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Timeline Items', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'title_field' => '{{{ title }}}', // Display title in repeater
                 'default' => [
                     [
-                        'title' => esc_html__('First Timeline Event', 'turbo-addons-elementor-pro'),
-                        'description' => esc_html__('Description for the first event.', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('First Timeline Event', 'freemius-turbo-addons-elementor-pro'),
+                        'description' => esc_html__('Description for the first event.', 'freemius-turbo-addons-elementor-pro'),
                         'media_type' => 'image',
                         'image' => ['url' => \Elementor\Utils::get_placeholder_image_src()],
                         'position' => 'left',
                     ],
                     [
-                        'title' => esc_html__('Second Timeline Event', 'turbo-addons-elementor-pro'),
-                        'description' => esc_html__('Description for the second event.', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Second Timeline Event', 'freemius-turbo-addons-elementor-pro'),
+                        'description' => esc_html__('Description for the second event.', 'freemius-turbo-addons-elementor-pro'),
                         'media_type' => 'icon',
                         'icon' => ['value' => 'fas fa-check'],
                         'position' => 'right',
@@ -244,10 +244,10 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'show_arrows',
             [
-                'label'        => esc_html__( 'Show Arrows', 'turbo-addons-elementor-pro' ),
+                'label'        => esc_html__( 'Show Arrows', 'freemius-turbo-addons-elementor-pro' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => esc_html__( 'Hide', 'turbo-addons-elementor-pro' ),
-                'label_off'    => esc_html__( 'Show', 'turbo-addons-elementor-pro' ),
+                'label_on'     => esc_html__( 'Hide', 'freemius-turbo-addons-elementor-pro' ),
+                'label_off'    => esc_html__( 'Show', 'freemius-turbo-addons-elementor-pro' ),
                 'return_value' => 'none',
                 'default'      => 'block',
                 'selectors'    => [
@@ -263,7 +263,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->start_controls_section(
             'trad_timeline_container_style',
             [
-                'label' => esc_html__('Box', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Box', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -271,7 +271,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_responsive_control(
             'time_line_container_padding',
             [
-                'label' => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -284,7 +284,7 @@ class TRAD_Timeline_Story extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'     => 'time_line_container_background',
-                'label'    => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-timeline-story-line-temp-one',
             ]
@@ -301,7 +301,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'time_line_container_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -316,7 +316,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->start_controls_section(
             'trad_timeline_content_style',
             [
-                'label' => esc_html__('Content Box', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Content Box', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -325,7 +325,7 @@ class TRAD_Timeline_Story extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'     => 'time_line_content_box_background',
-                'label'    => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-timeline-story-line-temp-one .trad-content-story-line-temp-one',
             ]
@@ -334,7 +334,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_responsive_control(
             'time_line_content_box_padding',
             [
-                'label' => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -354,7 +354,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'time_line_content_box_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -369,14 +369,14 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->start_controls_section(
             'trad_timeline_story_image_or_icon',
             [
-                'label' => esc_html__('Image or Icon', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Image or Icon', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
          $this->add_control(
             'trad_image_separator',
             [
-                'label'    => esc_html__( 'Image', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Image', 'freemius-turbo-addons-elementor-pro' ),
                 'type'     => \Elementor\Controls_Manager::HEADING,
                 'separator'=> 'before',
             ]
@@ -385,7 +385,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'image_width',
             [
-                'label' => esc_html__('Image Width', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Image Width', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'vw'],
                 'range' => [
@@ -411,7 +411,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'image_height',
             [
-                'label' => esc_html__('Image Height', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Image Height', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'vh', '%'],
                 'range' => [
@@ -438,7 +438,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'image_border_radius',
             [
-                'label' => esc_html__('Image Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Image Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'vw'],
                 'range' => [
@@ -461,7 +461,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'trad_icon_separator',
             [
-                'label'    => esc_html__( 'Icon', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Icon', 'freemius-turbo-addons-elementor-pro' ),
                 'type'     => \Elementor\Controls_Manager::HEADING,
                 'separator'=> 'before',
             ]
@@ -470,7 +470,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'icon_color',
             [
-                'label' => esc_html__( 'Icon Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Icon Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#131313ff',
                 'selectors' => [
@@ -483,7 +483,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'icon_size',
             [
-                'label' => esc_html__( 'Icon Size', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Icon Size', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -509,7 +509,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->start_controls_section(
             'trad_timeline_story_typography',
             [
-                'label' => esc_html__('Typography', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Typography', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -517,7 +517,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'trad_typography_separator',
             [
-                'label'    => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
                 'type'     => \Elementor\Controls_Manager::HEADING,
                 'separator'=> 'before',
             ]
@@ -526,7 +526,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_responsive_control(
             'trad_timeline_story_title_margin',
             [
-                'label' => esc_html__('Title Margin', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Title Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -545,7 +545,7 @@ class TRAD_Timeline_Story extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_timeline_story_title_typography', // Unique name for the control
-                'label'    => esc_html__( 'Title Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Title Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-timeline-story-title',
             ]
         );
@@ -554,7 +554,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'trad_timeline_story_title_color',
             [
-                'label' => esc_html__('Title Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Title Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#1b1b1bff', // Default to white
                 'selectors' => [
@@ -567,7 +567,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'trad_typography_desc_separator',
             [
-                'label'    => esc_html__( 'Description', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Description', 'freemius-turbo-addons-elementor-pro' ),
                 'type'     => \Elementor\Controls_Manager::HEADING,
                 'separator'=> 'before',
             ]
@@ -577,7 +577,7 @@ class TRAD_Timeline_Story extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_timeline_story_description_typography', // Unique name for the control
-                'label'    => esc_html__( 'Description Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Description Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-timeline-story-description',
             ]
         );
@@ -585,7 +585,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'trad_timeline_story_description_color',
             [
-                'label' => esc_html__('Description Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Description Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#353535ff', // Default to white
                 'selectors' => [
@@ -599,7 +599,7 @@ class TRAD_Timeline_Story extends Widget_Base {
          $this->start_controls_section(
             'trad_timeline_arrow_style',
             [
-                'label' => esc_html__('Arrow', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Arrow', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -608,7 +608,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'left_before_border_color',
             [
-                'label' => esc_html__('Left Arrow Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Left Arrow Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff', // Default to white
                 'selectors' => [
@@ -621,7 +621,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'right_before_border_color',
             [
-                'label' => esc_html__('Right Arrow Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Right Arrow Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff', // Default to white
                 'selectors' => [
@@ -633,7 +633,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'trad_arrow_separator',
             [
-                'label'    => esc_html__( 'Virtical Position', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Virtical Position', 'freemius-turbo-addons-elementor-pro' ),
                 'type'     => \Elementor\Controls_Manager::HEADING,
                 'separator'=> 'before',
             ]
@@ -642,7 +642,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_responsive_control(
             'trad_arrow_vertical_position',
             [
-                'label' => esc_html__('Position', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Position', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -675,7 +675,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->start_controls_section(
             'trad_timeline_pointer_style',
             [
-                'label' => esc_html__('Pointer/Circle', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Pointer/Circle', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -683,7 +683,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_responsive_control(
             'timeline_pointer_size',
             [
-                'label'      => esc_html__('Size', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Size', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range'      => [
@@ -705,7 +705,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'trad_dot_bg_color',
             [
-                'label' => esc_html__('Background Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Background Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-timeline-story-line-temp-one .trad-container-story-line-temp-one::after' => 'background-color: {{VALUE}};',
@@ -717,7 +717,7 @@ class TRAD_Timeline_Story extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'timeline_pointer_border',
-                'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-container-story-line-temp-one::after',
             ]
         );
@@ -725,7 +725,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_responsive_control(
             'timeline_pointer_border_radious',
             [
-                'label'      => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -738,7 +738,7 @@ class TRAD_Timeline_Story extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'time_line_pointer_box_shadow',
-                'label'    => esc_html__('Box Shadow', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-container-story-line-temp-one::after',
             ]
         );
@@ -747,7 +747,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'trad_pointer_position_separator',
             [
-                'label'    => esc_html__( 'Pointer Position', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Pointer Position', 'freemius-turbo-addons-elementor-pro' ),
                 'type'     => \Elementor\Controls_Manager::HEADING,
                 'separator'=> 'before',
             ]
@@ -757,7 +757,7 @@ class TRAD_Timeline_Story extends Widget_Base {
          $this->add_control(
             'trad_left_dot_position',
             [
-                'label' => __( 'Left Dot', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Left Dot', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -780,7 +780,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'trad_right_dot_position',
             [
-                'label' => __( 'Right Dot', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Right Dot', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -803,7 +803,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_control(
             'trad_pointer_arrow_separator',
             [
-                'label'    => esc_html__( 'Virtical Position', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Virtical Position', 'freemius-turbo-addons-elementor-pro' ),
                 'type'     => \Elementor\Controls_Manager::HEADING,
                 'separator'=> 'before',
             ]
@@ -812,7 +812,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_responsive_control(
             'trad_pointer_vertical_position',
             [
-                'label' => esc_html__('Position', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Position', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -840,14 +840,14 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->start_controls_section(
             'trad_timeline_line_style',
             [
-                'label' => esc_html__('Line Style', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Line Style', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'trad_timeline_story_vertical_line_width',
             [
-                'label' => esc_html__('Line Width', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Line Width', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'vw'],
                 'range' => [
@@ -875,7 +875,7 @@ class TRAD_Timeline_Story extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'     => 'card_background',
-                'label'    => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-timeline-story-line-temp-one::after',
             ]
@@ -885,7 +885,7 @@ class TRAD_Timeline_Story extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'trad_timeline_story_vertical_line_border',
-                'label' => __('Border', 'turbo-addons-elementor-pro'),
+                'label' => __('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-timeline-story-line-temp-one::after',
             ]
         );
@@ -894,7 +894,7 @@ class TRAD_Timeline_Story extends Widget_Base {
         $this->add_responsive_control(
             'trad_timeline_story_vertical_line_border_radious',
             [
-                'label'      => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [

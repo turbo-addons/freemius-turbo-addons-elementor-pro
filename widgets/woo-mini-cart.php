@@ -21,7 +21,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
     }
 
     public function get_title() {
-        return __('WOO Mini Cart', 'turbo-addons-elementor-pro');
+        return __('WOO Mini Cart', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -46,14 +46,14 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
         $this->start_controls_section(
             'trad_woo_mini_cart_content_section',
             [
-                'label' => esc_html__( 'Content', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Content', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 
         $this->add_control(
 			'trad_woo_mini_cart_icon',
 			[
-				'label' => __( 'Icon', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Icon', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fas fa-cart-arrow-down',
@@ -65,10 +65,10 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_show_price',
 			[
-				'label' => __( 'Show Price Count', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Show Price Count', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'turbo-addons-elementor-pro' ),
-				'label_off' => __( 'Hide', 'turbo-addons-elementor-pro' ),
+				'label_on' => __( 'Show', 'freemius-turbo-addons-elementor-pro' ),
+				'label_off' => __( 'Hide', 'freemius-turbo-addons-elementor-pro' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 			]
@@ -77,13 +77,13 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_visibility',
 			[
-				'label' => __( 'Cart Bag Visibility', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Cart Bag Visibility', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
-				'default' => 'hover',
+				'default' => 'fly-out',
 				'options' => [
-					'hover'  => __( 'Hover', 'turbo-addons-elementor-pro' ),
-					'click'  => __( 'Click', 'turbo-addons-elementor-pro' ),
-					'fly-out'  => __( 'Fly Out', 'turbo-addons-elementor-pro' ),
+					'hover'  => __( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
+					'click'  => __( 'Click', 'freemius-turbo-addons-elementor-pro' ),
+					'fly-out'  => __( 'Fly Out', 'freemius-turbo-addons-elementor-pro' ),
 				],
 			]
 		);
@@ -91,22 +91,22 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_bag_title',
 			[
-				'label' => __( 'Cart Bag Heading', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Cart Bag Heading', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Items Seleceted', 'turbo-addons-elementor-pro' ),
+				'default' => __( 'Items Seleceted', 'freemius-turbo-addons-elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
 			'trad_woo_mini_cart_visibility_animation',
 			[
-				'label' => __( 'Cart Bag Visibility Animation', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Cart Bag Visibility Animation', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'slide-down',
 				'options' => [
-					'slide-up'  => __( 'Slide Down', 'turbo-addons-elementor-pro' ),
-					'slide-down'  => __( 'Slide Up', 'turbo-addons-elementor-pro' ),
-					'zoom-down'  => __( 'Zoom Down', 'turbo-addons-elementor-pro' ),
+					'slide-up'  => __( 'Slide Down', 'freemius-turbo-addons-elementor-pro' ),
+					'slide-down'  => __( 'Slide Up', 'freemius-turbo-addons-elementor-pro' ),
+					'zoom-down'  => __( 'Zoom Down', 'freemius-turbo-addons-elementor-pro' ),
 				],
 				'condition' => [
 					'trad_woo_mini_cart_visibility!' => 'fly-out'
@@ -117,19 +117,19 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_fly_out_appere_position',
 			[
-				'label' => __( 'Fly Out Appear Position', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Fly Out Appear Position', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'fly-out-appear-position-left' => [
-						'title' => __( 'Left', 'turbo-addons-elementor-pro' ),
+						'title' => __( 'Left', 'freemius-turbo-addons-elementor-pro' ),
 						'icon' => 'eicon-arrow-left',
 					],
 					'fly-out-appear-position-right' => [
-						'title' => __( 'Right', 'turbo-addons-elementor-pro' ),
+						'title' => __( 'Right', 'freemius-turbo-addons-elementor-pro' ),
 						'icon' => 'eicon-arrow-right',
 					],
 				],
-				'default' => 'fly-out-appear-position-left',
+				'default' => 'fly-out-appear-position-right',
 				'toggle' => true,
 				'condition' => [
 					'trad_woo_mini_cart_visibility' => 'fly-out'
@@ -140,7 +140,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_color',
 			[
-				'label'     => esc_html__( 'Overlay Color', 'turbo-addons-elementor-pro' ),
+				'label'     => esc_html__( 'Overlay Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => 'rgba(0,0,0,.5)',
 				'selectors' => [
@@ -155,12 +155,12 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_view_button_alignment',
 			[
-				'label' => __( 'Button Allignment', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Button Allignment', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'button-inline',
 				'options' => [
-					'button-inline'  => __( 'Inline', 'turbo-addons-elementor-pro' ),
-					'button-full-width'  => __( 'Full Width', 'turbo-addons-elementor-pro' ),
+					'button-inline'  => __( 'Inline', 'freemius-turbo-addons-elementor-pro' ),
+					'button-full-width'  => __( 'Full Width', 'freemius-turbo-addons-elementor-pro' ),
 				],
 			]
 		);
@@ -174,7 +174,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_section(
             'trad_woo_mini_cart_icon_style',
             [
-				'label' => esc_html__( 'Cart Icon', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Cart Icon', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'       => Controls_Manager::TAB_STYLE
             ]
 		);
@@ -182,19 +182,19 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_icon_alignment',
 			[
-				'label' => __( 'Icon Alignment', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Icon Alignment', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'cart-icon-left' => [
-						'title' => __( 'Left', 'turbo-addons-elementor-pro' ),
+						'title' => __( 'Left', 'freemius-turbo-addons-elementor-pro' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'cart-icon-center' => [
-						'title' => __( 'Center', 'turbo-addons-elementor-pro' ),
+						'title' => __( 'Center', 'freemius-turbo-addons-elementor-pro' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'cart-icon-right' => [
-						'title' => __( 'Right', 'turbo-addons-elementor-pro' ),
+						'title' => __( 'Right', 'freemius-turbo-addons-elementor-pro' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -206,10 +206,10 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_icon_box',
 			[
-				'label' => __( 'Enable Icon Box', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Enable Icon Box', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'turbo-addons-elementor-pro' ),
-				'label_off' => __( 'Hide', 'turbo-addons-elementor-pro' ),
+				'label_on' => __( 'Show', 'freemius-turbo-addons-elementor-pro' ),
+				'label_off' => __( 'Hide', 'freemius-turbo-addons-elementor-pro' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -218,7 +218,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_icon_box_width',
 			[
-				'label' => __( 'Width', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Width', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -243,14 +243,15 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_icon_box_height',
 			[
-				'label' => __( 'Height', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Height', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
 					'px' => [
 						'min' => 0,
-						'max' => 200,
-					],
+						'max' => 100,
+						'step' => 1,
+					]
 				],
 				'default' => [
 					'unit' => 'px',
@@ -260,15 +261,15 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 					'{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-icon' => 'height: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
-					'trad_woo_mini_cart_icon_box' => 'yes'
-				]
+					'trad_woo_mini_cart_icon_box' => 'yes',
+				],
 			]
 		);
 
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_icon_padding',
 			[
-				'label' => __( 'Padding', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -292,16 +293,8 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_icon_background',
-				'label' => __( 'Background', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Background', 'freemius-turbo-addons-elementor-pro' ),
 				'types' => [ 'classic', 'gradient' ],
-				'fields_options'  => [
-					'background'  => [
-						'default' => 'classic'
-					],
-					'color'       => [
-						'default' => '#2E3195',
-					]
-				],
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-icon',
 			]
 		);
@@ -309,9 +302,9 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_icon_color',
 			[
-				'label' => __( 'Icon Color', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Icon Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#ffffff',
+				'default' => '#0e0c0cff',
 				'selectors' => [
 					'{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-icon i' => 'color: {{VALUE}}',
 					'{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-icon svg path' => 'fill: {{VALUE}}',
@@ -322,7 +315,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_icon_size',
 			[
-				'label' => __( 'Icon Size', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Icon Size', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -346,7 +339,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_icon_border',
-				'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-icon',
 			]
 		);
@@ -354,7 +347,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_icon_border_radius',
 			[
-				'label' => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -375,7 +368,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_icon_box_shadow',
-				'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-icon',
 			]
 		);
@@ -389,7 +382,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_section(
             'trad_woo_mini_cart_count_number_style',
             [
-				'label' => esc_html__( 'Cart Count Item Number', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Cart Count Item Number', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'       => Controls_Manager::TAB_STYLE
             ]
 		);
@@ -397,10 +390,10 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_count_number_box_enable',
 			[
-				'label' => __( 'Enable Number Box', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Enable Number Box', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'turbo-addons-elementor-pro' ),
-				'label_off' => __( 'Hide', 'turbo-addons-elementor-pro' ),
+				'label_on' => __( 'Show', 'freemius-turbo-addons-elementor-pro' ),
+				'label_off' => __( 'Hide', 'freemius-turbo-addons-elementor-pro' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -409,7 +402,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_count_number_box_width',
 			[
-				'label' => __( 'Width', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Width', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -434,7 +427,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_count_number_box_height',
 			[
-				'label' => __( 'Height', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Height', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -459,10 +452,10 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_count_number_position',
 			[
-				'label' => __( 'Number Position', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Number Position', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::POPOVER_TOGGLE,
-				'label_off' => __( 'Default', 'turbo-addons-elementor-pro' ),
-				'label_on' => __( 'Custom', 'turbo-addons-elementor-pro' ),
+				'label_off' => __( 'Default', 'freemius-turbo-addons-elementor-pro' ),
+				'label_on' => __( 'Custom', 'freemius-turbo-addons-elementor-pro' ),
 				'return_value' => 'yes',
                 'default' => 'yes',
 			]
@@ -473,7 +466,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
             $this->add_responsive_control(
                 'trad_woo_mini_cart_count_number_position_left',
                 [
-                    'label' => __( 'X Offset', 'turbo-addons-elementor-pro' ),
+                    'label' => __( 'X Offset', 'freemius-turbo-addons-elementor-pro' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -496,7 +489,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
             $this->add_responsive_control(
                 'trad_woo_mini_cart_count_number_position_top',
                 [
-                    'label' => __( 'Y Offset', 'turbo-addons-elementor-pro' ),
+                    'label' => __( 'Y Offset', 'freemius-turbo-addons-elementor-pro' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -521,7 +514,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_count_number_padding',
 			[
-				'label' => __( 'Padding', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -545,14 +538,14 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_count_number_background',
-				'label' => __( 'Background', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Background', 'freemius-turbo-addons-elementor-pro' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options'  => [
 					'background'  => [
 						'default' => 'classic'
 					],
 					'color'       => [
-						'default' => '#FF7676'
+						'default' => '#6e6e6eff'
 					]
 				],
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-icon .trad-cart-items-count-number',
@@ -563,7 +556,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_count_number_typography',
-				'label' => __( 'Typography', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-icon .trad-cart-items-count-number',
 			]
 		);
@@ -571,11 +564,11 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_count_number_color',
 			[
-				'label' => __( 'Number Color', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Number Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-icon .trad-cart-items-count-number' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-icon .trad-cart-items-count-number' => 'color: {{VALUE}} !important',
 				],
 			]
 		);
@@ -584,7 +577,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_count_number_border',
-				'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-icon .trad-cart-items-count-number',
 			]
 		);
@@ -592,7 +585,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_count_number_border_radius',
 			[
-				'label' => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -613,7 +606,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_count_number_box_shadow',
-				'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-icon .trad-cart-items-count-number',
 			]
 		);
@@ -627,7 +620,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_section(
             'trad_woo_mini_cart_count_price_style',
             [
-				'label' => esc_html__( 'Cart Total Price', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Cart Total Price', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'       => Controls_Manager::TAB_STYLE
             ]
 		);
@@ -636,7 +629,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_count_price_typography',
-				'label' => __( 'Typography', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-cart-items-count-price',
 			]
 		);
@@ -644,7 +637,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_count_price_color',
 			[
-				'label' => __( 'Price Color', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Price Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .trad-woo-mini-cart .trad-cart-items-count-price' => 'color: {{VALUE}}',
@@ -655,7 +648,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_count_price_left_spacing',
 			[
-				'label' => __( 'Left Spacing', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Left Spacing', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -684,38 +677,15 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_section(
             'trad_woo_mini_cart_bag_style',
             [
-				'label' => esc_html__( 'Cart Bag', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Cart Bag', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'       => Controls_Manager::TAB_STYLE
             ]
-		);
-
-		$this->add_control(
-			'trad_woo_mini_cart_bag_position',
-			[
-				'label' => __( 'Cart Bag Position', 'turbo-addons-elementor-pro' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'cart-bag-position-left' => [
-						'title' => __( 'Left', 'turbo-addons-elementor-pro' ),
-						'icon' => 'eicon-text-align-left',
-					],
-					'cart-bag-position-right' => [
-						'title' => __( 'Right', 'turbo-addons-elementor-pro' ),
-						'icon' => 'eicon-text-align-right',
-					],
-				],
-				'default' => 'cart-bag-position-left',
-				'toggle' => true,
-				'condition' => [
-					'trad_woo_mini_cart_visibility!' => 'fly-out'
-				]
-			]
 		);
 
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_bag_width',
 			[
-				'label' => __( 'Width', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Width', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -747,14 +717,14 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_bag_background',
-				'label' => __( 'Background', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Background', 'freemius-turbo-addons-elementor-pro' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options'  => [
 					'background'  => [
 						'default' => 'classic'
 					],
 					'color'       => [
-						'default' => '#2E3195',
+						'default' => '#E5E6FF',
 					]
 				],
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-mini-cart-wrapper .trad-woo-cart-bag',
@@ -764,7 +734,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_bag_padding',
 			[
-				'label' => __( 'Padding', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -785,7 +755,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_bag_border',
-				'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-mini-cart-wrapper .trad-woo-cart-bag',
 			]
 		);
@@ -793,7 +763,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_bag_border_radius',
 			[
-				'label' => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -814,7 +784,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_bag_box_shadow',
-				'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-mini-cart-wrapper .trad-woo-cart-bag',
 			]
 		);
@@ -828,7 +798,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_section(
             'trad_woo_mini_cart_heading_style',
             [
-				'label' => esc_html__( 'Cart Heading', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Cart Heading', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'       => Controls_Manager::TAB_STYLE
             ]
 		);
@@ -836,19 +806,19 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_heading_alignment',
 			[
-				'label' => __( 'Alignment', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Alignment', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'turbo-addons-elementor-pro' ),
+						'title' => __( 'Left', 'freemius-turbo-addons-elementor-pro' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'turbo-addons-elementor-pro' ),
+						'title' => __( 'Center', 'freemius-turbo-addons-elementor-pro' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'turbo-addons-elementor-pro' ),
+						'title' => __( 'Right', 'freemius-turbo-addons-elementor-pro' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -863,7 +833,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_heading_margin',
 			[
-				'label' => __( 'Margin', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -883,7 +853,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_heading_padding',
 			[
-				'label' => __( 'Padding', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -904,7 +874,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_heading_background',
-				'label' => __( 'Background', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Background', 'freemius-turbo-addons-elementor-pro' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-mini-cart-wrapper .trad-woo-cart-bag .trad-cart-items-heading',
 			]
@@ -914,7 +884,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_heading_typography',
-				'label' => __( 'Typography', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-mini-cart-wrapper .trad-woo-cart-bag .trad-cart-items-heading',
 			]
 		);
@@ -922,7 +892,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_heading_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+				'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'selectors' => [
@@ -935,7 +905,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_heading_border',
-				'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 				'fields_options'  => [
                     'border' 	  => [
                         'default' => 'solid'
@@ -959,7 +929,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_heading_border_radius',
 			[
-				'label' => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -980,7 +950,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_heading_box_shadow',
-				'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-mini-cart-wrapper .trad-woo-cart-bag .trad-cart-items-heading',
 			]
 		);
@@ -994,7 +964,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_section(
             'trad_woo_mini_cart_bag_item_style',
             [
-				'label' => esc_html__( 'Cart Item', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Cart Item', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'       => Controls_Manager::TAB_STYLE
             ]
 		);
@@ -1002,7 +972,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_bag_item_padding',
 			[
-				'label' => __( 'Padding', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -1023,7 +993,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_bag_item_border',
-				'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 				'fields_options'  => [
                     'border' 	  => [
                         'default' => 'solid'
@@ -1047,7 +1017,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_bag_item_image_heading',
 			[
-				'label' => __( 'Image', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Image', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1056,7 +1026,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_bag_item_image_size',
 			[
-				'label' => __( 'Image Size', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Image Size', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -1080,7 +1050,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_bag_item_image_border',
-				'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item a img',
 			]
 		);
@@ -1088,7 +1058,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_bag_item_image_border_radius',
 			[
-				'label' => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -1108,7 +1078,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_bag_item_image_right_spacing',
 			[
-				'label' => __( 'Image Right Spacing', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Image Right Spacing', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -1132,7 +1102,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_bag_item_image_box_shadow',
-				'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item a img',
 			]
 		);
@@ -1140,7 +1110,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_bag_item_product_name_heading',
 			[
-				'label' => __( 'Product Name', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Product Name', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1150,7 +1120,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_bag_item_product_name_typography',
-				'label' => __( 'Typography', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item a',
 			]
 		);
@@ -1158,12 +1128,12 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_tabs( 'trad_woo_mini_cart_bag_item_product_name_tabs' );
 
             // Normal State Tab
-            $this->start_controls_tab( 'trad_woo_mini_cart_bag_item_product_name_normal', [ 'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ) ] );
+            $this->start_controls_tab( 'trad_woo_mini_cart_bag_item_product_name_normal', [ 'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 				$this->add_control(
 					'trad_woo_mini_cart_bag_item_product_name_color_normal',
 					[
-						'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+						'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#ffffff',
 						'selectors' => [
@@ -1175,12 +1145,12 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
             $this->end_controls_tab();
 
             // Hover State Tab
-            $this->start_controls_tab( 'trad_woo_mini_cart_bag_item_product_name_hover', [ 'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ) ] );
+            $this->start_controls_tab( 'trad_woo_mini_cart_bag_item_product_name_hover', [ 'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 				$this->add_control(
 					'trad_woo_mini_cart_bag_item_product_name_color_hover',
 					[
-						'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+						'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 						'type'      => Controls_Manager::COLOR,
 						'selectors' => [
 							'{{WRAPPER}} .trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item a:hover' => 'color: {{VALUE}};'
@@ -1195,7 +1165,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_bag_item_product_price_heading',
 			[
-				'label' => __( 'Product Quantity & Price', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Product Quantity & Price', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1204,7 +1174,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_bag_item_product_price_margin',
 			[
-				'label' => __( 'Margin', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -1224,13 +1194,13 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_tabs( 'trad_woo_mini_cart_bag_item_product_price_tabs' );
 
             // Normal State Tab
-			$this->start_controls_tab( 'trad_woo_mini_cart_bag_item_product_quantity', [ 'label' => esc_html__( 'Product Quantity', 'turbo-addons-elementor-pro' ) ] );
+			$this->start_controls_tab( 'trad_woo_mini_cart_bag_item_product_quantity', [ 'label' => esc_html__( 'Product Quantity', 'freemius-turbo-addons-elementor-pro' ) ] );
 			
 				$this->add_group_control(
 					Group_Control_Typography::get_type(),
 					[
 						'name' => 'trad_woo_mini_cart_bag_item_product_quantity_typography',
-						'label' => __( 'Typography', 'turbo-addons-elementor-pro' ),
+						'label' => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
 						'selector' => '{{WRAPPER}} .trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item .quantity',
 					]
 				);
@@ -1238,7 +1208,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 				$this->add_control(
 					'trad_woo_mini_cart_bag_item_product_quantity_color',
 					[
-						'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+						'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#f5f5f5',
 						'selectors' => [
@@ -1250,13 +1220,13 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
             $this->end_controls_tab();
 
             // Hover State Tab
-			$this->start_controls_tab( 'trad_woo_mini_cart_bag_item_product_price', [ 'label' => esc_html__( 'Product Price', 'turbo-addons-elementor-pro' ) ] );
+			$this->start_controls_tab( 'trad_woo_mini_cart_bag_item_product_price', [ 'label' => esc_html__( 'Product Price', 'freemius-turbo-addons-elementor-pro' ) ] );
 			
 				$this->add_group_control(
 					Group_Control_Typography::get_type(),
 					[
 						'name' => 'trad_woo_mini_cart_bag_item_product_price_typography',
-						'label' => __( 'Typography', 'turbo-addons-elementor-pro' ),
+						'label' => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
 						'selector' => '{{WRAPPER}} .trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item .woocommerce-Price-amount',
 					]
 				);
@@ -1264,7 +1234,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 				$this->add_control(
 					'trad_woo_mini_cart_bag_item_product_price_color',
 					[
-						'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+						'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#f5f5f5',
 						'selectors' => [
@@ -1280,7 +1250,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_bag_item_remove_heading',
 			[
-				'label' => __( 'Remove Item Icon', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Remove Item Icon', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1289,7 +1259,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_bag_item_remove_icon_box_size',
 			[
-				'label' => __( 'Remove Icon Box Size', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Remove Icon Box Size', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -1308,7 +1278,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_bag_item_remove_icon_background_color',
 			[
-				'label'     => esc_html__( 'Remove Icon Background Color', 'turbo-addons-elementor-pro' ),
+				'label'     => esc_html__( 'Remove Icon Background Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item .remove_from_cart_button' => 'background: {{VALUE}};'
@@ -1319,7 +1289,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_bag_item_remove_icon_size',
 			[
-				'label' => __( 'Remove Icon Size', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Remove Icon Size', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -1342,7 +1312,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_bag_item_remove_icon_color',
 			[
-				'label'     => esc_html__( 'Remove Icon Color', 'turbo-addons-elementor-pro' ),
+				'label'     => esc_html__( 'Remove Icon Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'selectors' => [
@@ -1355,7 +1325,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_bag_item_remove_icon_box_border',
-				'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item .remove_from_cart_button',
 			]
 		);
@@ -1363,7 +1333,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_bag_item_remove_icon_border_radius',
 			[
-				'label' => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -1384,7 +1354,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_bag_item_remove_icon_box_shadow',
-				'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-cart-bag ul.woocommerce-mini-cart li.woocommerce-mini-cart-item .remove_from_cart_button',
 			]
 		);
@@ -1392,7 +1362,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_bag_item_empty_message_heading',
 			[
-				'label' => __( 'Empty Product Message', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Empty Product Message', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1402,7 +1372,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_bag_item_empty_message_typography',
-				'label' => __( 'Typography', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__empty-message',
 			]
 		);
@@ -1410,7 +1380,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_bag_item_empty_message_color',
 			[
-				'label'     => esc_html__( 'Empty Message Color', 'turbo-addons-elementor-pro' ),
+				'label'     => esc_html__( 'Empty Message Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'selectors' => [
@@ -1428,7 +1398,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_section(
             'trad_woo_mini_cart_subtotal_style',
             [
-				'label' => esc_html__( 'Subtotal', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Subtotal', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'       => Controls_Manager::TAB_STYLE
             ]
 		);
@@ -1436,7 +1406,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_subtotal_margin',
 			[
-				'label' => __( 'Margin', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -1456,7 +1426,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_subtotal_padding',
 			[
-				'label' => __( 'Padding', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -1476,7 +1446,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_subtotal_title_heading',
 			[
-				'label' => __( 'Sobtotal Title', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Sobtotal Title', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1486,7 +1456,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_subtotal_title_typography',
-				'label' => __( 'Typography', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__total',
 			]
 		);
@@ -1494,7 +1464,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_subtotal_title_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+				'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'selectors' => [
@@ -1506,7 +1476,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_subtotal_price_heading',
 			[
-				'label' => __( 'Sobtotal Price', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Sobtotal Price', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1516,7 +1486,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_subtotal_price_typography',
-				'label' => __( 'Typography', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__total .woocommerce-Price-amount',
 			]
 		);
@@ -1524,7 +1494,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_subtotal_price_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+				'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'selectors' => [
@@ -1537,7 +1507,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_subtotal_border',
-				'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__total',
 			]
 		);
@@ -1551,7 +1521,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_section(
             'trad_woo_mini_cart_view_cart_style',
             [
-				'label' => esc_html__( 'View Cart Button', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'View Cart Button', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'       => Controls_Manager::TAB_STYLE
             ]
 		);
@@ -1559,7 +1529,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_view_cart_left_spacing',
 			[
-				'label' => __( 'Left Spacing', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Left Spacing', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -1585,7 +1555,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_view_cart_bottom_spacing',
 			[
-				'label' => __( 'Bottom Spacing', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Bottom Spacing', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -1611,7 +1581,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_view_cart_padding',
 			[
-				'label' => __( 'Padding', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -1632,7 +1602,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_view_cart_typography',
-				'label' => __( 'Typography', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:first-child',
 			]
 		);
@@ -1640,7 +1610,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_view_cart_radius',
 			[
-				'label' => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -1660,12 +1630,12 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_tabs( 'trad_woo_mini_cart_view_cart_tabs' );
 
             // Normal State Tab
-			$this->start_controls_tab( 'trad_woo_mini_cart_view_cart_normal', [ 'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ) ] );
+			$this->start_controls_tab( 'trad_woo_mini_cart_view_cart_normal', [ 'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 				$this->add_control(
 					'trad_woo_mini_cart_view_cart_normal_background',
 					[
-						'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+						'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#ffffff',
 						'selectors' => [
@@ -1677,7 +1647,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 				$this->add_control(
 					'trad_woo_mini_cart_view_cart_normal_color',
 					[
-						'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+						'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#000000',
 						'selectors' => [
@@ -1690,7 +1660,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 					Group_Control_Border::get_type(),
 					[
 						'name' => 'trad_woo_mini_cart_view_cart_normal_border',
-						'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+						'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 						'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:first-child',
 					]
 				);
@@ -1699,7 +1669,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 					Group_Control_Box_Shadow::get_type(),
 					[
 						'name' => 'trad_woo_mini_cart_view_cart_normal_shadow',
-						'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+						'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
 						'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:first-child',
 					]
 				);
@@ -1707,12 +1677,12 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
             $this->end_controls_tab();
 
             // Hover State Tab
-			$this->start_controls_tab( 'trad_woo_mini_cart_view_cart_hover', [ 'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ) ] );
+			$this->start_controls_tab( 'trad_woo_mini_cart_view_cart_hover', [ 'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ) ] );
 			
 				$this->add_control(
 					'trad_woo_mini_cart_view_cart_hover_background',
 					[
-						'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+						'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 						'type'      => Controls_Manager::COLOR,
 						'selectors' => [
 							'{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:first-child:hover' => 'background: {{VALUE}};'
@@ -1723,7 +1693,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 				$this->add_control(
 					'trad_woo_mini_cart_view_cart_hover_color',
 					[
-						'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+						'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 						'type'      => Controls_Manager::COLOR,
 						'selectors' => [
 							'{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:first-child:hover' => 'color: {{VALUE}};'
@@ -1735,7 +1705,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 					Group_Control_Border::get_type(),
 					[
 						'name' => 'trad_woo_mini_cart_view_cart_hover_border',
-						'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+						'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 						'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:first-child:hover',
 					]
 				);
@@ -1744,7 +1714,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 					Group_Control_Box_Shadow::get_type(),
 					[
 						'name' => 'trad_woo_mini_cart_view_cart_hover_shadow',
-						'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+						'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
 						'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:first-child:hover',
 					]
 				);
@@ -1762,7 +1732,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_section(
             'trad_woo_mini_cart_checkout_style',
             [
-				'label' => esc_html__( 'Checkout Button', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Checkout Button', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'       => Controls_Manager::TAB_STYLE
             ]
 		);
@@ -1770,7 +1740,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_checkout_padding',
 			[
-				'label' => __( 'Padding', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -1791,7 +1761,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_checkout_typography',
-				'label' => __( 'Typography', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:last-child',
 			]
 		);
@@ -1799,7 +1769,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_checkout_radius',
 			[
-				'label' => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -1819,12 +1789,12 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_tabs( 'trad_woo_mini_cart_checkout_tabs' );
 
             // Normal State Tab
-			$this->start_controls_tab( 'trad_woo_mini_cart_checkout_normal', [ 'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ) ] );
+			$this->start_controls_tab( 'trad_woo_mini_cart_checkout_normal', [ 'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 				$this->add_control(
 					'trad_woo_mini_cart_checkout_normal_background',
 					[
-						'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+						'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#ffffff',
 						'selectors' => [
@@ -1836,7 +1806,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 				$this->add_control(
 					'trad_woo_mini_cart_checkout_normal_color',
 					[
-						'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+						'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#000000',
 						'selectors' => [
@@ -1849,7 +1819,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 					Group_Control_Border::get_type(),
 					[
 						'name' => 'trad_woo_mini_cart_checkout_normal_border',
-						'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+						'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 						'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:last-child',
 					]
 				);
@@ -1858,7 +1828,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 					Group_Control_Box_Shadow::get_type(),
 					[
 						'name' => 'trad_woo_mini_cart_checkout_normal_shadow',
-						'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+						'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
 						'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:last-child',
 					]
 				);
@@ -1866,12 +1836,12 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
             $this->end_controls_tab();
 
             // Hover State Tab
-			$this->start_controls_tab( 'trad_woo_mini_cart_checkout_hover', [ 'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ) ] );
+			$this->start_controls_tab( 'trad_woo_mini_cart_checkout_hover', [ 'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ) ] );
 			
 				$this->add_control(
 					'trad_woo_mini_cart_checkout_hover_background',
 					[
-						'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+						'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 						'type'      => Controls_Manager::COLOR,
 						'selectors' => [
 							'{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:last-child:hover' => 'background: {{VALUE}};'
@@ -1882,7 +1852,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 				$this->add_control(
 					'trad_woo_mini_cart_checkout_hover_color',
 					[
-						'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+						'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 						'type'      => Controls_Manager::COLOR,
 						'selectors' => [
 							'{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:last-child:hover' => 'color: {{VALUE}};'
@@ -1894,7 +1864,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 					Group_Control_Border::get_type(),
 					[
 						'name' => 'trad_woo_mini_cart_checkout_hover_border',
-						'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+						'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 						'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:last-child:hover',
 					]
 				);
@@ -1903,7 +1873,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 					Group_Control_Box_Shadow::get_type(),
 					[
 						'name' => 'trad_woo_mini_cart_checkout_hover_shadow',
-						'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+						'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
 						'selector' => '{{WRAPPER}} .trad-woo-cart-bag .woocommerce-mini-cart__buttons .wc-forward:last-child:hover',
 					]
 				);
@@ -1921,7 +1891,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->start_controls_section(
             'trad_woo_mini_cart_flyout_close_button_style',
             [
-				'label' => esc_html__( 'Flyout Close Button', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Flyout Close Button', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'trad_woo_mini_cart_visibility' => 'fly-out'
@@ -1932,7 +1902,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_flyout_close_button_box_size',
 			[
-				'label' => __( 'Button Box Size', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Button Box Size', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -1955,7 +1925,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_flyout_close_button_box_background',
 			[
-				'label'     => esc_html__( 'Box Background Color', 'turbo-addons-elementor-pro' ),
+				'label'     => esc_html__( 'Box Background Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'selectors' => [
@@ -1968,7 +1938,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_flyout_close_button_box_border',
-				'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-bag-fly-out-close-icon',
 			]
 		);
@@ -1976,7 +1946,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_flyout_close_button_box_border_radius',
 			[
-				'label' => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -1997,7 +1967,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'trad_woo_mini_cart_flyout_close_button_box_shadow',
-				'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' => '{{WRAPPER}} .trad-woo-mini-cart .trad-woo-cart-bag-fly-out-close-icon',
 			]
 		);
@@ -2005,7 +1975,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_mini_cart_flyout_close_button_icon_size',
 			[
-				'label' => __( 'Close Icon Size', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Close Icon Size', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -2029,7 +1999,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_flyout_close_button_box_icon_color',
 			[
-				'label'     => esc_html__( 'Close Icon Color', 'turbo-addons-elementor-pro' ),
+				'label'     => esc_html__( 'Close Icon Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#000000',
 				'selectors' => [
@@ -2042,10 +2012,10 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_control(
 			'trad_woo_mini_cart_flyout_close_button_position',
 			[
-				'label' => __( 'Close Button Position', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Close Button Position', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => Controls_Manager::POPOVER_TOGGLE,
-				'label_off' => __( 'Default', 'turbo-addons-elementor-pro' ),
-				'label_on' => __( 'Custom', 'turbo-addons-elementor-pro' ),
+				'label_off' => __( 'Default', 'freemius-turbo-addons-elementor-pro' ),
+				'label_on' => __( 'Custom', 'freemius-turbo-addons-elementor-pro' ),
 				'return_value' => 'yes',
                 'default' => 'yes',
 			]
@@ -2056,7 +2026,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
             $this->add_responsive_control(
                 'trad_woo_mini_cart_flyout_close_button_position_x_offset',
                 [
-                    'label' => __( 'X Offset', 'turbo-addons-elementor-pro' ),
+                    'label' => __( 'X Offset', 'freemius-turbo-addons-elementor-pro' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -2079,7 +2049,7 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
             $this->add_responsive_control(
                 'trad_woo_mini_cart_flyout_close_button_position_y_offset',
                 [
-                    'label' => __( 'Y Offset', 'turbo-addons-elementor-pro' ),
+                    'label' => __( 'Y Offset', 'freemius-turbo-addons-elementor-pro' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -2110,11 +2080,11 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
     protected function trad_init_content_wc_notice_controls() {
 		if ( ! class_exists( 'woocommerce' ) ) {
 			$this->start_controls_section( 'trad_global_warning', [
-				'label' => __( 'Warning!', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Warning!', 'freemius-turbo-addons-elementor-pro' ),
 			] );
 			$this->add_responsive_control( 'trad_global_warning_text', [
 				'type'            => Controls_Manager::RAW_HTML,
-				'raw'             => __( '<strong>WooCommerce</strong> is not installed/activated on your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> first.', 'turbo-addons-elementor-pro' ),
+				'raw'             => __( '<strong>WooCommerce</strong> is not installed/activated on your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> first.', 'freemius-turbo-addons-elementor-pro' ),
 				'content_classes' => 'trad-woo-warning',
 			] );
 			$this->end_controls_section();
@@ -2133,14 +2103,25 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 		$this->add_render_attribute(
             'trad_woo_mini_cart',
             [
-                'class'           => [ 'trad-woo-mini-cart', $settings['trad_woo_mini_cart_visibility'], $settings['trad_woo_mini_cart_icon_alignment'], $settings['trad_woo_mini_cart_bag_position'], $settings['trad_woo_mini_cart_fly_out_appere_position'], $settings['trad_woo_mini_cart_visibility_animation'] ],
-                'data-visibility' => $settings['trad_woo_mini_cart_visibility'],
+                'class'           => array_filter( [
+                    'trad-woo-mini-cart',
+                    $settings['trad_woo_mini_cart_visibility']           ?? '',
+                    $settings['trad_woo_mini_cart_icon_alignment']       ?? '',
+                    $settings['trad_woo_mini_cart_bag_position']         ?? '',
+                    $settings['trad_woo_mini_cart_fly_out_appere_position'] ?? '',
+                    $settings['trad_woo_mini_cart_visibility_animation'] ?? '',
+                ] ),
+                'data-visibility' => $settings['trad_woo_mini_cart_visibility'] ?? 'hover',
             ]
         );
 		$this->add_render_attribute(
             'trad_woo_mini_cart_wrapper',
             [
-                'class' => ['trad-woo-mini-cart-wrapper', 'trad-cart-icon-box-'.$settings['trad_woo_mini_cart_icon_box'], $settings['trad_woo_mini_cart_view_button_alignment'] ],
+                'class' => array_filter( [
+                    'trad-woo-mini-cart-wrapper',
+                    'trad-cart-icon-box-' . ( $settings['trad_woo_mini_cart_icon_box'] ?? 'yes' ),
+                    $settings['trad_woo_mini_cart_view_button_alignment'] ?? '',
+                ] ),
             ]
         );
 		?>
@@ -2165,17 +2146,82 @@ class TRAD_WOO_Mini_Cart extends Widget_Base {
 				?>
 				<div class="trad-woo-cart-bag">
 					<div class="trad-cart-items-heading">
-						<?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-						<span class="trad-cart-items-heading-text"><?php echo (( WC()->cart != '' ) )?  WC()->cart->get_cart_contents_count() : '' ; ?></span> 
+						<span class="trad-cart-items-heading-text"><?php echo esc_html( WC()->cart ? WC()->cart->get_cart_contents_count() : 0 ); ?></span>
 						<?php echo esc_html( $settings['trad_woo_mini_cart_bag_title'] ); ?>
 					</div>
-					<div class="widget_shopping_cart_content">
-						<?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-						<?php (( WC()->cart != '' ) ? woocommerce_mini_cart() : '' ); ?>
+					<div class="widget_shopping_cart_content trad-cart-items-list">
+					<?php if ( WC()->cart && ! WC()->cart->is_empty() ) : ?>
+						<?php foreach ( WC()->cart->get_cart() as $trad_cart_key => $trad_cart_item ) :
+							$trad_product   = $trad_cart_item['data'];
+							$trad_qty       = $trad_cart_item['quantity'];
+							$trad_permalink = $trad_product->is_visible() ? get_permalink( $trad_product->get_id() ) : '';
+							$trad_name      = $trad_product->get_name();
+							$trad_price     = WC()->cart->get_product_price( $trad_product );
+							$trad_img       = $trad_product->get_image( [ 60, 60 ] );
+							$trad_remove    = wc_get_cart_remove_url( $trad_cart_key );
+						?>
+						<div class="trad-cart-item">
+							<div class="trad-cart-item-thumb">
+								<?php if ( $trad_permalink ) : ?>
+									<a href="<?php echo esc_url( $trad_permalink ); ?>">
+										<?php echo $trad_img; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- WC template output ?>
+									</a>
+								<?php else : ?>
+									<?php echo $trad_img; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<?php endif; ?>
+							</div>
+							<div class="trad-cart-item-info">
+								<?php if ( $trad_permalink ) : ?>
+									<a class="trad-cart-item-name" href="<?php echo esc_url( $trad_permalink ); ?>"><?php echo esc_html( $trad_name ); ?></a>
+								<?php else : ?>
+									<span class="trad-cart-item-name"><?php echo esc_html( $trad_name ); ?></span>
+								<?php endif; ?>
+								<span class="trad-cart-item-qty">
+									<?php echo esc_html( $trad_qty ); ?> &times;
+									<?php echo $trad_price; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- WC formatted price ?>
+								</span>
+							</div>
+							<a href="<?php echo esc_url( $trad_remove ); ?>"
+							   class="trad-cart-item-remove remove_from_cart_button"
+							   data-product_id="<?php echo esc_attr( $trad_product->get_id() ); ?>"
+							   data-cart_item_key="<?php echo esc_attr( $trad_cart_key ); ?>"
+							   aria-label="<?php
+							   	/* translators: %s: product name */
+							   	echo esc_attr( sprintf( __( 'Remove %s from cart', 'freemius-turbo-addons-elementor-pro' ), $trad_name ) );
+							   ?>">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="10" height="10" aria-hidden="true">
+									<line x1="1" y1="1" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+									<line x1="9" y1="1" x2="1" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+								</svg>
+							</a>
+						</div>
+						<?php endforeach; ?>
+
+						<div class="trad-cart-subtotal">
+							<span><?php esc_html_e( 'Subtotal:', 'freemius-turbo-addons-elementor-pro' ); ?></span>
+							<span><?php echo WC()->cart->get_cart_subtotal(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- WC formatted price ?></span>
+						</div>
+
+						<div class="trad-cart-actions">
+							<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="trad-cart-action-btn trad-cart-view-btn">
+								<?php esc_html_e( 'View cart', 'freemius-turbo-addons-elementor-pro' ); ?>
+							</a>
+							<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="trad-cart-action-btn trad-cart-checkout-btn">
+								<?php esc_html_e( 'Checkout', 'freemius-turbo-addons-elementor-pro' ); ?>
+							</a>
+						</div>
+					<?php else : ?>
+						<p class="trad-cart-empty"><?php esc_html_e( 'No products in the cart.', 'freemius-turbo-addons-elementor-pro' ); ?></p>
+					<?php endif; ?>
 					</div>
-					<?php if( 'fly-out' === $settings['trad_woo_mini_cart_visibility'] ){ ?>
-						<div class="trad-woo-cart-bag-fly-out-close-icon"></div>
-					<?php } ?>
+					<?php if ( 'fly-out' === $settings['trad_woo_mini_cart_visibility'] ) : ?>
+						<div class="trad-woo-cart-bag-fly-out-close-icon" role="button" aria-label="<?php esc_attr_e( 'Close', 'freemius-turbo-addons-elementor-pro' ); ?>">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="14" height="14" aria-hidden="true">
+								<line x1="1" y1="1" x2="13" y2="13" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+								<line x1="13" y1="1" x2="1" y2="13" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+							</svg>
+						</div>
+					<?php endif; ?>
 				</div>
 				<?php if( 'fly-out' === $settings['trad_woo_mini_cart_visibility'] ){ ?>
 					<div class="trad-woo-cart-bag-fly-out-overlay"></div>

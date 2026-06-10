@@ -7,9 +7,9 @@ if (!defined('ABSPATH')) {
 
 <div class="trad-review-archive">
     <div class="trad-review-archive-logo">
-        <img src="<?php echo esc_url($settings['trad_review_archive_logo']['url']); ?>" 
-                width="<?php echo esc_attr($settings['logo_width']['size']); ?>" 
-                height="<?php echo esc_attr($settings['logo_height']['size']); ?>" 
+        <img src="<?php echo esc_url( $settings['trad_review_archive_logo']['url'] ?? '' ); ?>"
+                width="<?php echo esc_attr( $settings['logo_width']['size'] ?? '' ); ?>"
+                height="<?php echo esc_attr( $settings['logo_height']['size'] ?? '' ); ?>"
                 alt="Logo" />
     </div>
     <div class="trad-review-archive-content">
