@@ -281,8 +281,10 @@ function turbo_addons_pro_admin_page() {
                                         <img src="<?php echo esc_url( $tpl['thumb'] ); ?>"
                                              alt="<?php echo esc_attr( $tpl['title'] ); ?>"
                                              class="taep-tpl-slide-img">
-                                        <?php if ( strtoupper( $tpl['batch'] ) === 'PRO' || $tpl['batch'] === 'on' ) : ?>
-                                        <span class="taep-template-pro-badge">PRO</span>
+                                        <?php if ( strtoupper( trim( $tpl['batch'] ) ) === 'PRO' || $tpl['batch'] === 'on' ) : ?>
+                                            <span class="taep-template-pro-badge">PRO</span>
+                                        <?php else : ?>
+                                            <span class="taep-template-pro-badge">FREE</span>
                                         <?php endif; ?>
                                     </div>
                                     <?php endforeach; ?>
