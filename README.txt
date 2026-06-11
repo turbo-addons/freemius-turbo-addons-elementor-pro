@@ -6,7 +6,7 @@ Tested up to: 7.0
 Requires PHP: 7.4
 Stable tag: 1.9.0
 License: GPLv3
-License URI: https://opensource.org/licenses/GPL-3.0  
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Turbo Addons Pro unlocks premium Elementor widgets with advanced design, speed tools & full customization options.
 

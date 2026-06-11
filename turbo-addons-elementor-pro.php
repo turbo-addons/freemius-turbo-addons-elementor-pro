@@ -5,6 +5,7 @@
  * Description: Turbo Addons for Elementor gives you everything: 90+ advanced widgets, WooCommerce support, and 200+ prebuilt templates — all built for easy drag & drop design. Customize every part of your site, fast and code-free!
  * Version: 1.9.0
  * Requires at least: 5.0
+ * Requires Plugins: elementor, turbo-addons-elementor
  * Requires PHP: 7.4
  * Tested up to: 7.0
  * Author: Turbo Addons Pro
