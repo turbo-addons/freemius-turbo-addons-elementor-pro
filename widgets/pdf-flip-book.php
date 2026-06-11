@@ -19,7 +19,7 @@ class Trad_Flip_Book extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__('PDF Flip Book', 'turbo-addons-elementor-pro');
+        return esc_html__('PDF Flip Book', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -38,7 +38,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => __('PDF Library', 'turbo-addons-elementor-pro'),
+                'label' => __('PDF Library', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -48,31 +48,31 @@ class Trad_Flip_Book extends Widget_Base {
         $repeater->add_control(
             'item_title',
             [
-                'label'       => __('Title', 'turbo-addons-elementor-pro'),
+                'label'       => __('Title', 'freemius-turbo-addons-elementor-pro'),
                 'type'        => Controls_Manager::TEXT,
-                'default'     => __('Item Title', 'turbo-addons-elementor-pro'),
+                'default'     => __('Item Title', 'freemius-turbo-addons-elementor-pro'),
                 'label_block' => true,
-                'description' => __('Only Show 15 characters', 'turbo-addons-elementor-pro'), // UI hint
+                'description' => __('Only Show 15 characters', 'freemius-turbo-addons-elementor-pro'), // UI hint
             ]
         );
 
         $repeater->add_control(
             'item_type',
             [
-                'label'   => __('Select Type', 'turbo-addons-elementor-pro'),
+                'label'   => __('Select Type', 'freemius-turbo-addons-elementor-pro'),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'image',
                 'options' => [
-                    'image' => __('Image', 'turbo-addons-elementor-pro'),
-                    'icon'  => __('Icon', 'turbo-addons-elementor-pro'),
+                    'image' => __('Image', 'freemius-turbo-addons-elementor-pro'),
+                    'icon'  => __('Icon', 'freemius-turbo-addons-elementor-pro'),
                 ],
-                'description' => __('Choose Image or Icon. The same option must be selected under Style → Sidebar Tab Item for styling.', 'turbo-addons-elementor-pro'),
+                'description' => __('Choose Image or Icon. The same option must be selected under Style → Sidebar Tab Item for styling.', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
         $repeater->add_control(
             'item_image',
             [
-                'label' => __('Feature Image', 'turbo-addons-elementor-pro'),
+                'label' => __('Feature Image', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -86,7 +86,7 @@ class Trad_Flip_Book extends Widget_Base {
         $repeater->add_control(
             'item_icon',
             [
-                'label' => esc_html__('Icon', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Icon', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-check',
@@ -101,22 +101,22 @@ class Trad_Flip_Book extends Widget_Base {
         $repeater->add_control(
             'item_url',
             [
-                'label' => __('URL', 'turbo-addons-elementor-pro'),
+                'label' => __('URL', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::URL,
-                'placeholder' => __('https://example.com', 'turbo-addons-elementor-pro'),
-                'description' => __('Upload your PDF anywhere and paste the live link here. Only public links work, local URLs not supported.', 'turbo-addons-elementor-pro'),
+                'placeholder' => __('https://example.com', 'freemius-turbo-addons-elementor-pro'),
+                'description' => __('Upload your PDF anywhere and paste the live link here. Only public links work, local URLs not supported.', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
         $this->add_control(
             'items_list',
             [
-                'label' => __('Items', 'turbo-addons-elementor-pro'),
+                'label' => __('Items', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'item_title' => __('Item #1', 'turbo-addons-elementor-pro'),
+                        'item_title' => __('Item #1', 'freemius-turbo-addons-elementor-pro'),
                         'item_image' => ['url' => Utils::get_placeholder_image_src()],
                         'item_url' => ['url' => '#'],
                     ],
@@ -129,7 +129,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->start_controls_section(
             'pdf_box_section',
             [
-                'label' => esc_html__('Box', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Box', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -138,7 +138,7 @@ class Trad_Flip_Book extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'     => 'pdf_box_background_color',
-                'label'    => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'], 
                 'selector' => '{{WRAPPER}} .trad-pdf-ifram-section',
             ]
@@ -147,7 +147,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'pdf_box_padding',
             [
-                'label' => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -166,7 +166,7 @@ class Trad_Flip_Book extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'pdf_box_border',
-                'label'    => esc_html__('Border', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-pdf-ifram-section',
             ]
         );
@@ -174,7 +174,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'pdf_box_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -188,7 +188,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->start_controls_section(
             'pdf_heading_section',
             [
-                'label' => esc_html__('Heading', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Heading', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -197,7 +197,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_control(
             'trad_pdf_flip_book_title_color',
             [
-                'label'     => esc_html__( 'Color', 'turbo-addons-elementor-pro' ),
+                'label'     => esc_html__( 'Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '#333333',
                 'selectors' => [
@@ -211,7 +211,7 @@ class Trad_Flip_Book extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_pdf_flip_book_title_typography',
-                'label'    => esc_html__( 'Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-pdf-flip-book-title',
             ]
         );
@@ -220,19 +220,19 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'trad_pdf_flip_book_title_alignment',
             [
-                'label'   => esc_html__( 'Alignment', 'turbo-addons-elementor-pro' ),
+                'label'   => esc_html__( 'Alignment', 'freemius-turbo-addons-elementor-pro' ),
                 'type'    => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
+                        'title' => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'  => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__( 'Center', 'turbo-addons-elementor-pro' ),
+                        'title' => esc_html__( 'Center', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'  => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
+                        'title' => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'  => 'eicon-text-align-right',
                     ],
                 ],
@@ -247,7 +247,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'trad_pdf_flip_book_title_margin',
             [
-                'label'      => esc_html__( 'Margin', 'turbo-addons-elementor-pro' ),
+                'label'      => esc_html__( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
@@ -268,7 +268,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'trad_pdf_flip_book_title_padding',
             [
-                'label'      => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+                'label'      => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
@@ -282,14 +282,14 @@ class Trad_Flip_Book extends Widget_Base {
         $this->start_controls_section(
             'trad_active_item_section',
             [
-                'label' => esc_html__('Active Item', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Active Item', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'trad_pdf_tab_item_active_color',
             [
-                'label' => esc_html__('Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Color', 'freemius-turbo-addons-elementor-pro'),
                 'type'  => Controls_Manager::COLOR,
                 'default' => '#424242ff',
                 'selectors' => [
@@ -303,7 +303,7 @@ class Trad_Flip_Book extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'     => 'trad_pdf_tab_item_active_background_color',
-                'label'    => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .pdf-side-sidebar-section li.active',
             ]
@@ -314,7 +314,7 @@ class Trad_Flip_Book extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'trad_pdf_tab_item_active_border',
-                'label'    => esc_html__( 'Border', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .pdf-side-sidebar-section li.active',
             ]
         );
@@ -323,7 +323,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'trad_pdf_tab_item_active_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -338,7 +338,7 @@ class Trad_Flip_Book extends Widget_Base {
          $this->start_controls_section(
             'layout_section',
             [
-                'label' => esc_html__('Layout Settings', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Layout Settings', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -347,23 +347,23 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'trad_pdf_flip_book_flex_direction',
             [
-                'label' => esc_html__('Direction', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Direction', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'row' => [
-                        'title' => esc_html__('Row', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Row', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'column' => [
-                        'title' => esc_html__('Column', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Column', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-v-align-top',
                     ],
                     'row-reverse' => [
-                        'title' => esc_html__('Row Reverse', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Row Reverse', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-h-align-right',
                     ],
                     'column-reverse' => [
-                        'title' => esc_html__('Column Reverse', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Column Reverse', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-v-align-bottom',
                     ],
                 ],
@@ -377,7 +377,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'section_width',
             [
-                'label' => __('Width', 'turbo-addons-elementor-pro'),
+                'label' => __('Width', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em', 'vw'], // Allow multiple units
                 'range' => [
@@ -415,7 +415,7 @@ class Trad_Flip_Book extends Widget_Base {
           $this->add_control(
             'trad_pdf_sidebar_section_spacing_heading',
             [
-                'label'     => esc_html__( 'Spacing', 'turbo-addons-elementor-pro' ),
+                'label'     => esc_html__( 'Spacing', 'freemius-turbo-addons-elementor-pro' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -424,7 +424,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'trad_pdf_iframe_section_margin_right',
             [
-                'label' => esc_html__( 'Space', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Space', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'em' ],
                 'range' => [
@@ -453,7 +453,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'trad_pdf_iframe_section_margin_right_row_reverse',
             [
-                'label' => esc_html__( 'Space', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Space', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'em' ],
                 'range' => [
@@ -482,7 +482,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'trad_pdf_iframe_section_margin_right_column',
             [
-                'label' => esc_html__( 'Space', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Space', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'em' ],
                 'range' => [
@@ -511,7 +511,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'trad_pdf_iframe_section_margin_right_column_reverse',
             [
-                'label' => esc_html__( 'Space', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Space', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'em' ],
                 'range' => [
@@ -543,7 +543,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->start_controls_section(
             'pdf_tab_section',
             [
-                'label' => esc_html__('Sidebar Tab', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Sidebar Tab', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -552,7 +552,7 @@ class Trad_Flip_Book extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'     => 'pdf_tab_sidebar_background',
-                'label'    => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types'    => ['classic', 'gradient'], 
                 'selector' => '{{WRAPPER}} .pdf-side-sidebar-section',
             ]
@@ -562,7 +562,7 @@ class Trad_Flip_Book extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'pdf_tab_sidebar_border',
-                'label'    => esc_html__('Border', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .pdf-side-sidebar-section',
             ]
         );
@@ -570,7 +570,7 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'pdf_tab_sidebar_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -583,23 +583,23 @@ class Trad_Flip_Book extends Widget_Base {
         $this->add_responsive_control(
             'tab_flex_direction',
             [
-                'label' => esc_html__('Direction', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Direction', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'row' => [
-                        'title' => esc_html__('Row', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Row', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'column' => [
-                        'title' => esc_html__('Column', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Column', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-v-align-top',
                     ],
                     'row-reverse' => [
-                        'title' => esc_html__('Row Reverse', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Row Reverse', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-h-align-right',
                     ],
                     'column-reverse' => [
-                        'title' => esc_html__('Column Reverse', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Column Reverse', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-v-align-bottom',
                     ],
                 ],
@@ -615,7 +615,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'tab_bar_width',
                 [
-                    'label' => esc_html__('Width', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Width', 'freemius-turbo-addons-elementor-pro'),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => ['%', 'px', 'em', 'vw'],
                     'range' => [
@@ -635,33 +635,33 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'tab_justify_content',
                 [
-                    'label' => esc_html__('Alignment', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Alignment', 'freemius-turbo-addons-elementor-pro'),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'flex-end' => [
-                            'title' => esc_html__('Start', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Start', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-text-align-right',
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => esc_html__('Center', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Center', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-text-align-center',
                         ],
                         
                         'flex-start' => [
-                            'title' => esc_html__('End', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('End', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'space-between' => [
-                            'title' => esc_html__('Space Between', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Space Between', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-flex eicon-justify-space-between-h',
                         ],
                         'space-around' => [
-                            'title' => esc_html__('Space Around', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Space Around', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-flex eicon-justify-space-around-h',
                         ],
                         'space-evenly' => [
-                            'title' => esc_html__('Space Evenly', 'turbo-addons-elementor-pro'),
+                            'title' => esc_html__('Space Evenly', 'freemius-turbo-addons-elementor-pro'),
                             'icon' => 'eicon-flex eicon-justify-space-evenly-h',
                         ],
                     ],
@@ -678,7 +678,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->start_controls_section(
                 'pdf_tab_item_section',
                 [
-                    'label' => esc_html__('Sidebar Tab Item', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Sidebar Tab Item', 'freemius-turbo-addons-elementor-pro'),
                     'tab' => Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -686,14 +686,14 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_control(
                 'item_type',
                 [
-                    'label'   => __('Item Type', 'turbo-addons-elementor-pro'),
+                    'label'   => __('Item Type', 'freemius-turbo-addons-elementor-pro'),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'image',
                     'options' => [
-                        'image' => __('Image', 'turbo-addons-elementor-pro'),
-                        'icon'  => __('Icon', 'turbo-addons-elementor-pro'),
+                        'image' => __('Image', 'freemius-turbo-addons-elementor-pro'),
+                        'icon'  => __('Icon', 'freemius-turbo-addons-elementor-pro'),
                     ],
-                    'description' => __('Choose Image or Icon. Make sure the same option is selected in Content → PDF Library → Items → Select Type.', 'turbo-addons-elementor-pro'),
+                    'description' => __('Choose Image or Icon. Make sure the same option is selected in Content → PDF Library → Items → Select Type.', 'freemius-turbo-addons-elementor-pro'),
                 ]
             );
 
@@ -702,14 +702,14 @@ class Trad_Flip_Book extends Widget_Base {
             $this->start_controls_tab(
                 'trad_pdf_tab_section_normal',
                 [
-                    'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
                 ]
             );
 
             $this->add_control(
                 'trad_pdf_tab_item_body_style_heading',
                 [
-                    'label'     => esc_html__( 'Body', 'turbo-addons-elementor-pro' ),
+                    'label'     => esc_html__( 'Body', 'freemius-turbo-addons-elementor-pro' ),
                     'type'      => Controls_Manager::HEADING,
                     'separator' => 'after', // optional: ekta line separator dibe
                 ]
@@ -719,7 +719,7 @@ class Trad_Flip_Book extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name'     => 'trad_pdf_tab_item_border',
-                    'label'    => esc_html__('Border', 'turbo-addons-elementor-pro'),
+                    'label'    => esc_html__('Border', 'freemius-turbo-addons-elementor-pro'),
                     'selector' => '{{WRAPPER}} .pdf-side-sidebar-section li',
                 ]
             );
@@ -727,7 +727,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_control(
                 'trad_pdf_tab_item_icon_style_heading',
                 [
-                    'label'     => esc_html__( 'Icon', 'turbo-addons-elementor-pro' ),
+                    'label'     => esc_html__( 'Icon', 'freemius-turbo-addons-elementor-pro' ),
                     'type'      => Controls_Manager::HEADING,
                     'separator' => 'after', // optional: ekta line separator dibe
                     'condition' => [
@@ -740,7 +740,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_control(
                 'trad_pdf_tab_icon_color',
                 [
-                    'label' => esc_html__('Color', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Color', 'freemius-turbo-addons-elementor-pro'),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#000000',
                     'selectors' => [
@@ -757,7 +757,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_icon_size',
                 [
-                    'label' => esc_html__( 'Size', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Size', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -783,7 +783,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_icon_margin',
                 [
-                    'label'      => esc_html__( 'Margin', 'turbo-addons-elementor-pro' ),
+                    'label'      => esc_html__( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => ['px', '%', 'em'],
                     'selectors'  => [
@@ -807,7 +807,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_icon_padding',
                 [
-                    'label'      => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+                    'label'      => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => ['px', '%', 'em'],
                     'selectors'  => [
@@ -824,7 +824,7 @@ class Trad_Flip_Book extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name'     => 'trad_pdf_tab_icon_border',
-                    'label'    => esc_html__( 'Border', 'turbo-addons-elementor-pro' ),
+                    'label'    => esc_html__( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                     'selector' => '{{WRAPPER}} .trad-pdf-list-item',
                     'condition' => [
                         'item_type' => 'icon',
@@ -836,7 +836,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_icon_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors' => [
@@ -851,7 +851,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_control(
                 'trad_pdf_tab_item_image_style_heading',
                 [
-                    'label'     => esc_html__( 'Image', 'turbo-addons-elementor-pro' ),
+                    'label'     => esc_html__( 'Image', 'freemius-turbo-addons-elementor-pro' ),
                     'type'      => Controls_Manager::HEADING,
                     'separator' => 'after', // optional: ekta line separator dibe
                     'condition' => [
@@ -864,7 +864,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_item_image_width',
                 [
-                    'label' => esc_html__( 'Width', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Width', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -894,7 +894,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_item_image_height',
                 [
-                    'label' => esc_html__( 'Height', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Height', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -924,7 +924,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_item_image_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -939,7 +939,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_item_image_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -956,7 +956,7 @@ class Trad_Flip_Book extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name'     => 'trad_pdf_tab_item_image_border',
-                    'label'    => esc_html__( 'Border', 'turbo-addons-elementor-pro' ),
+                    'label'    => esc_html__( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                     'selector' => '{{WRAPPER}} .pdf-side-sidebar-section li img',
                     'condition' => [
                         'item_type' => 'image',
@@ -968,7 +968,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_item_image_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors' => [
@@ -983,7 +983,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_control(
                 'trad_pdf_tab_item_text_style_heading',
                 [
-                    'label'     => esc_html__( 'Text', 'turbo-addons-elementor-pro' ),
+                    'label'     => esc_html__( 'Text', 'freemius-turbo-addons-elementor-pro' ),
                     'type'      => Controls_Manager::HEADING,
                     'separator' => 'after', // optional: ekta line separator dibe
                 ]
@@ -992,7 +992,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_control(
                 'trad_pdf_tab_item_color',
                 [
-                    'label' => esc_html__('Color', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Color', 'freemius-turbo-addons-elementor-pro'),
                     'type'  => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .pdf-side-sidebar-section p' => 'color: {{VALUE}};',
@@ -1005,7 +1005,7 @@ class Trad_Flip_Book extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'trad_pdf_tab_item_typography',
-                    'label' => esc_html__( 'Typography', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                     'selector' => '{{WRAPPER}} .pdf-side-sidebar-section p',
                 ]
             );
@@ -1014,7 +1014,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_item_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1027,7 +1027,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_item_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1041,13 +1041,13 @@ class Trad_Flip_Book extends Widget_Base {
             $this->start_controls_tab(
                 'trad_pdf_tab_section_hover',
                 [
-                    'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
                 ]
             );
             $this->add_control(
                 'trad_pdf_tab_item_heading_hover',
                 [
-                    'label'     => esc_html__( 'Body', 'turbo-addons-elementor-pro' ),
+                    'label'     => esc_html__( 'Body', 'freemius-turbo-addons-elementor-pro' ),
                     'type'      => Controls_Manager::HEADING,
                     'separator' => 'after', // optional: ekta line separator dibe
                 ]
@@ -1055,7 +1055,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_control(
                 'trad_pdf_tab_section_hover_transition',
                 [
-                    'label' => esc_html__('Transition', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Transition', 'freemius-turbo-addons-elementor-pro'),
                     'type'  => Controls_Manager::SLIDER,
                     'size_units' => ['s'],
                     'range' => [
@@ -1080,7 +1080,7 @@ class Trad_Flip_Book extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name'     => 'trad_pdf_tab_item_hover_background_color',
-                    'label'    => esc_html__('Background', 'turbo-addons-elementor-pro'),
+                    'label'    => esc_html__('Background', 'freemius-turbo-addons-elementor-pro'),
                     'types'    => ['classic', 'gradient'], 
                     'selector' => '{{WRAPPER}} .pdf-side-sidebar-section li:hover',
                 ]
@@ -1089,14 +1089,14 @@ class Trad_Flip_Book extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name'     => 'trad_pdf_tab_item_hover_border',
-                    'label'    => esc_html__('Border', 'turbo-addons-elementor-pro'),
+                    'label'    => esc_html__('Border', 'freemius-turbo-addons-elementor-pro'),
                     'selector' => '{{WRAPPER}} .pdf-side-sidebar-section li:hover',
                 ]
             );
             $this->add_responsive_control(
                 'trad_pdf_tab_item_hover_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors' => [
@@ -1107,7 +1107,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_control(
                 'trad_pdf_tab_item_heading_text_hover',
                 [
-                    'label'     => esc_html__( 'Text', 'turbo-addons-elementor-pro' ),
+                    'label'     => esc_html__( 'Text', 'freemius-turbo-addons-elementor-pro' ),
                     'type'      => Controls_Manager::HEADING,
                     'separator' => 'after', // optional: ekta line separator dibe
                 ]
@@ -1116,7 +1116,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_control(
                 'trad_pdf_tab_item_hover_color',
                 [
-                    'label' => esc_html__('Color', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Color', 'freemius-turbo-addons-elementor-pro'),
                     'type'  => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .pdf-side-sidebar-section li:hover, 
@@ -1130,7 +1130,7 @@ class Trad_Flip_Book extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'trad_pdf_tab_item_hover_typography',
-                    'label' => esc_html__( 'Typography', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                     'selector' => '{{WRAPPER}} .pdf-side-sidebar-section li:hover, {{WRAPPER}} .pdf-side-sidebar-section li:hover *',
                 ]
             );
@@ -1139,7 +1139,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_item_hover_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1152,7 +1152,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_item_hover_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1164,7 +1164,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_control(
                 'trad_pdf_tab_item_heading_icon_hover',
                 [
-                    'label'     => esc_html__( 'Icon', 'turbo-addons-elementor-pro' ),
+                    'label'     => esc_html__( 'Icon', 'freemius-turbo-addons-elementor-pro' ),
                     'type'      => Controls_Manager::HEADING,
                     'separator' => 'after', // optional: ekta line separator dibe
                     'condition' => [
@@ -1177,7 +1177,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_control(
                 'trad_pdf_tab_icon_hover_color',
                 [
-                    'label' => esc_html__('Color', 'turbo-addons-elementor-pro'),
+                    'label' => esc_html__('Color', 'freemius-turbo-addons-elementor-pro'),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .pdf-side-sidebar-section li:hover .trad-pdf-list-item i'   => 'color: {{VALUE}};',
@@ -1190,7 +1190,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_icon_hover_size',
                 [
-                    'label' => esc_html__( 'Size', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Size', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -1210,7 +1210,7 @@ class Trad_Flip_Book extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name'     => 'trad_pdf_tab_icon_hover_border',
-                    'label'    => esc_html__( 'Border', 'turbo-addons-elementor-pro' ),
+                    'label'    => esc_html__( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                     'selector' => '{{WRAPPER}} .pdf-side-sidebar-section li:hover .trad-pdf-list-item',
                 ]
             );
@@ -1219,7 +1219,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_icon_hover_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors' => [
@@ -1233,7 +1233,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_control(
                 'trad_pdf_tab_item_heading_image_hover',
                 [
-                    'label'     => esc_html__( 'Image', 'turbo-addons-elementor-pro' ),
+                    'label'     => esc_html__( 'Image', 'freemius-turbo-addons-elementor-pro' ),
                     'type'      => Controls_Manager::HEADING,
                     'separator' => 'after', // optional: ekta line separator dibe
                     'condition' => [
@@ -1247,7 +1247,7 @@ class Trad_Flip_Book extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name'     => 'trad_pdf_tab_item_image_hover_border',
-                    'label'    => esc_html__( 'Border (Hover)', 'turbo-addons-elementor-pro' ),
+                    'label'    => esc_html__( 'Border (Hover)', 'freemius-turbo-addons-elementor-pro' ),
                     'selector' => '{{WRAPPER}} .pdf-side-sidebar-section li:hover img',
                     'condition' => [
                         'item_type' => 'image',
@@ -1259,7 +1259,7 @@ class Trad_Flip_Book extends Widget_Base {
             $this->add_responsive_control(
                 'trad_pdf_tab_item_image_hover_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors' => [

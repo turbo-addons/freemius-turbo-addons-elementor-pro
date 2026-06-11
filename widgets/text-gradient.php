@@ -19,7 +19,7 @@ class TRAD_Text_Gradient extends Widget_Base {
     }
 
     public function get_title() {
-        return __('Text Gradient', 'turbo-addons-elementor-pro');
+        return __('Text Gradient', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -36,7 +36,7 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => __('Content', 'turbo-addons-elementor-pro'),
+                'label' => __('Content', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -44,11 +44,11 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->add_control(
             'skin_select',
             [
-                'label' => esc_html__( 'Select Skin', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Select Skin', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'skin-1' => esc_html__( 'Skin 1', 'turbo-addons-elementor-pro' ),
-                    'skin-2' => esc_html__( 'Skin 2', 'turbo-addons-elementor-pro' ),
+                    'skin-1' => esc_html__( 'Skin 1', 'freemius-turbo-addons-elementor-pro' ),
+                    'skin-2' => esc_html__( 'Skin 2', 'freemius-turbo-addons-elementor-pro' ),
                 ],
                 'default' => 'skin-1',
             ]
@@ -57,9 +57,9 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->add_control(
             'top_text',
             [
-                'label' => __('Text', 'turbo-addons-elementor-pro'),
+                'label' => __('Text', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::TEXT,
-                'default' => __('abstract', 'turbo-addons-elementor-pro'),
+                'default' => __('abstract', 'freemius-turbo-addons-elementor-pro'),
                 'label_block' => true,
             ]
         );
@@ -68,7 +68,7 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->start_controls_section(
             'style_box_section',
             [
-                'label' => __('Box', 'turbo-addons-elementor-pro'),
+                'label' => __('Box', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         ); 
@@ -78,7 +78,7 @@ class TRAD_Text_Gradient extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'text_gradient_skin_one_background',
-                'label' => __('Background', 'turbo-addons-elementor-pro'),
+                'label' => __('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-text-gradient-skin-one-container',
                 'condition' => [
@@ -90,7 +90,7 @@ class TRAD_Text_Gradient extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'text_gradient_skin_two_background',
-                'label' => __('Background', 'turbo-addons-elementor-pro'),
+                'label' => __('Background', 'freemius-turbo-addons-elementor-pro'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-text-gradient-skin-two-container',
                 'condition' => [
@@ -103,7 +103,7 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->add_responsive_control(
             'text_gradient_skin_one_padding',
             [
-                'label'      => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
@@ -118,7 +118,7 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->add_responsive_control(
             'text_gradient_skin_two_padding',
             [
-                'label'      => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
@@ -135,7 +135,7 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->add_responsive_control(
             'text_gradient_skin_one_margin',
             [
-                'label'      => esc_html__('Margin', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
@@ -150,7 +150,7 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->add_responsive_control(
             'text_gradient_skin_two_margin',
             [
-                'label'      => esc_html__('Margin', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
@@ -167,7 +167,7 @@ class TRAD_Text_Gradient extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'text_gradient_skin_one_border',
-                'label'    => esc_html__('Border', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-text-gradient-skin-one-container',
                 'condition' => [
                     'skin_select' => 'skin-1',
@@ -178,7 +178,7 @@ class TRAD_Text_Gradient extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'text_gradient_skin_two_border',
-                'label'    => esc_html__('Border', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-text-gradient-skin-two-container',
                 'condition' => [
                     'skin_select' => 'skin-2',
@@ -190,7 +190,7 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->add_responsive_control(
             'text_gradient_skin_one_radius',
             [
-                'label'      => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -205,7 +205,7 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->add_responsive_control(
             'text_gradient_skin_two_radius',
             [
-                'label'      => esc_html__('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => esc_html__('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -222,7 +222,7 @@ class TRAD_Text_Gradient extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'text_gradient_skin_one_shadow',
-                'label'    => esc_html__('Box Shadow', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-text-gradient-skin-one-container',
                 'condition' => [
                     'skin_select' => 'skin-1',
@@ -234,7 +234,7 @@ class TRAD_Text_Gradient extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'text_gradient_skin_two_shadow',
-                'label'    => esc_html__('Box Shadow', 'turbo-addons-elementor-pro'),
+                'label'    => esc_html__('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-text-gradient-skin-two-container',
                 'condition' => [
                     'skin_select' => 'skin-2',
@@ -248,7 +248,7 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->start_controls_section(
             'style_section',
             [
-                'label' => __('Content', 'turbo-addons-elementor-pro'),
+                'label' => __('Content', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -257,7 +257,7 @@ class TRAD_Text_Gradient extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'text_gradient_skin_one_content_background',
-                'label' => __('Text Background', 'turbo-addons-elementor-pro'),
+                'label' => __('Text Background', 'freemius-turbo-addons-elementor-pro'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-text-gradient-skin-one-content',
                 'condition' => [
@@ -270,7 +270,7 @@ class TRAD_Text_Gradient extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'text_gradient_skin_two_content_background',
-                'label' => __('Text Background', 'turbo-addons-elementor-pro'),
+                'label' => __('Text Background', 'freemius-turbo-addons-elementor-pro'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .trad-text-gradient-skin-animated',
                 'condition' => [
@@ -284,7 +284,7 @@ class TRAD_Text_Gradient extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'text_gradient_skin_one_content_typography', // Unique name for the control
-                'label'    => esc_html__( 'Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-text-gradient-skin-one-top-line',
                 'condition' => [
                     'skin_select' => 'skin-1',
@@ -296,7 +296,7 @@ class TRAD_Text_Gradient extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'text_gradient_skin_two_content_typography', // Unique name for the control
-                'label'    => esc_html__( 'Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-text-gradient-skin-animated',
                 'condition' => [
                     'skin_select' => 'skin-2',
@@ -309,19 +309,19 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->add_control(
             'text_gradient_skin_one_content_align',
             [
-                'label' => __('Text Alignment', 'turbo-addons-elementor-pro'),
+                'label' => __('Text Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'title' => __('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'title' => __('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'title' => __('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -339,19 +339,19 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->add_control(
             'text_gradient_skin_two_content_align',
             [
-                'label' => __('Text Alignment', 'turbo-addons-elementor-pro'),
+                'label' => __('Text Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'flex-start' => [
-                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'title' => __('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'title' => __('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'flex-end' => [
-                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'title' => __('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -369,7 +369,7 @@ class TRAD_Text_Gradient extends Widget_Base {
         $this->add_control(
             'text_gradient_skin_animated_speed',
             [
-                'label' => __('Animation Speed (Seconds)', 'turbo-addons-elementor-pro'),
+                'label' => __('Animation Speed (Seconds)', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['s'],
                 'range' => [

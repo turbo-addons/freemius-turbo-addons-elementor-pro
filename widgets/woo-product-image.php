@@ -19,7 +19,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
     }
 
     public function get_title() {
-        return __('WOO Product Image', 'turbo-addons-elementor-pro');
+        return __('WOO Product Image', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -47,7 +47,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->start_controls_section(
             'trad_woo_product_title_content_section',
             [
-                'label' => esc_html__( 'Content', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Content', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 
@@ -55,12 +55,12 @@ class TRAD_WOO_Product_Image extends Widget_Base {
 		$this->add_control(
             'trad_woo_product_thumb_view_style',
             [
-                'label'   => esc_html__( 'Thumbnail View', 'turbo-addons-elementor-pro' ),
+                'label'   => esc_html__( 'Thumbnail View', 'freemius-turbo-addons-elementor-pro' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'default',
                 'prefix_class' => 'trad-woo-product-thumb-view-',
                 'options' => [
-					'default'   => esc_html__( 'Default', 'turbo-addons-elementor-pro' ),                    
+					'default'   => esc_html__( 'Default', 'freemius-turbo-addons-elementor-pro' ),                    
                 ]
             ]
         );
@@ -68,7 +68,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_control(
             'trad_woo_product_image_before',
             [
-                'label'   => esc_html__( 'Text Before Image', 'turbo-addons-elementor-pro' ),
+                'label'   => esc_html__( 'Text Before Image', 'freemius-turbo-addons-elementor-pro' ),
                 'type'    => Controls_Manager::TEXTAREA
             ]
         );
@@ -81,7 +81,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->start_controls_section(
             'trad_woo_product_image_container_style_section',
             [
-                'label' => esc_html__( 'Container', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Container', 'freemius-turbo-addons-elementor-pro' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -98,7 +98,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_product_image_container_padding',
 			[
-				'label'         => __( 'Padding', 'turbo-addons-elementor-pro' ),
+				'label'         => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 				'type'          => Controls_Manager::DIMENSIONS,
 				'size_units'    => [ 'px', '%' ],
 				'default'       => [
@@ -118,7 +118,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_product_image_container_margin',
 			[
-				'label'        => __( 'Margin', 'turbo-addons-elementor-pro' ),
+				'label'        => __( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
 				'type'         => Controls_Manager::DIMENSIONS,
 				'size_units'   => [ 'px', '%' ],
 				'default'      => [
@@ -138,7 +138,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_responsive_control(
 			'trad_woo_product_image_container_radius',
 			[
-				'label'      => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+				'label'      => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'default'    => [
@@ -178,7 +178,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->start_controls_section(
             'trad_woo_product_image_style_section',
             [
-                'label' => esc_html__( 'Image', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Image', 'freemius-turbo-addons-elementor-pro' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -186,10 +186,10 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_control(
             'trad_woo_product_image_enable_sale_flash',
             [
-                'label'        => __( 'Enable Sale Flash', 'turbo-addons-elementor-pro' ),
+                'label'        => __( 'Enable Sale Flash', 'freemius-turbo-addons-elementor-pro' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Show', 'turbo-addons-elementor-pro' ),
-                'label_off'    => __( 'Hide', 'turbo-addons-elementor-pro' ),
+                'label_on'     => __( 'Show', 'freemius-turbo-addons-elementor-pro' ),
+                'label_off'    => __( 'Hide', 'freemius-turbo-addons-elementor-pro' ),
                 'return_value' => 'yes',
                 'default'      => 'yes',
             ]
@@ -199,7 +199,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' 		=> 'trad_woo_product_image_border',
-				'label' 	=> __( 'Border', 'turbo-addons-elementor-pro' ),
+				'label' 	=> __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' 	=> '{{WRAPPER}} .trad-woo-product-image .images img.wp-post-image',
 			]
         );
@@ -207,7 +207,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_product_image_border_radius',
             [
-                'label'         => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+                'label'         => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type'          => Controls_Manager::DIMENSIONS,
                 'default'       => [
                     'top'       => '0',
@@ -227,7 +227,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' 		=> 'trad_woo_product_image_box_shadow',
-				'label' 	=> __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+				'label' 	=> __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' 	=> '{{WRAPPER}} .trad-woo-product-image .images img.wp-post-image',
 			]
 		);
@@ -240,7 +240,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
 		$this->start_controls_section(
             'trad_woo_product_image_sale_style',
             [
-                'label'     => __( 'Sale Tags', 'turbo-addons-elementor-pro' ),
+                'label'     => __( 'Sale Tags', 'freemius-turbo-addons-elementor-pro' ),
                 'tab'       => Controls_Manager::TAB_STYLE
             ]
         );
@@ -248,7 +248,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_product_image_sale_tag_left_position',
             [
-                'label'         => esc_html__('Horizontal Position', 'turbo-addons-elementor-pro' ),
+                'label'         => esc_html__('Horizontal Position', 'freemius-turbo-addons-elementor-pro' ),
                 'type'          => Controls_Manager::SLIDER,
                 'default'       => [
                     'size'      => 20,
@@ -270,7 +270,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_product_image_sale_tag_top_position',
             [
-                'label'         => esc_html__('Vertical Position', 'turbo-addons-elementor-pro' ),
+                'label'         => esc_html__('Vertical Position', 'freemius-turbo-addons-elementor-pro' ),
                 'type'          => Controls_Manager::SLIDER,
                 'default'       => [
                     'size'      => 20,
@@ -292,7 +292,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_product_image_sale_height',
             [
-                'label'         => esc_html__('Sale Height', 'turbo-addons-elementor-pro' ),
+                'label'         => esc_html__('Sale Height', 'freemius-turbo-addons-elementor-pro' ),
                 'type'          => Controls_Manager::SLIDER,
                 'selectors'     => [
                     '.woocommerce {{WRAPPER}} .trad-woo-product-image span.onsale' => 'min-height: {{SIZE}}{{UNIT}}; line-height: {{SIZE}}{{UNIT}};'
@@ -314,7 +314,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_product_image_sale_tag_padding',
             [
-                'label'         => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+                'label'         => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
                 'type'          => Controls_Manager::DIMENSIONS,            
                 'size_units'    => [ 'px', 'em', '%' ],
                 'default'       => [
@@ -334,7 +334,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_product_image_sale_tag_border_radius',
             [
-                'label'         => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+                'label'         => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type'          => Controls_Manager::DIMENSIONS,
                 'size_units'    => [ 'px', '%' ],
                 'default'    => [
@@ -354,7 +354,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_control(
             'trad_woo_product_image_sale_tag_style',
             [
-                'label'         => esc_html__( 'Sale Tag', 'turbo-addons-elementor-pro' ),
+                'label'         => esc_html__( 'Sale Tag', 'freemius-turbo-addons-elementor-pro' ),
                 'type'          => Controls_Manager::HEADING
             ]
         );
@@ -362,7 +362,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_control(
             'trad_woo_product_image_sale_tag_color',
             [
-                'label'     => esc_html__( 'Color', 'turbo-addons-elementor-pro' ),
+                'label'     => esc_html__( 'Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '#ffffff',
                 'selectors' => [
@@ -374,7 +374,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_control(
             'trad_woo_product_image_sale_tag_bg_color',
             [
-                'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+                'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '#2E3195',
                 'selectors' => [
@@ -400,7 +400,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->start_controls_section(
             'trad_woo_product_image_thumbnail_style',
             [
-                'label' => esc_html__( 'Product Gallery', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Product Gallery', 'freemius-turbo-addons-elementor-pro' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -410,7 +410,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' 		=> 'trad_woo_product_image_thumbnail_border',
-				'label' 	=> __( 'Border', 'turbo-addons-elementor-pro' ),
+				'label' 	=> __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' 	=> '{{WRAPPER}} .trad-woo-product-image .images .flex-control-thumbs li img',
 			]
         );
@@ -418,7 +418,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_product_image_thumbnail_border_radius',
             [
-                'label'         => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+                'label'         => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type'          => Controls_Manager::DIMENSIONS,
                 'default'       => [
                     'top'       => '0',
@@ -439,7 +439,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' 		=> 'trad_woo_product_image_thumbnail_box_shadow',
-				'label' 	=> __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+				'label' 	=> __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
 				'selector' 	=> '{{WRAPPER}} .trad-woo-product-image .images .flex-control-thumbs li img',
 			]
 		);
@@ -450,7 +450,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
 		$this->start_controls_section(
             'trad_woo_product_image_before_after_style_section',
             [
-                'label' => esc_html__( 'Before Text', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Before Text', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
@@ -468,7 +468,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
 		$this->add_control(
 			'trad_woo_product_image_before_color',
 			[
-				'label'     => __( 'Color', 'turbo-addons-elementor-pro' ),
+				'label'     => __( 'Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#333333',
 				'selectors' => [
@@ -499,7 +499,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_product_image_before_margin',
 			[
-				'label'      => __( 'Margin', 'turbo-addons-elementor-pro' ),
+				'label'      => __( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -518,7 +518,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_responsive_control(
 			'trad_woo_product_image_before_padding',
 			[
-				'label'      => __( 'Padding', 'turbo-addons-elementor-pro' ),
+				'label'      => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -537,21 +537,21 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_product_image_before_alignment',
             [
-                'label'         => esc_html__( 'Alignment', 'turbo-addons-elementor-pro' ),
+                'label'         => esc_html__( 'Alignment', 'freemius-turbo-addons-elementor-pro' ),
                 'type'          => Controls_Manager::CHOOSE,
                 'default'       => 'left',
                 'toggle'        => false,
                 'options'       => [
                     'left' => [
-                        'title'  => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
+                        'title'  => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'   => 'eicon-text-align-left'
                     ],
                     'center'     => [
-                        'title'  => esc_html__( 'Center', 'turbo-addons-elementor-pro' ),
+                        'title'  => esc_html__( 'Center', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'   => 'eicon-text-align-center'
                     ],
                     'right'   => [
-                        'title'  => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
+                        'title'  => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'   => 'eicon-text-align-right'
                     ]
                 ],
@@ -565,11 +565,11 @@ class TRAD_WOO_Product_Image extends Widget_Base {
     protected function trad_init_content_wc_notice_controls() {
         if ( ! class_exists( 'woocommerce' ) ) {
             $this->start_controls_section( 'trad_global_warning', [
-                'label' => __( 'Warning!', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Warning!', 'freemius-turbo-addons-elementor-pro' ),
             ] );
             $this->add_responsive_control( 'trad_global_warning_text', [
                 'type'            => Controls_Manager::RAW_HTML,
-                'raw'             => __( '<strong>WooCommerce</strong> is not installed/activated on your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> first.', 'turbo-addons-elementor-pro' ),
+                'raw'             => __( '<strong>WooCommerce</strong> is not installed/activated on your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> first.', 'freemius-turbo-addons-elementor-pro' ),
                 'content_classes' => 'trad-woo-warning',
             ] );
             $this->end_controls_section();
@@ -591,7 +591,8 @@ class TRAD_WOO_Product_Image extends Widget_Base {
     // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     echo '<div ' . $this->get_render_attribute_string( 'trad-woo-product-image' ) . '>';
 
-    global $product;
+    // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- WooCommerce standard global
+    global $product; 
 
     // ✅ Handle Elementor Editor Mode
     if ( \Elementor\Plugin::instance()->editor->is_edit_mode() ) {
@@ -605,15 +606,17 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         setup_postdata( $product->get_id() );
 
         ob_start();
-        $columns = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
+        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHookname -- WooCommerce core filter
+        $columns = apply_filters( 'woocommerce_product_thumbnails_columns', 4 ); 
         $thumbnail_id = $product->get_image_id();
-        $wrapper_classes = apply_filters( 'woocommerce_single_product_image_gallery_classes', array(
+       
+        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHookname -- WooCommerce core filter
+        $wrapper_classes = apply_filters( 'woocommerce_single_product_image_gallery_classes', array( 
             'woocommerce-product-gallery',
             'woocommerce-product-gallery--' . ( $thumbnail_id ? 'with-images' : 'without-images' ),
             'woocommerce-product-gallery--columns-' . absint( $columns ),
             'images',
         ) );
-
         ?>
         <div class="product">
             <div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>"
@@ -627,26 +630,20 @@ class TRAD_WOO_Product_Image extends Widget_Base {
                         $html  = '<div class="woocommerce-product-gallery__image--placeholder">';
                         $html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />',
                             esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ),
-                            esc_html__( 'Awaiting product image', 'turbo-addons-elementor-pro' ) );
+                            esc_html__( 'Awaiting product image', 'freemius-turbo-addons-elementor-pro' ) );
                         $html .= '</div>';
                     }
-                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                    echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $thumbnail_id );
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped,WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHookname -- WooCommerce core filter/output
+                    echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $thumbnail_id ); 
 
                     $attachment_ids = $product->get_gallery_image_ids();
                     if ( $attachment_ids && $thumbnail_id ) {
                         foreach ( $attachment_ids as $attachment_id ) {
-                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                            echo apply_filters(
-                                'woocommerce_single_product_image_thumbnail_html',
-                                wc_get_gallery_image_html( $attachment_id ),
-                                $attachment_id
-                            );
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped,WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHookname -- WooCommerce core filter/output
+                            echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', wc_get_gallery_image_html( $attachment_id ), $attachment_id );
                         }
                     }
 
-                    // ⚠️ Removed in Elementor editor to prevent fatal error
-                    // do_action( 'woocommerce_before_single_product_summary' );
                     ?>
                 </figure>
             </div>
@@ -666,7 +663,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
 
     } else {
         // ✅ Frontend rendering
-        $product = wc_get_product();
+        $product = wc_get_product(); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- WooCommerce standard global
 
         if ( empty( $product ) ) {
             echo '</div>';

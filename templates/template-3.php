@@ -1,3 +1,10 @@
+<?php
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+} 
+?>
+
 <div class="trad-review-archive-template-three-container">
 <div class="trad-review-archive-template-three-logo-image">
         <div class="trad-review-archive-image-section">

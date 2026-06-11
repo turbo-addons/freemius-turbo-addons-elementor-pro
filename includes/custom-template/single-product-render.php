@@ -4,35 +4,35 @@ if (!defined('ABSPATH')) {
 }
 get_header();
 
-$template_id = intval(get_option('trad_selected_single_template_id'));
+$trad_template_id = intval(get_option('trad_selected_single_template_id')); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 
-if ($template_id && class_exists('\Elementor\Plugin') && get_post_type($template_id) === 'trad_single_template') {
+if ($trad_template_id && class_exists('\Elementor\Plugin') && get_post_type($trad_template_id) === 'trad_single_template') {
 
     // Force a global $product during Elementor editor preview
     if (is_admin() && \Elementor\Plugin::$instance->editor->is_edit_mode()) {
-        $mock_product = wc_get_product();
-        if (!$mock_product) {
-            $products = wc_get_products(['limit' => 1]);
-            if (!empty($products)) {
-                $mock_product = wc_get_product($products[0]->get_id());
+        $trad_mock_product = wc_get_product(); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+        if (!$trad_mock_product) {
+            $trad_products = wc_get_products(['limit' => 1]); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+            if (!empty($trad_products)) {
+                $trad_mock_product = wc_get_product($trad_products[0]->get_id());
             }
         }
 
-        if ($mock_product) {
-            global $product;
-            $product = $mock_product;
+        if ($trad_mock_product) {
+            global $product; // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- WooCommerce standard global
+            $product = $trad_mock_product;
             setup_postdata($product->get_id());
         }
     }
 
     // Fetch the Elementor template content
-    $content = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($template_id);
+    $trad_content = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($trad_template_id); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 
-    if (!empty($content)) {
-        do_action('woocommerce_before_main_content');
-        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-        echo $content;
-        do_action('woocommerce_after_main_content');
+    if (!empty($trad_content)) {
+        do_action('woocommerce_before_main_content'); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHookname -- WooCommerce core action
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor sanitizes its own builder output
+        echo $trad_content;
+        do_action('woocommerce_after_main_content'); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHookname -- WooCommerce core action
     } else {
         echo '<p>No template selected or the selected template is empty.</p>';
     }

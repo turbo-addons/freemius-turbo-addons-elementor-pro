@@ -1,3 +1,10 @@
+<?php
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+} 
+?>
+
 <div class="trad-image-overlay-template-two-container">
   <img src="<?php echo esc_url($settings['trad_overlay_image_upload']['url']); ?>" alt="Avatar" class="trad-image-overlay-template-two-image" style="width:100%">
   <div class="trad-image-overlay-template-two-middle">

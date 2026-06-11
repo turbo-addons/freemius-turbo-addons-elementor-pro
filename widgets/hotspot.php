@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class TRAD_Hotspot_Widget extends Widget_Base {
 
     public function get_name() { return 'trad-hotspot'; }
-    public function get_title() { return esc_html__( 'Image Hotspot', 'turbo-addons-elementor-pro' ); }
+    public function get_title() { return esc_html__( 'Image Hotspot', 'freemius-turbo-addons-elementor-pro' ); }
     public function get_icon() { return 'eicon-image-hotspot trad-icon'; }
     public function get_categories() { return ['turbo-addons-pro']; }
 
@@ -24,11 +24,11 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         return [
             'condition'    => ! Utils::has_pro(),
             'image'        => esc_url( ELEMENTOR_ASSETS_URL . 'images/go-pro.svg' ),
-            'image_alt'    => esc_attr__( 'Upgrade', 'turbo-addons-elementor-pro' ),
-            'title'        => esc_html__( 'Upgrade to Pro', 'turbo-addons-elementor-pro' ),
-            'description'  => esc_html__( 'Get the Image Hotspot widget with Turbo Addons Elementor Pro.', 'turbo-addons-elementor-pro' ),
+            'image_alt'    => esc_attr__( 'Upgrade', 'freemius-turbo-addons-elementor-pro' ),
+            'title'        => esc_html__( 'Upgrade to Pro', 'freemius-turbo-addons-elementor-pro' ),
+            'description'  => esc_html__( 'Get the Image Hotspot widget with Turbo Addons Elementor Pro.', 'freemius-turbo-addons-elementor-pro' ),
             'upgrade_url'  => esc_url( 'https://turbo-addons.com/pricing/' ),
-            'upgrade_text' => esc_html__( 'Upgrade Now', 'turbo-addons-elementor-pro' ),
+            'upgrade_text' => esc_html__( 'Upgrade Now', 'freemius-turbo-addons-elementor-pro' ),
         ];
     }
 
@@ -38,24 +38,24 @@ class TRAD_Hotspot_Widget extends Widget_Base {
          * CONTENT TAB - Section: Image
          * ============================================================ */
         $this->start_controls_section( 'section_image', [
-            'label' => __( 'Image', 'turbo-addons-elementor-pro' ),
+            'label' => __( 'Image', 'freemius-turbo-addons-elementor-pro' ),
         ] );
 
         $this->add_control( 'hotspot_image', [
-            'label'   => __( 'Background Image', 'turbo-addons-elementor-pro' ),
+            'label'   => __( 'Background Image', 'freemius-turbo-addons-elementor-pro' ),
             'type'    => Controls_Manager::MEDIA,
             'default' => [ 'url' => Utils::get_placeholder_image_src() ],
         ] );
 
         $this->add_control( 'hotspot_image_size', [
-            'label'   => __( 'Image Size', 'turbo-addons-elementor-pro' ),
+            'label'   => __( 'Image Size', 'freemius-turbo-addons-elementor-pro' ),
             'type'    => Controls_Manager::SELECT,
             'default' => 'full',
             'options' => [
-                'full'      => __( 'Full', 'turbo-addons-elementor-pro' ),
-                'large'     => __( 'Large', 'turbo-addons-elementor-pro' ),
-                'medium'    => __( 'Medium', 'turbo-addons-elementor-pro' ),
-                'thumbnail' => __( 'Thumbnail', 'turbo-addons-elementor-pro' ),
+                'full'      => __( 'Full', 'freemius-turbo-addons-elementor-pro' ),
+                'large'     => __( 'Large', 'freemius-turbo-addons-elementor-pro' ),
+                'medium'    => __( 'Medium', 'freemius-turbo-addons-elementor-pro' ),
+                'thumbnail' => __( 'Thumbnail', 'freemius-turbo-addons-elementor-pro' ),
             ],
         ] );
 
@@ -65,19 +65,19 @@ class TRAD_Hotspot_Widget extends Widget_Base {
          * CONTENT TAB - Section: Hotspots (Repeater)
          * ============================================================ */
         $this->start_controls_section( 'section_hotspots', [
-            'label' => __( 'Hotspots', 'turbo-addons-elementor-pro' ),
+            'label' => __( 'Hotspots', 'freemius-turbo-addons-elementor-pro' ),
         ] );
 
         $repeater = new Repeater();
 
         $repeater->add_control( 'hotspot_label', [
-            'label'   => __( 'Label', 'turbo-addons-elementor-pro' ),
+            'label'   => __( 'Label', 'freemius-turbo-addons-elementor-pro' ),
             'type'    => Controls_Manager::TEXT,
-            'default' => __( 'Hotspot', 'turbo-addons-elementor-pro' ),
+            'default' => __( 'Hotspot', 'freemius-turbo-addons-elementor-pro' ),
         ] );
 
         $repeater->add_control( 'hotspot_position_x', [
-            'label'      => __( 'Horizontal Position (%)', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Horizontal Position (%)', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => [ '%' ],
             'range'      => [ '%' => [ 'min' => 0, 'max' => 100 ] ],
@@ -85,7 +85,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $repeater->add_control( 'hotspot_position_y', [
-            'label'      => __( 'Vertical Position (%)', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Vertical Position (%)', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => [ '%' ],
             'range'      => [ '%' => [ 'min' => 0, 'max' => 100 ] ],
@@ -93,77 +93,77 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $repeater->add_control( 'hotspot_icon', [
-            'label'   => __( 'Icon', 'turbo-addons-elementor-pro' ),
+            'label'   => __( 'Icon', 'freemius-turbo-addons-elementor-pro' ),
             'type'    => Controls_Manager::ICONS,
             'default' => [ 'value' => 'fas fa-plus', 'library' => 'fa-solid' ],
         ] );
 
         $repeater->add_control( 'hotspot_icon_type', [
-            'label'   => __( 'Marker Type', 'turbo-addons-elementor-pro' ),
+            'label'   => __( 'Marker Type', 'freemius-turbo-addons-elementor-pro' ),
             'type'    => Controls_Manager::SELECT,
             'default' => 'icon',
             'options' => [
-                'icon' => __( 'Icon', 'turbo-addons-elementor-pro' ),
-                'text' => __( 'Text', 'turbo-addons-elementor-pro' ),
+                'icon' => __( 'Icon', 'freemius-turbo-addons-elementor-pro' ),
+                'text' => __( 'Text', 'freemius-turbo-addons-elementor-pro' ),
             ],
         ] );
 
         $repeater->add_control( 'hotspot_marker_text', [
-            'label'     => __( 'Marker Text', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Marker Text', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::TEXT,
             'default'   => '+',
             'condition' => [ 'hotspot_icon_type' => 'text' ],
         ] );
 
         $repeater->add_control( 'tooltip_style', [
-            'label'   => __( 'Tooltip Style', 'turbo-addons-elementor-pro' ),
+            'label'   => __( 'Tooltip Style', 'freemius-turbo-addons-elementor-pro' ),
             'type'    => Controls_Manager::SELECT,
             'default' => 'default',
             'options' => [
-                'default'    => __( 'Default (Box)', 'turbo-addons-elementor-pro' ),
-                'line'       => __( 'Line Style', 'turbo-addons-elementor-pro' ),
+                'default'    => __( 'Default (Box)', 'freemius-turbo-addons-elementor-pro' ),
+                'line'       => __( 'Line Style', 'freemius-turbo-addons-elementor-pro' ),
             ],
         ] );
 
         $repeater->add_control( 'tooltip_trigger', [
-            'label'   => __( 'Trigger', 'turbo-addons-elementor-pro' ),
+            'label'   => __( 'Trigger', 'freemius-turbo-addons-elementor-pro' ),
             'type'    => Controls_Manager::SELECT,
             'default' => 'hover',
             'options' => [
-                'hover' => __( 'Hover', 'turbo-addons-elementor-pro' ),
-                'click' => __( 'Click', 'turbo-addons-elementor-pro' ),
+                'hover' => __( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
+                'click' => __( 'Click', 'freemius-turbo-addons-elementor-pro' ),
             ],
         ] );
 
         $repeater->add_control( 'tooltip_position', [
-            'label'     => __( 'Tooltip Position', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Tooltip Position', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::SELECT,
             'default'   => 'top',
             'options'   => [
-                'top'    => __( 'Top', 'turbo-addons-elementor-pro' ),
-                'bottom' => __( 'Bottom', 'turbo-addons-elementor-pro' ),
-                'left'   => __( 'Left', 'turbo-addons-elementor-pro' ),
-                'right'  => __( 'Right', 'turbo-addons-elementor-pro' ),
+                'top'    => __( 'Top', 'freemius-turbo-addons-elementor-pro' ),
+                'bottom' => __( 'Bottom', 'freemius-turbo-addons-elementor-pro' ),
+                'left'   => __( 'Left', 'freemius-turbo-addons-elementor-pro' ),
+                'right'  => __( 'Right', 'freemius-turbo-addons-elementor-pro' ),
             ],
             'condition' => [ 'tooltip_style' => 'default' ],
         ] );
 
         // Line style direction
         $repeater->add_control( 'line_direction', [
-            'label'     => __( 'Line Direction', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Line Direction', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::SELECT,
             'default'   => 'right-down',
             'options'   => [
-                'right-down' => __( 'Right → Down', 'turbo-addons-elementor-pro' ),
-                'right-up'   => __( 'Right → Up', 'turbo-addons-elementor-pro' ),
-                'left-down'  => __( 'Left → Down', 'turbo-addons-elementor-pro' ),
-                'left-up'    => __( 'Left → Up', 'turbo-addons-elementor-pro' ),
+                'right-down' => __( 'Right → Down', 'freemius-turbo-addons-elementor-pro' ),
+                'right-up'   => __( 'Right → Up', 'freemius-turbo-addons-elementor-pro' ),
+                'left-down'  => __( 'Left → Down', 'freemius-turbo-addons-elementor-pro' ),
+                'left-up'    => __( 'Left → Up', 'freemius-turbo-addons-elementor-pro' ),
             ],
             'condition' => [ 'tooltip_style' => 'line' ],
         ] );
 
         $repeater->add_control( 'line_length', [
-            'label'      => __( 'Line Length (px)', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Line Length (px)', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => [ 'px' ],
             'range'      => [ 'px' => [ 'min' => 30, 'max' => 300 ] ],
@@ -172,73 +172,73 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $repeater->add_control( 'tooltip_title', [
-            'label'   => __( 'Tooltip Title', 'turbo-addons-elementor-pro' ),
+            'label'   => __( 'Tooltip Title', 'freemius-turbo-addons-elementor-pro' ),
             'type'    => Controls_Manager::TEXT,
-            'default' => __( 'Hotspot Title', 'turbo-addons-elementor-pro' ),
+            'default' => __( 'Hotspot Title', 'freemius-turbo-addons-elementor-pro' ),
         ] );
 
         $repeater->add_control( 'tooltip_description', [
-            'label'   => __( 'Description', 'turbo-addons-elementor-pro' ),
+            'label'   => __( 'Description', 'freemius-turbo-addons-elementor-pro' ),
             'type'    => Controls_Manager::TEXTAREA,
-            'default' => __( 'Add your description here.', 'turbo-addons-elementor-pro' ),
+            'default' => __( 'Add your description here.', 'freemius-turbo-addons-elementor-pro' ),
         ] );
 
         $repeater->add_control( 'tooltip_show_link', [
-            'label'        => __( 'Show Link Button', 'turbo-addons-elementor-pro' ),
+            'label'        => __( 'Show Link Button', 'freemius-turbo-addons-elementor-pro' ),
             'type'         => Controls_Manager::SWITCHER,
-            'label_on'     => __( 'Yes', 'turbo-addons-elementor-pro' ),
-            'label_off'    => __( 'No', 'turbo-addons-elementor-pro' ),
+            'label_on'     => __( 'Yes', 'freemius-turbo-addons-elementor-pro' ),
+            'label_off'    => __( 'No', 'freemius-turbo-addons-elementor-pro' ),
             'return_value' => 'yes',
             'default'      => '',
         ] );
 
         $repeater->add_control( 'tooltip_link', [
-            'label'     => __( 'Link', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Link', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::URL,
             'condition' => [ 'tooltip_show_link' => 'yes' ],
         ] );
 
         $repeater->add_control( 'tooltip_link_text', [
-            'label'     => __( 'Link Text', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Link Text', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::TEXT,
-            'default'   => __( 'Learn More', 'turbo-addons-elementor-pro' ),
+            'default'   => __( 'Learn More', 'freemius-turbo-addons-elementor-pro' ),
             'condition' => [ 'tooltip_show_link' => 'yes' ],
         ] );
 
         $repeater->add_control( 'tooltip_show_image', [
-            'label'        => __( 'Show Image', 'turbo-addons-elementor-pro' ),
+            'label'        => __( 'Show Image', 'freemius-turbo-addons-elementor-pro' ),
             'type'         => Controls_Manager::SWITCHER,
-            'label_on'     => __( 'Yes', 'turbo-addons-elementor-pro' ),
-            'label_off'    => __( 'No', 'turbo-addons-elementor-pro' ),
+            'label_on'     => __( 'Yes', 'freemius-turbo-addons-elementor-pro' ),
+            'label_off'    => __( 'No', 'freemius-turbo-addons-elementor-pro' ),
             'return_value' => 'yes',
             'default'      => '',
         ] );
 
         $repeater->add_control( 'tooltip_image', [
-            'label'     => __( 'Tooltip Image', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Tooltip Image', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::MEDIA,
             'condition' => [ 'tooltip_show_image' => 'yes' ],
         ] );
 
         $this->add_control( 'hotspots', [
-            'label'       => __( 'Hotspot Items', 'turbo-addons-elementor-pro' ),
+            'label'       => __( 'Hotspot Items', 'freemius-turbo-addons-elementor-pro' ),
             'type'        => Controls_Manager::REPEATER,
             'fields'      => $repeater->get_controls(),
             'title_field' => '{{{ hotspot_label }}}',
             'default'     => [
                 [
-                    'hotspot_label'      => __( 'Hotspot 1', 'turbo-addons-elementor-pro' ),
+                    'hotspot_label'      => __( 'Hotspot 1', 'freemius-turbo-addons-elementor-pro' ),
                     'hotspot_position_x' => [ 'size' => 30, 'unit' => '%' ],
                     'hotspot_position_y' => [ 'size' => 40, 'unit' => '%' ],
-                    'tooltip_title'      => __( 'Hotspot Title', 'turbo-addons-elementor-pro' ),
-                    'tooltip_description'=> __( 'Add your description here.', 'turbo-addons-elementor-pro' ),
+                    'tooltip_title'      => __( 'Hotspot Title', 'freemius-turbo-addons-elementor-pro' ),
+                    'tooltip_description'=> __( 'Add your description here.', 'freemius-turbo-addons-elementor-pro' ),
                 ],
                 [
-                    'hotspot_label'      => __( 'Hotspot 2', 'turbo-addons-elementor-pro' ),
+                    'hotspot_label'      => __( 'Hotspot 2', 'freemius-turbo-addons-elementor-pro' ),
                     'hotspot_position_x' => [ 'size' => 65, 'unit' => '%' ],
                     'hotspot_position_y' => [ 'size' => 55, 'unit' => '%' ],
-                    'tooltip_title'      => __( 'Hotspot Title', 'turbo-addons-elementor-pro' ),
-                    'tooltip_description'=> __( 'Add your description here.', 'turbo-addons-elementor-pro' ),
+                    'tooltip_title'      => __( 'Hotspot Title', 'freemius-turbo-addons-elementor-pro' ),
+                    'tooltip_description'=> __( 'Add your description here.', 'freemius-turbo-addons-elementor-pro' ),
                 ],
             ],
         ] );
@@ -249,26 +249,26 @@ class TRAD_Hotspot_Widget extends Widget_Base {
          * CONTENT TAB - Section: Settings
          * ============================================================ */
         $this->start_controls_section( 'section_settings', [
-            'label' => __( 'Settings', 'turbo-addons-elementor-pro' ),
+            'label' => __( 'Settings', 'freemius-turbo-addons-elementor-pro' ),
         ] );
 
         $this->add_control( 'hotspot_animation', [
-            'label'   => __( 'Marker Animation', 'turbo-addons-elementor-pro' ),
+            'label'   => __( 'Marker Animation', 'freemius-turbo-addons-elementor-pro' ),
             'type'    => Controls_Manager::SELECT,
             'default' => 'pulse',
             'options' => [
-                'pulse'  => __( 'Pulse', 'turbo-addons-elementor-pro' ),
-                'glow'   => __( 'Glow', 'turbo-addons-elementor-pro' ),
-                'bounce' => __( 'Bounce', 'turbo-addons-elementor-pro' ),
-                'none'   => __( 'None', 'turbo-addons-elementor-pro' ),
+                'pulse'  => __( 'Pulse', 'freemius-turbo-addons-elementor-pro' ),
+                'glow'   => __( 'Glow', 'freemius-turbo-addons-elementor-pro' ),
+                'bounce' => __( 'Bounce', 'freemius-turbo-addons-elementor-pro' ),
+                'none'   => __( 'None', 'freemius-turbo-addons-elementor-pro' ),
             ],
         ] );
 
         $this->add_control( 'close_on_outside_click', [
-            'label'        => __( 'Close on Outside Click', 'turbo-addons-elementor-pro' ),
+            'label'        => __( 'Close on Outside Click', 'freemius-turbo-addons-elementor-pro' ),
             'type'         => Controls_Manager::SWITCHER,
-            'label_on'     => __( 'Yes', 'turbo-addons-elementor-pro' ),
-            'label_off'    => __( 'No', 'turbo-addons-elementor-pro' ),
+            'label_on'     => __( 'Yes', 'freemius-turbo-addons-elementor-pro' ),
+            'label_off'    => __( 'No', 'freemius-turbo-addons-elementor-pro' ),
             'return_value' => 'yes',
             'default'      => 'yes',
         ] );
@@ -279,7 +279,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
          * STYLE TAB - Section: Image Style
          * ============================================================ */
         $this->start_controls_section( 'section_style_image', [
-            'label' => __( 'Image Style', 'turbo-addons-elementor-pro' ),
+            'label' => __( 'Image Style', 'freemius-turbo-addons-elementor-pro' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
@@ -292,7 +292,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         );
 
         $this->add_responsive_control( 'hotspot_image_border_radius', [
-            'label'      => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%' ],
             'selectors'  => [
@@ -314,12 +314,12 @@ class TRAD_Hotspot_Widget extends Widget_Base {
          * STYLE TAB - Section: Marker Style
          * ============================================================ */
         $this->start_controls_section( 'section_style_marker', [
-            'label' => __( 'Marker Style', 'turbo-addons-elementor-pro' ),
+            'label' => __( 'Marker Style', 'freemius-turbo-addons-elementor-pro' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
         $this->add_responsive_control( 'hotspot_marker_size', [
-            'label'      => __( 'Marker Size', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Marker Size', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => [ 'px' ],
             'range'      => [ 'px' => [ 'min' => 20, 'max' => 100 ] ],
@@ -330,7 +330,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'hotspot_marker_bg', [
-            'label'     => __( 'Background Color', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#4054b2',
             'selectors' => [
@@ -339,7 +339,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'hotspot_marker_color', [
-            'label'     => __( 'Icon Color', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Icon Color', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#ffffff',
             'selectors' => [
@@ -349,7 +349,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'hotspot_marker_icon_size', [
-            'label'      => __( 'Icon Size', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Icon Size', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => [ 'px' ],
             'range'      => [ 'px' => [ 'min' => 10, 'max' => 50 ] ],
@@ -361,7 +361,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'hotspot_marker_border_radius', [
-            'label'      => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%' ],
             'default'    => [ 'top' => '50', 'right' => '50', 'bottom' => '50', 'left' => '50', 'unit' => '%' ],
@@ -387,7 +387,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         );
 
         $this->add_control( 'hotspot_pulse_color', [
-            'label'     => __( 'Pulse Color', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Pulse Color', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => 'rgba(64,84,178,0.5)',
             'selectors' => [
@@ -401,12 +401,12 @@ class TRAD_Hotspot_Widget extends Widget_Base {
          * STYLE TAB - Section: Line Style
          * ============================================================ */
         $this->start_controls_section( 'section_style_line', [
-            'label' => __( 'Line Style', 'turbo-addons-elementor-pro' ),
+            'label' => __( 'Line Style', 'freemius-turbo-addons-elementor-pro' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
         $this->add_control( 'line_color', [
-            'label'     => __( 'Line Color', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Line Color', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#f0a500',
             'selectors' => [
@@ -416,7 +416,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'line_thickness', [
-            'label'      => __( 'Line Thickness', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Line Thickness', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => [ 'px' ],
             'range'      => [ 'px' => [ 'min' => 1, 'max' => 6 ] ],
@@ -428,7 +428,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'line_text_color', [
-            'label'     => __( 'Text Color', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#ffffff',
             'selectors' => [
@@ -441,7 +441,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'line_title_typography',
-                'label'    => __( 'Title Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Title Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-line-label .trad-hotspot-tooltip-title',
             ]
         );
@@ -450,20 +450,20 @@ class TRAD_Hotspot_Widget extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'line_desc_typography',
-                'label'    => __( 'Description Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => __( 'Description Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-line-label .trad-hotspot-tooltip-desc',
             ]
         );
 
         // ── Label Box ──────────────────────────────────────────────
         $this->add_control( 'line_label_box_heading', [
-            'label'     => __( 'Label Box', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Label Box', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::HEADING,
             'separator' => 'before',
         ] );
 
         $this->add_control( 'line_label_bg', [
-            'label'     => __( 'Background Color', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '',
             'selectors' => [
@@ -472,7 +472,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'line_label_padding', [
-            'label'      => __( 'Padding', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em' ],
             'selectors'  => [
@@ -481,7 +481,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'line_label_margin', [
-            'label'      => __( 'Margin', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em' ],
             'selectors'  => [
@@ -490,7 +490,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'line_label_border_radius', [
-            'label'      => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%' ],
             'selectors'  => [
@@ -520,12 +520,12 @@ class TRAD_Hotspot_Widget extends Widget_Base {
          * STYLE TAB - Section: Tooltip Style
          * ============================================================ */
         $this->start_controls_section( 'section_style_tooltip', [
-            'label' => __( 'Tooltip Style', 'turbo-addons-elementor-pro' ),
+            'label' => __( 'Tooltip Style', 'freemius-turbo-addons-elementor-pro' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
         $this->add_responsive_control( 'tooltip_width', [
-            'label'      => __( 'Tooltip Width', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Tooltip Width', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => [ 'px' ],
             'range'      => [ 'px' => [ 'min' => 150, 'max' => 500 ] ],
@@ -536,7 +536,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'tooltip_bg', [
-            'label'     => __( 'Background Color', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#ffffff',
             'selectors' => [
@@ -545,7 +545,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'tooltip_padding', [
-            'label'      => __( 'Padding', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em' ],
             'default'    => [ 'top' => '15', 'right' => '15', 'bottom' => '15', 'left' => '15', 'unit' => 'px' ],
@@ -555,7 +555,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'tooltip_border_radius', [
-            'label'      => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%' ],
             'default'    => [ 'top' => '8', 'right' => '8', 'bottom' => '8', 'left' => '8', 'unit' => 'px' ],
@@ -581,13 +581,13 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         );
 
         $this->add_control( 'tooltip_title_heading', [
-            'label'     => __( 'Title', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Title', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::HEADING,
             'separator' => 'before',
         ] );
 
         $this->add_control( 'tooltip_title_color', [
-            'label'     => __( 'Title Color', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Title Color', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#1a1a2e',
             'selectors' => [
@@ -604,13 +604,13 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         );
 
         $this->add_control( 'tooltip_desc_heading', [
-            'label'     => __( 'Description', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Description', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::HEADING,
             'separator' => 'before',
         ] );
 
         $this->add_control( 'tooltip_desc_color', [
-            'label'     => __( 'Description Color', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Description Color', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#555555',
             'selectors' => [
@@ -627,13 +627,13 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         );
 
         $this->add_control( 'tooltip_link_heading', [
-            'label'     => __( 'Link Button', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Link Button', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::HEADING,
             'separator' => 'before',
         ] );
 
         $this->add_control( 'tooltip_link_color', [
-            'label'     => __( 'Link Text Color', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Link Text Color', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#ffffff',
             'selectors' => [
@@ -642,7 +642,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'tooltip_link_bg', [
-            'label'     => __( 'Link Background', 'turbo-addons-elementor-pro' ),
+            'label'     => __( 'Link Background', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#4054b2',
             'selectors' => [
@@ -651,7 +651,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'tooltip_link_padding', [
-            'label'      => __( 'Link Padding', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Link Padding', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em' ],
             'default'    => [ 'top' => '6', 'right' => '14', 'bottom' => '6', 'left' => '14', 'unit' => 'px' ],
@@ -661,7 +661,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'tooltip_link_border_radius', [
-            'label'      => __( 'Link Border Radius', 'turbo-addons-elementor-pro' ),
+            'label'      => __( 'Link Border Radius', 'freemius-turbo-addons-elementor-pro' ),
             'type'       => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%' ],
             'default'    => [ 'top' => '4', 'right' => '4', 'bottom' => '4', 'left' => '4', 'unit' => 'px' ],
@@ -800,9 +800,9 @@ class TRAD_Hotspot_Widget extends Widget_Base {
                                 $link_url    = esc_url( $hotspot['tooltip_link']['url'] );
                                 $link_target = ! empty( $hotspot['tooltip_link']['is_external'] ) ? '_blank' : '_self';
                                 $link_rel    = ! empty( $hotspot['tooltip_link']['nofollow'] ) ? 'nofollow' : 'noopener';
-                                $link_text   = ! empty( $hotspot['tooltip_link_text'] ) ? $hotspot['tooltip_link_text'] : __( 'Learn More', 'turbo-addons-elementor-pro' );
+                                $link_text   = ! empty( $hotspot['tooltip_link_text'] ) ? $hotspot['tooltip_link_text'] : __( 'Learn More', 'freemius-turbo-addons-elementor-pro' );
                             ?>
-                                <a href="<?php echo $link_url; ?>"
+                                <a href="<?php echo esc_url( $link_url ); ?>"
                                    class="trad-hotspot-tooltip-link"
                                    target="<?php echo esc_attr( $link_target ); ?>"
                                    rel="<?php echo esc_attr( $link_rel ); ?>">

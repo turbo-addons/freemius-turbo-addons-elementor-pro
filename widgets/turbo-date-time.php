@@ -18,7 +18,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
     }
 
     public function get_title() {
-        return __('Locale Date', 'turbo-addons-elementor-pro');
+        return __('Locale Date', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -33,7 +33,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->start_controls_section(
             'section_content',
             [
-                'label' => __('Content', 'turbo-addons-elementor-pro'),
+                'label' => __('Content', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
@@ -43,22 +43,22 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'country',
             [
-                'label' => __('Country', 'turbo-addons-elementor-pro'),
+                'label' => __('Country', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT2,
                 'options' => [
-                    'us' => __('United States', 'turbo-addons-elementor-pro'),
-                    'uk' => __('United Kingdom', 'turbo-addons-elementor-pro'),
-                    'jp' => __('Japan', 'turbo-addons-elementor-pro'),
-                    'cn' => __('China', 'turbo-addons-elementor-pro'),
-                    'bd' => __('Bangladesh', 'turbo-addons-elementor-pro'),
-                    'in' => __('India', 'turbo-addons-elementor-pro'),
-                    'pk' => __('Pakistan', 'turbo-addons-elementor-pro'),
-                    'de' => __('Germany', 'turbo-addons-elementor-pro'),
-                    'ru' => __('Russia', 'turbo-addons-elementor-pro'),
-                    'au' => __('Australia', 'turbo-addons-elementor-pro'),
-                    'fr' => __('France', 'turbo-addons-elementor-pro'),
-                    'it' => __('Italy', 'turbo-addons-elementor-pro'),
-                    'nl' => __('Netherlands', 'turbo-addons-elementor-pro'),
+                    'us' => __('United States', 'freemius-turbo-addons-elementor-pro'),
+                    'uk' => __('United Kingdom', 'freemius-turbo-addons-elementor-pro'),
+                    'jp' => __('Japan', 'freemius-turbo-addons-elementor-pro'),
+                    'cn' => __('China', 'freemius-turbo-addons-elementor-pro'),
+                    'bd' => __('Bangladesh', 'freemius-turbo-addons-elementor-pro'),
+                    'in' => __('India', 'freemius-turbo-addons-elementor-pro'),
+                    'pk' => __('Pakistan', 'freemius-turbo-addons-elementor-pro'),
+                    'de' => __('Germany', 'freemius-turbo-addons-elementor-pro'),
+                    'ru' => __('Russia', 'freemius-turbo-addons-elementor-pro'),
+                    'au' => __('Australia', 'freemius-turbo-addons-elementor-pro'),
+                    'fr' => __('France', 'freemius-turbo-addons-elementor-pro'),
+                    'it' => __('Italy', 'freemius-turbo-addons-elementor-pro'),
+                    'nl' => __('Netherlands', 'freemius-turbo-addons-elementor-pro'),
                     // Add more countries as needed
                 ],
                 'default' => 'us',
@@ -70,10 +70,10 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'trad_show_country',
             [
-                'label' => __('Show My Country', 'turbo-addons-elementor-pro'),
+                'label' => __('Show My Country', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'turbo-addons-elementor-pro'),
-                'label_off' => __('Hide', 'turbo-addons-elementor-pro'),
+                'label_on' => __('Show', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => __('Hide', 'freemius-turbo-addons-elementor-pro'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -86,14 +86,14 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'date_format_us',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'MM/dd/yyyy' => __('MM/DD/YYYY', 'turbo-addons-elementor-pro'),
-                    'dd-MM-yyyy' => __('DD-MM-YYYY', 'turbo-addons-elementor-pro'),
-                    'yyyy.MM.dd' => __('YYYY.MM.DD', 'turbo-addons-elementor-pro'),
-                    'd MMMM, yyyy' => __('30 July 2024', 'turbo-addons-elementor-pro'),
-                    'MMMM d, yyyy' => __('July 30 2024', 'turbo-addons-elementor-pro'),
+                    'MM/dd/yyyy' => __('MM/DD/YYYY', 'freemius-turbo-addons-elementor-pro'),
+                    'dd-MM-yyyy' => __('DD-MM-YYYY', 'freemius-turbo-addons-elementor-pro'),
+                    'yyyy.MM.dd' => __('YYYY.MM.DD', 'freemius-turbo-addons-elementor-pro'),
+                    'd MMMM, yyyy' => __('30 July 2024', 'freemius-turbo-addons-elementor-pro'),
+                    'MMMM d, yyyy' => __('July 30 2024', 'freemius-turbo-addons-elementor-pro'),
                 ],
                 'default' => 'MM/dd/yyyy',
                 'condition' => [
@@ -105,13 +105,13 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'date_format_uk',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'dd/MM/yyyy' => __('DD/MM/YYYY', 'turbo-addons-elementor-pro'),  // Standard UK format
-                    'd MMMM, yyyy' => __('30 July 2024', 'turbo-addons-elementor-pro'), // Example: 30 July 2024
-                    'MMMM d, yyyy' => __('July 30, 2024', 'turbo-addons-elementor-pro'), // Example: July 30, 2024
-                    'yyyy/MM/dd' => __('YYYY/MM/DD', 'turbo-addons-elementor-pro'),  // Alternative format
+                    'dd/MM/yyyy' => __('DD/MM/YYYY', 'freemius-turbo-addons-elementor-pro'),  // Standard UK format
+                    'd MMMM, yyyy' => __('30 July 2024', 'freemius-turbo-addons-elementor-pro'), // Example: 30 July 2024
+                    'MMMM d, yyyy' => __('July 30, 2024', 'freemius-turbo-addons-elementor-pro'), // Example: July 30, 2024
+                    'yyyy/MM/dd' => __('YYYY/MM/DD', 'freemius-turbo-addons-elementor-pro'),  // Alternative format
                 ],
                 'default' => 'dd/MM/yyyy',
                 'condition' => [
@@ -123,12 +123,12 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'date_format_de',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'dd.MM.yyyy' => __('TT.MM.JJJJ', 'turbo-addons-elementor-pro'), // Standard German format
-                    'd. MMMM, yyyy' => __('30. Juli 2024', 'turbo-addons-elementor-pro'), // Example: 30. July 2024
-                    'MMMM d, yyyy' => __('Juli 30, 2024', 'turbo-addons-elementor-pro'), // Example: July 30, 2024
+                    'dd.MM.yyyy' => __('TT.MM.JJJJ', 'freemius-turbo-addons-elementor-pro'), // Standard German format
+                    'd. MMMM, yyyy' => __('30. Juli 2024', 'freemius-turbo-addons-elementor-pro'), // Example: 30. July 2024
+                    'MMMM d, yyyy' => __('Juli 30, 2024', 'freemius-turbo-addons-elementor-pro'), // Example: July 30, 2024
                 ],
                 'default' => 'dd.MM.yyyy',
                 'condition' => [
@@ -140,13 +140,13 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'date_format_ru',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'dd.MM.yyyy' => __('ДД.MM.ГГГГ', 'turbo-addons-elementor-pro'), // Standard Russian format
-                    'd MMMM yyyy' => __('30 июля 2024', 'turbo-addons-elementor-pro'), // Example: 30 July 2024
-                    'MMMM d, yyyy' => __('Июль 30, 2024', 'turbo-addons-elementor-pro'), // Example: July 30, 2024
-                    'yyyy-MM-dd' => __('ГГГГ-ММ-ДД', 'turbo-addons-elementor-pro'), // Alternative format
+                    'dd.MM.yyyy' => __('ДД.MM.ГГГГ', 'freemius-turbo-addons-elementor-pro'), // Standard Russian format
+                    'd MMMM yyyy' => __('30 июля 2024', 'freemius-turbo-addons-elementor-pro'), // Example: 30 July 2024
+                    'MMMM d, yyyy' => __('Июль 30, 2024', 'freemius-turbo-addons-elementor-pro'), // Example: July 30, 2024
+                    'yyyy-MM-dd' => __('ГГГГ-ММ-ДД', 'freemius-turbo-addons-elementor-pro'), // Alternative format
                 ],
                 'default' => 'dd.MM.yyyy',
                 'condition' => [
@@ -158,13 +158,13 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'date_format_au',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'dd/MM/yyyy' => __('30/07/2024', 'turbo-addons-elementor-pro'), // Standard Australian format
-                    'd MMMM, yyyy' => __('30 July 2024', 'turbo-addons-elementor-pro'), // Example: 30 July 2024
-                    'MMMM d, yyyy' => __('July 30, 2024', 'turbo-addons-elementor-pro'), // Example: July 30, 2024
-                    'yyyy-MM-dd' => __('2024-07-30', 'turbo-addons-elementor-pro'), // Alternative format
+                    'dd/MM/yyyy' => __('30/07/2024', 'freemius-turbo-addons-elementor-pro'), // Standard Australian format
+                    'd MMMM, yyyy' => __('30 July 2024', 'freemius-turbo-addons-elementor-pro'), // Example: 30 July 2024
+                    'MMMM d, yyyy' => __('July 30, 2024', 'freemius-turbo-addons-elementor-pro'), // Example: July 30, 2024
+                    'yyyy-MM-dd' => __('2024-07-30', 'freemius-turbo-addons-elementor-pro'), // Alternative format
                 ],
                 'default' => 'dd/MM/yyyy',
                 'condition' => [
@@ -176,13 +176,13 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'date_format_fr',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'dd/MM/yyyy' => __('30/07/2024', 'turbo-addons-elementor-pro'), // Standard French format
-                    'd MMMM, yyyy' => __('30 juillet 2024', 'turbo-addons-elementor-pro'), // Example: 30 July 2024
-                    'MMMM d, yyyy' => __('juillet 30, 2024', 'turbo-addons-elementor-pro'), // Example: July 30, 2024
-                    'yyyy-MM-dd' => __('2024-07-30', 'turbo-addons-elementor-pro'), // Alternative format
+                    'dd/MM/yyyy' => __('30/07/2024', 'freemius-turbo-addons-elementor-pro'), // Standard French format
+                    'd MMMM, yyyy' => __('30 juillet 2024', 'freemius-turbo-addons-elementor-pro'), // Example: 30 July 2024
+                    'MMMM d, yyyy' => __('juillet 30, 2024', 'freemius-turbo-addons-elementor-pro'), // Example: July 30, 2024
+                    'yyyy-MM-dd' => __('2024-07-30', 'freemius-turbo-addons-elementor-pro'), // Alternative format
                 ],
                 'default' => 'dd/MM/yyyy',
                 'condition' => [
@@ -194,13 +194,13 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'date_format_it',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'dd/MM/yyyy' => __('DD/MM/YYYY', 'turbo-addons-elementor-pro'), // Standard Italian format
-                    'd MMMM yyyy' => __('30 luglio 2024', 'turbo-addons-elementor-pro'), // Example: 30 July 2024
-                    'MMMM d, yyyy' => __('Luglio 30, 2024', 'turbo-addons-elementor-pro'), // Example: July 30, 2024
-                    'yyyy-MM-dd' => __('YYYY-MM-DD', 'turbo-addons-elementor-pro'), // Alternative format
+                    'dd/MM/yyyy' => __('DD/MM/YYYY', 'freemius-turbo-addons-elementor-pro'), // Standard Italian format
+                    'd MMMM yyyy' => __('30 luglio 2024', 'freemius-turbo-addons-elementor-pro'), // Example: 30 July 2024
+                    'MMMM d, yyyy' => __('Luglio 30, 2024', 'freemius-turbo-addons-elementor-pro'), // Example: July 30, 2024
+                    'yyyy-MM-dd' => __('YYYY-MM-DD', 'freemius-turbo-addons-elementor-pro'), // Alternative format
                 ],
                 'default' => 'dd/MM/yyyy',
                 'condition' => [
@@ -212,14 +212,14 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'date_format_nl',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'dd-MM-yyyy' => __('DD-MM-JJJJ', 'turbo-addons-elementor-pro'), // Standard Dutch format
-                    'dd/MM/yyyy' => __('DD/MM/JJJJ', 'turbo-addons-elementor-pro'), // Alternative format
-                    'd MMMM yyyy' => __('30 juli 2024', 'turbo-addons-elementor-pro'), // Example: 30 July 2024
-                    'MMMM d, yyyy' => __('Juli 30, 2024', 'turbo-addons-elementor-pro'), // Example: July 30, 2024
-                    'yyyy-MM-dd' => __('YYYY-MM-DD', 'turbo-addons-elementor-pro'), // ISO format
+                    'dd-MM-yyyy' => __('DD-MM-JJJJ', 'freemius-turbo-addons-elementor-pro'), // Standard Dutch format
+                    'dd/MM/yyyy' => __('DD/MM/JJJJ', 'freemius-turbo-addons-elementor-pro'), // Alternative format
+                    'd MMMM yyyy' => __('30 juli 2024', 'freemius-turbo-addons-elementor-pro'), // Example: 30 July 2024
+                    'MMMM d, yyyy' => __('Juli 30, 2024', 'freemius-turbo-addons-elementor-pro'), // Example: July 30, 2024
+                    'yyyy-MM-dd' => __('YYYY-MM-DD', 'freemius-turbo-addons-elementor-pro'), // ISO format
                 ],
                 'default' => 'dd-MM-yyyy',
                 'condition' => [
@@ -233,13 +233,13 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'date_format_cn',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'MM/dd/yyyy' => __('MM/DD/YYYY', 'turbo-addons-elementor-pro'),
-                    'dd-MM-yyyy' => __('DD-MM-YYYY', 'turbo-addons-elementor-pro'),
-                    'yyyy.MM.dd' => __('YYYY.MM.DD', 'turbo-addons-elementor-pro'),
-                    'MMMM d yyyy' => __('July 30 2024', 'turbo-addons-elementor-pro'),
+                    'MM/dd/yyyy' => __('MM/DD/YYYY', 'freemius-turbo-addons-elementor-pro'),
+                    'dd-MM-yyyy' => __('DD-MM-YYYY', 'freemius-turbo-addons-elementor-pro'),
+                    'yyyy.MM.dd' => __('YYYY.MM.DD', 'freemius-turbo-addons-elementor-pro'),
+                    'MMMM d yyyy' => __('July 30 2024', 'freemius-turbo-addons-elementor-pro'),
                 ],
                 'default' => 'yyyy.MM.dd',
                 'condition' => [
@@ -251,13 +251,13 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'date_format_jp',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'MM/dd/yyyy' => __('MM/DD/YYYY', 'turbo-addons-elementor-pro'),
-                    'dd-MM-yyyy' => __('DD-MM-YYYY', 'turbo-addons-elementor-pro'),
-                    'yyyy.MM.dd' => __('YYYY.MM.DD', 'turbo-addons-elementor-pro'),
-                    'MMMM d yyyy' => __('July 30 2024', 'turbo-addons-elementor-pro'),
+                    'MM/dd/yyyy' => __('MM/DD/YYYY', 'freemius-turbo-addons-elementor-pro'),
+                    'dd-MM-yyyy' => __('DD-MM-YYYY', 'freemius-turbo-addons-elementor-pro'),
+                    'yyyy.MM.dd' => __('YYYY.MM.DD', 'freemius-turbo-addons-elementor-pro'),
+                    'MMMM d yyyy' => __('July 30 2024', 'freemius-turbo-addons-elementor-pro'),
                 ],
                 'default' => 'yyyy.MM.dd',
                 'condition' => [
@@ -269,14 +269,14 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'date_format_bd',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'MM/dd/yyyy' => __('দদ/মম/বববব', 'turbo-addons-elementor-pro'),
-                    'dd-MM-yyyy' => __('দদ-মম-বববব', 'turbo-addons-elementor-pro'),
-                    'yyyy.MM.dd' => __('দদ.মম.বববব', 'turbo-addons-elementor-pro'),
-                    'd MMMM, yyyy' => __('৩০ জুলাই ২০২৪', 'turbo-addons-elementor-pro'), // Example Bangla format
-                    'MMMM d, yyyy' => __('জুলাই ৩০ ২০২৪', 'turbo-addons-elementor-pro'),
+                    'MM/dd/yyyy' => __('দদ/মম/বববব', 'freemius-turbo-addons-elementor-pro'),
+                    'dd-MM-yyyy' => __('দদ-মম-বববব', 'freemius-turbo-addons-elementor-pro'),
+                    'yyyy.MM.dd' => __('দদ.মম.বববব', 'freemius-turbo-addons-elementor-pro'),
+                    'd MMMM, yyyy' => __('৩০ জুলাই ২০২৪', 'freemius-turbo-addons-elementor-pro'), // Example Bangla format
+                    'MMMM d, yyyy' => __('জুলাই ৩০ ২০২৪', 'freemius-turbo-addons-elementor-pro'),
                 ],
                 'default' => 'MM/dd/yyyy',
                 'condition' => [
@@ -288,14 +288,14 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'date_format_in',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'MM/dd/yyyy' => __('मम/दि/वववव', 'turbo-addons-elementor-pro'),
-                    'dd-MM-yyyy' => __('दि-मम-वववव', 'turbo-addons-elementor-pro'),
-                    'yyyy.MM.dd' => __('वववव.मम.दि', 'turbo-addons-elementor-pro'),
-                    'd MMMM, yyyy' => __('३० जुलाई, २०२४', 'turbo-addons-elementor-pro'), // Example Indian format
-                    'MMMM d, yyyy' => __('जुलाई ३०, २०२४', 'turbo-addons-elementor-pro'),
+                    'MM/dd/yyyy' => __('मम/दि/वववव', 'freemius-turbo-addons-elementor-pro'),
+                    'dd-MM-yyyy' => __('दि-मम-वववव', 'freemius-turbo-addons-elementor-pro'),
+                    'yyyy.MM.dd' => __('वववव.मम.दि', 'freemius-turbo-addons-elementor-pro'),
+                    'd MMMM, yyyy' => __('३० जुलाई, २०२४', 'freemius-turbo-addons-elementor-pro'), // Example Indian format
+                    'MMMM d, yyyy' => __('जुलाई ३०, २०२४', 'freemius-turbo-addons-elementor-pro'),
                 ],
                 'default' => 'MM/dd/yyyy',
                 'condition' => [
@@ -307,14 +307,14 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $repeater->add_control(
             'date_format_pk',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'MM/dd/yyyy' => __('مم/دد/سسسس', 'turbo-addons-elementor-pro'),
-                    'dd-MM-yyyy' => __('دد-مم-سسسس', 'turbo-addons-elementor-pro'),
-                    'yyyy.MM.dd' => __('سسسس.مم.دد', 'turbo-addons-elementor-pro'),
-                    'd MMMM, yyyy' => __('٣٠ جولائی، ٢٠٢٤', 'turbo-addons-elementor-pro'), // Example Urdu format
-                    'MMMM d, yyyy' => __('جولائی ٣٠، ٢٠٢٤', 'turbo-addons-elementor-pro'),
+                    'MM/dd/yyyy' => __('مم/دد/سسسس', 'freemius-turbo-addons-elementor-pro'),
+                    'dd-MM-yyyy' => __('دد-مم-سسسس', 'freemius-turbo-addons-elementor-pro'),
+                    'yyyy.MM.dd' => __('سسسس.مم.دد', 'freemius-turbo-addons-elementor-pro'),
+                    'd MMMM, yyyy' => __('٣٠ جولائی، ٢٠٢٤', 'freemius-turbo-addons-elementor-pro'), // Example Urdu format
+                    'MMMM d, yyyy' => __('جولائی ٣٠، ٢٠٢٤', 'freemius-turbo-addons-elementor-pro'),
                 ],
                 'default' => 'MM/dd/yyyy',
                 'condition' => [
@@ -326,7 +326,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->add_control(
             'date_time_entries',
             [
-                'label' => __('Locale Date', 'turbo-addons-elementor-pro'),
+                'label' => __('Locale Date', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
@@ -344,25 +344,25 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
             $repeater->add_control(
                 'date_format_global_all',
                 [
-                    'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                    'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                     'type' => Controls_Manager::SELECT,
                     'options' => [
-                        'F j, Y' => __('November 1, 2024', 'turbo-addons-elementor-pro'),
-                        'F d, Y' => __('November 01, 2024', 'turbo-addons-elementor-pro'),
-                        'F j, y' => __('November 11, 24', 'turbo-addons-elementor-pro'),
-                        'F d, y' => __('November 11, 24', 'turbo-addons-elementor-pro'),
-                        'j/n/Y' => __('11/11/2024', 'turbo-addons-elementor-pro'),
-                        'j-n-Y' => __('11-11-2024', 'turbo-addons-elementor-pro'),
+                        'F j, Y' => __('November 1, 2024', 'freemius-turbo-addons-elementor-pro'),
+                        'F d, Y' => __('November 01, 2024', 'freemius-turbo-addons-elementor-pro'),
+                        'F j, y' => __('November 11, 24', 'freemius-turbo-addons-elementor-pro'),
+                        'F d, y' => __('November 11, 24', 'freemius-turbo-addons-elementor-pro'),
+                        'j/n/Y' => __('11/11/2024', 'freemius-turbo-addons-elementor-pro'),
+                        'j-n-Y' => __('11-11-2024', 'freemius-turbo-addons-elementor-pro'),
                     ],
                     'default' => 'F j, Y',
-                    'description' => __('Enter the PHP date format. Default is F j, Y.', 'turbo-addons-elementor-pro'),
+                    'description' => __('Enter the PHP date format. Default is F j, Y.', 'freemius-turbo-addons-elementor-pro'),
                 ]
             );
 
             $this->add_control(
                 'date_time_entries',
                 [
-                    'label' => __('Locale Date', 'turbo-addons-elementor-pro'),
+                    'label' => __('Locale Date', 'freemius-turbo-addons-elementor-pro'),
                     'type' => Controls_Manager::REPEATER,
                     'fields' => $repeater->get_controls(),
                     'default' => [
@@ -382,7 +382,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->start_controls_section(
             'section_local_date_body_style',
             [
-                'label' => __('Style Background', 'turbo-addons-elementor-pro'),
+                'label' => __('Style Background', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -391,7 +391,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_local_date_time_display_background_color',
             [
-                'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Background Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#2E3292',
                 'selectors' => [
@@ -404,7 +404,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_local_date_time_display_padding',
             [
-                'label' => __('Padding', 'turbo-addons-elementor-pro'),
+                'label' => __('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'default' => [
@@ -424,7 +424,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_local_date_time_display_margin',
             [
-                'label' => __('Margin', 'turbo-addons-elementor-pro'),
+                'label' => __('Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'default' => [
@@ -445,7 +445,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'trad_local_date_time_display_box_shadow',
-                'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-date-time-display',
             ]
         );
@@ -454,7 +454,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'slider_container_border',
-                'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-date-time-display',
             ]
         );
@@ -466,7 +466,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->start_controls_section(
             'section_local_date_title_style',
             [
-                'label' => __('Style Country Title', 'turbo-addons-elementor-pro'),
+                'label' => __('Style Country Title', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -476,7 +476,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_local_date_title_typography', // Unique name for the control
-                'label'    => esc_html__( 'Title Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Title Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-date-time-title-typography',
             ]
         );
@@ -485,7 +485,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_local_date_title_color',
             [
-                'label' => __('Title Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Title Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
@@ -498,19 +498,19 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_local_date_title_alignment',
             [
-                'label' => __('Title Alignment', 'turbo-addons-elementor-pro'),
+                'label' => __('Title Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'title' => __('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'title' => __('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'title' => __('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -525,7 +525,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_local_date_title_padding',
             [
-                'label' => __('Title Padding', 'turbo-addons-elementor-pro'),
+                'label' => __('Title Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],  // You can specify the units for padding
                 'default' => [
@@ -545,7 +545,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_local_date_title_margin',
             [
-                'label' => __('Title Margin', 'turbo-addons-elementor-pro'),
+                'label' => __('Title Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],  // You can specify the units for margin
                 'default' => [
@@ -566,7 +566,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->start_controls_section(
             'section_local_date_style',
             [
-                'label' => __('Style Date', 'turbo-addons-elementor-pro'),
+                'label' => __('Style Date', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -574,7 +574,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_local_date_typography', // Unique name for the control
-                'label'    => esc_html__( 'Date Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Date Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-date-time-typography',
             ]
         );
@@ -583,7 +583,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_local_date_color',
             [
-                'label' => __('Date Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
@@ -596,19 +596,19 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_local_date_alignment',
             [
-                'label' => __('Date Alignment', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'title' => __('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'title' => __('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'title' => __('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -623,7 +623,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_local_date_time_padding',
             [
-                'label' => __('Date Time Padding', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Time Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],  // Specify the units for padding
                 'default' => [
@@ -643,7 +643,7 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_local_date_time_margin',
             [
-                'label' => __('Date Time Margin', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Time Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],  // Specify the units for margin
                 'default' => [
@@ -999,23 +999,23 @@ class TRAD_Date_Time_Display_Widget extends Widget_Base {
 
     private function get_country_name($country_code) {
         $countries = [
-            'us' => __('United States', 'turbo-addons-elementor-pro'),
-            'jp' => __('Japan', 'turbo-addons-elementor-pro'),
-            'cn' => __('China', 'turbo-addons-elementor-pro'),
-            'bd' => __('Bangladesh', 'turbo-addons-elementor-pro'),
-            'in' => __('India', 'turbo-addons-elementor-pro'),
-            'pk' => __('Pakistan', 'turbo-addons-elementor-pro'),
-            'uk' => __('United Kingdom', 'turbo-addons-elementor-pro'),
-            'de' => __('Germany', 'turbo-addons-elementor-pro'),
-            'ru' => __('Russia', 'turbo-addons-elementor-pro'),
-            'au' => __('Australia', 'turbo-addons-elementor-pro'),
-            'fr' => __('France', 'turbo-addons-elementor-pro'),
-            'it' => __('Italy', 'turbo-addons-elementor-pro'),
-            'nl' => __('Netherlands', 'turbo-addons-elementor-pro'),
+            'us' => __('United States', 'freemius-turbo-addons-elementor-pro'),
+            'jp' => __('Japan', 'freemius-turbo-addons-elementor-pro'),
+            'cn' => __('China', 'freemius-turbo-addons-elementor-pro'),
+            'bd' => __('Bangladesh', 'freemius-turbo-addons-elementor-pro'),
+            'in' => __('India', 'freemius-turbo-addons-elementor-pro'),
+            'pk' => __('Pakistan', 'freemius-turbo-addons-elementor-pro'),
+            'uk' => __('United Kingdom', 'freemius-turbo-addons-elementor-pro'),
+            'de' => __('Germany', 'freemius-turbo-addons-elementor-pro'),
+            'ru' => __('Russia', 'freemius-turbo-addons-elementor-pro'),
+            'au' => __('Australia', 'freemius-turbo-addons-elementor-pro'),
+            'fr' => __('France', 'freemius-turbo-addons-elementor-pro'),
+            'it' => __('Italy', 'freemius-turbo-addons-elementor-pro'),
+            'nl' => __('Netherlands', 'freemius-turbo-addons-elementor-pro'),
             // Add more countries as needed
         ];
 
-        return $countries[$country_code] ?? __('Unknown', 'turbo-addons-elementor-pro');
+        return $countries[$country_code] ?? __('Unknown', 'freemius-turbo-addons-elementor-pro');
     }
 
     private function convert_to_native_numerals($text, $country_code) {

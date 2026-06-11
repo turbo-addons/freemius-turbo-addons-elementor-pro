@@ -1,232 +1,354 @@
-/* Testimonial Template - One */
-.trad-turbo-testmonial-slider-template-one-slider {
-    text-align: center;
-    /* max-width: 600px; */
-    margin: 0 auto;
-}
-.trad-turbo-testmonial-slider-template-one-image {
-    display: flex;                     /* Enable flexbox */
-    justify-content: center;           /* Center horizontally */
-    height: 100%;                      /* Adjust height as needed */
+/* ==========================================================================
+   Turbo Testimonial Slider — Style 1 & Style 2
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   SHARED RESET
+   -------------------------------------------------------------------------- */
+.trad-ts1-wrapper *,
+.trad-ts2-wrapper * {
+    box-sizing: border-box;
 }
 
-.trad-turbo-testmonial-slider-template-one-image img {
-    max-width: 100%;                   /* Ensure image does not overflow */
-    height: auto;                      /* Maintain aspect ratio */
-}
-.trad-turbo-testmonial-slider-template-one-name {
-    font-size: 24px;
-    font-weight: bold;
-}
-.trad-turbo-testmonial-slider-template-one-location {
-    color: #777;
-}
-.trad-turbo-testmonial-slider-template-one-text {
-    font-size: 16px;
-    margin-top: 10px;
-}
-.trad-turbo-testmonial-slider-template-one-content {
-    display: none;
-}
-.trad-turbo-testmonial-slider-template-one-content.trad-turbo-testmonial-slider-template-one-card-active {
-    display: block;
-}
-.trad-turbo-testmonial-slider-template-one-controls {
-    margin-top: 10px;
-}
-.trad-turbo-testmonial-slider-template-one-dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    background-color: #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-}
-.trad-turbo-testmonial-slider-template-one-dot.trad-turbo-testmonial-slider-template-one-active {
-    background-color: #36c;
-}
+/* ==========================================================================
+   STYLE 1 — Card Slider with Arrow Navigation
+   ========================================================================== */
 
-
-/* Testimonial Template - Two */
-  
-  .trad-testimonial-template-two-main {
-    width: 800px;
-  }
-  
-  .trad-testimonial-template-two-slide-row {
-    display: flex;
-    width: 3200px;
-    transition: 0.5s;
-  }
-  
-  .trad-testimonial-template-two-slide-col {
+.trad-ts1-wrapper {
+    width: 100%;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 800px;
-    height: 400px;
-  }
-  
-  .trad-testimonial-template-two-hero {
-    position: absolute;
-    right: 0;
-    height: 100%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .trad-testimonial-template-two-hero img {
-    height: 100%;
-    border-radius: 10px;
-    width: 320px;
-    object-fit: cover;
-    pointer-events: none;
-    user-select: none;
-  }
-  
-  .trad-testimonial-template-two-content {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 520px;
-    height: 270px;
-    color: #4d4352;
-    background: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 1px 11px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4.5px);
-    -webkit-backdrop-filter: blur(4.5px);
-    border-radius: 10px;
-    padding: 45px;
-    z-index: 2;
-    user-select: none;
-  }
-  
-  .trad-testimonial-template-two-content 
-  .trad-testimonial-template-two-content-description {
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.3;
-  }
+}
 
-  .trad-testimonial-template-two-content 
-  .trad-testimonial-template-two-content-author {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 0.3;
-  }
-  
-  .trad-testimonial-template-two-content
-  .trad-testimonial-template-two-content-heading {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-top: 35px;
-    color: #4d4352;
-  }
-  
-  .trad-testimonial-template-two-indicator {
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem;
-  }
-  
-  .trad-testimonial-template-two-indicator .trad-testimonial-template-two-btn {
-    display: inline-block;
-    height: 15px;
-    width: 15px;
-    margin: 4px;
-    border-radius: 15px;
-    background: #000;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-  }
-  
-  .trad-testimonial-template-two-btn.active {
-    width: 30px;
-    background: #7d1e1e;
-  }
-  
-  .trad-testimonial-template-two-slider {
+/* Clip — no overflow allowed */
+.trad-ts1-track-outer {
     width: 100%;
     overflow: hidden;
-  }
-  
-  @media only screen and (max-width: 850px) {
-    .trad-testimonial-template-two-main {
-      width: 500px;
-    }
-  
-    .trad-testimonial-template-two-slide-row {
-      width: 2000px;
-    }
-  
-    .trad-testimonial-template-two-slide-col {
-      width: 500px;
-      height: 250px;
-    }
-  
-    .trad-testimonial-template-two-hero img {
-      width: 200px;
-    }
-  
-    .trad-testimonial-template-two-content {
-      width: 320px;
-      height: 200px;
-      padding: 20px;
-    }
-  
-    .trad-testimonial-template-two-content 
-    .trad-testimonial-template-two-content-description {
-      font-size: 0.9rem;
+}
+
+/* Flex row. JS sets each slide's exact px width. */
+.trad-ts1-track {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* Slide shell — JS sets width / min-width / max-width */
+.trad-ts1-slide {
+    flex-shrink: 0;
+    padding: 10px 12px;
+}
+
+/* Card */
+.trad-ts1-card {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    padding: 28px;
+    /* box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07); */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: box-shadow 0.25s ease;
+}
+
+/* Top row: image left, quote right */
+.trad-ts1-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.trad-ts1-author-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+.trad-ts1-author-placeholder {
+    background: #e5e7eb;
+}
+
+.trad-ts1-quote-icon {
+    font-size: 32px;
+    color: #22c55e;
+    line-height: 1;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.trad-ts1-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #374151;
+    margin: 0;
+    flex: 1;
+}
+
+.trad-ts1-author-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 0px;
+    margin-top: auto;
+}
+
+.trad-ts1-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #111827;
+}
+
+.trad-ts1-sep {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.trad-ts1-designation {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Arrow navigation — Style 1 */
+.trad-ts1-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.trad-ts1-arrow,
+.trad-ts2-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    color: #22c55e;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+    padding: 0;
+    outline: none;
+    line-height: 1;
+}
+
+.trad-ts1-arrow:hover,
+.trad-ts2-arrow:hover {
+    background: rgba(34, 197, 94, 0.1);
+    transform: scale(1.1);
+}
+
+.trad-ts1-arrow:active,
+.trad-ts2-arrow:active {
+    transform: scale(0.95);
+}
+
+.trad-ts1-arrow svg,
+.trad-ts2-arrow svg {
+    display: block;
+}
+
+/* Arrow navigation — Style 2 */
+.trad-ts2-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+/* Dot navigation — Style 1 */
+.trad-ts1-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.trad-ts1-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d1d5db;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+    outline: none;
+    display: inline-block;
+}
+
+.trad-ts1-dot.trad-ts1-dot-active {
+    background: #22c55e;
+    transform: scale(1.35);
+}
+
+.trad-ts1-dot:hover:not(.trad-ts1-dot-active) {
+    background: #9ca3af;
+}
+
+/* ==========================================================================
+   STYLE 2 — Multi-card Slider with Dot Navigation
+   ========================================================================== */
+
+.trad-ts2-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.trad-ts2-track-outer {
+    width: 100%;
+    overflow: hidden;
+}
+
+.trad-ts2-track {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* Slide shell — JS sets width / min-width / max-width */
+.trad-ts2-slide {
+    flex-shrink: 0;
+    padding: 10px 12px;
+}
+
+/* Card base */
+.trad-ts2-card {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    padding: 28px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+}
+
+/* Active / center card highlight */
+.trad-ts2-card.trad-ts2-card-active {
+    border-color: #d1d5db;
+    transform: translateY(-5px);
+}
+
+.trad-ts2-quote-icon {
+    font-size: 32px;
+    color: #9ca3af;
+    line-height: 1;
+    display: flex;
+    align-items: flex-start;
+}
+
+.trad-ts2-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #374151;
+    margin: 0;
+    flex: 1;
+}
+
+.trad-ts2-author-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.trad-ts2-author-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+}
+
+.trad-ts2-author-placeholder {
+    background: #e5e7eb;
+    border-radius: 50%;
+}
+
+.trad-ts2-author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.trad-ts2-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #111827;
+    line-height: 1.3;
+}
+
+.trad-ts2-designation {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.3;
+}
+
+/* Dot navigation */
+.trad-ts2-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 28px;
+}
+
+.trad-ts2-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d1d5db;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+    outline: none;
+    display: inline-block;
+}
+
+.trad-ts2-dot.trad-ts2-active {
+    background: #22c55e;
+    transform: scale(1.35);
+}
+
+.trad-ts2-dot:hover:not(.trad-ts2-active) {
+    background: #9ca3af;
+}
+
+/* ==========================================================================
+   RESPONSIVE PADDING ADJUSTMENT
+   ========================================================================== */
+@media (max-width: 768px) {
+    .trad-ts1-slide,
+    .trad-ts2-slide {
+        padding: 8px 6px;
     }
 
-    .trad-testimonial-template-two-content
-    .trad-testimonial-template-two-content-author {
-        font-size: 0.9rem;
-      }
-  
-    .trad-testimonial-template-two-content
-    .trad-testimonial-template-two-content-heading {
-      font-size: 1.2rem;
-      margin-top: 20px;
+    .trad-ts1-card,
+    .trad-ts2-card {
+        padding: 20px 16px;
     }
-  }
-  
-  @media only screen and (max-width: 550px) {
-    .trad-testimonial-template-two-main {
-      width: 300px;
-    }
-  
-    .trad-testimonial-template-two-slide-row {
-      width: 1200px;
-    }
-  
-    .trad-testimonial-template-two-slide-col {
-      width: 300px;
-      height: 300px;
-    }
-  
-    .trad-testimonial-template-two-hero {
-      height: 100px;
-      left: 77%;
-      bottom: -40px;
-      transform: translate(-50%, -50%);
-      width: 70%;
-      background-color: transparent;
-      z-index: -4;
-    }
-  
-    .trad-testimonial-template-two-hero img {
-      width: 100px;
-    }
-  
-    .trad-testimonial-template-two-content {
-      width: 270px;
-      z-index: -5;
-    }
-  }
-  
+}

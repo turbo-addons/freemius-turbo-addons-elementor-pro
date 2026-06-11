@@ -17,7 +17,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
     }
 
     public function get_title() {
-        return __('Post Date', 'turbo-addons-elementor-pro');
+        return __('Post Date', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -32,7 +32,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->start_controls_section(
             'section_content',
             [
-                'label' => __('Content', 'turbo-addons-elementor-pro'),
+                'label' => __('Content', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
@@ -41,7 +41,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_post_date',
             [
-                'label' => __('Select Post', 'turbo-addons-elementor-pro'),
+                'label' => __('Select Post', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'dynamic' => [
                     'active' => true,
@@ -56,54 +56,54 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->add_control(
             'country',
             [
-                'label' => __('Select Country', 'turbo-addons-elementor-pro'),
+                'label' => __('Select Country', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'us' => __('United States', 'turbo-addons-elementor-pro'),
-                    'uk' => __('United Kingdom', 'turbo-addons-elementor-pro'),
-                    'jp' => __('Japan', 'turbo-addons-elementor-pro'),
-                    'cn' => __('China', 'turbo-addons-elementor-pro'),
-                    'bd' => __('Bangladesh', 'turbo-addons-elementor-pro'),
-                    'in' => __('India', 'turbo-addons-elementor-pro'),
-                    'pk' => __('Pakistan', 'turbo-addons-elementor-pro'),
-                    'de' => __('Germany', 'turbo-addons-elementor-pro'),
-                    'ru' => __('Russia', 'turbo-addons-elementor-pro'),
-                    'au' => __('Australia', 'turbo-addons-elementor-pro'),
-                    'fr' => __('France', 'turbo-addons-elementor-pro'),
-                    'it' => __('Italy', 'turbo-addons-elementor-pro'),
-                    'nl' => __('Netherlands', 'turbo-addons-elementor-pro'),
+                    'us' => __('United States', 'freemius-turbo-addons-elementor-pro'),
+                    'uk' => __('United Kingdom', 'freemius-turbo-addons-elementor-pro'),
+                    'jp' => __('Japan', 'freemius-turbo-addons-elementor-pro'),
+                    'cn' => __('China', 'freemius-turbo-addons-elementor-pro'),
+                    'bd' => __('Bangladesh', 'freemius-turbo-addons-elementor-pro'),
+                    'in' => __('India', 'freemius-turbo-addons-elementor-pro'),
+                    'pk' => __('Pakistan', 'freemius-turbo-addons-elementor-pro'),
+                    'de' => __('Germany', 'freemius-turbo-addons-elementor-pro'),
+                    'ru' => __('Russia', 'freemius-turbo-addons-elementor-pro'),
+                    'au' => __('Australia', 'freemius-turbo-addons-elementor-pro'),
+                    'fr' => __('France', 'freemius-turbo-addons-elementor-pro'),
+                    'it' => __('Italy', 'freemius-turbo-addons-elementor-pro'),
+                    'nl' => __('Netherlands', 'freemius-turbo-addons-elementor-pro'),
                     // Add more countries as needed
                 ],
                 'default' => 'us', // Default to Bangladesh
-                'description' => __('Select a country to display the post date in the local language.', 'turbo-addons-elementor-pro'),
+                'description' => __('Select a country to display the post date in the local language.', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
         $this->add_control(
             'date_format',
             [
-                'label' => __('Date Format', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Format', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'F j, Y' => __('November 1, 2024', 'turbo-addons-elementor-pro'),
-                    'F d, Y' => __('November 01, 2024', 'turbo-addons-elementor-pro'),
-                    'F j, y' => __('November 11, 24', 'turbo-addons-elementor-pro'),
-                    'F d, y' => __('November 11, 24', 'turbo-addons-elementor-pro'),
-                    'j/n/Y' => __('11/11/2024', 'turbo-addons-elementor-pro'),
-                  'j-n-Y' => __('11-11-2024', 'turbo-addons-elementor-pro'),
+                    'F j, Y' => __('November 1, 2024', 'freemius-turbo-addons-elementor-pro'),
+                    'F d, Y' => __('November 01, 2024', 'freemius-turbo-addons-elementor-pro'),
+                    'F j, y' => __('November 11, 24', 'freemius-turbo-addons-elementor-pro'),
+                    'F d, y' => __('November 11, 24', 'freemius-turbo-addons-elementor-pro'),
+                    'j/n/Y' => __('11/11/2024', 'freemius-turbo-addons-elementor-pro'),
+                  'j-n-Y' => __('11-11-2024', 'freemius-turbo-addons-elementor-pro'),
                 ],
                 'default' => 'F j, Y',
-                'description' => __('Enter the PHP date format. Default is F j, Y.', 'turbo-addons-elementor-pro'),
+                'description' => __('Enter the PHP date format. Default is F j, Y.', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
         $this->add_control(
             'trad_show_post_date_heading',
             [
-                'label' => __('Show Heading', 'turbo-addons-elementor-pro'),
+                'label' => __('Show Heading', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'turbo-addons-elementor-pro'),
-                'label_off' => __('Hide', 'turbo-addons-elementor-pro'),
+                'label_on' => __('Show', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => __('Hide', 'freemius-turbo-addons-elementor-pro'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -114,7 +114,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->start_controls_section(
             'section_post_date_body_style',
             [
-                'label' => __('Background Style', 'turbo-addons-elementor-pro'),
+                'label' => __('Background Style', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -123,7 +123,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_post_date_display_background_color',
             [
-                'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Background Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#2E3292',
                 'selectors' => [
@@ -136,7 +136,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_post_date_display_padding',
             [
-                'label' => __('Padding', 'turbo-addons-elementor-pro'),
+                'label' => __('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'default' => [
@@ -156,7 +156,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_post_date_display_margin',
             [
-                'label' => __('Margin', 'turbo-addons-elementor-pro'),
+                'label' => __('Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'default' => [
@@ -177,7 +177,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'trad_post_date_display_box_shadow',
-                'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-post-display',
             ]
         );
@@ -186,7 +186,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'trad_post_date_display_border',
-                'label' => __( 'Border', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-post-display',
             ]
         );
@@ -196,7 +196,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->start_controls_section(
             'section_post_date_text_style',
             [
-                'label' => __('Text Style', 'turbo-addons-elementor-pro'),
+                'label' => __('Text Style', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'trad_show_post_date_heading' => 'yes',
@@ -209,7 +209,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_post_date_title_typography', // Unique name for the control
-                'label'    => esc_html__( 'Title Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Title Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-post-display-title',
             ]
         );
@@ -218,7 +218,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_post_date_title_color',
             [
-                'label' => __('Title Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Title Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
@@ -231,19 +231,19 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_post_date_title_alignment',
             [
-                'label' => __('Title Alignment', 'turbo-addons-elementor-pro'),
+                'label' => __('Title Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'title' => __('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'title' => __('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'title' => __('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -258,7 +258,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_post_date_title_padding',
             [
-                'label' => __('Title Padding', 'turbo-addons-elementor-pro'),
+                'label' => __('Title Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],  // You can specify the units for padding
                 'default' => [
@@ -278,7 +278,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_post_date_title_margin',
             [
-                'label' => __('Title Margin', 'turbo-addons-elementor-pro'),
+                'label' => __('Title Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],  // You can specify the units for margin
                 'default' => [
@@ -299,7 +299,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->start_controls_section(
             'section_post_date_date_style',
             [
-                'label' => __('Date Style', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Style', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -309,7 +309,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'trad_post_date_date_typography', // Unique name for the control
-                'label'    => esc_html__( 'Date Typography', 'turbo-addons-elementor-pro' ),
+                'label'    => esc_html__( 'Date Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-post-display-date',
             ]
         );
@@ -318,7 +318,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_post_date_date_color',
             [
-                'label' => __('Date Color', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
@@ -331,19 +331,19 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_post_date_date_alignment',
             [
-                'label' => __('Date Alignment', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'turbo-addons-elementor-pro'),
+                        'title' => __('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'turbo-addons-elementor-pro'),
+                        'title' => __('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'turbo-addons-elementor-pro'),
+                        'title' => __('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -358,7 +358,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_post_date_date_padding',
             [
-                'label' => __('Date Padding', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],  // You can specify the units for padding
                 'default' => [
@@ -378,7 +378,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         $this->add_control(
             'trad_post_date_date_margin',
             [
-                'label' => __('Date Margin', 'turbo-addons-elementor-pro'),
+                'label' => __('Date Margin', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],  // You can specify the units for margin
                 'default' => [
@@ -542,7 +542,7 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
             echo '</div>';
         } else {
             echo '<div class="trad-post-display">';
-            echo '<p class="trad-post-display-date">' . esc_html__('Post not found or invalid.', 'turbo-addons-elementor-pro') . '</p>';
+            echo '<p class="trad-post-display-date">' . esc_html__('Post not found or invalid.', 'freemius-turbo-addons-elementor-pro') . '</p>';
             echo '</div>';
         }
     }

@@ -1,3 +1,10 @@
+<?php
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+} 
+?>
+
 <a class="trad-advance-featured-card-post-link"
    href="<?php echo esc_url( $card_link ); ?>"
    <?php if ( ! empty( $link_target ) ) : ?>
@@ -14,7 +21,7 @@
                 if (!empty($image_upload_for_card)) { ; ?>
                 <img class="trad_advance_features_card_content_image" 
                 src="<?php echo esc_url( $image_upload_for_card ); ?>" 
-                alt="<?php echo esc_attr__( 'new', 'turbo-addons-elementor-pro' ); ?>">
+                alt="<?php echo esc_attr__( 'new', 'freemius-turbo-addons-elementor-pro' ); ?>">
 
             <?php
                 };
@@ -24,22 +31,22 @@
             </p>
        </div>
        <?php 
-            $badge_text = !empty($badge_card_text) ? $badge_card_text : 'Popular';
+            $trad_badge_text = ! empty( $badge_card_text ) ? $badge_card_text : 'Popular';
 
             // Extract first word only
-            $first_word = explode(' ', trim($badge_text))[0];
+            $trad_first_word = explode( ' ', trim( $trad_badge_text ) )[0];
 
             // Convert to safe CSS slug (lowercase, no spaces)
-            $badge_first_slug = sanitize_title($first_word);
+            $trad_badge_first_slug = sanitize_title( $trad_first_word );
 
             // Final dynamic class
-            $dynamic_class = 'trad-featured-badge-' . $badge_first_slug;
+            $trad_dynamic_class = 'trad-featured-badge-' . $trad_badge_first_slug;
             ?>
 
             <span 
-                class="trad_advance_features_card_badge_text_global <?php echo esc_attr($dynamic_class); ?>"
+                class="trad_advance_features_card_badge_text_global <?php echo esc_attr( $trad_dynamic_class ); ?>"
                 id="trad-features-badge-text">
-                <?php echo esc_html($badge_text); ?>
+                <?php echo esc_html( $trad_badge_text ); ?>
             </span>
 </div>
 </a>

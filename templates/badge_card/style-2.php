@@ -1,3 +1,10 @@
+<?php
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+} 
+?>
+
 <a class="trad-advance-featured-card-post-link"
    href="<?php echo esc_url( $card_link ); ?>"
    <?php if ( ! empty( $link_target ) ) : ?>
@@ -14,7 +21,7 @@
                 if (!empty($image_upload_for_card)) { ; ?>
                 <img class="trad_advance_features_card_content_image" 
                 src="<?php echo esc_url( $image_upload_for_card ); ?>" 
-                alt="<?php echo esc_attr__( 'new', 'turbo-addons-elementor-pro' ); ?>">
+                alt="<?php echo esc_attr__( 'new', 'freemius-turbo-addons-elementor-pro' ); ?>">
             <?php
                 };
             ?>
@@ -27,7 +34,7 @@
             if (!empty($style_badge_image)) { ; ?>
                 <img class="trad_advance_features_card_badge_image" 
                 src="<?php echo esc_url( $style_badge_image ); ?>" 
-                alt="<?php echo esc_attr__( 'new', 'turbo-addons-elementor-pro' ); ?>">
+                alt="<?php echo esc_attr__( 'new', 'freemius-turbo-addons-elementor-pro' ); ?>">
             <?php
                 };
             ?>

@@ -48,7 +48,7 @@ class TRAD_Plugin_Information {
         $plugin_info->requires = '5.0';
         $plugin_info->tested = '6.9.4';
         $plugin_info->requires_php = '7.4';
-        $plugin_info->last_updated = date( 'Y-m-d' );
+        $plugin_info->last_updated = gmdate( 'Y-m-d' );
         $plugin_info->sections = array(
             'description' => self::get_description(),
             'features' => self::get_features(),
@@ -179,7 +179,7 @@ class TRAD_Plugin_Information {
     private static function get_changelog() {
         return '<h3>Changelog</h3>
         
-        <h4>Version 1.3.4 - ' . date('Y-m-d') . '</h4>
+        <h4>Version 1.3.4 - ' . gmdate('Y-m-d') . '</h4>
         <ul>
             <li><strong>New:</strong> CSV Upload & Display widget with search and pagination</li>
             <li><strong>New:</strong> Advanced table styling options</li>

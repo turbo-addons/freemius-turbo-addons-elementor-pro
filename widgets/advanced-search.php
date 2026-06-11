@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class TRAD_Advanced_Search extends Widget_Base {
 
 	public function get_name()          { return 'trad-advanced-search'; }
-	public function get_title()         { return esc_html__( 'Advanced Search', 'turbo-addons-elementor-pro' ); }
+	public function get_title()         { return esc_html__( 'Advanced Search', 'freemius-turbo-addons-elementor-pro' ); }
 	public function get_icon()          { return 'eicon-search trad-icon'; }
 	public function get_categories()    { return [ 'turbo-addons-pro' ]; }
 	public function get_keywords()      { return [ 'search', 'ajax', 'live search', 'advanced', 'turbo' ]; }
@@ -22,22 +22,22 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── LAYOUT ────────────────────────────────────────────────────────────
 		$this->start_controls_section( 'section_layout', [
-			'label' => esc_html__( 'Layout', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Layout', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'   => Controls_Manager::TAB_CONTENT,
 		] );
 
 		$this->add_control( 'layout', [
-			'label'   => esc_html__( 'Layout', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Layout', 'freemius-turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::SELECT,
 			'default' => 'input-button',
 			'options' => [
-				'input-only'   => esc_html__( 'Input Box Only', 'turbo-addons-elementor-pro' ),
-				'input-button' => esc_html__( 'Input Box with Button', 'turbo-addons-elementor-pro' ),
+				'input-only'   => esc_html__( 'Input Box Only', 'freemius-turbo-addons-elementor-pro' ),
+				'input-button' => esc_html__( 'Input Box with Button', 'freemius-turbo-addons-elementor-pro' ),
 			],
 		] );
 
 		$this->add_responsive_control( 'alignment', [
-			'label'     => esc_html__( 'Alignment', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Alignment', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::CHOOSE,
 			'options'   => [
 				'left'   => [ 'title' => 'Left',   'icon' => 'eicon-text-align-left' ],
@@ -52,51 +52,51 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── SEARCH SETTINGS ───────────────────────────────────────────────────
 		$this->start_controls_section( 'section_search_settings', [
-			'label' => esc_html__( 'Search Settings', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Search Settings', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'   => Controls_Manager::TAB_CONTENT,
 		] );
 
 		$this->add_control( 'placeholder', [
-			'label'       => esc_html__( 'Placeholder Text', 'turbo-addons-elementor-pro' ),
+			'label'       => esc_html__( 'Placeholder Text', 'freemius-turbo-addons-elementor-pro' ),
 			'type'        => Controls_Manager::TEXT,
-			'default'     => esc_html__( 'Search...', 'turbo-addons-elementor-pro' ),
+			'default'     => esc_html__( 'Search...', 'freemius-turbo-addons-elementor-pro' ),
 			'label_block' => true,
 		] );
 
 		$this->add_control( 'button_text', [
-			'label'       => esc_html__( 'Button Text', 'turbo-addons-elementor-pro' ),
+			'label'       => esc_html__( 'Button Text', 'freemius-turbo-addons-elementor-pro' ),
 			'type'        => Controls_Manager::TEXT,
-			'default'     => esc_html__( 'Search', 'turbo-addons-elementor-pro' ),
+			'default'     => esc_html__( 'Search', 'freemius-turbo-addons-elementor-pro' ),
 			'condition'   => [ 'layout' => 'input-button' ],
 			'label_block' => true,
 		] );
 
 		$this->add_control( 'search_icon', [
-			'label'   => esc_html__( 'Placeholder Icon', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Placeholder Icon', 'freemius-turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::ICONS,
 			'default' => [ 'value' => 'fas fa-search', 'library' => 'fa-solid' ],
 		] );
 
 		$this->add_control( 'icon_position', [
-			'label'   => esc_html__( 'Placeholder Icon Position', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Placeholder Icon Position', 'freemius-turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::SELECT,
 			'default' => 'left',
 			'options' => [
-				'left'  => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
-				'right' => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
+				'left'  => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
+				'right' => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
 			],
 			'condition' => [ 'layout!' => 'icon-only' ],
 		] );
 
 		$this->add_control( 'button_icon', [
-			'label'     => esc_html__( 'Button Icon', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Button Icon', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::ICONS,
 			'default'   => [ 'value' => 'fas fa-search', 'library' => 'fa-solid' ],
 			'condition' => [ 'layout' => 'input-button' ],
 		] );
 
 		$this->add_control( 'close_icon', [
-			'label'   => esc_html__( 'Search Close Icon', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Search Close Icon', 'freemius-turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::ICONS,
 			'default' => [ 'value' => 'fas fa-times', 'library' => 'fa-solid' ],
 		] );
@@ -105,19 +105,19 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── AJAX SETTINGS ─────────────────────────────────────────────────────
 		$this->start_controls_section( 'section_ajax', [
-			'label' => esc_html__( 'AJAX Settings', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'AJAX Settings', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'   => Controls_Manager::TAB_CONTENT,
 		] );
 
 		$this->add_control( 'enable_ajax', [
-			'label'        => esc_html__( 'Enable Live Search', 'turbo-addons-elementor-pro' ),
+			'label'        => esc_html__( 'Enable Live Search', 'freemius-turbo-addons-elementor-pro' ),
 			'type'         => Controls_Manager::SWITCHER,
 			'return_value' => 'yes',
 			'default'      => 'yes',
 		] );
 
 		$this->add_control( 'min_characters', [
-			'label'     => esc_html__( 'Minimum Characters', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Minimum Characters', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::NUMBER,
 			'default'   => 3,
 			'min'       => 1,
@@ -126,18 +126,18 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_control( 'search_delay', [
-			'label'       => esc_html__( 'Search Delay (ms)', 'turbo-addons-elementor-pro' ),
+			'label'       => esc_html__( 'Search Delay (ms)', 'freemius-turbo-addons-elementor-pro' ),
 			'type'        => Controls_Manager::NUMBER,
 			'default'     => 300,
 			'min'         => 0,
 			'max'         => 2000,
 			'step'        => 100,
 			'condition'   => [ 'enable_ajax' => 'yes' ],
-			'description' => esc_html__( 'Delay before triggering search', 'turbo-addons-elementor-pro' ),
+			'description' => esc_html__( 'Delay before triggering search', 'freemius-turbo-addons-elementor-pro' ),
 		] );
 
 		$this->add_control( 'results_count', [
-			'label'     => esc_html__( 'Number of Results', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Number of Results', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::NUMBER,
 			'default'   => 5,
 			'min'       => 1,
@@ -149,12 +149,12 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── CONTENT TO SEARCH ─────────────────────────────────────────────────
 		$this->start_controls_section( 'section_content_search', [
-			'label' => esc_html__( 'Content to Search', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Content to Search', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'   => Controls_Manager::TAB_CONTENT,
 		] );
 
 		$this->add_control( 'search_post_types', [
-			'label'    => esc_html__( 'Post Types', 'turbo-addons-elementor-pro' ),
+			'label'    => esc_html__( 'Post Types', 'freemius-turbo-addons-elementor-pro' ),
 			'type'     => Controls_Manager::SELECT2,
 			'multiple' => true,
 			'default'  => [ 'post', 'page' ],
@@ -165,27 +165,27 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── RESULTS DISPLAY ───────────────────────────────────────────────────
 		$this->start_controls_section( 'section_results_display', [
-			'label'     => esc_html__( 'Results Display', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Results Display', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'       => Controls_Manager::TAB_CONTENT,
 			'condition' => [ 'enable_ajax' => 'yes' ],
 		] );
 
 		$this->add_control( 'show_thumbnail', [
-			'label'        => esc_html__( 'Show Featured Image', 'turbo-addons-elementor-pro' ),
+			'label'        => esc_html__( 'Show Featured Image', 'freemius-turbo-addons-elementor-pro' ),
 			'type'         => Controls_Manager::SWITCHER,
 			'return_value' => 'yes',
 			'default'      => 'yes',
 		] );
 
 		$this->add_control( 'show_excerpt', [
-			'label'        => esc_html__( 'Show Excerpt', 'turbo-addons-elementor-pro' ),
+			'label'        => esc_html__( 'Show Excerpt', 'freemius-turbo-addons-elementor-pro' ),
 			'type'         => Controls_Manager::SWITCHER,
 			'return_value' => 'yes',
 			'default'      => 'yes',
 		] );
 
 		$this->add_control( 'excerpt_length', [
-			'label'     => esc_html__( 'Excerpt Length', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Excerpt Length', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::NUMBER,
 			'default'   => 15,
 			'min'       => 5,
@@ -194,31 +194,31 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_control( 'show_date', [
-			'label'        => esc_html__( 'Show Post Date', 'turbo-addons-elementor-pro' ),
+			'label'        => esc_html__( 'Show Post Date', 'freemius-turbo-addons-elementor-pro' ),
 			'type'         => Controls_Manager::SWITCHER,
 			'return_value' => 'yes',
 			'default'      => 'no',
 		] );
 
 		$this->add_control( 'show_post_type', [
-			'label'        => esc_html__( 'Show Post Type', 'turbo-addons-elementor-pro' ),
+			'label'        => esc_html__( 'Show Post Type', 'freemius-turbo-addons-elementor-pro' ),
 			'type'         => Controls_Manager::SWITCHER,
 			'return_value' => 'yes',
 			'default'      => 'no',
 		] );
 
 		$this->add_control( 'result_style', [
-			'label'   => esc_html__( 'Result Style', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Result Style', 'freemius-turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::SELECT,
 			'default' => 'list',
 			'options' => [
-				'list' => esc_html__( 'List (Vertical)', 'turbo-addons-elementor-pro' ),
-				'grid' => esc_html__( 'Grid (Cards)', 'turbo-addons-elementor-pro' ),
+				'list' => esc_html__( 'List (Vertical)', 'freemius-turbo-addons-elementor-pro' ),
+				'grid' => esc_html__( 'Grid (Cards)', 'freemius-turbo-addons-elementor-pro' ),
 			],
 		] );
 
 		$this->add_responsive_control( 'grid_columns', [
-			'label'     => esc_html__( 'Columns', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Columns', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SELECT,
 			'default'   => '2',
 			'options'   => [
@@ -237,7 +237,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── STYLE: Box ────────────────────────────────────────────────────────
 		$this->start_controls_section( 'section_style_box', [
-			'label' => esc_html__( 'Box', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Box', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
@@ -247,7 +247,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'box_padding', [
-			'label'      => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', 'em', '%' ],
 			'selectors'  => [ '{{WRAPPER}} .trad-search-form' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
@@ -259,7 +259,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'box_border_radius', [
-			'label'      => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [ '{{WRAPPER}} .trad-search-form' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
@@ -274,7 +274,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── STYLE: Input Field ────────────────────────────────────────────────
 		$this->start_controls_section( 'section_style_input', [
-			'label' => esc_html__( 'Input Field', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Input Field', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
@@ -285,22 +285,22 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		$this->start_controls_tabs( 'input_tabs' );
 
-		$this->start_controls_tab( 'input_normal', [ 'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ) ] );
+		$this->start_controls_tab( 'input_normal', [ 'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 		$this->add_control( 'input_text_color', [
-			'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-search-input' => 'color: {{VALUE}};' ],
 		] );
 
 		$this->add_control( 'input_placeholder_color', [
-			'label'     => esc_html__( 'Placeholder Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Placeholder Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-search-input::placeholder' => 'color: {{VALUE}};' ],
 		] );
 
 		$this->add_control( 'input_bg_color', [
-			'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '#ffffff',
 			'selectors' => [ '{{WRAPPER}} .trad-search-input' => 'background-color: {{VALUE}};' ],
@@ -308,22 +308,22 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'input_focus', [ 'label' => esc_html__( 'Focus', 'turbo-addons-elementor-pro' ) ] );
+		$this->start_controls_tab( 'input_focus', [ 'label' => esc_html__( 'Focus', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 		$this->add_control( 'input_focus_color', [
-			'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-search-input:focus' => 'color: {{VALUE}};' ],
 		] );
 
 		$this->add_control( 'input_focus_bg', [
-			'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-search-input:focus' => 'background-color: {{VALUE}};' ],
 		] );
 
 		$this->add_control( 'input_focus_border', [
-			'label'     => esc_html__( 'Border Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Border Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-search-input:focus' => 'border-color: {{VALUE}};' ],
 		] );
@@ -332,7 +332,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_responsive_control( 'input_padding', [
-			'label'      => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', 'em' ],
 			'default'    => [ 'top' => '12', 'right' => '15', 'bottom' => '12', 'left' => '15', 'unit' => 'px' ],
@@ -341,7 +341,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'input_height', [
-			'label'      => esc_html__( 'Height', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Height', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px' ],
 			'range'      => [
@@ -359,7 +359,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'input_border_radius', [
-			'label'      => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'default'    => [ 'top' => '5', 'right' => '5', 'bottom' => '5', 'left' => '5', 'unit' => 'px' ],
@@ -367,7 +367,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'input_width', [
-			'label'      => esc_html__( 'Width', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Width', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px', '%', 'vw' ],
 			'range'      => [
@@ -386,7 +386,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── STYLE: Search Button ──────────────────────────────────────────────
 		$this->start_controls_section( 'section_style_button', [
-			'label'     => esc_html__( 'Search Button', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Search Button', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'       => Controls_Manager::TAB_STYLE,
 			'condition' => [ 'layout' => 'input-button' ],
 		] );
@@ -399,17 +399,17 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		$this->start_controls_tabs( 'button_tabs' );
 
-		$this->start_controls_tab( 'button_normal', [ 'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ) ] );
+		$this->start_controls_tab( 'button_normal', [ 'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 		$this->add_control( 'button_text_color', [
-			'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '#ffffff',
 			'selectors' => [ '{{WRAPPER}} .trad-search-button' => 'color: {{VALUE}};' ],
 		] );
 
 		$this->add_control( 'button_bg_color', [
-			'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '#6040e0',
 			'selectors' => [ '{{WRAPPER}} .trad-search-button' => 'background-color: {{VALUE}};' ],
@@ -417,16 +417,16 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'button_hover', [ 'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ) ] );
+		$this->start_controls_tab( 'button_hover', [ 'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 		$this->add_control( 'button_hover_color', [
-			'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-search-button:hover' => 'color: {{VALUE}};' ],
 		] );
 
 		$this->add_control( 'button_hover_bg', [
-			'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '#4f2fc5',
 			'selectors' => [ '{{WRAPPER}} .trad-search-button:hover' => 'background-color: {{VALUE}};' ],
@@ -436,7 +436,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_responsive_control( 'button_padding', [
-			'label'      => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', 'em' ],
 			'default'    => [ 'top' => '12', 'right' => '25', 'bottom' => '12', 'left' => '25', 'unit' => 'px' ],
@@ -450,7 +450,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'button_border_radius', [
-			'label'      => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'default'    => [ 'top' => '5', 'right' => '5', 'bottom' => '5', 'left' => '5', 'unit' => 'px' ],
@@ -458,13 +458,13 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_control( 'button_icon_heading', [
-			'label'     => esc_html__( 'Button Icon', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Button Icon', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::HEADING,
 			'separator' => 'before',
 		] );
 
 		$this->add_responsive_control( 'button_icon_size', [
-			'label'     => esc_html__( 'Icon Size', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon Size', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [ 'px' => [ 'min' => 10, 'max' => 50 ] ],
 			'default'   => [ 'size' => 16 ],
@@ -475,7 +475,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'button_icon_spacing', [
-			'label'     => esc_html__( 'Icon Spacing', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon Spacing', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [ 'px' => [ 'min' => 0, 'max' => 30 ] ],
 			'default'   => [ 'size' => 8 ],
@@ -485,7 +485,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_control( 'button_icon_color', [
-			'label'     => esc_html__( 'Icon Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .trad-button-icon i'   => 'color: {{VALUE}};',
@@ -494,7 +494,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_control( 'button_icon_hover_color', [
-			'label'     => esc_html__( 'Icon Hover Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon Hover Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .trad-search-button:hover .trad-button-icon i'   => 'color: {{VALUE}};',
@@ -506,12 +506,12 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── STYLE: Search Icon ────────────────────────────────────────────────
 		$this->start_controls_section( 'section_style_icon', [
-			'label' => esc_html__( 'Placeholder Search Icon', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Placeholder Search Icon', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_responsive_control( 'icon_size', [
-			'label'     => esc_html__( 'Icon Size', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon Size', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [ 'px' => [ 'min' => 10, 'max' => 50 ] ],
 			'default'   => [ 'size' => 18 ],
@@ -522,7 +522,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_control( 'icon_color', [
-			'label'     => esc_html__( 'Icon Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .trad-search-icon i'   => 'color: {{VALUE}};',
@@ -531,7 +531,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'icon_spacing', [
-			'label'     => esc_html__( 'Spacing', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Spacing', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [ 'px' => [ 'min' => 0, 'max' => 50 ] ],
 			'default'   => [ 'size' => 40 ],
@@ -546,12 +546,12 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── STYLE: Close Icon ─────────────────────────────────────────────────
 		$this->start_controls_section( 'section_style_close_icon', [
-			'label' => esc_html__( 'Search Close Icon', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Search Close Icon', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_responsive_control( 'close_icon_size', [
-			'label'     => esc_html__( 'Icon Size', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon Size', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [ 'px' => [ 'min' => 10, 'max' => 50 ] ],
 			'default'   => [ 'size' => 16 ],
@@ -563,10 +563,10 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		$this->start_controls_tabs( 'close_icon_tabs' );
 
-		$this->start_controls_tab( 'close_icon_normal', [ 'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ) ] );
+		$this->start_controls_tab( 'close_icon_normal', [ 'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 		$this->add_control( 'close_icon_color', [
-			'label'     => esc_html__( 'Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '#999',
 			'selectors' => [
@@ -577,10 +577,10 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'close_icon_hover', [ 'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ) ] );
+		$this->start_controls_tab( 'close_icon_hover', [ 'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 		$this->add_control( 'close_icon_hover_color', [
-			'label'     => esc_html__( 'Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '#333',
 			'selectors' => [
@@ -596,20 +596,20 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── STYLE: Results Dropdown ───────────────────────────────────────────
 		$this->start_controls_section( 'section_style_results', [
-			'label'     => esc_html__( 'Results Dropdown', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Results Dropdown', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'       => Controls_Manager::TAB_STYLE,
 			'condition' => [ 'enable_ajax' => 'yes' ],
 		] );
 
 		$this->add_control( 'results_bg', [
-			'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '#ffffff',
 			'selectors' => [ '{{WRAPPER}} .trad-search-results' => 'background-color: {{VALUE}};' ],
 		] );
 
 		$this->add_responsive_control( 'results_max_height', [
-			'label'      => esc_html__( 'Max Height', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Max Height', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px', 'vh' ],
 			'range'      => [ 'px' => [ 'min' => 100, 'max' => 800 ] ],
@@ -623,7 +623,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'results_border_radius', [
-			'label'      => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [ '{{WRAPPER}} .trad-search-results' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
@@ -638,37 +638,37 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── STYLE: Result Items ───────────────────────────────────────────────
 		$this->start_controls_section( 'section_style_result_items', [
-			'label'     => esc_html__( 'Result Items', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Result Items', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'       => Controls_Manager::TAB_STYLE,
 			'condition' => [ 'enable_ajax' => 'yes' ],
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'result_title_typography',
-			'label'    => esc_html__( 'Title Typography', 'turbo-addons-elementor-pro' ),
+			'label'    => esc_html__( 'Title Typography', 'freemius-turbo-addons-elementor-pro' ),
 			'selector' => '{{WRAPPER}} .trad-result-title',
 		] );
 
 		$this->add_control( 'result_title_color', [
-			'label'     => esc_html__( 'Title Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Title Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-result-title' => 'color: {{VALUE}};' ],
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'result_excerpt_typography',
-			'label'    => esc_html__( 'Excerpt Typography', 'turbo-addons-elementor-pro' ),
+			'label'    => esc_html__( 'Excerpt Typography', 'freemius-turbo-addons-elementor-pro' ),
 			'selector' => '{{WRAPPER}} .trad-result-excerpt',
 		] );
 
 		$this->add_control( 'result_excerpt_color', [
-			'label'     => esc_html__( 'Excerpt Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Excerpt Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-result-excerpt' => 'color: {{VALUE}};' ],
 		] );
 
 		$this->add_responsive_control( 'result_item_padding', [
-			'label'      => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', 'em' ],
 			'default'    => [ 'top' => '12', 'right' => '15', 'bottom' => '12', 'left' => '15', 'unit' => 'px' ],
@@ -676,7 +676,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_control( 'result_item_hover_bg', [
-			'label'     => esc_html__( 'Hover Background', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Hover Background', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '#f5f5f5',
 			'selectors' => [ '{{WRAPPER}} .trad-result-item:hover' => 'background-color: {{VALUE}};' ],
@@ -686,13 +686,13 @@ class TRAD_Advanced_Search extends Widget_Base {
 
 		// ── STYLE: Thumbnail ──────────────────────────────────────────────────
 		$this->start_controls_section( 'section_style_thumbnail', [
-			'label'     => esc_html__( 'Thumbnail', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Thumbnail', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'       => Controls_Manager::TAB_STYLE,
 			'condition' => [ 'enable_ajax' => 'yes', 'show_thumbnail' => 'yes' ],
 		] );
 
 		$this->add_responsive_control( 'thumbnail_size', [
-			'label'      => esc_html__( 'Size', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Size', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px' ],
 			'range'      => [ 'px' => [ 'min' => 30, 'max' => 300 ] ],
@@ -704,7 +704,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'thumbnail_spacing', [
-			'label'     => esc_html__( 'Spacing', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Spacing', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [ 'px' => [ 'min' => 0, 'max' => 50 ] ],
 			'default'   => [ 'size' => 12 ],
@@ -714,7 +714,7 @@ class TRAD_Advanced_Search extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'thumbnail_border_radius', [
-			'label'      => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'default'    => [ 'top' => '5', 'right' => '5', 'bottom' => '5', 'left' => '5', 'unit' => 'px' ],

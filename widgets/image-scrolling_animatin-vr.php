@@ -14,7 +14,7 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
 // image-scrolling_animatin-vr
 
     public function get_title() {
-        return __('Image Vertical Scrolling', 'turbo-addons-elementor-pro');
+        return __('Image Vertical Scrolling', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -30,7 +30,7 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => __('Content', 'turbo-addons-elementor-pro'),
+                'label' => __('Content', 'freemius-turbo-addons-elementor-pro'),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -38,10 +38,10 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
         $this->add_control(
             'image_list',
             [
-                'label'       => __('Images', 'turbo-addons-elementor-pro'),
+                'label'       => __('Images', 'freemius-turbo-addons-elementor-pro'),
                 'type'        => Controls_Manager::GALLERY,
                 'default'     => [],
-                'description' => __('Add images to the scrolling gallery', 'turbo-addons-elementor-pro'),
+                'description' => __('Add images to the scrolling gallery', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
@@ -51,7 +51,7 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
         $this->start_controls_section(
             'settings_section',
             [
-                'label' => __('Settings', 'turbo-addons-elementor-pro'),
+                'label' => __('Settings', 'freemius-turbo-addons-elementor-pro'),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -59,33 +59,33 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
         $this->add_control(
             'scroll_speed',
             [
-                'label'   => __('Scroll Speed (seconds)', 'turbo-addons-elementor-pro'),
+                'label'   => __('Scroll Speed (seconds)', 'freemius-turbo-addons-elementor-pro'),
                 'type'    => Controls_Manager::NUMBER,
                 'default' => 10,
                 'min'     => 1,
                 'step'    => 1,
-                'description' => __('Set the speed of the scrolling animation.', 'turbo-addons-elementor-pro'),
+                'description' => __('Set the speed of the scrolling animation.', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
         $this->add_control(
             'scroll_direction',
             [
-                'label'   => __('Scroll Direction', 'turbo-addons-elementor-pro'),
+                'label'   => __('Scroll Direction', 'freemius-turbo-addons-elementor-pro'),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'btt', // default is Bottom-to-Top
                 'options' => [
-                    'btt' => __('Bottom to Top', 'turbo-addons-elementor-pro'),
-                    'ttb' => __('Top to Bottom', 'turbo-addons-elementor-pro'),
+                    'btt' => __('Bottom to Top', 'freemius-turbo-addons-elementor-pro'),
+                    'ttb' => __('Top to Bottom', 'freemius-turbo-addons-elementor-pro'),
                 ],
-                'description' => __('Choose the direction of the scrolling animation.', 'turbo-addons-elementor-pro'),
+                'description' => __('Choose the direction of the scrolling animation.', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
         $this->add_responsive_control(
             'columns',
             [
-                'label'   => __('Columns', 'turbo-addons-elementor-pro'),
+                'label'   => __('Columns', 'freemius-turbo-addons-elementor-pro'),
                 'type'    => Controls_Manager::SLIDER,
                 'size_units' => [''],
                 'range'   => [
@@ -107,22 +107,22 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
         $this->add_control(
             'gap',
             [
-                'label'   => __('Gap (px)', 'turbo-addons-elementor-pro'),
+                'label'   => __('Gap (px)', 'freemius-turbo-addons-elementor-pro'),
                 'type'    => Controls_Manager::NUMBER,
                 'default' => 10,
                 'min'     => 0,
                 'step'    => 1,
-                'description' => __('Spacing between images.', 'turbo-addons-elementor-pro'),
+                'description' => __('Spacing between images.', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
         // paused on off controller
         $this->add_control(
             'pause_on_hover',
             [
-                'label'        => __('Pause on Hover', 'turbo-addons-elementor-pro'),
+                'label'        => __('Pause on Hover', 'freemius-turbo-addons-elementor-pro'),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __('Yes', 'turbo-addons-elementor-pro'),
-                'label_off'    => __('No', 'turbo-addons-elementor-pro'),
+                'label_on'     => __('Yes', 'freemius-turbo-addons-elementor-pro'),
+                'label_off'    => __('No', 'freemius-turbo-addons-elementor-pro'),
                 'return_value' => 'yes',
                 'default'      => 'yes',
                 'selectors'    => [
@@ -138,7 +138,7 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
         $this->start_controls_section(
             'trad_box_auto_scroller_box_style',
             [
-                'label' => esc_html__('Box', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Box', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -146,7 +146,7 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
         $this->add_responsive_control(
             'trad_box_auto_scroller_padding',
             [
-                'label' => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'devices' => [ 'desktop', 'tablet', 'mobile' ],
                 'size_units' => [ 'px', '%', 'em' ],
@@ -169,7 +169,7 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
         $this->start_controls_section(
             'trad_auto_scroll_image_style',
             [
-                'label' => esc_html__('Image', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Image', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -177,7 +177,7 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
         $this->add_responsive_control(
             'image_width',
             [
-                'label' => __('Width', 'turbo-addons-elementor-pro'),
+                'label' => __('Width', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['%', 'px', 'em'],
                 'range' => [
@@ -208,7 +208,7 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'image_border',
-                'label'    => __('Border', 'turbo-addons-elementor-pro'),
+                'label'    => __('Border', 'freemius-turbo-addons-elementor-pro'),
                 'selector' => '{{WRAPPER}} .trad-image-grid-scrolling-inner img',
             ]
         );
@@ -216,7 +216,7 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
         $this->add_responsive_control(
             'image_border_radius',
             [
-                'label'      => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label'      => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range'      => [
@@ -249,7 +249,7 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
     $gap       = isset($s['gap']) ? (int) $s['gap'] : 10;
 
     if (empty($images)) {
-        echo '<p>' . esc_html__('No images added.', 'turbo-addons-elementor-pro') . '</p>';
+        echo '<p>' . esc_html__('No images added.', 'freemius-turbo-addons-elementor-pro') . '</p>';
         return;
     }
     ?>

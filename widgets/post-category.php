@@ -19,7 +19,7 @@ class TRAD_Post_Category extends Widget_Base {
     }
 
     public function get_title() {
-        return __('Post Category', 'turbo-addons-elementor-pro');
+        return __('Post Category', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -34,7 +34,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => __('Content', 'turbo-addons-elementor-pro'),
+                'label' => __('Content', 'freemius-turbo-addons-elementor-pro'),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -53,7 +53,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'selected_category',
             [
-                'label'       => __('Select Category', 'turbo-addons-elementor-pro'),
+                'label'       => __('Select Category', 'freemius-turbo-addons-elementor-pro'),
                 'type'        => Controls_Manager::SELECT,
                 'options'     => $options,
                 'default'     => key($options),
@@ -64,10 +64,10 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'trad_category_show_post_text',
             [
-                'label' => __('Show Category', 'turbo-addons-elementor-pro'),
+                'label' => __('Show Category', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'turbo-addons-elementor-pro'),
-                'label_off' => __('Hide', 'turbo-addons-elementor-pro'),
+                'label_on' => __('Show', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => __('Hide', 'freemius-turbo-addons-elementor-pro'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -76,10 +76,10 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'post_available_text',
             [
-                'label' => __('Text after number', 'turbo-addons-elementor-pro'),
+                'label' => __('Text after number', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('Post Available', 'turbo-addons-elementor-pro'),
-                'description' => __('Enter the text to display after the post count.', 'turbo-addons-elementor-pro'),
+                'default' => __('Post Available', 'freemius-turbo-addons-elementor-pro'),
+                'description' => __('Enter the text to display after the post count.', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
@@ -87,10 +87,10 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'trad_category_post_show_count_text',
             [
-                'label' => __('Show Post Count', 'turbo-addons-elementor-pro'),
+                'label' => __('Show Post Count', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'turbo-addons-elementor-pro'),
-                'label_off' => __('Hide', 'turbo-addons-elementor-pro'),
+                'label_on' => __('Show', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => __('Hide', 'freemius-turbo-addons-elementor-pro'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -101,7 +101,7 @@ class TRAD_Post_Category extends Widget_Base {
          $this->start_controls_section(
             'trad_post_category_image',
             [
-                'label' => __('Image', 'turbo-addons-elementor-pro'),
+                'label' => __('Image', 'freemius-turbo-addons-elementor-pro'),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -109,10 +109,10 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'trad_category_show_image',
             [
-                'label' => __('Show Image', 'turbo-addons-elementor-pro'),
+                'label' => __('Show Image', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'turbo-addons-elementor-pro'),
-                'label_off' => __('Hide', 'turbo-addons-elementor-pro'),
+                'label_on' => __('Show', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => __('Hide', 'freemius-turbo-addons-elementor-pro'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -120,7 +120,7 @@ class TRAD_Post_Category extends Widget_Base {
          $this->add_control(
             'uploaded_image',
             [
-                'label'     => __('Upload Image', 'turbo-addons-elementor-pro'),
+                'label'     => __('Upload Image', 'freemius-turbo-addons-elementor-pro'),
                 'type'      => Controls_Manager::MEDIA,
                 'default'   => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -137,19 +137,19 @@ class TRAD_Post_Category extends Widget_Base {
          $this->start_controls_section(
             'trad_post_category_button',
             [
-                'label' => __('Button', 'turbo-addons-elementor-pro'),
+                'label' => __('Button', 'freemius-turbo-addons-elementor-pro'),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
           $this->add_control(
             'trad_category_post_count_show_button',
             [
-                'label' => __('Show Button', 'turbo-addons-elementor-pro'),
+                'label' => __('Show Button', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'turbo-addons-elementor-pro'),
-                'label_off' => __('No', 'turbo-addons-elementor-pro'),
+                'label_on' => __('Yes', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => __('No', 'freemius-turbo-addons-elementor-pro'),
                 'default' => 'yes',
-                'description' => __('Enable to show a button below the post count', 'turbo-addons-elementor-pro'),
+                'description' => __('Enable to show a button below the post count', 'freemius-turbo-addons-elementor-pro'),
             ]
         );
 
@@ -157,9 +157,9 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'button_text',
             [
-                'label' => __('Button Text', 'turbo-addons-elementor-pro'),
+                'label' => __('Button Text', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('See All Post', 'turbo-addons-elementor-pro'),
+                'default' => __('See All Post', 'freemius-turbo-addons-elementor-pro'),
                 'condition' => [
                     'trad_category_post_count_show_button' => 'yes',
                 ],
@@ -170,12 +170,12 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'button_link_type',
             [
-                'label' => __('Link Type', 'turbo-addons-elementor-pro'),
+                'label' => __('Link Type', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'default',
                 'options' => [
-                    'default' => __('Default (Category Archive)', 'turbo-addons-elementor-pro'),
-                    'custom'  => __('Custom URL', 'turbo-addons-elementor-pro'),
+                    'default' => __('Default (Category Archive)', 'freemius-turbo-addons-elementor-pro'),
+                    'custom'  => __('Custom URL', 'freemius-turbo-addons-elementor-pro'),
                 ],
                 'condition' => [
                     'trad_category_post_count_show_button' => 'yes',
@@ -187,9 +187,9 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'button_link',
             [
-                'label' => __('Custom Button Link', 'turbo-addons-elementor-pro'),
+                'label' => __('Custom Button Link', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => __('https://your-link.com', 'turbo-addons-elementor-pro'),
+                'placeholder' => __('https://your-link.com', 'freemius-turbo-addons-elementor-pro'),
                 'condition' => [
                     'trad_category_post_count_show_button' => 'yes',
                     'button_link_type' => 'custom',
@@ -205,7 +205,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->start_controls_section(
             'container_style_section',
             [
-                'label' => esc_html__('Card', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Card', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -213,7 +213,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_responsive_control(
             'trad_category_post_count_card_padding',
             [
-                'label'      => __( 'Padding', 'turbo-addons-elementor-pro' ),
+                'label'      => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default'    => [
@@ -231,19 +231,19 @@ class TRAD_Post_Category extends Widget_Base {
           $this->add_responsive_control(
             'flex_direction',
             [
-                'label' => __('Image Direction', 'turbo-addons-elementor-pro'),
+                'label' => __('Image Direction', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                    'row' => [
-                        'title' => __('Row', 'turbo-addons-elementor-pro'),
+                        'title' => __('Row', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-arrow-left',
                     ],
                     'row-reverse' => [
-                        'title' => __('Row Reverse', 'turbo-addons-elementor-pro'),
+                        'title' => __('Row Reverse', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-arrow-right',
                     ],
                     'column' => [
-                        'title' => __('Column', 'turbo-addons-elementor-pro'),
+                        'title' => __('Column', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-arrow-down',
                     ],
                 ],
@@ -257,19 +257,19 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_responsive_control(
             'trad_category_post_count_card_align',
             [
-                'label' => esc_html__('Alignment', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'end' => [
-                        'title' => esc_html__('Right', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -282,7 +282,7 @@ class TRAD_Post_Category extends Widget_Base {
        $this->add_responsive_control(
             'content_row_img_gap',
             [
-                'label' => __('Gap', 'turbo-addons-elementor-pro'),
+                'label' => __('Gap', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range' => [
@@ -315,7 +315,7 @@ class TRAD_Post_Category extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'trad_category_post_count_card_background',
-                'label' => esc_html__( 'Background', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Background', 'freemius-turbo-addons-elementor-pro' ),
                 'types' => [ 'classic', 'gradient' ], 
                 'selector' => '{{WRAPPER}} .trad_category_post_count_card',
             ]
@@ -325,7 +325,7 @@ class TRAD_Post_Category extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'trad_category_post_count_card_shadow',
-                'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad_category_post_count_card',
             ]
         );
@@ -334,7 +334,7 @@ class TRAD_Post_Category extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'trad_category_post_count_card_border',
-                'label' => esc_html__( 'Border', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad_category_post_count_card',
             ]
         );
@@ -344,7 +344,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->start_controls_section(
             'image_style_section',
             [
-                'label' => esc_html__('Image Section', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Image Section', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -352,7 +352,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_responsive_control(
             'trad_category_post_count_image_width',
             [
-                'label' => __('Width', 'turbo-addons-elementor-pro'),
+                'label' => __('Width', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['%', 'px', 'vw'],
                 'range' => [
@@ -382,7 +382,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_responsive_control(
             'trad_category_post_count_image_border_radius',
             [
-                'label' => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -395,7 +395,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->start_controls_section(
             'content_style_section',
             [
-                'label' => esc_html__('Content Section', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Content Section', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -403,19 +403,19 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_responsive_control(
             'trad_category_post_content_text_align',
             [
-                'label' => esc_html__('Alignment', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Alignment', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Left', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Center', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'end' => [
-                        'title' => esc_html__('Right', 'turbo-addons-elementor-pro'),
+                        'title' => esc_html__('Right', 'freemius-turbo-addons-elementor-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -428,7 +428,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'trad_category_post_content_category_title_heading',
             [
-                'label' => esc_html__('Title', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Title', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -438,7 +438,7 @@ class TRAD_Post_Category extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'trad_category_post_content_category_title',
-                'label' => esc_html__( 'Typography', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad_category_post_count_card_title',
             ]
         );
@@ -447,7 +447,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'trad_category_post_content_category_title_color',
             [
-                'label' => esc_html__('Title Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Title Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000', // Default color
                 'selectors' => [
@@ -459,7 +459,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'trad_category_post_count_text_heading',
             [
-                'label' => esc_html__('Post Count Text', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Post Count Text', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -468,7 +468,7 @@ class TRAD_Post_Category extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'trad_category_post_count_text',
-                'label' => esc_html__( 'Typography', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad_category_post_count_card_count',
             ]
         );
@@ -477,7 +477,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'trad_category_post_count_text_color',
             [
-                'label' => esc_html__('Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000', // Default color
                 'selectors' => [
@@ -492,7 +492,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->start_controls_section(
             'button_style_section',
             [
-                'label' => esc_html__('Button Style', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Button Style', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -501,7 +501,7 @@ class TRAD_Post_Category extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'trad_category_post_content_button_typography',
-                'label' => esc_html__( 'Typography', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad_category_post_count_card_button',
             ]
         );
@@ -509,7 +509,7 @@ class TRAD_Post_Category extends Widget_Base {
           $this->add_responsive_control(
             'trad_category_post_content_button_padding',
             [
-                'label' => esc_html__('Padding', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Padding', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'default' => [
@@ -528,7 +528,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_responsive_control(
             'trad_category_post_content_button_radius',
             [
-                'label' => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -543,14 +543,14 @@ class TRAD_Post_Category extends Widget_Base {
         $this->start_controls_tab(
             'trad_category_post_count_style_normal',
             [
-                'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
         $this->add_group_control(
             Group_Control_Background::get_type(),
             [
                 'name' => 'trad_category_post_content_button',
-                'label' => esc_html__( 'Background', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Background', 'freemius-turbo-addons-elementor-pro' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .trad_category_post_count_card_button',
             ]
@@ -559,7 +559,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'trad_category_post_content_button_typography_text_color',
             [
-                'label' => esc_html__('Text Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Text Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff', 
                 'selectors' => [
@@ -572,7 +572,7 @@ class TRAD_Post_Category extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'trad_category_post_content_button_border',
-                'label' => esc_html__( 'Border', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad_category_post_count_card_button',
             ]
         );
@@ -581,7 +581,7 @@ class TRAD_Post_Category extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'trad_category_post_content_button_shadow',
-                'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad_category_post_count_card_button',
             ]
         );
@@ -591,7 +591,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->start_controls_tab(
             'trad_category_post_count_style_hover',
             [
-                'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
             ]
         ); 
 
@@ -599,7 +599,7 @@ class TRAD_Post_Category extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'trad_category_post_content_button_hover',
-                    'label' => esc_html__( 'Background', 'turbo-addons-elementor-pro' ),
+                    'label' => esc_html__( 'Background', 'freemius-turbo-addons-elementor-pro' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .trad_category_post_count_card_button:hover',
                 ]
@@ -608,7 +608,7 @@ class TRAD_Post_Category extends Widget_Base {
         $this->add_control(
             'trad_category_post_content_button_typography_text_color_hover',
             [
-                'label' => esc_html__('Text Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Text Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff', 
                 'selectors' => [
@@ -621,7 +621,7 @@ class TRAD_Post_Category extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'trad_category_post_content_button_border_hover',
-                'label' => esc_html__( 'Border', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Border', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad_category_post_count_card_button:hover',
             ]
         );
@@ -630,7 +630,7 @@ class TRAD_Post_Category extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'trad_category_post_content_button_shadow_hover',
-                'label' => __( 'Box Shadow', 'turbo-addons-elementor-pro' ),
+                'label' => __( 'Box Shadow', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad_category_post_count_card_button:hover',
             ]
         );
@@ -647,13 +647,13 @@ class TRAD_Post_Category extends Widget_Base {
         // Get the category details
         $category = get_term_by('id', $category_id, 'category');
         $post_count = $category ? $category->count : 0;
-        $category_name = $category ? $category->name : __('Unknown', 'turbo-addons-elementor-pro');
-        $post_available_text = !empty($settings['post_available_text']) ? $settings['post_available_text'] : __('Product Available', 'turbo-addons-elementor-pro');
+        $category_name = $category ? $category->name : __('Unknown', 'freemius-turbo-addons-elementor-pro');
+        $post_available_text = !empty($settings['post_available_text']) ? $settings['post_available_text'] : __('Product Available', 'freemius-turbo-addons-elementor-pro');
         $show_post_count = isset($settings['trad_category_post_show_count_text']) && 'yes' === $settings['trad_category_post_show_count_text'];
         $show_category_text = isset($settings['trad_category_show_post_text']) && 'yes' === $settings['trad_category_show_post_text']; 
         
         // button variable//
-        $button_text = !empty($settings['button_text']) ? $settings['button_text'] : __('Sell All Post', 'turbo-addons-elementor-pro');
+        $button_text = !empty($settings['button_text']) ? $settings['button_text'] : __('Sell All Post', 'freemius-turbo-addons-elementor-pro');
         // $button_link = $settings['button_link'];
         // $button_url = isset($button_link['url']) ? esc_url($button_link['url']) : '#';
         $button_target = isset($button_link['is_external']) && $button_link['is_external'] ? '_blank' : '_self';
@@ -672,7 +672,7 @@ class TRAD_Post_Category extends Widget_Base {
 
           if(!empty($settings["trad_category_show_image"])) {
             echo '<div class="trad_category_post_count_card_img">';
-                echo '<img src="' . esc_url($settings['uploaded_image']['url']) . '" alt="' . esc_attr__('Category Image', 'turbo-addons-elementor-pro') . '" class="trad_category_post_count_card_image_resize">';
+                echo '<img src="' . esc_url($settings['uploaded_image']['url']) . '" alt="' . esc_attr__('Category Image', 'freemius-turbo-addons-elementor-pro') . '" class="trad_category_post_count_card_image_resize">';
             echo '</div>';
           }
             // text content section//

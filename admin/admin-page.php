@@ -92,9 +92,9 @@ function turbo_addons_pro_admin_page() {
                         <img src="<?php echo esc_url( TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'admin/assets/images/turbo-logo-white.png' ); ?>"
                             alt="Turbo Addons Pro"
                             class="taep-navbar-logo">
-                        <span class="taep-navbar-pro-pill"><?php esc_html_e( 'PRO', 'turbo-addons-elementor-pro' ); ?></span>
+                        <span class="taep-navbar-pro-pill"><?php esc_html_e( 'PRO', 'freemius-turbo-addons-elementor-pro' ); ?></span>
                      </div>
-                     <span class="taep-navbar-headline"><?php esc_html_e( 'You\'re on the Pro plan — unlock everything.', 'turbo-addons-elementor-pro' ); ?></span>
+                     <span class="taep-navbar-headline"><?php esc_html_e( 'You\'re on the Pro plan — unlock everything.', 'freemius-turbo-addons-elementor-pro' ); ?></span>
                 </div>
                 
             </div>
@@ -103,17 +103,17 @@ function turbo_addons_pro_admin_page() {
             <div class="taep-navbar-stats">
                 <div class="taep-stat-chip">
                     <span class="taep-stat-num">45+</span>
-                    <span class="taep-stat-lbl"><?php esc_html_e( 'Pro Widgets', 'turbo-addons-elementor-pro' ); ?></span>
+                    <span class="taep-stat-lbl"><?php esc_html_e( 'Pro Widgets', 'freemius-turbo-addons-elementor-pro' ); ?></span>
                 </div>
                 <div class="taep-stat-divider"></div>
                 <div class="taep-stat-chip">
                     <span class="taep-stat-num">200+</span>
-                    <span class="taep-stat-lbl"><?php esc_html_e( 'Templates', 'turbo-addons-elementor-pro' ); ?></span>
+                    <span class="taep-stat-lbl"><?php esc_html_e( 'Templates', 'freemius-turbo-addons-elementor-pro' ); ?></span>
                 </div>
                 <div class="taep-stat-divider"></div>
                 <div class="taep-stat-chip">
                     <span class="taep-stat-num">WooCommerce</span>
-                    <span class="taep-stat-lbl"><?php esc_html_e( 'Full Support', 'turbo-addons-elementor-pro' ); ?></span>
+                    <span class="taep-stat-lbl"><?php esc_html_e( 'Full Support', 'freemius-turbo-addons-elementor-pro' ); ?></span>
                 </div>
             </div>
 
@@ -121,11 +121,11 @@ function turbo_addons_pro_admin_page() {
             <div class="taep-navbar-ctas">
                 <a href="https://turbo-addons.com/docs/" target="_blank" rel="noopener"
                    class="taep-navbar-btn taep-navbar-btn-ghost">
-                    📄 <?php esc_html_e( 'Docs', 'turbo-addons-elementor-pro' ); ?>
+                    📄 <?php esc_html_e( 'Docs', 'freemius-turbo-addons-elementor-pro' ); ?>
                 </a>
                 <a href="https://turbo-addons.com/get-support/" target="_blank" rel="noopener"
                    class="taep-navbar-btn taep-navbar-btn-solid">
-                    💬 <?php esc_html_e( 'Get Support', 'turbo-addons-elementor-pro' ); ?>
+                    💬 <?php esc_html_e( 'Get Support', 'freemius-turbo-addons-elementor-pro' ); ?>
                 </a>
             </div>
 
@@ -141,19 +141,19 @@ function turbo_addons_pro_admin_page() {
         <div class="taep-addons-sidebar" id="taep-addons-sidebar-menu">
             <ul class="taep-turbo-dashboard-menu-list">
                 <li class="taep-tab-link tab-link active" data-tab="general-tab">
-                    <a href="#"><?php esc_html_e( 'Dashboard', 'turbo-addons-elementor-pro' ); ?></a>
+                    <a href="#"><?php esc_html_e( 'Dashboard', 'freemius-turbo-addons-elementor-pro' ); ?></a>
                 </li>
                 <li class="taep-tab-link tab-link" data-tab="elements-free-tab">
-                    <a href="#"><?php esc_html_e( 'Elements Free', 'turbo-addons-elementor-pro' ); ?></a>
+                    <a href="#"><?php esc_html_e( 'Elements Free', 'freemius-turbo-addons-elementor-pro' ); ?></a>
                 </li>
                 <li class="taep-tab-link tab-link" data-tab="elements-pro-tab">
-                    <a href="#"><?php esc_html_e( 'Elements Pro', 'turbo-addons-elementor-pro' ); ?></a>
+                    <a href="#"><?php esc_html_e( 'Elements Pro', 'freemius-turbo-addons-elementor-pro' ); ?></a>
                 </li>
                 <li class="taep-tab-link tab-link" data-tab="extension-tab">
-                    <a href="#"><?php esc_html_e( 'Extension', 'turbo-addons-elementor-pro' ); ?></a>
+                    <a href="#"><?php esc_html_e( 'Extension', 'freemius-turbo-addons-elementor-pro' ); ?></a>
                 </li>
                 <!-- <li class="taep-tab-link tab-link" data-tab="premium-tab">
-                    <a href="#"><?php esc_html_e( 'Go Premium', 'turbo-addons-elementor-pro' ); ?></a>
+                    <a href="#"><?php esc_html_e( 'Go Premium', 'freemius-turbo-addons-elementor-pro' ); ?></a>
                 </li> -->
             </ul>
         </div>
@@ -167,13 +167,13 @@ function turbo_addons_pro_admin_page() {
                 <!-- ---------------------------Section 1: What's New + New Templates ----------------->
                 <div class="taep-dashboard-sec-one">
                     <div class="taep-dashboard-sec-one-left">
-                        <h3 class="taep-dashboard-sub-heading"><?php esc_html_e( "What's New in Version 1.3.4", 'turbo-addons-elementor-pro' ); ?></h3>
+                        <h3 class="taep-dashboard-sub-heading"><?php esc_html_e( "What's New in Version 1.9.0", 'freemius-turbo-addons-elementor-pro' ); ?></h3>
                         <hr>
                         <div class="taep-updated-list">
                             <img src="<?php echo esc_url( TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'admin/assets/images/turbo-logo-update.webp' ); ?>" alt="<?php echo esc_attr( 'update icon' ); ?>">
                             <div class="taep-updated-list-typography">
-                                <h4><?php esc_html_e( 'Added Pro Widgets', 'turbo-addons-elementor-pro' ); ?></h4>
-                                <p><?php esc_html_e( 'WhatsApp Chat, Image Hotspot, Off-Canvas, Advanced Search Pro', 'turbo-addons-elementor-pro' ); ?></p>
+                                <h4><?php esc_html_e( 'Added Pro Widgets', 'freemius-turbo-addons-elementor-pro' ); ?></h4>
+                                <p><?php esc_html_e( 'WhatsApp Chat, Image Hotspot, Off-Canvas, Advanced Search Pro, CSV Table Builder', 'freemius-turbo-addons-elementor-pro' ); ?></p>
                             </div>
                         </div>
                         <hr>
@@ -181,24 +181,24 @@ function turbo_addons_pro_admin_page() {
                         <div class="taep-updated-list">
                             <img src="<?php echo esc_url( TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'admin/assets/images/turbo-logo-update.webp' ); ?>" alt="<?php echo esc_attr( 'update icon' ); ?>">
                             <div class="taep-updated-list-typography">
-                                <h4><?php esc_html_e( 'WooCommerce Support', 'turbo-addons-elementor-pro' ); ?></h4>
-                                <p><?php esc_html_e( 'Full custom single product page builder with 15+ Woo widgets.', 'turbo-addons-elementor-pro' ); ?></p>
+                                <h4><?php esc_html_e( 'WooCommerce Support', 'freemius-turbo-addons-elementor-pro' ); ?></h4>
+                                <p><?php esc_html_e( 'Full custom single product page builder with 15+ WooCommerce widgets.', 'freemius-turbo-addons-elementor-pro' ); ?></p>
                             </div>
                         </div>
                         <hr>
                         <div class="taep-updated-list">
                             <img src="<?php echo esc_url( TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'admin/assets/images/turbo-logo-update.webp' ); ?>" alt="<?php echo esc_attr( 'update icon' ); ?>">
                             <div class="taep-updated-list-typography">
-                                <h4><?php esc_html_e( 'New Templates', 'turbo-addons-elementor-pro' ); ?></h4>
-                                <p><?php esc_html_e( 'Added 5 new modern templates - Cattle Farm, Degital Service, Vehicle etc.  ', 'turbo-addons-elementor-pro' ); ?></p>
+                                <h4><?php esc_html_e( 'New Templates', 'freemius-turbo-addons-elementor-pro' ); ?></h4>
+                                <p><?php esc_html_e( 'Added 5 new modern templates - Sports, Degital Service, Vehicle etc.  ', 'freemius-turbo-addons-elementor-pro' ); ?></p>
                             </div>
                         </div>
                         <hr>
                         <div class="taep-updated-list">
                             <img src="<?php echo esc_url( TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'admin/assets/images/turbo-logo-update.webp' ); ?>" alt="<?php echo esc_attr( 'update icon' ); ?>">
                             <div class="taep-updated-list-typography">
-                                <h4><?php esc_html_e( 'Updated', 'turbo-addons-elementor-pro' ); ?></h4>
-                                <p><?php esc_html_e( 'Tested and verified for full compatibility with Elementor 4.0.2', 'turbo-addons-elementor-pro' ); ?></p>
+                                <h4><?php esc_html_e( 'Updated', 'freemius-turbo-addons-elementor-pro' ); ?></h4>
+                                <p><?php esc_html_e( 'Tested and verified for full compatibility with Elementor 4.1.2', 'freemius-turbo-addons-elementor-pro' ); ?></p>
                             </div>
                         </div>
                     </div>
@@ -237,16 +237,16 @@ function turbo_addons_pro_admin_page() {
                         <div class="taep-template-panel-header">
                             <div class="taep-template-panel-header-left">
                                 <span class="taep-live-dot"></span>
-                                <span class="taep-live-label"><?php esc_html_e( 'New', 'turbo-addons-elementor-pro' ); ?></span>
-                                <h3 class="taep-dashboard-sub-heading"><?php esc_html_e( 'Templates Added', 'turbo-addons-elementor-pro' ); ?></h3>
+                                <span class="taep-live-label"><?php esc_html_e( 'New', 'freemius-turbo-addons-elementor-pro' ); ?></span>
+                                <h3 class="taep-dashboard-sub-heading"><?php esc_html_e( 'Templates Added', 'freemius-turbo-addons-elementor-pro' ); ?></h3>
                             </div>
                             <a href="#watch-guide-video" class="taep-how-to-btn taep-scroll-to-video">
                                 <span class="taep-how-to-ring">
                                     <span class="taep-how-to-play"></span>
                                 </span>
                                 <span class="taep-how-to-text">
-                                    <span class="taep-how-to-label"><?php esc_html_e( 'How to Use', 'turbo-addons-elementor-pro' ); ?></span>
-                                    <span class="taep-how-to-sub"><?php esc_html_e( 'Watch tutorial', 'turbo-addons-elementor-pro' ); ?></span>
+                                    <span class="taep-how-to-label"><?php esc_html_e( 'How to Use', 'freemius-turbo-addons-elementor-pro' ); ?></span>
+                                    <span class="taep-how-to-sub"><?php esc_html_e( 'Watch tutorial', 'freemius-turbo-addons-elementor-pro' ); ?></span>
                                 </span>
                             </a>
                         </div>
@@ -278,7 +278,7 @@ function turbo_addons_pro_admin_page() {
                                     <?php foreach ( $tpl_items as $idx => $tpl ) : ?>
                                     <div class="taep-tpl-slide <?php echo $idx === 0 ? 'active' : ''; ?>"
                                          data-index="<?php echo esc_attr( $idx ); ?>">
-                                        <img src="<?php echo $tpl['thumb']; ?>"
+                                        <img src="<?php echo esc_url( $tpl['thumb'] ); ?>"
                                              alt="<?php echo esc_attr( $tpl['title'] ); ?>"
                                              class="taep-tpl-slide-img">
                                         <?php if ( strtoupper( $tpl['batch'] ) === 'PRO' || $tpl['batch'] === 'on' ) : ?>
@@ -320,8 +320,10 @@ function turbo_addons_pro_admin_page() {
                                 </h4>
 
                                 <p class="taep-latest-template-desc" id="taep-tpl-desc">
-                                    <?php echo esc_html( $first_tpl['desc'] ?: sprintf(
-                                        __( 'A brand-new "%s" template is now available. Import it in one click and go live faster.', 'turbo-addons-elementor-pro' ),
+                                    <?php 
+                                    echo esc_html( $first_tpl['desc'] ?: sprintf(
+                                        /* translators: %s: Template title. */
+                                        __( 'A brand-new "%s" template is now available. Import it in one click and go live faster.', 'freemius-turbo-addons-elementor-pro' ),
                                         $first_tpl['title']
                                     ) ); ?>
                                 </p>
@@ -332,18 +334,18 @@ function turbo_addons_pro_admin_page() {
                                     <span id="taep-tpl-current">1</span>
                                     <span class="taep-tpl-counter-sep">/</span>
                                     <span id="taep-tpl-total"><?php echo count( $tpl_items ); ?></span>
-                                    <span class="taep-tpl-counter-label"><?php esc_html_e( 'templates', 'turbo-addons-elementor-pro' ); ?></span>
+                                    <span class="taep-tpl-counter-label"><?php esc_html_e( 'templates', 'freemius-turbo-addons-elementor-pro' ); ?></span>
                                 </div>
                                 <?php endif; ?>
 
                                 <div class="taep-latest-template-actions">
-                                    <a href="<?php echo $first_tpl['link']; ?>" target="_blank" rel="noopener"
+                                    <a href="<?php echo esc_url( $first_tpl['link'] ); ?>" target="_blank" rel="noopener"
                                        class="taep-template-btn taep-template-btn-preview" id="taep-tpl-preview-btn">
-                                        <?php esc_html_e( 'Live Preview ⤴', 'turbo-addons-elementor-pro' ); ?>
+                                        <?php esc_html_e( 'Live Preview ⤴', 'freemius-turbo-addons-elementor-pro' ); ?>
                                     </a>
                                     <a href="https://turbo-addons.com/templates/" target="_blank" rel="noopener"
                                        class="taep-template-btn taep-template-btn-all">
-                                        <?php esc_html_e( 'All Templates', 'turbo-addons-elementor-pro' ); ?>
+                                        <?php esc_html_e( 'All Templates', 'freemius-turbo-addons-elementor-pro' ); ?>
                                     </a>
                                 </div>
                             </div>
@@ -360,7 +362,7 @@ function turbo_addons_pro_admin_page() {
                                  alt="Turbo Addons Pro" style="width:100%;border-radius:8px;">
                             <div class="taep-dashboard-center-btn" style="margin-top:12px;">
                                 <a href="https://turbo-addons.com/templates/" target="_blank" rel="noopener">
-                                    <?php esc_html_e( 'Explore All Templates ⤴', 'turbo-addons-elementor-pro' ); ?>
+                                    <?php esc_html_e( 'Explore All Templates ⤴', 'freemius-turbo-addons-elementor-pro' ); ?>
                                 </a>
                             </div>
                         </div>
@@ -382,22 +384,22 @@ function turbo_addons_pro_admin_page() {
                         </div>
 
                         <h3 class="taep-review-cta-title">
-                            <?php esc_html_e( 'Loving Turbo Addons Pro?', 'turbo-addons-elementor-pro' ); ?>
+                            <?php esc_html_e( 'Loving Turbo Addons Pro?', 'freemius-turbo-addons-elementor-pro' ); ?>
                         </h3>
                         <p class="taep-review-cta-desc">
-                            <?php esc_html_e( "Your review helps thousands of WordPress users discover Turbo Addons. It takes 30 seconds and means the world to us.", 'turbo-addons-elementor-pro' ); ?>
+                            <?php esc_html_e( "Your review helps thousands of WordPress users discover Turbo Addons. It takes 30 seconds and means the world to us.", 'freemius-turbo-addons-elementor-pro' ); ?>
                         </p>
 
                         <div class="taep-review-cta-actions">
                             <a href="https://wordpress.org/plugins/turbo-addons-elementor/#reviews"
                                target="_blank" rel="noopener"
                                class="taep-review-btn taep-review-btn-primary">
-                                &#9733;&nbsp;<?php esc_html_e( 'Leave a Review', 'turbo-addons-elementor-pro' ); ?>
+                                &#9733;&nbsp;<?php esc_html_e( 'Leave a Review', 'freemius-turbo-addons-elementor-pro' ); ?>
                             </a>
                             <a href="https://turbo-addons.com/get-support/"
                                target="_blank" rel="noopener"
                                class="taep-review-btn taep-review-btn-ghost">
-                                <?php esc_html_e( 'Need Help?', 'turbo-addons-elementor-pro' ); ?>
+                                <?php esc_html_e( 'Need Help?', 'freemius-turbo-addons-elementor-pro' ); ?>
                             </a>
                         </div>
                     </div>
@@ -411,20 +413,20 @@ function turbo_addons_pro_admin_page() {
                             <span class="taep-info-card-icon">📚</span>
                         </div>
                         <div class="taep-info-card-body">
-                            <h3 class="taep-info-card-title"><?php esc_html_e( 'Docs & Support', 'turbo-addons-elementor-pro' ); ?></h3>
-                            <p class="taep-info-card-desc"><?php esc_html_e( 'Everything you need — step-by-step guides, widget references, video tutorials, and a dedicated support team ready to help.', 'turbo-addons-elementor-pro' ); ?></p>
+                            <h3 class="taep-info-card-title"><?php esc_html_e( 'Docs & Support', 'freemius-turbo-addons-elementor-pro' ); ?></h3>
+                            <p class="taep-info-card-desc"><?php esc_html_e( 'Everything you need — step-by-step guides, widget references, video tutorials, and a dedicated support team ready to help.', 'freemius-turbo-addons-elementor-pro' ); ?></p>
                             <ul class="taep-info-card-list">
-                                <li>✅ <?php esc_html_e( 'Full widget documentation', 'turbo-addons-elementor-pro' ); ?></li>
-                                <li>✅ <?php esc_html_e( 'Video tutorials', 'turbo-addons-elementor-pro' ); ?></li>
-                                <li>✅ <?php esc_html_e( 'Priority Pro support', 'turbo-addons-elementor-pro' ); ?></li>
+                                <li>✅ <?php esc_html_e( 'Full widget documentation', 'freemius-turbo-addons-elementor-pro' ); ?></li>
+                                <li>✅ <?php esc_html_e( 'Video tutorials', 'freemius-turbo-addons-elementor-pro' ); ?></li>
+                                <li>✅ <?php esc_html_e( 'Priority Pro support', 'freemius-turbo-addons-elementor-pro' ); ?></li>
                             </ul>
                         </div>
                         <div class="taep-info-card-footer">
                             <a href="https://turbo-addons.com/docs/" target="_blank" rel="noopener" class="taep-info-card-btn taep-info-card-btn--primary">
-                                <?php esc_html_e( 'Read Docs', 'turbo-addons-elementor-pro' ); ?> →
+                                <?php esc_html_e( 'Read Docs', 'freemius-turbo-addons-elementor-pro' ); ?> →
                             </a>
                             <a href="https://turbo-addons.com/get-support/" target="_blank" rel="noopener" class="taep-info-card-btn taep-info-card-btn--ghost">
-                                <?php esc_html_e( 'Get Support', 'turbo-addons-elementor-pro' ); ?>
+                                <?php esc_html_e( 'Get Support', 'freemius-turbo-addons-elementor-pro' ); ?>
                             </a>
                         </div>
                     </div>
@@ -432,25 +434,25 @@ function turbo_addons_pro_admin_page() {
                     <!-- ── Card 2: Pro Features Highlight ── -->
                     <div class="taep-info-card taep-info-card--features">
                         <div class="taep-info-card-gradient-header">
-                            <span class="taep-info-card-badge"><?php esc_html_e( 'PRO EXCLUSIVE', 'turbo-addons-elementor-pro' ); ?></span>
-                            <h3 class="taep-info-card-title taep-info-card-title--light"><?php esc_html_e( 'What Makes Pro Special', 'turbo-addons-elementor-pro' ); ?></h3>
+                            <span class="taep-info-card-badge"><?php esc_html_e( 'PRO EXCLUSIVE', 'freemius-turbo-addons-elementor-pro' ); ?></span>
+                            <h3 class="taep-info-card-title taep-info-card-title--light"><?php esc_html_e( 'What Makes Pro Special', 'freemius-turbo-addons-elementor-pro' ); ?></h3>
                         </div>
                         <div class="taep-info-card-body">
                             <div class="taep-feature-chips">
-                                <span class="taep-feature-chip">🛒 <?php esc_html_e( 'WooCommerce Builder', 'turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">🎠 <?php esc_html_e( '3D Carousel', 'turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">📄 <?php esc_html_e( 'PDF Flip Book', 'turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">🗺️ <?php esc_html_e( 'Tour Guide', 'turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">🔍 <?php esc_html_e( 'Advanced Search', 'turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">💬 <?php esc_html_e( 'WhatsApp Chat', 'turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">🎯 <?php esc_html_e( 'Image Hotspot', 'turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">📊 <?php esc_html_e( 'Dynamic Table', 'turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">🦸 <?php esc_html_e( 'Hero Slider', 'turbo-addons-elementor-pro' ); ?></span>
+                                <span class="taep-feature-chip">🛒 <?php esc_html_e( 'WooCommerce Builder', 'freemius-turbo-addons-elementor-pro' ); ?></span>
+                                <span class="taep-feature-chip">🎠 <?php esc_html_e( '3D Carousel', 'freemius-turbo-addons-elementor-pro' ); ?></span>
+                                <span class="taep-feature-chip">📄 <?php esc_html_e( 'PDF Flip Book', 'freemius-turbo-addons-elementor-pro' ); ?></span>
+                                <span class="taep-feature-chip">🗺️ <?php esc_html_e( 'Tour Guide', 'freemius-turbo-addons-elementor-pro' ); ?></span>
+                                <span class="taep-feature-chip">🔍 <?php esc_html_e( 'Advanced Search', 'freemius-turbo-addons-elementor-pro' ); ?></span>
+                                <span class="taep-feature-chip">💬 <?php esc_html_e( 'WhatsApp Chat', 'freemius-turbo-addons-elementor-pro' ); ?></span>
+                                <span class="taep-feature-chip">🎯 <?php esc_html_e( 'Image Hotspot', 'freemius-turbo-addons-elementor-pro' ); ?></span>
+                                <span class="taep-feature-chip">📊 <?php esc_html_e( 'Dynamic Table', 'freemius-turbo-addons-elementor-pro' ); ?></span>
+                                <span class="taep-feature-chip">🦸 <?php esc_html_e( 'Hero Slider', 'freemius-turbo-addons-elementor-pro' ); ?></span>
                             </div>
                         </div>
                         <div class="taep-info-card-footer">
                             <a href="https://turbo-addons.com/widgets/" target="_blank" rel="noopener" class="taep-info-card-btn taep-info-card-btn--purple">
-                                <?php esc_html_e( 'Explore All Widgets', 'turbo-addons-elementor-pro' ); ?> →
+                                <?php esc_html_e( 'Explore All Widgets', 'freemius-turbo-addons-elementor-pro' ); ?> →
                             </a>
                         </div>
                     </div>
@@ -458,20 +460,20 @@ function turbo_addons_pro_admin_page() {
                     <!-- ── Card 3: Our Other Plugins ── -->
                     <div class="taep-info-card taep-info-card--plugins">
                         <div class="taep-info-card-body">
-                            <h3 class="taep-info-card-title"><?php esc_html_e( 'More From Our Team', 'turbo-addons-elementor-pro' ); ?></h3>
-                            <p class="taep-info-card-desc"><?php esc_html_e( 'Free plugins built by the same team — trusted by thousands of WordPress users.', 'turbo-addons-elementor-pro' ); ?></p>
+                            <h3 class="taep-info-card-title"><?php esc_html_e( 'More From Our Team', 'freemius-turbo-addons-elementor-pro' ); ?></h3>
+                            <p class="taep-info-card-desc"><?php esc_html_e( 'Free plugins built by the same team — trusted by thousands of WordPress users.', 'freemius-turbo-addons-elementor-pro' ); ?></p>
 
                             <div class="taep-plugin-list">
 
                                 <a href="https://wordpress.org/plugins/header-footer-builder-for-elementor/" target="_blank" rel="noopener" class="taep-plugin-item">
                                     <div class="taep-plugin-icon taep-plugin-icon--green">
-                                        <img src="<?php echo esc_url( TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'admin/assets/images/h&ficon.gif' ); ?>"
+                                        <img src="<?php echo esc_url( TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'admin/assets/images/handficon.gif' ); ?>"
                                         alt="<?php echo esc_attr( 'Turbo Addons Pro' ); ?>"
                                         style="width:100%;border-radius:8px;">
                                     </div>
                                     <div class="taep-plugin-info">
-                                        <strong><?php esc_html_e( 'Header Footer Builder', 'turbo-addons-elementor-pro' ); ?></strong>
-                                        <span><?php esc_html_e( 'Custom headers & footers for Elementor', 'turbo-addons-elementor-pro' ); ?></span>
+                                        <strong><?php esc_html_e( 'Header Footer Builder', 'freemius-turbo-addons-elementor-pro' ); ?></strong>
+                                        <span><?php esc_html_e( 'Custom headers & footers for Elementor', 'freemius-turbo-addons-elementor-pro' ); ?></span>
                                     </div>
                                     <span class="taep-plugin-arrow">→</span>
                                 </a>
@@ -483,8 +485,8 @@ function turbo_addons_pro_admin_page() {
                                         style="width:100%;border-radius:8px;">
                                     </div>
                                     <div class="taep-plugin-info">
-                                        <strong><?php esc_html_e( 'Turbo Templates Library', 'turbo-addons-elementor-pro' ); ?></strong>
-                                        <span><?php esc_html_e( '200+ ready-made Elementor templates', 'turbo-addons-elementor-pro' ); ?></span>
+                                        <strong><?php esc_html_e( 'Turbo Templates Library', 'freemius-turbo-addons-elementor-pro' ); ?></strong>
+                                        <span><?php esc_html_e( '200+ ready-made Elementor templates', 'freemius-turbo-addons-elementor-pro' ); ?></span>
                                     </div>
                                     <span class="taep-plugin-arrow">→</span>
                                 </a>
@@ -496,8 +498,8 @@ function turbo_addons_pro_admin_page() {
                                         style="width:100%;border-radius:8px;">
                                     </div>
                                     <div class="taep-plugin-info">
-                                        <strong><?php esc_html_e( 'Whitespace Fixer for XML Sitemap', 'turbo-addons-elementor-pro' ); ?></strong>
-                                        <span><?php esc_html_e( 'Fix XML sitemap whitespace errors instantly', 'turbo-addons-elementor-pro' ); ?></span>
+                                        <strong><?php esc_html_e( 'Whitespace Fixer for XML Sitemap', 'freemius-turbo-addons-elementor-pro' ); ?></strong>
+                                        <span><?php esc_html_e( 'Fix XML sitemap whitespace errors instantly', 'freemius-turbo-addons-elementor-pro' ); ?></span>
                                     </div>
                                     <span class="taep-plugin-arrow">→</span>
                                 </a>
@@ -524,21 +526,21 @@ function turbo_addons_pro_admin_page() {
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="vertical-align:middle;margin-right:5px;">
                                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                             </svg>
-                            <?php esc_html_e( 'Video Tutorial', 'turbo-addons-elementor-pro' ); ?>
+                            <?php esc_html_e( 'Video Tutorial', 'freemius-turbo-addons-elementor-pro' ); ?>
                         </span>
                             <h2 class="taep-video-title">
-                                <?php esc_html_e( 'Get Started in Minutes', 'turbo-addons-elementor-pro' ); ?>
+                                <?php esc_html_e( 'Get Started in Minutes', 'freemius-turbo-addons-elementor-pro' ); ?>
                             </h2>
                             <p class="taep-video-desc">
-                                <?php esc_html_e( 'Watch this quick walkthrough to learn how to set up Turbo Addons Pro, activate widgets, import and customize templates, and build stunning pages — no coding needed.', 'turbo-addons-elementor-pro' ); ?>
+                                <?php esc_html_e( 'Watch this quick walkthrough to learn how to set up Turbo Addons Pro, activate widgets, import and customize templates, and build stunning pages — no coding needed.', 'freemius-turbo-addons-elementor-pro' ); ?>
                             </p>
                             <ul class="taep-video-checklist">
-                                <li>✅ <?php esc_html_e( 'Activate & configure Pro widgets', 'turbo-addons-elementor-pro' ); ?></li>
-                                <li>✅ <?php esc_html_e( 'Import ready-made templates', 'turbo-addons-elementor-pro' ); ?></li>
-                                <li>✅ <?php esc_html_e( 'How to prepare header & footer', 'turbo-addons-elementor-pro' ); ?></li>
+                                <li>✅ <?php esc_html_e( 'Activate & configure Pro widgets', 'freemius-turbo-addons-elementor-pro' ); ?></li>
+                                <li>✅ <?php esc_html_e( 'Import ready-made templates', 'freemius-turbo-addons-elementor-pro' ); ?></li>
+                                <li>✅ <?php esc_html_e( 'How to prepare header & footer', 'freemius-turbo-addons-elementor-pro' ); ?></li>
                             </ul>
                             <a href="https://www.youtube.com/@TurboAddons" target="_blank" rel="noopener" class="taep-video-channel-btn">
-                                <?php esc_html_e( 'Visit Our YouTube Channel ⤴', 'turbo-addons-elementor-pro' ); ?>
+                                <?php esc_html_e( 'Visit Our YouTube Channel ⤴', 'freemius-turbo-addons-elementor-pro' ); ?>
                             </a>
                         </div>
 
@@ -548,7 +550,7 @@ function turbo_addons_pro_admin_page() {
                             <div class="taep-video-frame">
                                 <iframe
                                     src="https://www.youtube.com/embed/Z5v6LXkcWLo?rel=0&modestbranding=1"
-                                    title="<?php esc_attr_e( 'Turbo Addons Pro — How to Use', 'turbo-addons-elementor-pro' ); ?>"
+                                    title="<?php esc_attr_e( 'Turbo Addons Pro — How to Use', 'freemius-turbo-addons-elementor-pro' ); ?>"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
@@ -572,12 +574,12 @@ function turbo_addons_pro_admin_page() {
 
                         if ( isset( $_POST['save_free_changes'] ) ) {
                             if ( ! isset( $_POST['turbo_addons_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['turbo_addons_nonce'] ) ), 'save_turbo_addons_widgets' ) ) {
-                                wp_die( esc_html__( 'Nonce verification failed. Please try again.', 'turbo-addons-elementor-pro' ) );
+                                wp_die( esc_html__( 'Nonce verification failed. Please try again.', 'freemius-turbo-addons-elementor-pro' ) );
                             }
                             $widgets = isset( $_POST['widgets'] ) && is_array( $_POST['widgets'] ) ? array_map( 'sanitize_key', wp_unslash( $_POST['widgets'] ) ) : [];
                             update_option( 'turbo_addons_widgets', $widgets );
                             echo '<div class="taep-alert-updated-div updated">
-                                <p>' . esc_html__( 'Free widgets saved successfully.', 'turbo-addons-elementor-pro' ) . '</p>
+                                <p>' . esc_html__( 'Free widgets saved successfully.', 'freemius-turbo-addons-elementor-pro' ) . '</p>
                                 <button class="taep-alert-dismiss-button" type="button">&times;</button>
                             </div>';
                         }
@@ -603,7 +605,7 @@ function turbo_addons_pro_admin_page() {
                         echo '<div class="taep-dashboard-select-widget-btn">';
                         echo '<label>';
                         echo '<input type="checkbox" id="taep-select-all-free-widgets" />';
-                        echo '<span>' . esc_html__( 'Select All', 'turbo-addons-elementor-pro' ) . '</span>';
+                        echo '<span>' . esc_html__( 'Select All', 'freemius-turbo-addons-elementor-pro' ) . '</span>';
                         echo '</label>';
                         echo '</div>';
                         echo '</div>'; // .taep-dashboard-elements-tab-wraper
@@ -636,7 +638,7 @@ function turbo_addons_pro_admin_page() {
                         ?>
                         <input type="hidden" id="current_tab" name="current_tab" value="<?php echo esc_attr( ! empty( $current_tab ) ? $current_tab : 'general-tab' ); ?>">
                         <div class="taep-tab-filter-save-btn">
-                            <input type="submit" name="save_free_changes" class="button taep-dashboard-elements-btn-submit" value="<?php esc_attr_e( 'Save Changes', 'turbo-addons-elementor-pro' ); ?>" />
+                            <input type="submit" name="save_free_changes" class="button taep-dashboard-elements-btn-submit" value="<?php esc_attr_e( 'Save Changes', 'freemius-turbo-addons-elementor-pro' ); ?>" />
                         </div>
                     </form>
                 </div>
@@ -652,12 +654,12 @@ function turbo_addons_pro_admin_page() {
 
                         if ( isset( $_POST['save_pro_changes'] ) ) {
                             if ( ! isset( $_POST['turbo_addons_pro_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['turbo_addons_pro_nonce'] ) ), 'save_turbo_addons_pro_widgets' ) ) {
-                                wp_die( esc_html__( 'Nonce verification failed. Please try again.', 'turbo-addons-elementor-pro' ) );
+                                wp_die( esc_html__( 'Nonce verification failed. Please try again.', 'freemius-turbo-addons-elementor-pro' ) );
                             }
                             $widgets_pro = isset( $_POST['widgets_pro'] ) && is_array( $_POST['widgets_pro'] ) ? array_map( 'sanitize_key', wp_unslash( $_POST['widgets_pro'] ) ) : [];
                             update_option( 'turbo_pro_addons_widgets', $widgets_pro );
                             echo '<div class="taep-alert-updated-div updated">
-                                <p>' . esc_html__( 'Pro widgets saved successfully.', 'turbo-addons-elementor-pro' ) . '</p>
+                                <p>' . esc_html__( 'Pro widgets saved successfully.', 'freemius-turbo-addons-elementor-pro' ) . '</p>
                                 <button class="taep-alert-dismiss-button" type="button">&times;</button>
                             </div>';
                         }
@@ -683,7 +685,7 @@ function turbo_addons_pro_admin_page() {
                         echo '<div class="taep-dashboard-select-widget-btn">';
                         echo '<label>';
                         echo '<input type="checkbox" id="taep-select-all-pro-widgets" />';
-                        echo '<span>' . esc_html__( 'Select All', 'turbo-addons-elementor-pro' ) . '</span>';
+                        echo '<span>' . esc_html__( 'Select All', 'freemius-turbo-addons-elementor-pro' ) . '</span>';
                         echo '</label>';
                         echo '</div>';
                         echo '</div>'; // .taep-dashboard-elements-tab-wraper
@@ -716,7 +718,7 @@ function turbo_addons_pro_admin_page() {
                         ?>
                         <input type="hidden" id="current_tab" name="current_tab" value="<?php echo esc_attr( ! empty( $current_tab ) ? $current_tab : 'general-tab' ); ?>">
                         <div class="taep-tab-filter-save-btn">
-                            <input type="submit" name="save_pro_changes" class="button taep-dashboard-elements-btn-submit" value="<?php esc_attr_e( 'Save Changes', 'turbo-addons-elementor-pro' ); ?>" />
+                            <input type="submit" name="save_pro_changes" class="button taep-dashboard-elements-btn-submit" value="<?php esc_attr_e( 'Save Changes', 'freemius-turbo-addons-elementor-pro' ); ?>" />
                         </div>
                     </form>
                 </div>
@@ -732,13 +734,13 @@ function turbo_addons_pro_admin_page() {
 
                         if ( isset( $_POST['save_pro_extensions'] ) ) {
                             if ( ! isset( $_POST['taep_extensions_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['taep_extensions_nonce'] ) ), 'save_turbo_addons_pro_extensions_action' ) ) {
-                                wp_die( esc_html__( 'Nonce verification failed. Please try again.', 'turbo-addons-elementor-pro' ) );
+                                wp_die( esc_html__( 'Nonce verification failed. Please try again.', 'freemius-turbo-addons-elementor-pro' ) );
                             }
                             $extensions = isset( $_POST['extensions'] ) && is_array( $_POST['extensions'] ) ? array_map( 'sanitize_key', wp_unslash( $_POST['extensions'] ) ) : [];
                             update_option( 'turbo_addons_extensions', $extensions );
                             $current_tab = 'extension-tab';
                             echo '<div class="taep-alert-updated-div updated">
-                                <p>' . esc_html__( 'Extensions saved successfully.', 'turbo-addons-elementor-pro' ) . '</p>
+                                <p>' . esc_html__( 'Extensions saved successfully.', 'freemius-turbo-addons-elementor-pro' ) . '</p>
                                 <button class="taep-alert-dismiss-button" type="button">&times;</button>
                             </div>';
                         }
@@ -752,13 +754,13 @@ function turbo_addons_pro_admin_page() {
 
                         echo '<div class="taep-dashboard-elements-tab-wraper">';
                         echo '<ul class="taep-widget-tabs-list">';
-                        echo '<li class="taep-widget-filter-tab-item active">' . esc_html__( 'Available Extensions', 'turbo-addons-elementor-pro' ) . '</li>';
+                        echo '<li class="taep-widget-filter-tab-item active">' . esc_html__( 'Available Extensions', 'freemius-turbo-addons-elementor-pro' ) . '</li>';
                         echo '</ul>';
 
                         echo '<div class="taep-dashboard-select-widget-btn">';
                         echo '<label>';
                         echo '<input type="checkbox" id="taep-select-all-extensions" />';
-                        echo '<span>' . esc_html__( 'Select All', 'turbo-addons-elementor-pro' ) . '</span>';
+                        echo '<span>' . esc_html__( 'Select All', 'freemius-turbo-addons-elementor-pro' ) . '</span>';
                         echo '</label>';
                         echo '</div>';
                         echo '</div>'; // .taep-dashboard-elements-tab-wraper
@@ -784,7 +786,7 @@ function turbo_addons_pro_admin_page() {
                                 <?php
                             }
                         } else {
-                            echo '<p>' . esc_html__( 'No extensions found. Please ensure the free plugin is active.', 'turbo-addons-elementor-pro' ) . '</p>';
+                            echo '<p>' . esc_html__( 'No extensions found. Please ensure the free plugin is active.', 'freemius-turbo-addons-elementor-pro' ) . '</p>';
                         }
 
                         echo '</div>'; // .taep-widget-list
@@ -794,7 +796,7 @@ function turbo_addons_pro_admin_page() {
                         ?>
                         <input type="hidden" id="current_tab" name="current_tab" value="extension-tab">
                         <div class="taep-tab-filter-save-btn">
-                            <input type="submit" name="save_pro_extensions" class="button taep-dashboard-elements-btn-submit" value="<?php esc_attr_e( 'Save Changes', 'turbo-addons-elementor-pro' ); ?>" />
+                            <input type="submit" name="save_pro_extensions" class="button taep-dashboard-elements-btn-submit" value="<?php esc_attr_e( 'Save Changes', 'freemius-turbo-addons-elementor-pro' ); ?>" />
                         </div>
                     </form>
                 </div>

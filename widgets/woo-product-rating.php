@@ -20,7 +20,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
     }
 
     public function get_title() {
-        return __('WOO Product Rating', 'turbo-addons-elementor-pro');
+        return __('WOO Product Rating', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -42,14 +42,14 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
         $this->start_controls_section(
             'trad_woo_product_rating_content_section',
             [
-                'label' => esc_html__( 'Content', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Content', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 
 		$this->add_control(
 			'trad_woo_product_rating_before',
 			[
-				'label'       => esc_html__( 'Text Before Rating', 'turbo-addons-elementor-pro' ),
+				'label'       => esc_html__( 'Text Before Rating', 'freemius-turbo-addons-elementor-pro' ),
 				'type'        => Controls_Manager::TEXTAREA
 			]
         );
@@ -60,7 +60,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
         $this->start_controls_section(
             'trad_woo_product_rating_box_style',
             [
-				'label' => esc_html__( 'Box', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Box', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'       => Controls_Manager::TAB_STYLE
             ]
 		);
@@ -68,20 +68,20 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
         $this->add_responsive_control(
             'trad_woo_product_rating_container_alignment',
             [
-                'label'   => esc_html__( 'Alignment', 'turbo-addons-elementor-pro' ),
+                'label'   => esc_html__( 'Alignment', 'freemius-turbo-addons-elementor-pro' ),
                 'type'    => Controls_Manager::CHOOSE,
                 'default' => 'flex-start',
                 'options' => [
                     'flex-start' => [
-                        'title' => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
+                        'title' => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'  => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__( 'Center', 'turbo-addons-elementor-pro' ),
+                        'title' => esc_html__( 'Center', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'  => 'eicon-text-align-center',
                     ],
                     'flex-end' => [
-                        'title' => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
+                        'title' => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
                         'icon'  => 'eicon-text-align-right',
                     ],
                 ],
@@ -104,7 +104,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_product_rating_container_padding',
 			[
-				'label'         => __( 'Padding', 'turbo-addons-elementor-pro' ),
+				'label'         => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 				'type'          => Controls_Manager::DIMENSIONS,
 				'size_units'    => [ 'px', '%' ],
 				'default'       => [
@@ -124,7 +124,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_product_rating_container_margin',
 			[
-				'label'        => __( 'Margin', 'turbo-addons-elementor-pro' ),
+				'label'        => __( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
 				'type'         => Controls_Manager::DIMENSIONS,
 				'size_units'   => [ 'px', '%' ],
 				'default'      => [
@@ -144,7 +144,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
         $this->add_responsive_control(
 			'trad_woo_product_rating_container_radius',
 			[
-				'label'      => __( 'Border Radius', 'turbo-addons-elementor-pro' ),
+				'label'      => __( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'default'    => [
@@ -184,7 +184,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
 		$this->start_controls_section(
 			'trad_woo_product_rating_style',
 			[
-				'label'     => esc_html__( 'Rating', 'turbo-addons-elementor-pro' ),
+				'label'     => esc_html__( 'Rating', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -192,7 +192,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_product_rating_size',
 			[
-				'label'       => __( 'Icon Size', 'turbo-addons-elementor-pro' ),
+				'label'       => __( 'Icon Size', 'freemius-turbo-addons-elementor-pro' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => [ 'px', '%' ],
 				'range'       => [
@@ -214,7 +214,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_product_rating_icon_margin',
 			[
-				'label'      => __( 'Icon Margin', 'turbo-addons-elementor-pro' ),
+				'label'      => __( 'Icon Margin', 'freemius-turbo-addons-elementor-pro' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -234,13 +234,13 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
         $this->start_controls_tab(
             'trad_woo_product_rating_normal_style',
             [
-                'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 		$this->add_control(
 			'trad_woo_product_rating_normal_color',
 			[
-				'label'     => __( 'Color', 'turbo-addons-elementor-pro' ),
+				'label'     => __( 'Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#2E3195',
 				'selectors' => [
@@ -252,13 +252,13 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
         $this->start_controls_tab(
             'trad_woo_product_rating_active_style',
             [
-                'label' => esc_html__( 'Active', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Active', 'freemius-turbo-addons-elementor-pro' ),
             ]
         );
 		$this->add_control(
 			'trad_woo_product_rating_active_color',
 			[
-				'label'     => __( 'Color', 'turbo-addons-elementor-pro' ),
+				'label'     => __( 'Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#2E3195',
 				'selectors' => [
@@ -274,7 +274,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
 		$this->start_controls_section(
 			'trad_woo_section_rating_review_link_style',
 			[
-				'label' => __( 'Review', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Review', 'freemius-turbo-addons-elementor-pro' ),
 				'tab' 	=> Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -282,10 +282,10 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
         $this->add_control(
             'trad_woo_product_hide_review_rating',
             [
-                'label'        => esc_html__( 'Hide Review', 'turbo-addons-elementor-pro' ),
+                'label'        => esc_html__( 'Hide Review', 'freemius-turbo-addons-elementor-pro' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => esc_html__( 'Hide', 'turbo-addons-elementor-pro' ),
-                'label_off'    => esc_html__( 'Show', 'turbo-addons-elementor-pro' ),
+                'label_on'     => esc_html__( 'Hide', 'freemius-turbo-addons-elementor-pro' ),
+                'label_off'    => esc_html__( 'Show', 'freemius-turbo-addons-elementor-pro' ),
                 'return_value' => 'none',
                 'default'      => '',
                 'selectors'    => [
@@ -297,7 +297,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
 		$this->add_control(
 			'trad_woo_product_rating_review_color',
 			[
-				'label' => __( 'Color', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type' 	=> Controls_Manager::COLOR,
 				'default' => '#2E3195',
 				'selectors' => [
@@ -319,7 +319,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
         $this->start_controls_section(
             'trad_woo_product_ratingbefore_style',
             [
-				'label' => esc_html__( 'Before Text', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Before Text', 'freemius-turbo-addons-elementor-pro' ),
 				'tab'       => Controls_Manager::TAB_STYLE
             ]
 		);
@@ -346,7 +346,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
 		$this->add_control(
 			'trad_woo_product_rating_before_color',
 			[
-				'label'     => __( 'Color', 'turbo-addons-elementor-pro' ),
+				'label'     => __( 'Color', 'freemius-turbo-addons-elementor-pro' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#2E3195',
 				'selectors' => [
@@ -358,7 +358,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
         $this->add_responsive_control(
 			'trad_woo_product_rating_before_padding',
 			[
-				'label'      => __( 'Padding', 'turbo-addons-elementor-pro' ),
+				'label'      => __( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -377,7 +377,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
 		$this->add_responsive_control(
 			'trad_woo_product_rating_before_margin',
 			[
-				'label'      => __( 'Margin', 'turbo-addons-elementor-pro' ),
+				'label'      => __( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -400,11 +400,11 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
     protected function trad_init_content_wc_notice_controls() {
 		if ( ! class_exists( 'woocommerce' ) ) {
 			$this->start_controls_section( 'trad_global_warning', [
-				'label' => __( 'Warning!', 'turbo-addons-elementor-pro' ),
+				'label' => __( 'Warning!', 'freemius-turbo-addons-elementor-pro' ),
 			] );
 			$this->add_responsive_control( 'trad_global_warning_text', [
 				'type'            => Controls_Manager::RAW_HTML,
-				'raw'             => __( '<strong>WooCommerce</strong> is not installed/activated on your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> first.', 'turbo-addons-elementor-pro' ),
+				'raw'             => __( '<strong>WooCommerce</strong> is not installed/activated on your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> first.', 'freemius-turbo-addons-elementor-pro' ),
 				'content_classes' => 'trad-woo-warning',
 			] );
 			$this->end_controls_section();
@@ -440,7 +440,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
 												'%1$s customer review',
 												'%1$s customer reviews',
 												$review_count,
-												'turbo-addons-elementor-pro'
+												'freemius-turbo-addons-elementor-pro'
 											)
 										),
 										'<span class="count">' . esc_html( $review_count ) . '</span>'
@@ -453,7 +453,7 @@ class TRAD_WOO_Product_Rating extends Widget_Base {
                     </div>
                 <?php }
             } else {
-                echo '<div class="trad-woo-product-is-empty">' . esc_html__( 'No Rating Available', 'turbo-addons-elementor-pro' ) . '</div>';
+                echo '<div class="trad-woo-product-is-empty">' . esc_html__( 'No Rating Available', 'freemius-turbo-addons-elementor-pro' ) . '</div>';
             }
 
         } else {

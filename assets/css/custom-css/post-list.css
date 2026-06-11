@@ -34,6 +34,22 @@
     text-align: center;
     transition: all 0.3s ease-in-out;
     display: flex;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.trad-post-list > div:first-child {
+    flex-shrink: 0;
+}
+
+.trad-post-image-wrapper {
+    flex-shrink: 0;
+    width: 100%; /* default, overridden by Elementor control */
+}
+
+.trad-post-list-content {
+    flex: 1;
+    min-width: 0;
 }
 .trad-post-read-more-button {
     display: inline-block;
@@ -69,8 +85,23 @@
     font-size: 11px;
     letter-spacing: 0.3px;
     border-radius: 4px;
-    margin-bottom: 8px;
     text-transform: uppercase;
     top: 15px;
+    right: 15px; /* default, overridden by Elementor alignment control */
+    z-index: 3;
+    text-decoration: none;
+}
+
+/* Stretched card link — covers entire card */
+.trad-post-card-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* Interactive elements sit above the card link */
+.trad-post-read-more-button {
+    position: relative;
+    z-index: 2;
 }
 

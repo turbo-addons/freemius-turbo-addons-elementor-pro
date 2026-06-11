@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class TRAD_Off_Canvas extends Widget_Base {
 
 	public function get_name()          { return 'trad-off-canvas'; }
-	public function get_title()         { return esc_html__( 'Off-Canvas', 'turbo-addons-elementor-pro' ); }
+	public function get_title()         { return esc_html__( 'Off-Canvas', 'freemius-turbo-addons-elementor-pro' ); }
 	public function get_icon()          { return 'eicon-sidebar trad-icon'; }
 	public function get_categories()    { return [ 'turbo-addons-pro' ]; }
 	public function get_keywords()      { return [ 'off-canvas', 'sidebar', 'drawer', 'panel', 'slide', 'turbo' ]; }
@@ -31,14 +31,14 @@ class TRAD_Off_Canvas extends Widget_Base {
 		]);
 
 		if ( $query->have_posts() ) {
-			$templates[0] = esc_html__( 'Select Template', 'turbo-addons-elementor-pro' );
+			$templates[0] = esc_html__( 'Select Template', 'freemius-turbo-addons-elementor-pro' );
 			while ( $query->have_posts() ) {
 				$query->the_post();
 				$templates[ get_the_ID() ] = get_the_title();
 			}
 			wp_reset_postdata();
 		} else {
-			$templates[0] = esc_html__( 'No templates found', 'turbo-addons-elementor-pro' );
+			$templates[0] = esc_html__( 'No templates found', 'freemius-turbo-addons-elementor-pro' );
 		}
 		
 		return $templates;
@@ -48,51 +48,51 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		// ── TRIGGER SETTINGS ──────────────────────────────────────────────────
 		$this->start_controls_section( 'section_trigger', [
-			'label' => esc_html__( 'Trigger', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Trigger', 'freemius-turbo-addons-elementor-pro' ),
 		] );
 
 		$this->add_control( 'trigger_type', [
-			'label'   => esc_html__( 'Trigger Type', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Trigger Type', 'freemius-turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::SELECT,
 			'options' => [
-				'button' => esc_html__( 'Button', 'turbo-addons-elementor-pro' ),
-				'icon'   => esc_html__( 'Icon', 'turbo-addons-elementor-pro' ),
-				'custom' => esc_html__( 'Custom Selector', 'turbo-addons-elementor-pro' ),
+				'button' => esc_html__( 'Button', 'freemius-turbo-addons-elementor-pro' ),
+				'icon'   => esc_html__( 'Icon', 'freemius-turbo-addons-elementor-pro' ),
+				'custom' => esc_html__( 'Custom Selector', 'freemius-turbo-addons-elementor-pro' ),
 			],
 			'default' => 'button',
 		] );
 
 		$this->add_control( 'trigger_text', [
-			'label'       => esc_html__( 'Button Text', 'turbo-addons-elementor-pro' ),
+			'label'       => esc_html__( 'Button Text', 'freemius-turbo-addons-elementor-pro' ),
 			'type'        => Controls_Manager::TEXT,
-			'default'     => esc_html__( 'Open Panel', 'turbo-addons-elementor-pro' ),
+			'default'     => esc_html__( 'Open Panel', 'freemius-turbo-addons-elementor-pro' ),
 			'condition'   => [ 'trigger_type' => 'button' ],
 			'label_block' => true,
 		] );
 
 		$this->add_control( 'trigger_icon', [
-			'label'     => esc_html__( 'Icon', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::ICONS,
 			'default'   => [ 'value' => 'fas fa-bars', 'library' => 'fa-solid' ],
 			'condition' => [ 'trigger_type!' => 'custom' ],
 		] );
 
 		$this->add_control( 'icon_position', [
-			'label'     => esc_html__( 'Icon Position', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon Position', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SELECT,
 			'options'   => [
-				'left'  => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
-				'right' => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
+				'left'  => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
+				'right' => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
 			],
 			'default'   => 'left',
 			'condition' => [ 'trigger_type' => 'button' ],
 		] );
 
 		$this->add_control( 'custom_selector', [
-			'label'       => esc_html__( 'Custom Selector', 'turbo-addons-elementor-pro' ),
+			'label'       => esc_html__( 'Custom Selector', 'freemius-turbo-addons-elementor-pro' ),
 			'type'        => Controls_Manager::TEXT,
 			'placeholder' => '.my-trigger-class',
-			'description' => esc_html__( 'Enter CSS selector (class or ID) of the element that will trigger the off-canvas', 'turbo-addons-elementor-pro' ),
+			'description' => esc_html__( 'Enter CSS selector (class or ID) of the element that will trigger the off-canvas', 'freemius-turbo-addons-elementor-pro' ),
 			'condition'   => [ 'trigger_type' => 'custom' ],
 			'label_block' => true,
 		] );
@@ -101,34 +101,34 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		// ── CANVAS SETTINGS ───────────────────────────────────────────────────
 		$this->start_controls_section( 'section_canvas', [
-			'label' => esc_html__( 'Canvas Settings', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Canvas Settings', 'freemius-turbo-addons-elementor-pro' ),
 		] );
 
 		$this->add_control( 'canvas_position', [
-			'label'   => esc_html__( 'Position', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Position', 'freemius-turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::SELECT,
 			'options' => [
-				'left'   => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
-				'right'  => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
-				'top'    => esc_html__( 'Top', 'turbo-addons-elementor-pro' ),
-				'bottom' => esc_html__( 'Bottom', 'turbo-addons-elementor-pro' ),
+				'left'   => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
+				'right'  => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
+				'top'    => esc_html__( 'Top', 'freemius-turbo-addons-elementor-pro' ),
+				'bottom' => esc_html__( 'Bottom', 'freemius-turbo-addons-elementor-pro' ),
 			],
 			'default' => 'left',
 		] );
 
 		$this->add_control( 'animation_type', [
-			'label'   => esc_html__( 'Animation', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Animation', 'freemius-turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::SELECT,
 			'options' => [
-				'slide'  => esc_html__( 'Slide', 'turbo-addons-elementor-pro' ),
-				'push'   => esc_html__( 'Push', 'turbo-addons-elementor-pro' ),
-				'reveal' => esc_html__( 'Reveal', 'turbo-addons-elementor-pro' ),
+				'slide'  => esc_html__( 'Slide', 'freemius-turbo-addons-elementor-pro' ),
+				'push'   => esc_html__( 'Push', 'freemius-turbo-addons-elementor-pro' ),
+				'reveal' => esc_html__( 'Reveal', 'freemius-turbo-addons-elementor-pro' ),
 			],
 			'default' => 'slide',
 		] );
 
 		$this->add_responsive_control( 'canvas_width', [
-			'label'      => esc_html__( 'Width', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Width', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px', '%', 'vw' ],
 			'range'      => [
@@ -145,7 +145,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'canvas_height', [
-			'label'      => esc_html__( 'Height', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Height', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px', '%', 'vh' ],
 			'range'      => [
@@ -165,22 +165,22 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		// ── CONTENT ───────────────────────────────────────────────────────────
 		$this->start_controls_section( 'section_content', [
-			'label' => esc_html__( 'Content', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Content', 'freemius-turbo-addons-elementor-pro' ),
 		] );
 
 		$this->add_control( 'content_type', [
-			'label'   => esc_html__( 'Content Type', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Content Type', 'freemius-turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::SELECT,
 			'options' => [
-				'template' => esc_html__( 'Saved Template', 'turbo-addons-elementor-pro' ),
-				'custom'   => esc_html__( 'Custom Content', 'turbo-addons-elementor-pro' ),
-				'repeater' => esc_html__( 'Content Repeater', 'turbo-addons-elementor-pro' ),
+				'template' => esc_html__( 'Saved Template', 'freemius-turbo-addons-elementor-pro' ),
+				'custom'   => esc_html__( 'Custom Content', 'freemius-turbo-addons-elementor-pro' ),
+				'repeater' => esc_html__( 'Content Repeater', 'freemius-turbo-addons-elementor-pro' ),
 			],
 			'default' => 'repeater',
 		] );
 
 		$this->add_control( 'saved_template', [
-			'label'     => esc_html__( 'Choose Template', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Choose Template', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SELECT,
 			'options'   => $this->get_saved_templates(),
 			'default'   => '0',
@@ -188,9 +188,9 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_control( 'custom_content', [
-			'label'       => esc_html__( 'Content', 'turbo-addons-elementor-pro' ),
+			'label'       => esc_html__( 'Content', 'freemius-turbo-addons-elementor-pro' ),
 			'type'        => Controls_Manager::WYSIWYG,
-			'default'     => esc_html__( 'Add your content here. You can use any HTML or shortcodes.', 'turbo-addons-elementor-pro' ),
+			'default'     => esc_html__( 'Add your content here. You can use any HTML or shortcodes.', 'freemius-turbo-addons-elementor-pro' ),
 			'condition'   => [ 'content_type' => 'custom' ],
 		] );
 
@@ -198,49 +198,49 @@ class TRAD_Off_Canvas extends Widget_Base {
 		$repeater = new Repeater();
 
 		$repeater->add_control( 'item_image', [
-			'label'   => esc_html__( 'Image', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Image', 'freemius-turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::MEDIA,
 			'default' => [ 'url' => Utils::get_placeholder_image_src() ],
 		] );
 
 		$repeater->add_control( 'item_title', [
-			'label'       => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
+			'label'       => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
 			'type'        => Controls_Manager::TEXT,
-			'default'     => esc_html__( 'Item Title', 'turbo-addons-elementor-pro' ),
+			'default'     => esc_html__( 'Item Title', 'freemius-turbo-addons-elementor-pro' ),
 			'label_block' => true,
 		] );
 
 		$repeater->add_control( 'item_description', [
-			'label'   => esc_html__( 'Description', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Description', 'freemius-turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::TEXTAREA,
-			'default' => esc_html__( 'Add your description text here.', 'turbo-addons-elementor-pro' ),
+			'default' => esc_html__( 'Add your description text here.', 'freemius-turbo-addons-elementor-pro' ),
 		] );
 
 		$repeater->add_control( 'item_button_text', [
-			'label'   => esc_html__( 'Button Text', 'turbo-addons-elementor-pro' ),
+			'label'   => esc_html__( 'Button Text', 'freemius-turbo-addons-elementor-pro' ),
 			'type'    => Controls_Manager::TEXT,
-			'default' => esc_html__( 'Read More', 'turbo-addons-elementor-pro' ),
+			'default' => esc_html__( 'Read More', 'freemius-turbo-addons-elementor-pro' ),
 		] );
 
 		$repeater->add_control( 'item_button_link', [
-			'label'       => esc_html__( 'Button Link', 'turbo-addons-elementor-pro' ),
+			'label'       => esc_html__( 'Button Link', 'freemius-turbo-addons-elementor-pro' ),
 			'type'        => Controls_Manager::URL,
-			'placeholder' => esc_html__( 'https://your-link.com', 'turbo-addons-elementor-pro' ),
+			'placeholder' => esc_html__( 'https://your-link.com', 'freemius-turbo-addons-elementor-pro' ),
 			'default'     => [ 'url' => '#' ],
 		] );
 
 		$this->add_control( 'content_items', [
-			'label'       => esc_html__( 'Content Items', 'turbo-addons-elementor-pro' ),
+			'label'       => esc_html__( 'Content Items', 'freemius-turbo-addons-elementor-pro' ),
 			'type'        => Controls_Manager::REPEATER,
 			'fields'      => $repeater->get_controls(),
 			'default'     => [
 				[
-					'item_title'       => esc_html__( 'Item #1', 'turbo-addons-elementor-pro' ),
-					'item_description' => esc_html__( 'Description for item 1', 'turbo-addons-elementor-pro' ),
+					'item_title'       => esc_html__( 'Item #1', 'freemius-turbo-addons-elementor-pro' ),
+					'item_description' => esc_html__( 'Description for item 1', 'freemius-turbo-addons-elementor-pro' ),
 				],
 				[
-					'item_title'       => esc_html__( 'Item #2', 'turbo-addons-elementor-pro' ),
-					'item_description' => esc_html__( 'Description for item 2', 'turbo-addons-elementor-pro' ),
+					'item_title'       => esc_html__( 'Item #2', 'freemius-turbo-addons-elementor-pro' ),
+					'item_description' => esc_html__( 'Description for item 2', 'freemius-turbo-addons-elementor-pro' ),
 				],
 			],
 			'title_field' => '{{{ item_title }}}',
@@ -248,18 +248,18 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_control( 'repeater_layout', [
-			'label'     => esc_html__( 'Layout', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Layout', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SELECT,
 			'options'   => [
-				'list' => esc_html__( 'List', 'turbo-addons-elementor-pro' ),
-				'grid' => esc_html__( 'Grid', 'turbo-addons-elementor-pro' ),
+				'list' => esc_html__( 'List', 'freemius-turbo-addons-elementor-pro' ),
+				'grid' => esc_html__( 'Grid', 'freemius-turbo-addons-elementor-pro' ),
 			],
 			'default'   => 'list',
 			'condition' => [ 'content_type' => 'repeater' ],
 		] );
 
 		$this->add_responsive_control( 'grid_columns', [
-			'label'     => esc_html__( 'Columns', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Columns', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SELECT,
 			'options'   => [
 				'1' => '1',
@@ -275,19 +275,19 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_control( 'image_position', [
-			'label'     => esc_html__( 'Image Position', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Image Position', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SELECT,
 			'options'   => [
-				'top'  => esc_html__( 'Top', 'turbo-addons-elementor-pro' ),
-				'left' => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
-				'right' => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
+				'top'  => esc_html__( 'Top', 'freemius-turbo-addons-elementor-pro' ),
+				'left' => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
+				'right' => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
 			],
 			'default'   => 'top',
 			'condition' => [ 'content_type' => 'repeater' ],
 		] );
 
 		$this->add_responsive_control( 'item_gap', [
-			'label'      => esc_html__( 'Item Gap', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Item Gap', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px' ],
 			'range'      => [ 'px' => [ 'min' => 0, 'max' => 100 ] ],
@@ -302,25 +302,25 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		// ── OVERLAY SETTINGS ──────────────────────────────────────────────────
 		$this->start_controls_section( 'section_overlay', [
-			'label' => esc_html__( 'Overlay', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Overlay', 'freemius-turbo-addons-elementor-pro' ),
 		] );
 
 		$this->add_control( 'enable_overlay', [
-			'label'        => esc_html__( 'Enable Overlay', 'turbo-addons-elementor-pro' ),
+			'label'        => esc_html__( 'Enable Overlay', 'freemius-turbo-addons-elementor-pro' ),
 			'type'         => Controls_Manager::SWITCHER,
 			'return_value' => 'yes',
 			'default'      => 'yes',
 		] );
 
 		$this->add_control( 'overlay_color', [
-			'label'     => esc_html__( 'Overlay Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Overlay Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => 'rgba(0,0,0,0.5)',
 			'condition' => [ 'enable_overlay' => 'yes' ],
 		] );
 
 		$this->add_control( 'close_on_overlay', [
-			'label'        => esc_html__( 'Close on Overlay Click', 'turbo-addons-elementor-pro' ),
+			'label'        => esc_html__( 'Close on Overlay Click', 'freemius-turbo-addons-elementor-pro' ),
 			'type'         => Controls_Manager::SWITCHER,
 			'return_value' => 'yes',
 			'default'      => 'yes',
@@ -331,38 +331,38 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		// ── CLOSE BUTTON ──────────────────────────────────────────────────────
 		$this->start_controls_section( 'section_close_button', [
-			'label' => esc_html__( 'Close Button', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Close Button', 'freemius-turbo-addons-elementor-pro' ),
 		] );
 
 		$this->add_control( 'show_close_button', [
-			'label'        => esc_html__( 'Show Close Button', 'turbo-addons-elementor-pro' ),
+			'label'        => esc_html__( 'Show Close Button', 'freemius-turbo-addons-elementor-pro' ),
 			'type'         => Controls_Manager::SWITCHER,
 			'return_value' => 'yes',
 			'default'      => 'yes',
 		] );
 
 		$this->add_control( 'close_button_position', [
-			'label'     => esc_html__( 'Position', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Position', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SELECT,
 			'options'   => [
-				'top-left'     => esc_html__( 'Top Left', 'turbo-addons-elementor-pro' ),
-				'top-right'    => esc_html__( 'Top Right', 'turbo-addons-elementor-pro' ),
-				'bottom-left'  => esc_html__( 'Bottom Left', 'turbo-addons-elementor-pro' ),
-				'bottom-right' => esc_html__( 'Bottom Right', 'turbo-addons-elementor-pro' ),
+				'top-left'     => esc_html__( 'Top Left', 'freemius-turbo-addons-elementor-pro' ),
+				'top-right'    => esc_html__( 'Top Right', 'freemius-turbo-addons-elementor-pro' ),
+				'bottom-left'  => esc_html__( 'Bottom Left', 'freemius-turbo-addons-elementor-pro' ),
+				'bottom-right' => esc_html__( 'Bottom Right', 'freemius-turbo-addons-elementor-pro' ),
 			],
 			'default'   => 'top-right',
 			'condition' => [ 'show_close_button' => 'yes' ],
 		] );
 
 		$this->add_control( 'close_button_icon', [
-			'label'     => esc_html__( 'Close Icon', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Close Icon', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::ICONS,
 			'default'   => [ 'value' => 'fas fa-times', 'library' => 'fa-solid' ],
 			'condition' => [ 'show_close_button' => 'yes' ],
 		] );
 
 		$this->add_control( 'close_on_esc', [
-			'label'        => esc_html__( 'Close on ESC Key', 'turbo-addons-elementor-pro' ),
+			'label'        => esc_html__( 'Close on ESC Key', 'freemius-turbo-addons-elementor-pro' ),
 			'type'         => Controls_Manager::SWITCHER,
 			'return_value' => 'yes',
 			'default'      => 'yes',
@@ -372,7 +372,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		// ── STYLE: TRIGGER BUTTON ─────────────────────────────────────────────
 		$this->start_controls_section( 'section_style_trigger', [
-			'label'     => esc_html__( 'Trigger Button', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Trigger Button', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'       => Controls_Manager::TAB_STYLE,
 			'condition' => [ 'trigger_type!' => 'custom' ],
 		] );
@@ -385,28 +385,28 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		$this->start_controls_tabs( 'trigger_tabs' );
 
-		$this->start_controls_tab( 'trigger_normal', [ 'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ) ] );
+		$this->start_controls_tab( 'trigger_normal', [ 'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 		$this->add_control( 'trigger_text_heading', [
-			'label'     => esc_html__( 'Text', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Text', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::HEADING,
 		] );
 
 		$this->add_control( 'trigger_text_color', [
-			'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '#ffffff',
 			'selectors' => [ '{{WRAPPER}} .trad-offcanvas-trigger' => 'color: {{VALUE}};' ],
 		] );
 
 		$this->add_control( 'trigger_icon_heading', [
-			'label'     => esc_html__( 'Icon', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::HEADING,
 			'separator' => 'before',
 		] );
 
 		$this->add_control( 'trigger_icon_color', [
-			'label'     => esc_html__( 'Icon Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .trad-offcanvas-trigger i'   => 'color: {{VALUE}};',
@@ -415,13 +415,13 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_control( 'trigger_bg_heading', [
-			'label'     => esc_html__( 'Background', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Background', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::HEADING,
 			'separator' => 'before',
 		] );
 
 		$this->add_control( 'trigger_bg_color', [
-			'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '#1434B1',
 			'selectors' => [ '{{WRAPPER}} .trad-offcanvas-trigger' => 'background-color: {{VALUE}};' ],
@@ -434,27 +434,27 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'trigger_hover', [ 'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ) ] );
+		$this->start_controls_tab( 'trigger_hover', [ 'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 		$this->add_control( 'trigger_hover_text_heading', [
-			'label'     => esc_html__( 'Text', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Text', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::HEADING,
 		] );
 
 		$this->add_control( 'trigger_hover_color', [
-			'label'     => esc_html__( 'Text Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-offcanvas-trigger:hover' => 'color: {{VALUE}};' ],
 		] );
 
 		$this->add_control( 'trigger_hover_icon_heading', [
-			'label'     => esc_html__( 'Icon', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::HEADING,
 			'separator' => 'before',
 		] );
 
 		$this->add_control( 'trigger_hover_icon_color', [
-			'label'     => esc_html__( 'Icon Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .trad-offcanvas-trigger:hover i'   => 'color: {{VALUE}};',
@@ -463,19 +463,19 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_control( 'trigger_hover_bg_heading', [
-			'label'     => esc_html__( 'Background', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Background', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::HEADING,
 			'separator' => 'before',
 		] );
 
 		$this->add_control( 'trigger_hover_bg', [
-			'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-offcanvas-trigger:hover' => 'background-color: {{VALUE}};' ],
 		] );
 
 		$this->add_control( 'trigger_hover_border', [
-			'label'     => esc_html__( 'Border Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Border Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-offcanvas-trigger:hover' => 'border-color: {{VALUE}};' ],
 		] );
@@ -484,7 +484,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_responsive_control( 'trigger_padding', [
-			'label'      => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', 'em' ],
 			'selectors'  => [ '{{WRAPPER}} .trad-offcanvas-trigger' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
@@ -492,7 +492,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'trigger_border_radius', [
-			'label'      => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [ '{{WRAPPER}} .trad-offcanvas-trigger' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
@@ -504,7 +504,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'trigger_icon_size', [
-			'label'     => esc_html__( 'Icon Size', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon Size', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [ 'px' => [ 'min' => 10, 'max' => 100 ] ],
 			'default'   => [ 'size' => 24, 'unit' => 'px' ],
@@ -516,7 +516,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'trigger_icon_spacing', [
-			'label'     => esc_html__( 'Icon Spacing', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Icon Spacing', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [ 'px' => [ 'min' => 0, 'max' => 50 ] ],
 			'selectors' => [
@@ -527,19 +527,19 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'trigger_vertical_align', [
-			'label'     => esc_html__( 'Vertical Alignment', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Vertical Alignment', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::CHOOSE,
 			'options'   => [
 				'flex-start' => [
-					'title' => esc_html__( 'Top', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Top', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-v-align-top',
 				],
 				'center'     => [
-					'title' => esc_html__( 'Center', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Center', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-v-align-middle',
 				],
 				'flex-end'   => [
-					'title' => esc_html__( 'Bottom', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Bottom', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-v-align-bottom',
 				],
 			],
@@ -551,14 +551,14 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		// ── STYLE: REPEATER ITEMS ─────────────────────────────────────────────
 		$this->start_controls_section( 'section_style_items', [
-			'label'     => esc_html__( 'Items', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Items', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'       => Controls_Manager::TAB_STYLE,
 			'condition' => [ 'content_type' => 'repeater' ],
 		] );
 
 		// Item Container Heading
 		$this->add_control( 'heading_item_container', [
-			'label'     => esc_html__( 'Item Container', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Item Container', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::HEADING,
 		] );
 
@@ -568,7 +568,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'item_padding', [
-			'label'      => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', 'em', '%' ],
 			'selectors'  => [ '{{WRAPPER}} .trad-offcanvas-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
@@ -580,7 +580,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'item_border_radius', [
-			'label'      => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [ '{{WRAPPER}} .trad-offcanvas-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
@@ -593,13 +593,13 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		// Image Heading
 		$this->add_control( 'heading_image', [
-			'label'     => esc_html__( 'Image', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Image', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::HEADING,
 			'separator' => 'before',
 		] );
 
 		$this->add_responsive_control( 'image_width', [
-			'label'      => esc_html__( 'Width', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Width', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px', '%' ],
 			'range'      => [
@@ -610,7 +610,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'image_height', [
-			'label'      => esc_html__( 'Height', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Height', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px' ],
 			'range'      => [ 'px' => [ 'min' => 50, 'max' => 500 ] ],
@@ -618,19 +618,19 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'image_align', [
-			'label'     => esc_html__( 'Alignment', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Alignment', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::CHOOSE,
 			'options'   => [
 				'left'   => [
-					'title' => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-text-align-left',
 				],
 				'center' => [
-					'title' => esc_html__( 'Center', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Center', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-text-align-center',
 				],
 				'right'  => [
-					'title' => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-text-align-right',
 				],
 			],
@@ -639,7 +639,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'image_spacing', [
-			'label'      => esc_html__( 'Spacing', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Spacing', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px' ],
 			'range'      => [ 'px' => [ 'min' => 0, 'max' => 100 ] ],
@@ -656,7 +656,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'image_border_radius', [
-			'label'      => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [ '{{WRAPPER}} .trad-item-image img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
@@ -664,13 +664,13 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		// Title Heading
 		$this->add_control( 'heading_title', [
-			'label'     => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::HEADING,
 			'separator' => 'before',
 		] );
 
 		$this->add_control( 'title_color', [
-			'label'     => esc_html__( 'Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-item-title' => 'color: {{VALUE}};' ],
 		] );
@@ -681,19 +681,19 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'title_align', [
-			'label'     => esc_html__( 'Alignment', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Alignment', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::CHOOSE,
 			'options'   => [
 				'left'   => [
-					'title' => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-text-align-left',
 				],
 				'center' => [
-					'title' => esc_html__( 'Center', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Center', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-text-align-center',
 				],
 				'right'  => [
-					'title' => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-text-align-right',
 				],
 			],
@@ -701,7 +701,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'title_spacing', [
-			'label'      => esc_html__( 'Spacing', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Spacing', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px' ],
 			'range'      => [ 'px' => [ 'min' => 0, 'max' => 50 ] ],
@@ -710,13 +710,13 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		// Description Heading
 		$this->add_control( 'heading_description', [
-			'label'     => esc_html__( 'Description', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Description', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::HEADING,
 			'separator' => 'before',
 		] );
 
 		$this->add_control( 'description_color', [
-			'label'     => esc_html__( 'Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-item-description' => 'color: {{VALUE}};' ],
 		] );
@@ -727,19 +727,19 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'description_align', [
-			'label'     => esc_html__( 'Alignment', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Alignment', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::CHOOSE,
 			'options'   => [
 				'left'   => [
-					'title' => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-text-align-left',
 				],
 				'center' => [
-					'title' => esc_html__( 'Center', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Center', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-text-align-center',
 				],
 				'right'  => [
-					'title' => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-text-align-right',
 				],
 			],
@@ -747,7 +747,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'description_spacing', [
-			'label'      => esc_html__( 'Spacing', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Spacing', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px' ],
 			'range'      => [ 'px' => [ 'min' => 0, 'max' => 50 ] ],
@@ -756,23 +756,23 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		// Button Heading
 		$this->add_control( 'heading_button', [
-			'label'     => esc_html__( 'Button', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Button', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::HEADING,
 			'separator' => 'before',
 		] );
 
 		$this->start_controls_tabs( 'button_tabs' );
 
-		$this->start_controls_tab( 'button_normal', [ 'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ) ] );
+		$this->start_controls_tab( 'button_normal', [ 'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 		$this->add_control( 'button_color', [
-			'label'     => esc_html__( 'Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-item-button' => 'color: {{VALUE}};' ],
 		] );
 
 		$this->add_control( 'button_bg_color', [
-			'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-item-button' => 'background-color: {{VALUE}};' ],
 		] );
@@ -784,22 +784,22 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'button_hover', [ 'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ) ] );
+		$this->start_controls_tab( 'button_hover', [ 'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 		$this->add_control( 'button_hover_color', [
-			'label'     => esc_html__( 'Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-item-button:hover' => 'color: {{VALUE}};' ],
 		] );
 
 		$this->add_control( 'button_hover_bg_color', [
-			'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-item-button:hover' => 'background-color: {{VALUE}};' ],
 		] );
 
 		$this->add_control( 'button_hover_border_color', [
-			'label'     => esc_html__( 'Border Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Border Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-item-button:hover' => 'border-color: {{VALUE}};' ],
 		] );
@@ -814,19 +814,19 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'button_align', [
-			'label'     => esc_html__( 'Alignment', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Alignment', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::CHOOSE,
 			'options'   => [
 				'left'   => [
-					'title' => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-text-align-left',
 				],
 				'center' => [
-					'title' => esc_html__( 'Center', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Center', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-text-align-center',
 				],
 				'right'  => [
-					'title' => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
+					'title' => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
 					'icon'  => 'eicon-text-align-right',
 				],
 			],
@@ -834,14 +834,14 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'button_padding', [
-			'label'      => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', 'em' ],
 			'selectors'  => [ '{{WRAPPER}} .trad-item-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
 		] );
 
 		$this->add_responsive_control( 'button_border_radius', [
-			'label'      => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [ '{{WRAPPER}} .trad-item-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
@@ -851,7 +851,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		// ── STYLE: CANVAS PANEL ───────────────────────────────────────────────
 		$this->start_controls_section( 'section_style_canvas', [
-			'label' => esc_html__( 'Canvas Panel', 'turbo-addons-elementor-pro' ),
+			'label' => esc_html__( 'Canvas Panel', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
@@ -861,7 +861,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'canvas_padding', [
-			'label'      => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', 'em', '%' ],
 			'default'    => [
@@ -889,17 +889,17 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		// ── STYLE: CLOSE BUTTON ───────────────────────────────────────────────
 		$this->start_controls_section( 'section_style_close', [
-			'label'     => esc_html__( 'Close Button', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Close Button', 'freemius-turbo-addons-elementor-pro' ),
 			'tab'       => Controls_Manager::TAB_STYLE,
 			'condition' => [ 'show_close_button' => 'yes' ],
 		] );
 
 		$this->start_controls_tabs( 'close_tabs' );
 
-		$this->start_controls_tab( 'close_normal', [ 'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ) ] );
+		$this->start_controls_tab( 'close_normal', [ 'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 		$this->add_control( 'close_color', [
-			'label'     => esc_html__( 'Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '#ffffff',
 			'selectors' => [
@@ -909,7 +909,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_control( 'close_bg_color', [
-			'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '#0d44e9',
 			'selectors' => [ '{{WRAPPER}} .trad-offcanvas-close' => 'background-color: {{VALUE}};' ],
@@ -922,10 +922,10 @@ class TRAD_Off_Canvas extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'close_hover', [ 'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ) ] );
+		$this->start_controls_tab( 'close_hover', [ 'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ) ] );
 
 		$this->add_control( 'close_hover_color', [
-			'label'     => esc_html__( 'Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .trad-offcanvas-close:hover'     => 'color: {{VALUE}};',
@@ -934,13 +934,13 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_control( 'close_hover_bg', [
-			'label'     => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-offcanvas-close:hover' => 'background-color: {{VALUE}};' ],
 		] );
 
 		$this->add_control( 'close_hover_border_color', [
-			'label'     => esc_html__( 'Border Color', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Border Color', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .trad-offcanvas-close:hover' => 'border-color: {{VALUE}};' ],
 		] );
@@ -949,20 +949,20 @@ class TRAD_Off_Canvas extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_control( 'close_hover_animation', [
-			'label'     => esc_html__( 'Hover Animation', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Hover Animation', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SELECT,
 			'default'   => 'rotate',
 			'options'   => [
-				'none'   => esc_html__( 'None', 'turbo-addons-elementor-pro' ),
-				'rotate' => esc_html__( 'Rotate', 'turbo-addons-elementor-pro' ),
-				'scale'  => esc_html__( 'Scale', 'turbo-addons-elementor-pro' ),
-				'pulse'  => esc_html__( 'Pulse', 'turbo-addons-elementor-pro' ),
+				'none'   => esc_html__( 'None', 'freemius-turbo-addons-elementor-pro' ),
+				'rotate' => esc_html__( 'Rotate', 'freemius-turbo-addons-elementor-pro' ),
+				'scale'  => esc_html__( 'Scale', 'freemius-turbo-addons-elementor-pro' ),
+				'pulse'  => esc_html__( 'Pulse', 'freemius-turbo-addons-elementor-pro' ),
 			],
 			'separator' => 'before',
 		] );
 
 		$this->add_responsive_control( 'close_size', [
-			'label'     => esc_html__( 'Size', 'turbo-addons-elementor-pro' ),
+			'label'     => esc_html__( 'Size', 'freemius-turbo-addons-elementor-pro' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [ 'px' => [ 'min' => 10, 'max' => 100 ] ],
 			'default'   => [ 'size' => 16, 'unit' => 'px' ],
@@ -974,14 +974,14 @@ class TRAD_Off_Canvas extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'close_padding', [
-			'label'      => esc_html__( 'Padding', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Padding', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', 'em' ],
 			'selectors'  => [ '{{WRAPPER}} .trad-offcanvas-close' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
 		] );
 
 		$this->add_responsive_control( 'close_border_radius', [
-			'label'      => esc_html__( 'Border Radius', 'turbo-addons-elementor-pro' ),
+			'label'      => esc_html__( 'Border Radius', 'freemius-turbo-addons-elementor-pro' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [ '{{WRAPPER}} .trad-offcanvas-close' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
@@ -1068,7 +1068,7 @@ class TRAD_Off_Canvas extends Widget_Base {
 				<div class="trad-offcanvas-content">
 					<?php
 					if ( $settings['content_type'] === 'template' && ! empty( $settings['saved_template'] ) && $settings['saved_template'] !== '0' ) {
-						echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $settings['saved_template'] );
+						echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $settings['saved_template'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor sanitizes its own builder output
 					} elseif ( $settings['content_type'] === 'repeater' && ! empty( $settings['content_items'] ) ) {
 						$layout = ! empty( $settings['repeater_layout'] ) ? $settings['repeater_layout'] : 'list';
 						$image_position = ! empty( $settings['image_position'] ) ? $settings['image_position'] : 'top';
@@ -1104,11 +1104,11 @@ class TRAD_Off_Canvas extends Widget_Base {
 										
 										<?php if ( ! empty( $item['item_button_text'] ) ) : ?>
 											<?php
-											$target = ! empty( $item['item_button_link']['is_external'] ) ? ' target="_blank"' : '';
+											$target   = ! empty( $item['item_button_link']['is_external'] ) ? ' target="_blank"' : '';
 											$nofollow = ! empty( $item['item_button_link']['nofollow'] ) ? ' rel="nofollow"' : '';
 											$button_url = ! empty( $item['item_button_link']['url'] ) ? $item['item_button_link']['url'] : '#';
 											?>
-											<a href="<?php echo esc_url( $button_url ); ?>" class="trad-item-button"<?php echo $target . $nofollow; ?>>
+											<a href="<?php echo esc_url( $button_url ); ?>" class="trad-item-button"<?php echo esc_attr( $target ) . esc_attr( $nofollow ); ?>>
 												<?php echo esc_html( $item['item_button_text'] ); ?>
 											</a>
 										<?php endif; ?>

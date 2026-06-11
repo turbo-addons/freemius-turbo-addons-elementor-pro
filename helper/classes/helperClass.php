@@ -196,7 +196,7 @@ class Pro_Helper {
     $extensions = get_option( 'turbo_addons_extensions', [] );
 
     $all_extensions = [
-        'tooltip' => __( 'Tooltip Extension', 'turbo-addons-elementor-pro' ),
+        'tooltip' => __( 'Tooltip Extension', 'freemius-turbo-addons-elementor-pro' ),
         // Add future pro extensions here
     ];
 

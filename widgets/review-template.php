@@ -16,7 +16,7 @@ class TRAD_Review_Archive extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__( 'Turbo Review Archive', 'turbo-addons-elementor-pro' );
+        return esc_html__( 'Turbo Review Archive', 'freemius-turbo-addons-elementor-pro' );
     }
 
     public function get_icon() {
@@ -31,7 +31,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__( 'Content', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Content', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -39,14 +39,14 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_select',
             [
-                'label' => esc_html__( 'Select Template', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Select Template', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'template-1' => esc_html__( 'Template 1', 'turbo-addons-elementor-pro' ),
-                    'template-2' => esc_html__( 'Template 2', 'turbo-addons-elementor-pro' ),
-                    'template-3' => esc_html__( 'Template 3', 'turbo-addons-elementor-pro' ),
-                    'template-4' => esc_html__( 'Template 4', 'turbo-addons-elementor-pro' ),
-                    'template-5' => esc_html__( 'Template 5', 'turbo-addons-elementor-pro' ),
+                    'template-1' => esc_html__( 'Template 1', 'freemius-turbo-addons-elementor-pro' ),
+                    'template-2' => esc_html__( 'Template 2', 'freemius-turbo-addons-elementor-pro' ),
+                    'template-3' => esc_html__( 'Template 3', 'freemius-turbo-addons-elementor-pro' ),
+                    'template-4' => esc_html__( 'Template 4', 'freemius-turbo-addons-elementor-pro' ),
+                    'template-5' => esc_html__( 'Template 5', 'freemius-turbo-addons-elementor-pro' ),
                 ],
                 'default' => 'template-1',
             ]
@@ -56,7 +56,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'trad_review_archive_logo',
             [
-                'label' => esc_html__( 'Upload Logo', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Upload Logo', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -71,7 +71,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'logo_width',
             [
-                'label' => esc_html__( 'Logo Width', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Logo Width', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -103,7 +103,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'logo_height',
             [
-                'label' => esc_html__( 'Logo Height', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Logo Height', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -136,7 +136,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'logo_border_radius',
             [
-                'label' => esc_html__( 'Logo Border Radius', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Logo Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -168,7 +168,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_two_card_logo',
             [
-                'label' => esc_html__( 'Upload Logo', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Upload Logo', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -183,7 +183,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_two_logo_width',
             [
-                'label' => esc_html__( 'Logo Width', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Logo Width', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -215,7 +215,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_two_logo_height',
             [
-                'label' => esc_html__( 'Logo Height', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Logo Height', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -248,7 +248,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_two_logo_border_radius',
             [
-                'label' => esc_html__( 'Logo Border Radius', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Logo Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -282,7 +282,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_card_logo',
             [
-                'label' => esc_html__( 'Upload Logo', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Upload Logo', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -295,7 +295,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_logo_width',
             [
-                'label' => esc_html__( 'Logo Width', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Logo Width', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -327,7 +327,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_logo_height',
             [
-                'label' => esc_html__( 'Logo Height', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Logo Height', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -359,7 +359,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_logo_border_radius',
             [
-                'label' => esc_html__( 'Logo Border Radius', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Logo Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -392,7 +392,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_logo_width',
             [
-                'label' => esc_html__( 'Logo Width', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Logo Width', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -424,7 +424,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_logo_height',
             [
-                'label' => esc_html__( 'Logo Height', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Logo Height', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -456,7 +456,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_logo_border_radius',
             [
-                'label' => esc_html__( 'Logo Border Radius', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Logo Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -491,10 +491,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'dynamic_title',
             [
-                'label' => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
-                'placeholder' => esc_html__( 'Enter your title', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'Enter your title', 'freemius-turbo-addons-elementor-pro' ),
                 'condition' => [
                     'template_select' => ['template-1', 'template-2', 'template-4', 'template-5'],
                 ],
@@ -504,10 +504,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'dynamic_sub_title',
             [
-                'label' => esc_html__( 'Sub Title', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Sub Title', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
-                'placeholder' => esc_html__( 'Enter your title', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'Enter your title', 'freemius-turbo-addons-elementor-pro' ),
                 'condition' => [
                     'template_select' => ['template-2'],
                 ],
@@ -519,10 +519,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'dynamic_content',
             [
-                'label' => esc_html__( 'Dynamic Content', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Dynamic Content', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => esc_html__( 'Default content', 'turbo-addons-elementor-pro' ),
-                'placeholder' => esc_html__( 'Enter your content', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Default content', 'freemius-turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'Enter your content', 'freemius-turbo-addons-elementor-pro' ),
                 'condition' => [
                     'template_select' => ['template-1', 'template-2', 'template-4'],
                 ],
@@ -534,10 +534,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'money_back_title',
             [
-                'label' => esc_html__( 'Guarantee Text', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Guarantee Text', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Guarantee Text', 'turbo-addons-elementor-pro' ),
-                'placeholder' => esc_html__( 'Enter your guarantee', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Guarantee Text', 'freemius-turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'Enter your guarantee', 'freemius-turbo-addons-elementor-pro' ),
                 'condition' => [
                     'template_select' => ['template-3', 'template-5'],
                 ],
@@ -547,10 +547,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_price_title',
             [
-                'label' => esc_html__( 'Price Text', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Price Text', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Price Text', 'turbo-addons-elementor-pro' ),
-                'placeholder' => esc_html__( 'Enter your Price', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Price Text', 'freemius-turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'Enter your Price', 'freemius-turbo-addons-elementor-pro' ),
                 'condition' => [
                     'template_select' => ['template-3', 'template-5'],
                 ],
@@ -560,10 +560,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_save_title',
             [
-                'label' => esc_html__( 'Save Text', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Save Text', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Save Text', 'turbo-addons-elementor-pro' ),
-                'placeholder' => esc_html__( 'Enter your Save', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Save Text', 'freemius-turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'Enter your Save', 'freemius-turbo-addons-elementor-pro' ),
                 'condition' => [
                     'template_select' => ['template-3', 'template-5'],
                 ],
@@ -573,10 +573,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_secure_title',
             [
-                'label' => esc_html__( 'Secure Text', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Secure Text', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Secure Text', 'turbo-addons-elementor-pro' ),
-                'placeholder' => esc_html__( 'Enter your Secure', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Secure Text', 'freemius-turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'Enter your Secure', 'freemius-turbo-addons-elementor-pro' ),
                 'condition' => [
                     'template_select' => ['template-3', 'template-5'],
                 ],
@@ -589,7 +589,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->start_controls_section(
             'review_section',
             [
-                'label' => esc_html__( 'Review', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -597,7 +597,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'number_of_stars',
             [
-                'label' => esc_html__('Number of Stars', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Number of Stars', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::NUMBER,
                 'min' => 1,
                 'max' => 5,  // Maximum of 10 stars
@@ -610,7 +610,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'star_rating',
             [
-                'label' => esc_html__('Star Rating', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Star Rating', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [''],
                 'range' => [
@@ -630,7 +630,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'star_background_color',
             [
-                'label' => esc_html__('Review Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Review Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fc0',
             ]
@@ -640,7 +640,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'star_color',
             [
-                'label' => esc_html__('Star Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Star Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000',
             ]
@@ -650,7 +650,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'star_size',
             [
-                'label' => esc_html__('Star Size', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Star Size', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -670,10 +670,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'enable_hover',
             [
-                'label' => esc_html__('Enable Hover Effect', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Enable Hover Effect', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Yes', 'turbo-addons-elementor-pro'),
-                'label_off' => esc_html__('No', 'turbo-addons-elementor-pro'),
+                'label_on' => esc_html__('Yes', 'freemius-turbo-addons-elementor-pro'),
+                'label_off' => esc_html__('No', 'freemius-turbo-addons-elementor-pro'),
                 'default' => 'yes',
             ]
         );
@@ -684,7 +684,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->start_controls_section(
             'button_section',
             [
-                'label' => esc_html__( 'Button', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
                 'condition' => [
                     'template_select' => ['template-1', 'template-3', 'template-4', 'template-5'],
@@ -696,10 +696,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'button_text',
             [
-                'label' => esc_html__( 'Button Text', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Text', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Visit', 'turbo-addons-elementor-pro' ),
-                'placeholder' => esc_html__( 'Enter button text', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Visit', 'freemius-turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'Enter button text', 'freemius-turbo-addons-elementor-pro' ),
                 'condition' => [
                     'template_select' => ['template-1', 'template-3', 'template-4', 'template-5'],
                 ],
@@ -708,9 +708,9 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_one_button_url',
             [
-                'label' => esc_html__( 'Link', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Link', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://your-link.com', 'turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'https://your-link.com', 'freemius-turbo-addons-elementor-pro' ),
                 'default' => [
                     'url' => '#',
                 ],
@@ -722,9 +722,9 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_button_url',
             [
-                'label' => esc_html__( 'Button Link', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Link', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://your-link.com', 'turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'https://your-link.com', 'freemius-turbo-addons-elementor-pro' ),
                 'default' => [
                     'url' => '#',
                 ],
@@ -737,9 +737,9 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_button_url',
             [
-                'label' => esc_html__( 'Link', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Link', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://your-link.com', 'turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'https://your-link.com', 'freemius-turbo-addons-elementor-pro' ),
                 'default' => [
                     'url' => '#',
                 ],
@@ -751,10 +751,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'button_text_two',
             [
-                'label' => esc_html__( 'Review Button', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Read Review', 'turbo-addons-elementor-pro' ),
-                'placeholder' => esc_html__( 'Enter review text', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Read Review', 'freemius-turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'Enter review text', 'freemius-turbo-addons-elementor-pro' ),
                 'condition' => [
                     'template_select' => ['template-3', 'template-5'],
                 ],
@@ -763,9 +763,9 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_review_button_url',
             [
-                'label' => esc_html__( 'Review Link', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Link', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://your-link.com', 'turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'https://your-link.com', 'freemius-turbo-addons-elementor-pro' ),
                 'default' => [
                     'url' => '#',
                 ],
@@ -777,9 +777,9 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_button_review_url',
             [
-                'label' => esc_html__( 'Link', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Link', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://your-link.com', 'turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'https://your-link.com', 'freemius-turbo-addons-elementor-pro' ),
                 'default' => [
                     'url' => '#',
                 ],
@@ -793,7 +793,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->start_controls_section(
             'tc_section',
             [
-                'label' => esc_html__( 'Terms & Condition', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms & Condition', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
                 'condition' => [
                     'template_select' => ['template-1', 'template-3', 'template-4', 'template-5'],
@@ -805,10 +805,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'tc_text',
             [
-                'label' => esc_html__( 'Terms and Condition Text', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms and Condition Text', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'T&Cs Apply', 'turbo-addons-elementor-pro' ),
-                'placeholder' => esc_html__( 'Enter term and condition text', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'T&Cs Apply', 'freemius-turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'Enter term and condition text', 'freemius-turbo-addons-elementor-pro' ),
                 'condition' => [
                     'template_select' => 'template-1',
                 ],
@@ -819,10 +819,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_tc_text',
             [
-                'label' => esc_html__( 'Terms and Condition Text', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms and Condition Text', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'T&Cs Apply', 'turbo-addons-elementor-pro' ),
-                'placeholder' => esc_html__( 'Enter term and condition text', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'T&Cs Apply', 'freemius-turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'Enter term and condition text', 'freemius-turbo-addons-elementor-pro' ),
                 'condition' => [
                     'template_select' => 'template-3',
                 ],
@@ -832,10 +832,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_tc_text',
             [
-                'label' => esc_html__( 'Terms and Condition Text', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms and Condition Text', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'T&Cs Apply', 'turbo-addons-elementor-pro' ),
-                'placeholder' => esc_html__( 'Enter term and condition text', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'T&Cs Apply', 'freemius-turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'Enter term and condition text', 'freemius-turbo-addons-elementor-pro' ),
                 'condition' => [
                     'template_select' => 'template-4',
                 ],
@@ -845,10 +845,10 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_terms_condition_text',
             [
-                'label' => esc_html__( 'Terms and Condition Text', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms and Condition Text', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Terms and condition apply', 'turbo-addons-elementor-pro' ),
-                'placeholder' => esc_html__( 'Enter term and condition text', 'turbo-addons-elementor-pro' ),
+                'default' => esc_html__( 'Terms and condition apply', 'freemius-turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'Enter term and condition text', 'freemius-turbo-addons-elementor-pro' ),
                 'condition' => [
                     'template_select' => 'template-5',
                 ],
@@ -858,9 +858,9 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_tc_url',
             [
-                'label' => esc_html__( 'Link', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Link', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://your-link.com', 'turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'https://your-link.com', 'freemius-turbo-addons-elementor-pro' ),
                 'default' => [
                     'url' => '#',
                 ],
@@ -873,9 +873,9 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_tc_url',
             [
-                'label' => esc_html__( 'Link', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Link', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://your-link.com', 'turbo-addons-elementor-pro' ),
+                'placeholder' => esc_html__( 'https://your-link.com', 'freemius-turbo-addons-elementor-pro' ),
                 'default' => [
                     'url' => '#',
                 ],
@@ -890,7 +890,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->start_controls_section(
             'card_background_section',
             [
-                'label' => esc_html__( 'Background', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Background', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -899,7 +899,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'vpn_card_bg_color',
             [
-                'label' => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
@@ -915,7 +915,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'card_container_bg_color',
             [
-                'label' => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
@@ -930,7 +930,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'container_template_three_bg_color',
             [
-                'label' => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
@@ -945,7 +945,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'container_template_four_bg_color',
             [
-                'label' => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
@@ -960,7 +960,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'container_template_five_bg_color',
             [
-                'label' => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
@@ -977,7 +977,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->start_controls_section(
             'title_two_style_section',
             [
-                'label' => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -986,7 +986,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_two_text_typography',
-                'label' => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-review-archive-name',
                 'condition' => [
                     'template_select' => 'template-1',
@@ -998,7 +998,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'title_two_text_color',
             [
-                'label' => esc_html__( 'Title Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -1015,7 +1015,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'template_two_title_typography',
-                'label' => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-template-two-title',
                 'condition' => [
                     'template_select' => 'template-2',
@@ -1027,7 +1027,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_two_title_text_color',
             [
-                'label' => esc_html__( 'Title Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000',
                 'selectors' => [
@@ -1045,7 +1045,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_three_price_typography',
-                'label' => esc_html__( 'Price', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Price', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-review-archive-template-three-price-value',
                 'condition' => [
                     'template_select' => 'template-3',
@@ -1057,7 +1057,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'title_three_price_color',
             [
-                'label' => esc_html__( 'Price Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Price Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -1073,7 +1073,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_three_save_typography',
-                'label' => esc_html__( 'Save', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Save', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-review-archive-template-three-save-value',
                 'condition' => [
                     'template_select' => 'template-3',
@@ -1085,7 +1085,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'title_three_save_color',
             [
-                'label' => esc_html__( 'Save Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Save Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -1103,7 +1103,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'trad_template_four_title_typography',
-                'label' => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-review-archive-template-four-container-title',
                 'condition' => [
                     'template_select' => 'template-4',
@@ -1115,7 +1115,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'trad_template_four_title_color',
             [
-                'label' => esc_html__( 'Title Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -1134,7 +1134,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'trad_template_five_title_typography',
-                'label' => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-template-five-service-name',
                 'condition' => [
                     'template_select' => 'template-5',
@@ -1146,7 +1146,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'trad_template_five_title_color',
             [
-                'label' => esc_html__( 'Title Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -1162,7 +1162,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_five_price_typography',
-                'label' => esc_html__( 'Price', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Price', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-template-five-price-value',
                 'condition' => [
                     'template_select' => 'template-5',
@@ -1174,7 +1174,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'title_five_price_color',
             [
-                'label' => esc_html__( 'Price Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Price Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -1190,7 +1190,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_five_save_typography',
-                'label' => esc_html__( 'Save', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Save', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-template-five-save',
                 'condition' => [
                     'template_select' => 'template-5',
@@ -1202,7 +1202,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'title_five_save_color',
             [
-                'label' => esc_html__( 'Save Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Save Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -1219,7 +1219,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->start_controls_section(
             'description_style_section',
             [
-                'label' => esc_html__( 'Description', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Description', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1228,7 +1228,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'description_text_typography',
-                'label' => esc_html__( 'Description', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Description', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-review-archive-features',
                 'condition' => [
                     'template_select' => 'template-1',
@@ -1240,7 +1240,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'description_text_color',
             [
-                'label' => esc_html__( 'Title Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -1256,7 +1256,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'template_two_description_typography',
-                'label' => esc_html__( 'Description', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Description', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-template-two-description',
                 'condition' => [
                     'template_select' => 'template-2',
@@ -1268,7 +1268,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_two_description_text_color',
             [
-                'label' => esc_html__( 'Description Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Description Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000',
                 'selectors' => [
@@ -1284,7 +1284,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_three_secure_typography',
-                'label' => esc_html__( 'Secure', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Secure', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-review-archive-template-three-secure-value',
                 'condition' => [
                     'template_select' => 'template-3',
@@ -1296,7 +1296,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'title_three_secure_color',
             [
-                'label' => esc_html__( 'Secure Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Secure Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -1312,7 +1312,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_three_money_typography',
-                'label' => esc_html__( 'Money Back', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Money Back', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-review-archive-template-three-money-back',
                 'condition' => [
                     'template_select' => 'template-3',
@@ -1324,7 +1324,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'title_three_money_color',
             [
-                'label' => esc_html__( 'Money Back Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Money Back Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -1340,7 +1340,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'trad_template_four_description_typography',
-                'label' => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-review-archive-template-four-container-description',
                 'condition' => [
                     'template_select' => 'template-4',
@@ -1352,7 +1352,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'trad_template_four_description_color',
             [
-                'label' => esc_html__( 'Title Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Title Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -1370,7 +1370,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_five_secure_typography',
-                'label' => esc_html__( 'Secure', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Secure', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-template-five-devices',
                 'condition' => [
                     'template_select' => 'template-5',
@@ -1382,7 +1382,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'title_five_secure_color',
             [
-                'label' => esc_html__( 'Secure Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Secure Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -1398,7 +1398,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_five_money_typography',
-                'label' => esc_html__( 'Money Back', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Money Back', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-template-five-money-back',
                 'condition' => [
                     'template_select' => 'template-5',
@@ -1410,7 +1410,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'title_five_money_color',
             [
-                'label' => esc_html__( 'Money Back Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Money Back Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -1429,7 +1429,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->start_controls_section(
             'button_style_section',
             [
-                'label' => esc_html__( 'Button Style', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Style', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'template_select' => ['template-1', 'template-3', 'template-4', 'template-5'],
@@ -1441,7 +1441,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'button_bg_color',
             [
-                'label' => esc_html__( 'Button Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#6a33d8',
                 'selectors' => [
@@ -1457,7 +1457,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'button_text_color',
             [
-                'label' => esc_html__( 'Button Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
@@ -1473,7 +1473,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'button_font_size',
             [
-                'label' => esc_html__( 'Button Font Size', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Font Size', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em', '%' ],
                 'range' => [
@@ -1505,7 +1505,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'button_border_radius',
             [
-                'label' => esc_html__( 'Button Border Radius', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1536,7 +1536,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'button_hover_bg_color',
             [
-                'label' => esc_html__( 'Button Hover Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Hover Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-review-archive-btn:hover' => 'background-color: {{VALUE}};',
@@ -1551,7 +1551,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'button_hover_text_color',
             [
-                'label' => esc_html__( 'Button Hover Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Hover Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-review-archive-btn:hover' => 'color: {{VALUE}};',
@@ -1568,7 +1568,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_button_bg_color',
             [
-                'label' => esc_html__( 'Button Background Color - 1', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Background Color - 1', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#6a33d8',
                 'selectors' => [
@@ -1583,7 +1583,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_button_bg_color',
             [
-                'label' => esc_html__( 'Button Background Color - 1', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Background Color - 1', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#6a33d8',
                 'selectors' => [
@@ -1598,7 +1598,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_button_bg_color',
             [
-                'label' => esc_html__( 'Button Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#6a33d8',
                 'selectors' => [
@@ -1614,7 +1614,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_button_text_color',
             [
-                'label' => esc_html__( 'Button Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
@@ -1629,7 +1629,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_button_text_color',
             [
-                'label' => esc_html__( 'Button Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
@@ -1644,7 +1644,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_button_text_color',
             [
-                'label' => esc_html__( 'Button Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
@@ -1659,7 +1659,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_button_review_text_color',
             [
-                'label' => esc_html__( 'Review Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000',
                 'selectors' => [
@@ -1675,7 +1675,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_button_font_size',
             [
-                'label' => esc_html__( 'Button Font Size', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Font Size', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em', '%' ],
                 'range' => [
@@ -1706,7 +1706,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_button_font_size',
             [
-                'label' => esc_html__( 'Button Font Size', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Font Size', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em', '%' ],
                 'range' => [
@@ -1737,7 +1737,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_button_font_size',
             [
-                'label' => esc_html__( 'Button Font Size', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Font Size', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em', '%' ],
                 'range' => [
@@ -1768,7 +1768,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_review_button_font_size',
             [
-                'label' => esc_html__( 'Review Font Size', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Font Size', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em', '%' ],
                 'range' => [
@@ -1799,7 +1799,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_button_width',
             [
-                'label' => esc_html__( 'Width', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Width', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'em' ],
                 'range' => [
@@ -1835,7 +1835,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_button_border_radius',
             [
-                'label' => esc_html__( 'Button Border Radius', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1865,7 +1865,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_button_border_radius',
             [
-                'label' => esc_html__( 'Button Border Radius', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1895,7 +1895,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_button_border_radius',
             [
-                'label' => esc_html__( 'Button Border Radius', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1926,7 +1926,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_button_hover_bg_color',
             [
-                'label' => esc_html__( 'Button Hover Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Hover Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-template-three-visit-btn:hover' => 'background-color: {{VALUE}};',
@@ -1940,7 +1940,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_button_hover_bg_color',
             [
-                'label' => esc_html__( 'Button Hover Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Hover Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-template-four-visit-btn:hover' => 'background-color: {{VALUE}};',
@@ -1954,7 +1954,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_button_hover_bg_color',
             [
-                'label' => esc_html__( 'Button Hover Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Hover Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-template-five-visit-btn:hover' => 'background-color: {{VALUE}};',
@@ -1969,7 +1969,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_button_hover_text_color',
             [
-                'label' => esc_html__( 'Button Hover Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Hover Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-template-three-visit-btn:hover' => 'color: {{VALUE}};',
@@ -1983,7 +1983,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_button_hover_text_color',
             [
-                'label' => esc_html__( 'Button Hover Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Hover Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-template-four-visit-btn:hover' => 'color: {{VALUE}};',
@@ -1997,7 +1997,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_button_hover_text_color',
             [
-                'label' => esc_html__( 'Button Hover Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Button Hover Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-template-five-visit-btn:hover' => 'color: {{VALUE}};',
@@ -2011,7 +2011,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_five_review_button_hover_text_color',
             [
-                'label' => esc_html__( 'Review Hover Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Hover Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-template-five-review-link:hover' => 'color: {{VALUE}};',
@@ -2027,7 +2027,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_review_button_bg_color',
             [
-                'label' => esc_html__( 'Review Button Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#6a33d8',
                 'selectors' => [
@@ -2042,7 +2042,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_review_button_bg_color',
             [
-                'label' => esc_html__( 'Review Button Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#6a33d8',
                 'selectors' => [
@@ -2058,7 +2058,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_review_button_text_color',
             [
-                'label' => esc_html__( 'Review Button Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
@@ -2073,7 +2073,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_review_button_text_color',
             [
-                'label' => esc_html__( 'Review Button Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
@@ -2089,7 +2089,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_review_button_font_size',
             [
-                'label' => esc_html__( 'Review Button Font Size', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button Font Size', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em', '%' ],
                 'range' => [
@@ -2120,7 +2120,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_review_button_font_size',
             [
-                'label' => esc_html__( 'Review Button Font Size', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button Font Size', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em', '%' ],
                 'range' => [
@@ -2151,7 +2151,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_review_button_width',
             [
-                'label' => esc_html__( 'Review Button Width', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button Width', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'em' ],
                 'range' => [
@@ -2187,7 +2187,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_review_button_border_radius',
             [
-                'label' => esc_html__( 'Review Button Border Radius', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -2217,7 +2217,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_review_button_border_radius',
             [
-                'label' => esc_html__( 'Review Button Border Radius', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button Border Radius', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -2248,7 +2248,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_review_button_hover_bg_color',
             [
-                'label' => esc_html__( 'Review Button Hover Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button Hover Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-template-three-review-btn:hover' => 'background-color: {{VALUE}};',
@@ -2262,7 +2262,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_review_button_hover_bg_color',
             [
-                'label' => esc_html__( 'Review Button Hover Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button Hover Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-template-four-review-btn:hover' => 'background-color: {{VALUE}};',
@@ -2277,7 +2277,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_three_review_button_hover_text_color',
             [
-                'label' => esc_html__( 'Review Button Hover Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button Hover Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-template-three-review-btn:hover' => 'color: {{VALUE}};',
@@ -2291,7 +2291,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'template_four_review_button_hover_text_color',
             [
-                'label' => esc_html__( 'Review Button Hover Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Review Button Hover Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad-template-four-review-btn:hover' => 'color: {{VALUE}};',
@@ -2307,7 +2307,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->start_controls_section(
             'tc_style_section',
             [
-                'label' => esc_html__( 'Terms & Condition', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms & Condition', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'template_select' => ['template-1', 'template-3', 'template-4', 'template-5'],
@@ -2319,7 +2319,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'tc_text_typography',
-                'label' => esc_html__( 'Terms Typography', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-review-archive-terms',
                 'condition' => [
                     'template_select' => 'template-1',
@@ -2331,7 +2331,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'tc_text_color',
             [
-                'label' => esc_html__( 'Terms Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -2347,7 +2347,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'trad_template_three_terms_text_typography',
-                'label' => esc_html__( 'Terms Typography', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-template-three-terms',
                 'condition' => [
                     'template_select' => 'template-3',
@@ -2359,7 +2359,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'trad_template_three_terms_text_color',
             [
-                'label' => esc_html__( 'Terms Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -2375,7 +2375,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'trad_template_four_terms_text_typography',
-                'label' => esc_html__( 'Terms Typography', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-template-three-terms',
                 'condition' => [
                     'template_select' => 'template-4',
@@ -2387,7 +2387,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'trad_template_four_terms_text_color',
             [
-                'label' => esc_html__( 'Terms Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -2403,7 +2403,7 @@ class TRAD_Review_Archive extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'trad_template_five_terms_text_typography',
-                'label' => esc_html__( 'Terms Typography', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms Typography', 'freemius-turbo-addons-elementor-pro' ),
                 'selector' => '{{WRAPPER}} .trad-template-five-terms',
                 'condition' => [
                     'template_select' => 'template-5',
@@ -2415,7 +2415,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'trad_template_five_terms_text_color',
             [
-                'label' => esc_html__( 'Terms Text Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Terms Text Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#808080',
                 'selectors' => [
@@ -2433,7 +2433,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->start_controls_section(
             'divider_style_section',
             [
-                'label' => esc_html__( 'Divider Style', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Divider Style', 'freemius-turbo-addons-elementor-pro' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'template_select' => ['template-3', 'template-4'],
@@ -2445,7 +2445,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'divider_width',
             [
-                'label' => esc_html__( 'Width', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Width', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'em' ],
                 'range' => [
@@ -2481,7 +2481,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'divider_height',
             [
-                'label' => esc_html__( 'Height', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Height', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em', '%' ],
                 'range' => [
@@ -2513,7 +2513,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'divider_background_color',
             [
-                'label' => esc_html__( 'Background Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Background Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000000',
                 'selectors' => [
@@ -2529,7 +2529,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_responsive_control(
             'divider_margin',
             [
-                'label' => esc_html__( 'Margin', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Margin', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default' => [
@@ -2552,7 +2552,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'trad_card_header_border_width',
             [
-                'label' => esc_html__( 'Border Width', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Border Width', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em', '%' ],
                 'range' => [
@@ -2589,7 +2589,7 @@ class TRAD_Review_Archive extends Widget_Base {
         $this->add_control(
             'trad_card_header_border_color',
             [
-                'label' => esc_html__( 'Border Color', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Border Color', 'freemius-turbo-addons-elementor-pro' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000000', // Set a default color
                 'selectors' => [

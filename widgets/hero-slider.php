@@ -21,7 +21,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     }
 
     public function get_title() {
-        return __('Hero Slider', 'turbo-addons-elementor-pro');
+        return __('Hero Slider', 'freemius-turbo-addons-elementor-pro');
     }
 
     public function get_icon() {
@@ -37,7 +37,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->start_controls_section(
           'slides_section',
           [
-              'label' => __('Slides', 'turbo-addons-elementor-pro'),
+              'label' => __('Slides', 'freemius-turbo-addons-elementor-pro'),
               'tab'   => Controls_Manager::TAB_CONTENT,
           ]
       );
@@ -48,7 +48,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       $repeater->add_control(
           'slide_background_image',
           [
-              'label'   => __('Background Image', 'turbo-addons-elementor-pro'),
+              'label'   => __('Background Image', 'freemius-turbo-addons-elementor-pro'),
               'type'    => Controls_Manager::MEDIA,
               'default' => [
                   'url' => Utils::get_placeholder_image_src(),
@@ -59,9 +59,9 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       $repeater->add_control(
           'slide_title',
           [
-              'label'   => __('Slide Title', 'turbo-addons-elementor-pro'),
+              'label'   => __('Slide Title', 'freemius-turbo-addons-elementor-pro'),
               'type'    => Controls_Manager::TEXT,
-              'default' => __('Default Title', 'turbo-addons-elementor-pro'),
+              'default' => __('Default Title', 'freemius-turbo-addons-elementor-pro'),
               'label_block' => true,
           ]
       );
@@ -69,9 +69,9 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       $repeater->add_control(
           'slide_sub_title',
           [
-              'label'   => __('Slide Subtitle', 'turbo-addons-elementor-pro'),
+              'label'   => __('Slide Subtitle', 'freemius-turbo-addons-elementor-pro'),
               'type'    => Controls_Manager::TEXT,
-              'default' => __('Default Subtitle ', 'turbo-addons-elementor-pro'),
+              'default' => __('Default Subtitle ', 'freemius-turbo-addons-elementor-pro'),
               'label_block' => true,
           ]
       );
@@ -79,9 +79,9 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       $repeater->add_control(
           'slide_text',
           [
-              'label'   => __('Slide Text', 'turbo-addons-elementor-pro'),
+              'label'   => __('Slide Text', 'freemius-turbo-addons-elementor-pro'),
               'type'    => Controls_Manager::TEXTAREA,
-              'default' => __('Default text for the slide.', 'turbo-addons-elementor-pro'),
+              'default' => __('Default text for the slide.', 'freemius-turbo-addons-elementor-pro'),
               'label_block' => true,
           ]
       );
@@ -89,9 +89,9 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       $repeater->add_control(
           'slide_button_one',
           [
-              'label'       => __('Button One Text', 'turbo-addons-elementor-pro'),
+              'label'       => __('Button One Text', 'freemius-turbo-addons-elementor-pro'),
               'type'        => Controls_Manager::TEXT,
-              'default'     => __('Learn More', 'turbo-addons-elementor-pro'),
+              'default'     => __('Learn More', 'freemius-turbo-addons-elementor-pro'),
               'label_block' => true,
           ]
       );
@@ -99,9 +99,9 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $repeater->add_control(
           'slide_button_one_url',
           [
-              'label'       => __('Button One URL', 'turbo-addons-elementor-pro'),
+              'label'       => __('Button One URL', 'freemius-turbo-addons-elementor-pro'),
               'type'        => Controls_Manager::URL,
-              'placeholder' => __('https://example.com', 'turbo-addons-elementor-pro'),
+              'placeholder' => __('https://example.com', 'freemius-turbo-addons-elementor-pro'),
               'default'     => [
                   'url' => '#',
               ],
@@ -111,9 +111,9 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $repeater->add_control(
           'slide_button_two',
           [
-              'label'       => __('Button Two Text', 'turbo-addons-elementor-pro'),
+              'label'       => __('Button Two Text', 'freemius-turbo-addons-elementor-pro'),
               'type'        => Controls_Manager::TEXT,
-              'default'     => __('Get Info', 'turbo-addons-elementor-pro'),
+              'default'     => __('Get Info', 'freemius-turbo-addons-elementor-pro'),
               'label_block' => true,
           ]
       );
@@ -121,9 +121,9 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $repeater->add_control(
           'slide_button_two_url',
           [
-              'label'       => __('Button Two URL', 'turbo-addons-elementor-pro'),
+              'label'       => __('Button Two URL', 'freemius-turbo-addons-elementor-pro'),
               'type'        => Controls_Manager::URL,
-              'placeholder' => __('https://example.com', 'turbo-addons-elementor-pro'),
+              'placeholder' => __('https://example.com', 'freemius-turbo-addons-elementor-pro'),
               'default'     => [
                   'url' => '#',
               ],
@@ -134,10 +134,10 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         $repeater->add_control(
             'show_slide_image',
             [
-                'label'        => esc_html__( 'Show Image', 'turbo-addons-elementor-pro' ),
+                'label'        => esc_html__( 'Show Image', 'freemius-turbo-addons-elementor-pro' ),
                 'type'         => \Elementor\Controls_Manager::SWITCHER,
-                'label_on'     => esc_html__( 'Show', 'turbo-addons-elementor-pro' ),
-                'label_off'    => esc_html__( 'Hide', 'turbo-addons-elementor-pro' ),
+                'label_on'     => esc_html__( 'Show', 'freemius-turbo-addons-elementor-pro' ),
+                'label_off'    => esc_html__( 'Hide', 'freemius-turbo-addons-elementor-pro' ),
                 'return_value' => 'yes',
                 'default'      => 'yes',
             ]
@@ -147,7 +147,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         $repeater->add_control(
             'hero_slider_image_content',
             [
-                'label'   => esc_html__( 'Slider Image', 'turbo-addons-elementor-pro' ),
+                'label'   => esc_html__( 'Slider Image', 'freemius-turbo-addons-elementor-pro' ),
                 'type'    => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -161,10 +161,10 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
      $repeater->add_control(
         'show_slide_shortcode',
         [
-            'label'        => esc_html__( 'Show Shortcode', 'turbo-addons-elementor-pro' ),
+            'label'        => esc_html__( 'Show Shortcode', 'freemius-turbo-addons-elementor-pro' ),
             'type'         => \Elementor\Controls_Manager::SWITCHER,
-            'label_on'     => esc_html__( 'Show', 'turbo-addons-elementor-pro' ),
-            'label_off'    => esc_html__( 'Hide', 'turbo-addons-elementor-pro' ),
+            'label_on'     => esc_html__( 'Show', 'freemius-turbo-addons-elementor-pro' ),
+            'label_off'    => esc_html__( 'Hide', 'freemius-turbo-addons-elementor-pro' ),
             'return_value' => 'yes',
             'default'      => '',
             ]
@@ -174,9 +174,9 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $repeater->add_control(
         'slide_shortcode_content',
         [
-            'label'       => esc_html__( 'Shortcode', 'turbo-addons-elementor-pro' ),
+            'label'       => esc_html__( 'Shortcode', 'freemius-turbo-addons-elementor-pro' ),
             'type'        => \Elementor\Controls_Manager::TEXTAREA,
-            'placeholder' => esc_html__( '[your_shortcode]', 'turbo-addons-elementor-pro' ),
+            'placeholder' => esc_html__( '[your_shortcode]', 'freemius-turbo-addons-elementor-pro' ),
             'condition'   => [
                 'show_slide_shortcode' => 'yes',
             ],
@@ -191,7 +191,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
           'slides',
           [
-              'label'       => __('Slides', 'turbo-addons-elementor-pro'),
+              'label'       => __('Slides', 'freemius-turbo-addons-elementor-pro'),
               'type'        => Controls_Manager::REPEATER,
               'fields'      => $repeater->get_controls(),
               'default'     => [
@@ -199,15 +199,15 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
                       'slide_background_image' => [
                           'url' => Utils::get_placeholder_image_src(),
                       ],
-                      'slide_title' => __('Default Slide 1', 'turbo-addons-elementor-pro'),
-                      'slide_text'  => __('This is the default text for slide 1.', 'turbo-addons-elementor-pro'),
+                      'slide_title' => __('Default Slide 1', 'freemius-turbo-addons-elementor-pro'),
+                      'slide_text'  => __('This is the default text for slide 1.', 'freemius-turbo-addons-elementor-pro'),
                   ],
                   [
                       'slide_background_image' => [
                           'url' => Utils::get_placeholder_image_src(),
                       ],
-                      'slide_title' => __('Default Slide 2', 'turbo-addons-elementor-pro'),
-                      'slide_text'  => __('This is the default text for slide 2.', 'turbo-addons-elementor-pro'),
+                      'slide_title' => __('Default Slide 2', 'freemius-turbo-addons-elementor-pro'),
+                      'slide_text'  => __('This is the default text for slide 2.', 'freemius-turbo-addons-elementor-pro'),
                   ],
               ],
               'title_field' => '{{{ slide_title }}}',
@@ -219,22 +219,22 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->start_controls_section(
         'slider_buttons_settings',
             [
-                'label' => __('Button Settings', 'turbo-addons-elementor-pro'),
+                'label' => __('Button Settings', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
     $this->add_responsive_control(
         'slide_btns_flex_direction',
         [
-            'label'   => esc_html__( 'Buttons Direction', 'turbo-addons-elementor-pro' ),
+            'label'   => esc_html__( 'Buttons Direction', 'freemius-turbo-addons-elementor-pro' ),
             'type'    => \Elementor\Controls_Manager::CHOOSE,
             'options' => [
                 'row' => [
-                    'title' => esc_html__( 'Row', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Row', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-h-align-left',
                 ],
                 'column' => [
-                    'title' => esc_html__( 'Column', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Column', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-v-align-top',
                 ],
     
@@ -250,20 +250,20 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
         'slide_btns_justify_content',
         [
-            'label'   => esc_html__( 'Justify Content', 'turbo-addons-elementor-pro' ),
+            'label'   => esc_html__( 'Justify Content', 'freemius-turbo-addons-elementor-pro' ),
             'type'    => \Elementor\Controls_Manager::CHOOSE,
             'options' => [
                 'flex-start' => [
-                    'title' => esc_html__( 'Start', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Start', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-h-align-left',
                 ],
                 'center' => [
-                    'title' => esc_html__( 'Center', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Center', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-h-align-center',
                 ],
 
                 'flex-end' => [
-                    'title' => esc_html__( 'End', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'End', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-h-align-right',
                 ],
     
@@ -282,19 +282,19 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
         'slide_btns_align_items',
         [
-            'label'   => esc_html__( 'Align Items', 'turbo-addons-elementor-pro' ),
+            'label'   => esc_html__( 'Align Items', 'freemius-turbo-addons-elementor-pro' ),
             'type'    => \Elementor\Controls_Manager::CHOOSE,
             'options' => [
                 'flex-start' => [
-                    'title' => esc_html__( 'Top', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Top', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-v-align-top',
                 ],
                 'center' => [
-                    'title' => esc_html__( 'Middle', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Middle', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-v-align-middle',
                 ],
                 'flex-end' => [
-                    'title' => esc_html__( 'Bottom', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Bottom', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-v-align-bottom',
                 ],
             ],
@@ -311,7 +311,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
     'slide_btns_gap',
         [
-            'label' => esc_html__( 'Buttons Gap', 'turbo-addons-elementor-pro' ),
+            'label' => esc_html__( 'Buttons Gap', 'freemius-turbo-addons-elementor-pro' ),
             'type'  => \Elementor\Controls_Manager::SLIDER,
             'size_units' => [ 'px', 'em', 'rem' ],
             'selectors' => [
@@ -329,7 +329,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->start_controls_section(
         'navigation_icons_section',
             [
-                'label' => __('Navigation Icons', 'turbo-addons-elementor-pro'),
+                'label' => __('Navigation Icons', 'freemius-turbo-addons-elementor-pro'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -337,10 +337,10 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
         'show_navigation_icons',
         [
-            'label'        => esc_html__( 'Navigation Icons', 'turbo-addons-elementor-pro' ),
+            'label'        => esc_html__( 'Navigation Icons', 'freemius-turbo-addons-elementor-pro' ),
             'type'         => \Elementor\Controls_Manager::SWITCHER,
-            'label_on'     => esc_html__( 'Show', 'turbo-addons-elementor-pro' ),
-            'label_off'    => esc_html__( 'Hide', 'turbo-addons-elementor-pro' ),
+            'label_on'     => esc_html__( 'Show', 'freemius-turbo-addons-elementor-pro' ),
+            'label_off'    => esc_html__( 'Hide', 'freemius-turbo-addons-elementor-pro' ),
             'return_value' => 'yes',
             'default'      => 'yes',
             'selectors'    => [
@@ -357,7 +357,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
         'prev_icon',
         [
-            'label' => __('Previous Icon', 'turbo-addons-elementor-pro'),
+            'label' => __('Previous Icon', 'freemius-turbo-addons-elementor-pro'),
             'type' => Controls_Manager::ICONS,
             'default' => [
                 'value' => 'fas fa-chevron-left',
@@ -372,7 +372,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
         'next_icon',
         [
-            'label' => __('Next Icon', 'turbo-addons-elementor-pro'),
+            'label' => __('Next Icon', 'freemius-turbo-addons-elementor-pro'),
             'type' => Controls_Manager::ICONS,
             'default' => [
                 'value' => 'fas fa-chevron-right',
@@ -392,7 +392,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->start_controls_section(
       'slider_style',
       [
-          'label' => __('Slider Wrapper', 'turbo-addons-elementor-pro'),
+          'label' => __('Slider Wrapper', 'freemius-turbo-addons-elementor-pro'),
           'tab' => Controls_Manager::TAB_STYLE,
       ]
     );
@@ -400,23 +400,23 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
         'slide_content_direction',
         [
-            'label' => esc_html__( 'Content Direction', 'turbo-addons-elementor-pro' ),
+            'label' => esc_html__( 'Content Direction', 'freemius-turbo-addons-elementor-pro' ),
             'type' => \Elementor\Controls_Manager::CHOOSE,
             'options' => [
                 'row' => [
-                    'title' => esc_html__( 'Row', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Row', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-h-align-left',
                 ],
                 'row-reverse' => [
-                    'title' => esc_html__( 'Row Reverse', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Row Reverse', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-h-align-right',
                 ],
                 'column' => [
-                    'title' => esc_html__( 'Column', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Column', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-v-align-top',
                 ],
                 'column-reverse' => [
-                    'title' => esc_html__( 'Column Reverse', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Column Reverse', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-v-align-bottom',
                 ],
             ],
@@ -430,31 +430,31 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
         'slide_content_justify',
         [
-            'label' => esc_html__( 'Content Justify', 'turbo-addons-elementor-pro' ),
+            'label' => esc_html__( 'Content Justify', 'freemius-turbo-addons-elementor-pro' ),
             'type' => \Elementor\Controls_Manager::CHOOSE,
             'options' => [
                 'flex-start' => [
-                    'title' => esc_html__( 'Left', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Left', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-text-align-left',
                 ],
                 'center' => [
-                    'title' => esc_html__( 'Center', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Center', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-text-align-center',
                 ],
                 'flex-end' => [
-                    'title' => esc_html__( 'Right', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Right', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-text-align-right',
                 ],
                 'space-between' => [
-                    'title' => esc_html__( 'Between', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Between', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-justify-space-between-h',
                 ],
                 'space-around' => [
-                    'title' => esc_html__( 'Around', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Around', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-justify-space-around-h',
                 ],
                 'space-evenly' => [
-                    'title' => esc_html__( 'Evenly', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Evenly', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-justify-space-evenly-h',
                 ],
             ],
@@ -471,19 +471,19 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
         'slide_content_align_items',
         [
-            'label' => esc_html__( 'Content Alignment', 'turbo-addons-elementor-pro' ),
+            'label' => esc_html__( 'Content Alignment', 'freemius-turbo-addons-elementor-pro' ),
             'type'  => \Elementor\Controls_Manager::CHOOSE,
             'options' => [
                 'flex-start' => [
-                    'title' => esc_html__( 'Top', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Top', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-v-align-top',
                 ],
                 'center' => [
-                    'title' => esc_html__( 'Middle', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Middle', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-v-align-middle',
                 ],
                 'flex-end' => [
-                    'title' => esc_html__( 'Bottom', 'turbo-addons-elementor-pro' ),
+                    'title' => esc_html__( 'Bottom', 'freemius-turbo-addons-elementor-pro' ),
                     'icon'  => 'eicon-v-align-bottom',
                 ],
             ],
@@ -497,7 +497,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
       'hero_slider_width',
       [
-          'label' => __('Width', 'turbo-addons-elementor-pro'),
+          'label' => __('Width', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::SLIDER,
           'size_units' => ['px', '%', 'em', 'vw'], // Allow multiple units
           'range' => [
@@ -536,7 +536,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
       'hero_slider_height',
       [
-          'label' => __('Height', 'turbo-addons-elementor-pro'),
+          'label' => __('Height', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::SLIDER,
           'size_units' => ['px', '%', 'em', 'vh'], // Allow multiple units
           'range' => [
@@ -575,7 +575,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
       'hero_slider_padding',
       [
-          'label' => __('Padding', 'turbo-addons-elementor-pro'),
+          'label' => __('Padding', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::DIMENSIONS,
           'size_units' => ['px', 'em', '%'], // Allow padding in px, em, %
           'selectors' => [
@@ -589,7 +589,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       Group_Control_Background::get_type(),
       [
           'name' => 'hero_slider_background',
-          'label' => __('Background', 'turbo-addons-elementor-pro'),
+          'label' => __('Background', 'freemius-turbo-addons-elementor-pro'),
           'types' => ['classic', 'gradient'],
           'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_hero-slider',
       ]
@@ -600,7 +600,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       Group_Control_Border::get_type(),
       [
           'name' => 'hero_slider_border',
-          'label' => __('Border', 'turbo-addons-elementor-pro'),
+          'label' => __('Border', 'freemius-turbo-addons-elementor-pro'),
           'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_hero-slider',
       ]
     );
@@ -609,7 +609,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
       'hero_slider_border_radius',
       [
-          'label' => __('Border Radius', 'turbo-addons-elementor-pro'),
+          'label' => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::SLIDER,
           'size_units' => ['px', '%'], // Allow px and %
           'range' => [
@@ -633,7 +633,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
         'slide_overlay_color',
         [
-            'label'     => esc_html__( 'Background Overlay', 'turbo-addons-elementor-pro' ),
+            'label'     => esc_html__( 'Background Overlay', 'freemius-turbo-addons-elementor-pro' ),
             'type'      => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .slide-inner.slide-bg-image::before' => 'background-color: {{VALUE}};',
@@ -646,7 +646,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       Group_Control_Box_Shadow::get_type(),
       [
           'name' => 'hero_slider_box_shadow',
-          'label' => __('Box Shadow', 'turbo-addons-elementor-pro'),
+          'label' => __('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
           'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_hero-slider',
       ]
     );
@@ -656,7 +656,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->start_controls_section(
       'slider_inner_style',
       [
-          'label' => __('Content Section', 'turbo-addons-elementor-pro'),
+          'label' => __('Content Section', 'freemius-turbo-addons-elementor-pro'),
           'tab' => Controls_Manager::TAB_STYLE,
       ]
     );
@@ -664,7 +664,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
     'slide_content_gap',
         [
-            'label' => esc_html__( 'Content Gap', 'turbo-addons-elementor-pro' ),
+            'label' => esc_html__( 'Content Gap', 'freemius-turbo-addons-elementor-pro' ),
             'type'  => \Elementor\Controls_Manager::SLIDER,
             'size_units' => [ 'px', '%', 'em', 'rem' ],
             'selectors' => [
@@ -679,23 +679,23 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
         'header_text_align',
         [
-            'label' => __('Content Alignment', 'turbo-addons-elementor-pro'),
+            'label' => __('Content Alignment', 'freemius-turbo-addons-elementor-pro'),
             'type' => Controls_Manager::CHOOSE,
             'options' => [
                 'left' => [
-                    'title' => __('Left', 'turbo-addons-elementor-pro'),
+                    'title' => __('Left', 'freemius-turbo-addons-elementor-pro'),
                     'icon' => 'eicon-text-align-left',
                 ],
                 'center' => [
-                    'title' => __('Center', 'turbo-addons-elementor-pro'),
+                    'title' => __('Center', 'freemius-turbo-addons-elementor-pro'),
                     'icon' => 'eicon-text-align-center',
                 ],
                 'right' => [
-                    'title' => __('Right', 'turbo-addons-elementor-pro'),
+                    'title' => __('Right', 'freemius-turbo-addons-elementor-pro'),
                     'icon' => 'eicon-text-align-right',
                 ],
                 'justify' => [
-                    'title' => __('Justify', 'turbo-addons-elementor-pro'),
+                    'title' => __('Justify', 'freemius-turbo-addons-elementor-pro'),
                     'icon' => 'eicon-text-align-justify',
                 ],
             ],
@@ -714,7 +714,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
       'hero_slider_inner_width',
       [
-          'label' => __('Width', 'turbo-addons-elementor-pro'),
+          'label' => __('Width', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::SLIDER,
           'size_units' => ['px', '%', 'em', 'vw'], // Allow multiple units
           'range' => [
@@ -749,7 +749,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
       'hero_slider_inner_height',
       [
-          'label' => __('Height', 'turbo-addons-elementor-pro'),
+          'label' => __('Height', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::SLIDER,
           'size_units' => ['px', '%', 'em', 'vh'], // Allow multiple units
           'range' => [
@@ -784,7 +784,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
       'hero_slider_inner_padding',
       [
-          'label' => __('Padding', 'turbo-addons-elementor-pro'),
+          'label' => __('Padding', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::DIMENSIONS,
           'size_units' => ['px', 'em', '%'], // Allow padding in px, em, %
           'selectors' => [
@@ -797,7 +797,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
       'hero_slider_inner_margin',
       [
-          'label' => __('Margin', 'turbo-addons-elementor-pro'),
+          'label' => __('Margin', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::DIMENSIONS,
           'size_units' => ['px', 'em', '%'], // Allow margin in px, em, %
           'selectors' => [
@@ -811,7 +811,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       Group_Control_Background::get_type(),
       [
           'name' => 'hero_slider_inner_background',
-          'label' => __('Background', 'turbo-addons-elementor-pro'),
+          'label' => __('Background', 'freemius-turbo-addons-elementor-pro'),
           'types' => ['classic', 'gradient'],
           'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_container',
       ]
@@ -822,7 +822,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       Group_Control_Border::get_type(),
       [
           'name' => 'hero_slider_inner_border',
-          'label' => __('Border', 'turbo-addons-elementor-pro'),
+          'label' => __('Border', 'freemius-turbo-addons-elementor-pro'),
           'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_container',
       ]
     );
@@ -831,7 +831,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
       'hero_slider_border_inner_radius',
       [
-          'label' => __('Border Radius', 'turbo-addons-elementor-pro'),
+          'label' => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::SLIDER,
           'size_units' => ['px', '%'], // Allow px and %
           'range' => [
@@ -857,7 +857,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       Group_Control_Box_Shadow::get_type(),
       [
           'name' => 'hero_slider_box_inner_shadow',
-          'label' => __('Box Shadow', 'turbo-addons-elementor-pro'),
+          'label' => __('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
           'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_container',
       ]
     );
@@ -867,7 +867,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
      $this->start_controls_section(
       'slider_inner_style_image',
       [
-          'label' => __('Content (Media)', 'turbo-addons-elementor-pro'),
+          'label' => __('Content (Media)', 'freemius-turbo-addons-elementor-pro'),
           'tab' => Controls_Manager::TAB_STYLE,
       ]
     );
@@ -875,10 +875,10 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
         'show_hero_slider_image',
         [
-            'label'        => esc_html__( 'Show Image', 'turbo-addons-elementor-pro' ),
+            'label'        => esc_html__( 'Show Image', 'freemius-turbo-addons-elementor-pro' ),
             'type'         => Controls_Manager::SWITCHER,
-            'label_on'     => esc_html__( 'Hide', 'turbo-addons-elementor-pro' ),
-            'label_off'    => esc_html__( 'Show', 'turbo-addons-elementor-pro' ),
+            'label_on'     => esc_html__( 'Hide', 'freemius-turbo-addons-elementor-pro' ),
+            'label_off'    => esc_html__( 'Show', 'freemius-turbo-addons-elementor-pro' ),
             'return_value' => 'yes',
             'default'      => '',
             'selectors' => [
@@ -890,7 +890,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
      $this->add_responsive_control(
       'hero_slider_image_width',
       [
-          'label' => __('Width', 'turbo-addons-elementor-pro'),
+          'label' => __('Width', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::SLIDER,
           'size_units' => ['px', '%', 'em', 'vw'], 
           'range' => [
@@ -932,7 +932,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->start_controls_section(
       'slider_title_style',
       [
-          'label' => __('Typography', 'turbo-addons-elementor-pro'),
+          'label' => __('Typography', 'freemius-turbo-addons-elementor-pro'),
           'tab' => Controls_Manager::TAB_STYLE,
       ]
     );
@@ -940,7 +940,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
 			'slider_title_options',
 			[
-				'label' => esc_html__( 'Title', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Title', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'after',
 			]
@@ -950,7 +950,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       Group_Control_Typography::get_type(),
       [
           'name'     => 'trad_turbo_slider_title_style_typography', 
-          'label'    => esc_html__( 'Title Typography', 'turbo-addons-elementor-pro' ),
+          'label'    => esc_html__( 'Title Typography', 'freemius-turbo-addons-elementor-pro' ),
           'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_header',
       ]
     );
@@ -959,7 +959,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
       'header_text_color',
       [
-          'label' => __('Text Color', 'turbo-addons-elementor-pro'),
+          'label' => __('Text Color', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::COLOR,
           'selectors' => [
               '{{WRAPPER}} .trad_turbo_slider_pro_header' => 'color: {{VALUE}};',
@@ -971,7 +971,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
       'header_margin',
       [
-          'label' => __('Margin', 'turbo-addons-elementor-pro'),
+          'label' => __('Margin', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::DIMENSIONS,
           'size_units' => ['px', '%', 'em'],
           'selectors' => [
@@ -984,7 +984,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
      $this->add_control(
 			'slider_subtitle_options',
 			[
-				'label' => esc_html__( 'Sub-Title', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Sub-Title', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'after',
 			]
@@ -994,7 +994,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       Group_Control_Typography::get_type(),
       [
           'name'     => 'trad_turbo_slider_sub_title_style_typography', // Unique name for the control
-          'label'    => esc_html__( 'Title Typography', 'turbo-addons-elementor-pro' ),
+          'label'    => esc_html__( 'Title Typography', 'freemius-turbo-addons-elementor-pro' ),
           'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_subtitle',
       ]
     );
@@ -1003,7 +1003,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
       'header_sub_text_color',
       [
-          'label' => __('Text Color', 'turbo-addons-elementor-pro'),
+          'label' => __('Text Color', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::COLOR,
           'selectors' => [
               '{{WRAPPER}} .trad_turbo_slider_pro_subtitle' => 'color: {{VALUE}};',
@@ -1015,7 +1015,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
       'header_sub_margin',
       [
-          'label' => __('Margin', 'turbo-addons-elementor-pro'),
+          'label' => __('Margin', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::DIMENSIONS,
           'size_units' => ['px', '%', 'em'],
           'selectors' => [
@@ -1028,7 +1028,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
      $this->add_control(
 			'slider_paragraph_options',
 			[
-				'label' => esc_html__( 'Paragraph', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Paragraph', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'after',
 			]
@@ -1038,7 +1038,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       Group_Control_Typography::get_type(),
       [
           'name'     => 'trad_turbo_slider_paragraph', 
-          'label'    => esc_html__( 'Paragraph', 'turbo-addons-elementor-pro' ),
+          'label'    => esc_html__( 'Paragraph', 'freemius-turbo-addons-elementor-pro' ),
           'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_paragraph',
       ]
     );
@@ -1048,7 +1048,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
       'trad_turbo_slider_paragraph_color',
       [
-          'label' => __('Text Color', 'turbo-addons-elementor-pro'),
+          'label' => __('Text Color', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::COLOR,
           'selectors' => [
               '{{WRAPPER}} .trad_turbo_slider_pro_paragraph' => 'color: {{VALUE}};',
@@ -1060,7 +1060,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
       'trad_turbo_slider_paragraph_margin',
       [
-          'label' => __('Margin', 'turbo-addons-elementor-pro'),
+          'label' => __('Margin', 'freemius-turbo-addons-elementor-pro'),
           'type' => Controls_Manager::DIMENSIONS,
           'size_units' => ['px', '%', 'em'],
           'selectors' => [
@@ -1075,7 +1075,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->start_controls_section(
         'slider_buttons_one_style',
         [
-            'label' => __('Button One', 'turbo-addons-elementor-pro'),
+            'label' => __('Button One', 'freemius-turbo-addons-elementor-pro'),
             'tab' => Controls_Manager::TAB_STYLE,
         ]
     );
@@ -1083,7 +1083,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
             'slider_button_one_width',
             [
-                'label' => __('Width', 'turbo-addons-elementor-pro'),
+                'label' => __('Width', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px','%'],
                 'range' => [
@@ -1110,7 +1110,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       Group_Control_Typography::get_type(),
       [
           'name'     => 'trad_turbo_hero_slider_btn1', 
-          'label'    => esc_html__( 'Typography', 'turbo-addons-elementor-pro' ),
+          'label'    => esc_html__( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
           'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-one',
       ]
     );
@@ -1119,7 +1119,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
         'slider_button_one_padding',
         [
-            'label' => __('Padding', 'turbo-addons-elementor-pro'),
+            'label' => __('Padding', 'freemius-turbo-addons-elementor-pro'),
             'type' => \Elementor\Controls_Manager::DIMENSIONS,
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
@@ -1132,7 +1132,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
         'slider_button_one_border_radius',
         [
-            'label' => __('Border Radius', 'turbo-addons-elementor-pro'),
+            'label' => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
             'type' => \Elementor\Controls_Manager::DIMENSIONS,
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
@@ -1146,7 +1146,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->start_controls_tab(
         'trad_slider_main_button_normal_tab',
         [
-            'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+            'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
         ]
     );
 
@@ -1154,7 +1154,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         Group_Control_Background::get_type(),
         [
             'name' => 'trad_slider_main_button_background',
-            'label' => __('Background', 'turbo-addons-elementor-pro'),
+            'label' => __('Background', 'freemius-turbo-addons-elementor-pro'),
             'types' => ['classic', 'gradient'],
             'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-one',
         ]
@@ -1163,7 +1163,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
         'button_text_color',
         [
-            'label' => __( 'Text Color', 'turbo-addons-elementor-pro' ),
+            'label' => __( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
             'type' => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-one' => 'color: {{VALUE}};',
@@ -1176,7 +1176,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         \Elementor\Group_Control_Border::get_type(),
         [
             'name' => 'slider_button_one_border',
-            'label' => __('Border', 'turbo-addons-elementor-pro'),
+            'label' => __('Border', 'freemius-turbo-addons-elementor-pro'),
             'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-one',
         ]
     );
@@ -1186,7 +1186,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         \Elementor\Group_Control_Box_Shadow::get_type(),
         [
             'name' => 'slider_button_one_box_shadow',
-            'label' => __('Box Shadow', 'turbo-addons-elementor-pro'),
+            'label' => __('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
             'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-one',
         ]
     );
@@ -1196,14 +1196,14 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->start_controls_tab(
         'trad_slider_main_button_hover_tab',
         [
-            'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ),
+            'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
         ]
     );
     $this->add_group_control(
         \Elementor\Group_Control_Background::get_type(),
         [
             'name' => 'slider_button_one_background_hover',
-            'label' => __('Background', 'turbo-addons-elementor-pro'),
+            'label' => __('Background', 'freemius-turbo-addons-elementor-pro'),
             'types' => ['classic', 'gradient'],
             'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-one:hover',
         ]
@@ -1212,7 +1212,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
         'slider_button_one_text_color_hover',
         [
-            'label' => __('Text Color', 'turbo-addons-elementor-pro'),
+            'label' => __('Text Color', 'freemius-turbo-addons-elementor-pro'),
             'type' => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-one:hover' => 'color: {{VALUE}};',
@@ -1224,7 +1224,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         \Elementor\Group_Control_Border::get_type(),
         [
             'name' => 'slider_button_one_border_hover',
-            'label' => __('Border', 'turbo-addons-elementor-pro'),
+            'label' => __('Border', 'freemius-turbo-addons-elementor-pro'),
             'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-one:hover',
         ]
     );
@@ -1233,7 +1233,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         \Elementor\Group_Control_Box_Shadow::get_type(),
         [
             'name' => 'slider_button_one_box_shadow_hover',
-            'label' => __('Box Shadow', 'turbo-addons-elementor-pro'),
+            'label' => __('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
             'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-one:hover',
         ]
     );
@@ -1247,7 +1247,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->start_controls_section(
         'slider_buttons_two_style',
         [
-            'label' => __('Button Two', 'turbo-addons-elementor-pro'),
+            'label' => __('Button Two', 'freemius-turbo-addons-elementor-pro'),
             'tab' => Controls_Manager::TAB_STYLE,
         ]
     );
@@ -1256,7 +1256,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
             'slider_button_two_width',
             [
-                'label' => __('Width', 'turbo-addons-elementor-pro'),
+                'label' => __('Width', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px','%'],
                 'range' => [
@@ -1281,7 +1281,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
       Group_Control_Typography::get_type(),
       [
           'name'     => 'trad_turbo_hero_slider_btn2', 
-          'label'    => esc_html__( 'Typography', 'turbo-addons-elementor-pro' ),
+          'label'    => esc_html__( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
           'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-two',
       ]
     );
@@ -1290,7 +1290,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
         'slider_button_info_padding',
         [
-            'label' => __('Padding', 'turbo-addons-elementor-pro'),
+            'label' => __('Padding', 'freemius-turbo-addons-elementor-pro'),
             'type' => \Elementor\Controls_Manager::DIMENSIONS,
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
@@ -1302,7 +1302,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
         'slider_button_info_border_radius',
         [
-            'label' => __('Border Radius', 'turbo-addons-elementor-pro'),
+            'label' => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
             'type' => \Elementor\Controls_Manager::DIMENSIONS,
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
@@ -1316,7 +1316,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->start_controls_tab(
         'trad_slider_info_button_normal_tab',
         [
-            'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+            'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
         ]
     );
 
@@ -1324,7 +1324,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         Group_Control_Background::get_type(),
         [
             'name' => 'trad_slider_info_button_background',
-            'label' => __('Background', 'turbo-addons-elementor-pro'),
+            'label' => __('Background', 'freemius-turbo-addons-elementor-pro'),
             'types' => ['classic', 'gradient'],
             'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-two',
         ]
@@ -1333,7 +1333,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
         'info_button_text_color',
         [
-            'label' => __( 'Text Color', 'turbo-addons-elementor-pro' ),
+            'label' => __( 'Text Color', 'freemius-turbo-addons-elementor-pro' ),
             'type' => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-two' => 'color: {{VALUE}};',
@@ -1346,7 +1346,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         \Elementor\Group_Control_Border::get_type(),
         [
             'name' => 'slider_button_info_border',
-            'label' => __('Border', 'turbo-addons-elementor-pro'),
+            'label' => __('Border', 'freemius-turbo-addons-elementor-pro'),
             'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-two',
         ]
     );
@@ -1356,7 +1356,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         \Elementor\Group_Control_Box_Shadow::get_type(),
         [
             'name' => 'slider_button_info_box_shadow',
-            'label' => __('Box Shadow', 'turbo-addons-elementor-pro'),
+            'label' => __('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
             'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-two',
         ]
     );
@@ -1366,14 +1366,14 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->start_controls_tab(
         'trad_slider_info_button_hover_tab',
         [
-            'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ),
+            'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
         ]
     );
     $this->add_group_control(
         \Elementor\Group_Control_Background::get_type(),
         [
             'name' => 'slider_button_info_background_hover',
-            'label' => __('Background', 'turbo-addons-elementor-pro'),
+            'label' => __('Background', 'freemius-turbo-addons-elementor-pro'),
             'types' => ['classic', 'gradient'],
             'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-two:hover',
         ]
@@ -1382,7 +1382,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
         'slider_button_info_text_color_hover',
         [
-            'label' => __('Text Color', 'turbo-addons-elementor-pro'),
+            'label' => __('Text Color', 'freemius-turbo-addons-elementor-pro'),
             'type' => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-two:hover' => 'color: {{VALUE}};',
@@ -1394,7 +1394,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         \Elementor\Group_Control_Border::get_type(),
         [
             'name' => 'slider_button_info_border_hover',
-            'label' => __('Border', 'turbo-addons-elementor-pro'),
+            'label' => __('Border', 'freemius-turbo-addons-elementor-pro'),
             'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-two:hover',
         ]
     );
@@ -1403,7 +1403,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         \Elementor\Group_Control_Box_Shadow::get_type(),
         [
             'name' => 'slider_button_info_box_shadow_hover',
-            'label' => __('Box Shadow', 'turbo-addons-elementor-pro'),
+            'label' => __('Box Shadow', 'freemius-turbo-addons-elementor-pro'),
             'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-two:hover',
         ]
     );
@@ -1416,7 +1416,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->start_controls_section(
         'navigation_buttons_style',
         [
-            'label' => __('Navigation Buttons', 'turbo-addons-elementor-pro'),
+            'label' => __('Navigation Buttons', 'freemius-turbo-addons-elementor-pro'),
             'tab' => Controls_Manager::TAB_STYLE,
         ]
     );
@@ -1424,10 +1424,10 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
         'nav_hover_show',
         [
-            'label'        => esc_html__( 'Show Navigation on Hover', 'turbo-addons-elementor-pro' ),
+            'label'        => esc_html__( 'Show Navigation on Hover', 'freemius-turbo-addons-elementor-pro' ),
             'type'         => \Elementor\Controls_Manager::SWITCHER,
-            'label_on'     => esc_html__( 'Yes', 'turbo-addons-elementor-pro' ),
-            'label_off'    => esc_html__( 'No', 'turbo-addons-elementor-pro' ),
+            'label_on'     => esc_html__( 'Yes', 'freemius-turbo-addons-elementor-pro' ),
+            'label_off'    => esc_html__( 'No', 'freemius-turbo-addons-elementor-pro' ),
             'return_value' => 'yes',
             'default'      => 'yes',
             'selectors'    => [
@@ -1448,7 +1448,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_control(
         'navigation_buttons_background',
         [
-            'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+            'label' => __('Background Color', 'freemius-turbo-addons-elementor-pro'),
             'type' => Controls_Manager::COLOR,
             'default' => 'transparent',
             'selectors' => [
@@ -1462,7 +1462,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
             'navigation_buttons_width',
             [
-                'label' => __('Width', 'turbo-addons-elementor-pro'),
+                'label' => __('Width', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px','%'],
                 'range' => [
@@ -1492,7 +1492,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         Group_Control_Border::get_type(),
         [
             'name'     => 'hero_slider_navigation_btn_border',
-            'label'    => esc_html__( 'Border', 'turbo-addons-elementor-pro' ),
+            'label'    => esc_html__( 'Border', 'freemius-turbo-addons-elementor-pro' ),
             'selector' => 
                 '{{WRAPPER}} .trad_turbo_slider_pro_hero-slider .swiper-button-prev, 
                 {{WRAPPER}} .trad_turbo_slider_pro_hero-slider .swiper-button-next',
@@ -1502,7 +1502,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         Group_Control_Border::get_type(),
         [
             'name'     => 'hero_slider_navigation_btn_border',
-            'label'    => esc_html__( 'Border', 'turbo-addons-elementor-pro' ),
+            'label'    => esc_html__( 'Border', 'freemius-turbo-addons-elementor-pro' ),
             'selector' => 
                 '{{WRAPPER}} .trad_turbo_slider_pro_hero-slider .swiper-button-prev, 
                 {{WRAPPER}} .trad_turbo_slider_pro_hero-slider .swiper-button-next',
@@ -1514,7 +1514,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
             'navigation_buttons_border_radius',
             [
-                'label' => __('Border Radius', 'turbo-addons-elementor-pro'),
+                'label' => __('Border Radius', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -1545,7 +1545,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     $this->add_responsive_control(
             'icon_size',
             [
-                'label' => esc_html__('Icon Size', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Icon Size', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -1571,7 +1571,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         $this->add_control(
             'icon_color',
             [
-                'label' => esc_html__('Icon Color', 'turbo-addons-elementor-pro'),
+                'label' => esc_html__('Icon Color', 'freemius-turbo-addons-elementor-pro'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .trad_turbo_slider_pro_swiper-button-prev.elementor-icon i' => 'color: {{VALUE}} !important;', 
@@ -1584,7 +1584,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         $this->add_control(
 			'hero_slider_icon_positions',
 			[
-				'label' => esc_html__( 'Vertical Position(Y)', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Vertical Position(Y)', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1593,7 +1593,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         $this->add_responsive_control(
             'nav_icon_vertical_position',
             [
-                'label' => esc_html__( 'Prev + Next Buttons', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Prev + Next Buttons', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'vh' ],
                 'range' => [
@@ -1628,7 +1628,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         $this->add_control(
 			'hero_slider_icon_x_positions',
 			[
-				'label' => esc_html__( 'Horizontal Position(x)', 'turbo-addons-elementor-pro' ),
+				'label' => esc_html__( 'Horizontal Position(x)', 'freemius-turbo-addons-elementor-pro' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1637,7 +1637,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         $this->add_responsive_control(
             'hero_nav_icon_x_position_prev',
             [
-                'label' => esc_html__( 'Previous Button', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Previous Button', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'vw' ],
                 'range' => [
@@ -1669,7 +1669,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         $this->add_responsive_control(
             'hero_nav_icon_x_position_next',
             [
-                'label' => esc_html__( 'Next Button', 'turbo-addons-elementor-pro' ),
+                'label' => esc_html__( 'Next Button', 'freemius-turbo-addons-elementor-pro' ),
                 'type'  => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'vw' ],
                 'range' => [
@@ -1707,7 +1707,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
   $this->start_controls_section(
       'pagination_style',
       [
-          'label' => __('Pagination Bullet Style', 'turbo-addons-elementor-pro'),
+          'label' => __('Pagination Bullet Style', 'freemius-turbo-addons-elementor-pro'),
           'tab' => Controls_Manager::TAB_STYLE,
       ]
   );
@@ -1717,16 +1717,16 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
   $this->start_controls_tab(
       'trad_pagination_bullet_style_normal_tab',
       [
-          'label' => esc_html__( 'Normal', 'turbo-addons-elementor-pro' ),
+          'label' => esc_html__( 'Normal', 'freemius-turbo-addons-elementor-pro' ),
       ]
   );
   $this->add_control(
         'pagination_bullets_display',
         [
-            'label' => __('Display Bullets', 'turbo-addons-elementor-pro'),
+            'label' => __('Display Bullets', 'freemius-turbo-addons-elementor-pro'),
             'type' => Controls_Manager::SWITCHER,
-            'label_on' => __('Hide', 'turbo-addons-elementor-pro'), 
-            'label_off' => __('Show', 'turbo-addons-elementor-pro'),
+            'label_on' => __('Hide', 'freemius-turbo-addons-elementor-pro'), 
+            'label_off' => __('Show', 'freemius-turbo-addons-elementor-pro'),
             'return_value' => 'none', 
             'default' => '', 
             'selectors' => [
@@ -1739,7 +1739,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
   $this->add_responsive_control(
         'pagination_bullets_width',
         [
-            'label' => __('Width', 'turbo-addons-elementor-pro'),
+            'label' => __('Width', 'freemius-turbo-addons-elementor-pro'),
             'type' => Controls_Manager::SLIDER,
             'size_units' => ['px'],
             'range' => [
@@ -1764,7 +1764,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
   $this->add_responsive_control(
     'pagination_bullets_height',
     [
-        'label' => __('Height', 'turbo-addons-elementor-pro'),
+        'label' => __('Height', 'freemius-turbo-addons-elementor-pro'),
         'type' => Controls_Manager::SLIDER,
         'size_units' => ['px'],
         'range' => [
@@ -1790,7 +1790,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
   $this->add_control(
     'pagination_bullets_background',
     [
-        'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+        'label' => __('Background Color', 'freemius-turbo-addons-elementor-pro'),
         'type' => Controls_Manager::COLOR,
         'default' => '#ffffff',
         'selectors' => [
@@ -1806,7 +1806,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
   $this->start_controls_tab(
       'trad_pagination_bullet_style_hover_tab',
       [
-          'label' => esc_html__( 'Hover', 'turbo-addons-elementor-pro' ),
+          'label' => esc_html__( 'Hover', 'freemius-turbo-addons-elementor-pro' ),
           'condition' => [
             'pagination_bullets_display' => '', 
           ],
@@ -1815,7 +1815,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
   $this->add_control(
     'pagination_bullets_hover_background',
     [
-        'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+        'label' => __('Background Color', 'freemius-turbo-addons-elementor-pro'),
         'type' => Controls_Manager::COLOR,
         'default' => '#ddd',
         'selectors' => [
@@ -1829,7 +1829,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
   $this->start_controls_tab(
       'trad_pagination_bullet_style_active_tab',
       [
-          'label' => esc_html__( 'Active', 'turbo-addons-elementor-pro' ),
+          'label' => esc_html__( 'Active', 'freemius-turbo-addons-elementor-pro' ),
           'condition' => [
             'pagination_bullets_display' => '', // Show only if bullets are displayed
           ],
@@ -1838,7 +1838,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
   $this->add_control(
     'pagination_bullets_active_background',
     [
-        'label' => __('Background Color', 'turbo-addons-elementor-pro'),
+        'label' => __('Background Color', 'freemius-turbo-addons-elementor-pro'),
         'type' => Controls_Manager::COLOR,
         'default' => '#2b3b95',
         'selectors' => [
