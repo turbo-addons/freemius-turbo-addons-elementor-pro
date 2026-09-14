@@ -3,7 +3,7 @@
  * Plugin Name: Turbo Addons Elementor Pro
  * Plugin URI: https://turbo-addons.com/
  * Description: Turbo Addons for Elementor gives you everything: 90+ advanced widgets, WooCommerce support, and 200+ prebuilt templates — all built for easy drag & drop design. Customize every part of your site, fast and code-free!
- * Version: 1.9.0
+ * Version: 1.9.3
  * Requires at least: 5.0
  * Requires Plugins: elementor, turbo-addons-elementor
  * Requires PHP: 7.4
@@ -92,6 +92,7 @@ final class TRAD_Turbo_Addons_Pro {
         include_once plugin_dir_path(__FILE__) . 'helper/classes/woo_helper.php';
         include_once plugin_dir_path(__FILE__) . 'includes/woo-add-cart-helper.php';
         include_once plugin_dir_path(__FILE__) . 'includes/plugin-information.php';
+        include_once plugin_dir_path(__FILE__) . 'includes/pro-template-enhancer.php';
         add_action( 'wp_enqueue_scripts', 'trad_pro_enqueue_scripts_styles' );
         add_action( 'init', [ $this, 'trad_load_textdomain' ] );
         add_action( 'plugins_loaded', [ $this, 'init' ] );
@@ -175,7 +176,7 @@ final class TRAD_Turbo_Addons_Pro {
     private function define_constants() {
         define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_URL', trailingslashit( plugins_url( '/', __FILE__ ) ) );
         define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
-        define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION', '1.9.0' );
+        define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION', '1.9.3' );
     }
 
     /**

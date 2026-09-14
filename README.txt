@@ -4,9 +4,7 @@ Tags: elementor, addons, turbo-addons-pro, elementor-widgets, turbo-plugins
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.9.0
-License: GPLv3
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Stable tag: 1.9.3
 
 Turbo Addons Pro unlocks premium Elementor widgets with advanced design, speed tools & full customization options.
 
@@ -109,11 +107,14 @@ Follow these steps to install Turbo Addons Pro for Elementor on your WordPress w
 ### Q: How can I get support for Turbo Addons Pro?
 **A:** For support, please visit [our support page](https://turbo-addons.com/contact/) or reach out to our dedicated support team.
 
-### Q: Is Turbo Addons Pro licensed for use on multiple websites?
-**A:** Yes, Turbo Addons Pro is licensed under GPL v3, allowing use on multiple sites as permitted under this license.
 
 ## Changelog
 
+
+### Version 1.9.3 
+   1. Dynamic Tag for all fields
+   2. Compitable with latest version of elemntor and wordpress
+   3. Updated the latest SDK of Freemious
 
 ### Version 1.9.0 
    1. Update all widgets tex-domain
@@ -196,6 +197,3 @@ Follow these steps to install Turbo Addons Pro for Elementor on your WordPress w
 ### Version 1.0.0  
 * Initial release with 6 advanced widgets for Elementor.
 
-## License
-
-Turbo Addons Pro for Elementor is licensed under the [GNU General Public License v3 or later](https://www.gnu.org/licenses/gpl-3.0.html).
