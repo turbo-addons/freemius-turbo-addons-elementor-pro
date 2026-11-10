@@ -25,8 +25,24 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
         return 'eicon-number-field trad-icon';
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-woo-pro'];
+    }
+
+    public function get_style_depends() {
+        return [ 'trad-woo-pagination-style', 'trad-woo-product-all-style' ];
+    }
+
+    public function get_script_depends() {
+        return [ 'jquery', 'trad-woo-product-all-script' ];
     }
 
     protected function register_controls() {
@@ -879,4 +895,4 @@ class TRAD_WOO_Product_Category_Widget extends Widget_Base {
     
 }
 
-Plugin::instance()->widgets_manager->register_widget_type(new TRAD_WOO_Product_Category_Widget());
+Plugin::instance()->widgets_manager->register(new TRAD_WOO_Product_Category_Widget());

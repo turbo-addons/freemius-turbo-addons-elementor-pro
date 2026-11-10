@@ -16,7 +16,23 @@ class TRAD_Table extends Widget_Base {
 	public function get_name()          { return 'trad-table'; }
 	public function get_title()         { return esc_html__( 'Table', 'freemius-turbo-addons-elementor-pro' ); }
 	public function get_icon()          { return 'eicon-table trad-icon'; }
+	/**
+	 * Hidden from the editor panel without an active Pro license; existing
+	 * instances on pages keep rendering. @since 1.9.6
+	 */
+	public function show_in_panel() {
+	    return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+	}
+
 	public function get_categories()    { return [ 'turbo-addons-pro' ]; }
+
+    public function get_style_depends() {
+        return [ 'trad-table-style' ];
+    }
+
+    public function get_script_depends() {
+        return [ 'trad-table-script' ];
+    }
 	public function get_keywords()      { return [ 'table', 'data table', 'sortable', 'responsive', 'comparison', 'turbo' ]; }
 
 	protected function register_controls() {
@@ -994,4 +1010,4 @@ class TRAD_Table extends Widget_Base {
 }
 
 // Register the widget with Elementor.
-Plugin::instance()->widgets_manager->register_widget_type( new TRAD_Table() );
+Plugin::instance()->widgets_manager->register( new TRAD_Table() );

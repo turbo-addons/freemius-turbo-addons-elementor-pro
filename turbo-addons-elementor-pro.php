@@ -3,16 +3,16 @@
  * Plugin Name: Turbo Addons Elementor Pro
  * Plugin URI: https://turbo-addons.com/
  * Description: Turbo Addons for Elementor gives you everything: 90+ advanced widgets, WooCommerce support, and 200+ prebuilt templates — all built for easy drag & drop design. Customize every part of your site, fast and code-free!
- * Version: 1.9.3
+ * Version: 1.9.6
  * Requires at least: 5.0
  * Requires Plugins: elementor, turbo-addons-elementor
  * Requires PHP: 7.4
- * Tested up to: 7.0
  * Author: Turbo Addons Pro
  * Author URI: https://turbo-addons.com/pricing/
  * License: GPLv3
- * License URI: https://wp-turbo.com/turbo-toolkit/
+ * License URI: https://opensource.org/licenses/GPL-3.0
  * Text Domain: freemius-turbo-addons-elementor-pro
+ * Elementor tested up to: 4.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,8 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class TRAD_Turbo_Addons_Pro {
 
-    const TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION = '1.9.0';
-    const TRAD_TURBO_ADDONS_PRO_MIN_ELEMENTOR_VERSION = '3.0.0';
+    const TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION = '1.9.6';
+    const TRAD_TURBO_ADDONS_PRO_MIN_ELEMENTOR_VERSION = '3.5.0'; // Widgets_Manager::register() + elementor/widgets/register (3.5+)
     const TRAD_TURBO_ADDONS_PRO_MIN_PHP_VERSION = '7.4';
     
     private static $_instance = null;
@@ -93,7 +93,7 @@ final class TRAD_Turbo_Addons_Pro {
         include_once plugin_dir_path(__FILE__) . 'includes/woo-add-cart-helper.php';
         include_once plugin_dir_path(__FILE__) . 'includes/plugin-information.php';
         include_once plugin_dir_path(__FILE__) . 'includes/pro-template-enhancer.php';
-        add_action( 'wp_enqueue_scripts', 'trad_pro_enqueue_scripts_styles' );
+        add_action( 'wp_enqueue_scripts', 'trad_pro_enqueue_scripts_styles', 5 ); // Register early so widget dependencies resolve.
         add_action( 'init', [ $this, 'trad_load_textdomain' ] );
         add_action( 'plugins_loaded', [ $this, 'init' ] );
 
@@ -152,7 +152,7 @@ final class TRAD_Turbo_Addons_Pro {
     public function handle_pro_activation_redirect() {
         if ( get_transient( 'turbo_addons_pro_activation_redirect' ) ) {
             delete_transient( 'turbo_addons_pro_activation_redirect' );
-            wp_redirect( admin_url( 'admin.php?page=turbo_addons_pro' )); // Correct redirect URL
+            wp_safe_redirect( admin_url( 'admin.php?page=turbo_addons_pro' )); // Correct redirect URL
             exit; // Always exit after redirecting
         }
     }
@@ -176,7 +176,7 @@ final class TRAD_Turbo_Addons_Pro {
     private function define_constants() {
         define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_URL', trailingslashit( plugins_url( '/', __FILE__ ) ) );
         define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
-        define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION', '1.9.3' );
+        define( 'TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION', '1.9.6' );
     }
 
     /**
@@ -184,7 +184,7 @@ final class TRAD_Turbo_Addons_Pro {
      * @since 1.0.0
      */
     public function trad_load_textdomain() {
-        load_plugin_textdomain( 'turbo-addons-elementor-pro', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+        load_plugin_textdomain( 'freemius-turbo-addons-elementor-pro', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
     }
 
     /**
@@ -199,10 +199,10 @@ final class TRAD_Turbo_Addons_Pro {
             return;
         }
 
-        // if ( ! version_compare( ELEMENTOR_VERSION, self::TRAD_TURBO_ADDONS_PRO_MIN_ELEMENTOR_VERSION, '>=' ) ) {
-        //     add_action( 'admin_notices', [ $this, 'trad_admin_notice_minimum_elementor_version' ] );
-        //     return;
-        // }
+        if ( defined( 'ELEMENTOR_VERSION' ) && ! version_compare( ELEMENTOR_VERSION, self::TRAD_TURBO_ADDONS_PRO_MIN_ELEMENTOR_VERSION, '>=' ) ) {
+            add_action( 'admin_notices', [ $this, 'trad_admin_notice_minimum_elementor_version' ] );
+            return;
+        }
         if ( ! version_compare( PHP_VERSION, self::TRAD_TURBO_ADDONS_PRO_MIN_PHP_VERSION, '>=' ) ) {
             add_action( 'admin_notices', [ $this, 'trad_admin_notice_minimum_php_version' ] );
             return;
@@ -216,7 +216,8 @@ final class TRAD_Turbo_Addons_Pro {
         // -------------single product page----------//
         require_once plugin_dir_path(__FILE__) . 'includes/custom-template/turbo-single-product-template.php';
         add_action( 'elementor/init', [ $this, 'trad_init_category' ] );
-        add_action( 'elementor/widgets/widgets_registered', [ $this, 'trad_init_widgets' ] );
+        add_action( 'elementor/widgets/register', [ $this, 'trad_init_widgets' ] );
+        add_action( 'elementor/element/after_section_start', [ $this, 'trad_license_notice_control' ], 10, 3 );
         if ( is_admin() ) {
             include_once ABSPATH . 'wp-admin/includes/plugin.php';
             // Check if the Free version is active
@@ -230,40 +231,52 @@ final class TRAD_Turbo_Addons_Pro {
     }
 
     /**
+     * Without an active license, show a notice at the top of every existing Pro
+     * widget's settings: the widget keeps working, but new Pro widgets/templates
+     * need a license.
+     *
+     * @since 1.9.6
+     */
+    public function trad_license_notice_control( $element, $section_id, $args ) {
+        static $done = [];
+        if ( ! $element instanceof \Elementor\Widget_Base || trad_pro_is_license_active() ) {
+            return;
+        }
+        $name = $element->get_name();
+        if ( isset( $done[ $name ] ) ) {
+            return;
+        }
+        $file = ( new \ReflectionClass( $element ) )->getFileName();
+        if ( false === strpos( wp_normalize_path( (string) $file ), wp_normalize_path( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH ) ) ) {
+            return;
+        }
+        $done[ $name ] = true;
+        $element->add_control(
+            'trad_pro_license_notice',
+            [
+                'type'            => \Elementor\Controls_Manager::RAW_HTML,
+                'raw'             => sprintf(
+                    '<strong>%1$s</strong><br>%2$s <a href="%3$s" target="_blank" rel="noopener noreferrer">%4$s</a>',
+                    esc_html__( 'Turbo Addons Pro license is not active.', 'freemius-turbo-addons-elementor-pro' ),
+                    esc_html__( 'This widget keeps working on your site, but adding new Pro widgets or Pro templates needs an active license.', 'freemius-turbo-addons-elementor-pro' ),
+                    esc_url( 'https://turbo-addons.com/pricing/' ),
+                    esc_html__( 'Renew / activate license', 'freemius-turbo-addons-elementor-pro' )
+                ),
+                'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
+            ]
+        );
+    }
+
+    /**
      * Initialize Widgets
      * @since 1.0.0
      */
     public function trad_init_widgets() {
-        // Only load widgets if Freemius exists
-        if ( ! function_exists( 'taep_fs' ) ) {
-            return; // Freemius not loaded
-        }
-    
-        $fs = taep_fs();
-    
-        // Check if user has valid license/access
-        $has_valid_access = false;
-    
-        // Check for active Pro license
-        if ( $fs->is_plan( 'pro', true ) ) {
-            $has_valid_access = true;
-        }
-        // Check if user is in trial
-        elseif ( $fs->is_trial() ) {
-            $has_valid_access = true;
-        }
-        // Check if user can use premium code (includes development mode, sandbox, etc.)
-        elseif ( $fs->can_use_premium_code() ) {
-            $has_valid_access = true;
-        }
-        // Check if it's a paying customer (has any paid plan)
-        elseif ( $fs->is_paying() ) {
-            $has_valid_access = true;
-        }
-    
-        if ( ! $has_valid_access ) {
-            return;
-        }
+        // Pro widgets are ALWAYS registered while the Pro plugin is active, so
+        // pages built earlier keep rendering after a license expires (before
+        // 1.9.6 they disappeared from the front end). Without an active license
+        // the widgets are only hidden from the editor panel (show_in_panel())
+        // and Pro templates cannot be inserted — see trad_pro_is_license_active().
 
         // Retrieve the widget settings from the database
         $widgets = get_option('turbo_pro_addons_widgets', []);
@@ -392,26 +405,18 @@ final class TRAD_Turbo_Addons_Pro {
      * Admin Notice for Minimum Elementor Version
      * @since 1.0.0
      */
-    // public function trad_admin_notice_minimum_elementor_version() {
-    //     if ( isset( $_GET['activate'] ) && isset( $_GET['_wpnonce'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'activate_plugin' ) ) {
-    //         return; // Nonce verification failed
-    //     }
-
-    //     if ( isset( $_GET['activate'] ) ) {
-    //         unset( $_GET['activate'] );
-    //     }
-
-    //     printf(
-    //         '<div class="notice notice-warning is-dismissible"><p>%s</p></div>',
-    //         wp_kses_post( sprintf(
-    //             /* translators: 1: Plugin name (Turbo Addons), 2: Dependency name (Elementor), 3: Minimum required Elementor version */
-    //             esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'turbo-addons-elementor-pro' ),
-    //             '<strong>' . esc_html__( 'Turbo Addons Elementor Pro', 'turbo-addons-elementor-pro' ) . '</strong>',
-    //             '<strong>' . esc_html__( 'Elementor', 'turbo-addons-elementor-pro' ) . '</strong>',
-    //             esc_html( self::TRAD_TURBO_ADDONS_PRO_MIN_ELEMENTOR_VERSION )
-    //         ) )
-    //     );
-    // }
+    public function trad_admin_notice_minimum_elementor_version() {
+        printf(
+            '<div class="notice notice-warning is-dismissible"><p>%s</p></div>',
+            wp_kses_post( sprintf(
+                /* translators: 1: Plugin name (Turbo Addons), 2: Dependency name (Elementor), 3: Minimum required Elementor version */
+                esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'freemius-turbo-addons-elementor-pro' ),
+                '<strong>' . esc_html__( 'Turbo Addons Elementor Pro', 'freemius-turbo-addons-elementor-pro' ) . '</strong>',
+                '<strong>' . esc_html__( 'Elementor', 'freemius-turbo-addons-elementor-pro' ) . '</strong>',
+                esc_html( self::TRAD_TURBO_ADDONS_PRO_MIN_ELEMENTOR_VERSION )
+            ) )
+        );
+    }
 
     /**
      * Admin Notice for Minimum PHP Version

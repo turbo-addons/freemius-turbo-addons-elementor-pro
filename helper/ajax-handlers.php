@@ -14,6 +14,7 @@ function trad_load_products_callback() {
     : ['all'];
     $page = isset($_POST['page']) ? absint($_POST['page']) : 1;
     $posts_per_page = isset($_POST['posts_per_page']) ? absint($_POST['posts_per_page']) : 4;
+    $posts_per_page = min( max( 1, $posts_per_page ), 50 ); // public request: never unbounded
     $widget_id = isset($_POST['widget_id'])
     ? sanitize_text_field( wp_unslash( $_POST['widget_id'] ) )
     : '';
@@ -92,8 +93,14 @@ function trad_advanced_search_callback() {
     check_ajax_referer( 'trad_search_nonce', 'nonce' );
 
     $query          = isset( $_POST['query'] ) ? sanitize_text_field( wp_unslash( $_POST['query'] ) ) : '';
-    $post_types     = isset( $_POST['post_types'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['post_types'] ) ) : [ 'post', 'page' ];
+    $post_types     = isset( $_POST['post_types'] ) ? array_map( 'sanitize_key', (array) wp_unslash( $_POST['post_types'] ) ) : [ 'post', 'page' ];
+    // Only public post types may be searched from the front end.
+    $post_types     = array_values( array_intersect( $post_types, get_post_types( [ 'public' => true ] ) ) );
+    if ( empty( $post_types ) ) {
+        $post_types = [ 'post', 'page' ];
+    }
     $count          = isset( $_POST['count'] ) ? absint( $_POST['count'] ) : 5;
+    $count          = min( max( 1, $count ), 50 ); // public request: never unbounded
     $show_thumb     = isset( $_POST['show_thumb'] ) && 'yes' === $_POST['show_thumb'];
     $show_excerpt   = isset( $_POST['show_excerpt'] ) && 'yes' === $_POST['show_excerpt'];
     $excerpt_length = isset( $_POST['excerpt_length'] ) ? absint( $_POST['excerpt_length'] ) : 15;

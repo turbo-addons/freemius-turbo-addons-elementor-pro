@@ -1580,3 +1580,67 @@
     display: block;
     border: none;
 }
+
+/* ============================================================
+   Card 2 — Turbo Guard promo  @since 1.9.6
+   ============================================================ */
+/* All three cards share one height; buttons sit at the bottom. */
+.taep-info-cards-grid { align-items: stretch; }
+.taep-info-card-footer { margin-top: auto; }
+
+.taep-info-card--guard { border-top: 3px solid #d84315; }
+.taep-guard-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #d84315;
+}
+.taep-guard-shield { width: 16px; height: 16px; fill: currentColor; flex: none; }
+.taep-info-card-title.taep-guard-title {
+    font-size: 21px !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.2px;
+    margin-bottom: 8px !important;
+}
+.taep-info-card-desc.taep-guard-desc { margin-bottom: 14px !important; }
+.taep-guard-features {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+.taep-guard-features li {
+    position: relative;
+    margin: 0 !important;
+    padding: 0 0 0 26px !important;
+    font-size: 13.5px !important;
+    line-height: 18px;
+    color: #1a1a2e;
+}
+.taep-guard-features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    background: #d84315 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 11.2 3.3 8l1-1 2.2 2.2 5.2-5.2 1 1z' fill='%23fff'/%3E%3C/svg%3E") center / 14px no-repeat;
+}
+.taep-guard-features strong { font-weight: 700; }
+.taep-guard-features span { color: #777; font-size: 12.5px; }
+.taep-guard-features span::before { content: "— "; }
+.taep-info-card-btn--guard {
+    background: #d84315;
+    color: #fff !important;
+    border-radius: 8px;
+}
+.taep-info-card-btn--guard:hover { background: #bf360c; opacity: 1; }

@@ -79,9 +79,10 @@ add_action('admin_init', function () {
     if (
         isset( $_POST['trad_selected_template'], $_POST['_trad_nonce'] )
         && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_trad_nonce'] ) ), 'trad_template_settings_nonce' )
+        && current_user_can( 'manage_options' )
     ) {
-        update_option('trad_selected_single_template_id', intval($_POST['trad_selected_template']));
-        wp_redirect(add_query_arg(['template_saved' => '1'], admin_url('edit.php?post_type=trad_single_template')));
+        update_option('trad_selected_single_template_id', absint($_POST['trad_selected_template']));
+        wp_safe_redirect(add_query_arg(['template_saved' => '1'], admin_url('edit.php?post_type=trad_single_template')));
         exit;
     }
 });

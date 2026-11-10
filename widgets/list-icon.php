@@ -25,8 +25,20 @@ class Trad_Icon_List extends Widget_Base {
         return 'eicon-checkbox trad-icon'; // Choose an appropriate icon
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-pro']; // Change to your desired category
+    }
+
+    public function get_style_depends() {
+        return [ 'trad-list-icon_style' ];
     }
 
     protected function get_upsale_data() {
@@ -41,7 +53,7 @@ class Trad_Icon_List extends Widget_Base {
 		];
 	}
 
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->start_controls_section(
             'list_section',
             [
@@ -666,4 +678,4 @@ class Trad_Icon_List extends Widget_Base {
     
 }
 // Register the widget with Elementor.
-Plugin::instance()->widgets_manager->register_widget_type( new Trad_Icon_List() );
+Plugin::instance()->widgets_manager->register( new Trad_Icon_List() );

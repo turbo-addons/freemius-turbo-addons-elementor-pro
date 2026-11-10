@@ -18,6 +18,14 @@ class TRAD_Visitor_Count_Pro extends Widget_Base {
         return 'eicon-person trad-icon';
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-pro'];
     }
@@ -29,8 +37,15 @@ class TRAD_Visitor_Count_Pro extends Widget_Base {
         </div>
         <script>
             document.addEventListener("DOMContentLoaded", function() {
+                // Random per-tab visitor ID (no cookies, no PHP session).
+                var vid = '';
+                try { vid = sessionStorage.getItem('trad_vc_id') || ''; } catch (e) {}
+                if (!/^[a-z0-9]{16,40}$/.test(vid)) {
+                    vid = (Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2) + Date.now().toString(36)).replace(/[^a-z0-9]/g, '').slice(0, 32);
+                    try { sessionStorage.setItem('trad_vc_id', vid); } catch (e) {}
+                }
                 function updateActiveUsers() {
-                    fetch('<?php echo esc_url(admin_url('admin-ajax.php?action=trad_update_active_users')); ?>')
+                    fetch('<?php echo esc_url(admin_url('admin-ajax.php?action=trad_update_active_users')); ?>&vid=' + vid)
                     .then(response => response.json())
                     .then(data => {
                         document.getElementById('trad-active-users-count').innerText = data.data.active_users;
@@ -39,7 +54,7 @@ class TRAD_Visitor_Count_Pro extends Widget_Base {
                 }
 
                 function removeActiveUser() {
-                    navigator.sendBeacon('<?php echo esc_url(admin_url('admin-ajax.php?action=trad_remove_active_user')); ?>');
+                    navigator.sendBeacon('<?php echo esc_url(admin_url('admin-ajax.php?action=trad_remove_active_user')); ?>&vid=' + vid);
                 }
 
                 // Polling every 5 seconds for more frequent updates
@@ -60,4 +75,4 @@ class TRAD_Visitor_Count_Pro extends Widget_Base {
 }
 
 // Register the widget
-Plugin::instance()->widgets_manager->register_widget_type(new TRAD_Visitor_Count_Pro());
+Plugin::instance()->widgets_manager->register(new TRAD_Visitor_Count_Pro());

@@ -24,6 +24,14 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
         return 'eicon-date trad-icon';
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-pro'];
     }
@@ -549,4 +557,4 @@ class TRAD_Post_Date_Display_Widget extends Widget_Base {
 }
 
 // Register the widget
-Plugin::instance()->widgets_manager->register_widget_type(new TRAD_Post_Date_Display_Widget());
+Plugin::instance()->widgets_manager->register(new TRAD_Post_Date_Display_Widget());

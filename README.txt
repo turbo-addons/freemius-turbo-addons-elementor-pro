@@ -2,9 +2,11 @@
 Contributors: TurboAddons, sharifok, wpanik, siraji2017
 Tags: elementor, addons, turbo-addons-pro, elementor-widgets, turbo-plugins  
 Requires at least: 5.0
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.9.3
+Stable tag: 1.9.6
+License: GPLv3
+License URI: https://opensource.org/licenses/GPL-3.0
 
 Turbo Addons Pro unlocks premium Elementor widgets with advanced design, speed tools & full customization options.
 
@@ -110,6 +112,20 @@ Follow these steps to install Turbo Addons Pro for Elementor on your WordPress w
 
 ## Changelog
 
+
+### Version 1.9.6
+   1. Version number now matches Turbo Addons (free)
+   2. Faster pages: Pro CSS/JS now loads only on pages that use a Pro widget (before, about 50 files loaded on every page)
+   3. Expired or inactive license: pages built with Pro widgets keep working; adding new Pro widgets or Pro templates needs an active license
+   4. Hero Slider now uses Elementor's built-in Swiper and works with several sliders on one page (also fixed broken markup when navigation is hidden)
+   5. Removed unused libraries (GSAP, Owl Carousel, bundled Swiper); updated intro.js to 8.6.0 and the Freemius SDK to 2.13.5
+   6. Security: capped public AJAX queries, search limited to public post types, permission check on the single product template setting, safe redirects, Visitor Count no longer uses PHP sessions
+   7. Fixed duplicated controls in Progress Bar, Hero Slider, CSV Data Table, Post Filter Tab and Woo Product Navigation (Next Icon could not be set)
+   8. Fixed Pro translations not loading (wrong text domain) and the PDF Flip Book using an insecure http URL
+   9. Compatible with WordPress 7.1, PHP 8.5 and Elementor 4.3
+   10. New "Templates" tab on the Pro dashboard: browse, search and filter the whole template library (same as the free dashboard)
+   11. Fixed the dashboard "Templates Added" slider: it now shows the latest templates from the API (it fell back to the static banner), marks Pro/Free correctly and the 30-second live update works again
+   12. Dashboard: the "What Makes Pro Special" card is replaced by a Turbo Guard security card (Install / Activate / Upgrade button based on the plugin's state)
 
 ### Version 1.9.3 
    1. Dynamic Tag for all fields

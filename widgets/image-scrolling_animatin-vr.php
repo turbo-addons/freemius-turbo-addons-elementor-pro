@@ -21,11 +21,27 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
         return 'eicon-slider-vertical trad-icon';
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-pro'];
     }
 
-    protected function _register_controls() {
+    public function get_style_depends() {
+        return [ 'trad-image-vertical-scrolling' ];
+    }
+
+    public function get_script_depends() {
+        return [ 'trad-image-vertical-scroll-script' ];
+    }
+
+    protected function register_controls() {
         // Section: Content
         $this->start_controls_section(
             'content_section',
@@ -277,4 +293,4 @@ class TRAD_Image_Scroll_Widget extends Widget_Base {
 }
 
 // Register the widget
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new TRAD_Image_Scroll_Widget());
+\Elementor\Plugin::instance()->widgets_manager->register(new TRAD_Image_Scroll_Widget());

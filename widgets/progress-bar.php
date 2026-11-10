@@ -25,11 +25,27 @@ class TRAD_Progress_bar extends Widget_Base {
         return 'eicon-skill-bar trad-icon';
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return [ 'turbo-addons-pro' ];
     }
 
-    public function _register_controls() {
+    public function get_style_depends() {
+        return [ 'progress-milestone-style' ];
+    }
+
+    public function get_script_depends() {
+        return [ 'progress-milestone-script' ];
+    }
+
+    public function register_controls() {
 
     //----------------------------------------------content section----------------------------------
     //==================================================================================================
@@ -331,15 +347,6 @@ class TRAD_Progress_bar extends Widget_Base {
             ]
         );
 
-        $this->add_group_control(
-            Group_Control_Background::get_type(),
-            [
-                'name' => 'progress_bar_background',
-                'label' => esc_html__( 'Progress Bar Background', 'freemius-turbo-addons-elementor-pro' ),
-                'types' => [ 'classic', 'gradient', 'video' ],
-                'selector' => '{{WRAPPER}} .trad-progress-milestone-progress-bar',
-            ]
-        );
 
         // Progress Bar Box Shadow and Border
         $this->add_group_control(
@@ -404,5 +411,5 @@ class TRAD_Progress_bar extends Widget_Base {
 }
 
 // Register widget
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new TRAD_Progress_bar() );
+\Elementor\Plugin::instance()->widgets_manager->register( new TRAD_Progress_bar() );
 

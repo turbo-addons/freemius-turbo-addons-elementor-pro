@@ -25,11 +25,23 @@ class TRAD_Testimonial_Slider extends Widget_Base {
         return 'eicon-review trad-icon';
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-pro'];
     }
 
-    protected function _register_controls() {
+    public function get_style_depends() {
+        return [ 'testimonial-template-style' ];
+    }
+
+    protected function register_controls() {
 
         // ============================================================
         // CONTENT SECTION — Testimonials List
@@ -1130,4 +1142,4 @@ class TRAD_Testimonial_Slider extends Widget_Base {
     }
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new TRAD_Testimonial_Slider() );
+Plugin::instance()->widgets_manager->register( new TRAD_Testimonial_Slider() );

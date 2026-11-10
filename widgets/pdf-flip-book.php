@@ -26,8 +26,24 @@ class Trad_Flip_Book extends Widget_Base {
         return 'eicon-library-open trad-icon'; // Choose an appropriate icon
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-pro']; // Change to your desired category
+    }
+
+    public function get_style_depends() {
+        return [ 'trad-flip-book-style' ];
+    }
+
+    public function get_script_depends() {
+        return [ 'jquery' ];
     }
 
     public function get_keywords() {
@@ -1281,7 +1297,7 @@ class Trad_Flip_Book extends Widget_Base {
         $items = $settings['items_list'];
     
         // Define the fixed base URL
-        $base_url = 'http://flowpaper.com/flipbook/';
+        $base_url = 'https://flowpaper.com/flipbook/'; // https: an http iframe is blocked on https sites (mixed content)
     
         if (empty($items)) return;
     
@@ -1322,7 +1338,7 @@ class Trad_Flip_Book extends Widget_Base {
         </div>
         <script>
         jQuery(document).ready(function($) {
-            const baseURL = "http://flowpaper.com/flipbook/"; // Fixed base URL
+            const baseURL = "https://flowpaper.com/flipbook/"; // Fixed base URL
 
             $('.pdf-side-sidebar-section li').first().addClass('active');
     
@@ -1350,4 +1366,4 @@ class Trad_Flip_Book extends Widget_Base {
 
 }
 // Register the widget with Elementor.
-Plugin::instance()->widgets_manager->register_widget_type( new Trad_Flip_Book() );
+Plugin::instance()->widgets_manager->register( new Trad_Flip_Book() );

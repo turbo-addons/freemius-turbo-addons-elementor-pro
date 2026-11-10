@@ -26,12 +26,24 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         return 'eicon-product-images trad-icon';
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-woo-pro'];
     }
 
+    public function get_style_depends() {
+        return [ 'trad-woo-product-all-style' ];
+    }
+
     public function get_script_depends() {
-        return [ 'zoom', 'wc-single-product' ];
+        return [ 'zoom', 'wc-single-product', 'jquery', 'trad-woo-product-all-script' ];
     } 
 
     protected function register_controls() {
@@ -655,7 +667,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
         <script>
             jQuery(document).ready(function () {
                 jQuery('.woocommerce-product-gallery').each(function () {
-                    jQuery(this).wc_product_gallery();
+                    if ( 'function' === typeof jQuery.fn.wc_product_gallery ) { jQuery(this).wc_product_gallery(); } // WooCommerce gallery script is not loaded in the editor preview
                 });
             });
         </script>
@@ -679,7 +691,7 @@ class TRAD_WOO_Product_Image extends Widget_Base {
        <script>
         document.addEventListener('DOMContentLoaded', function () {
             jQuery('.woocommerce-product-gallery').each(function () {
-                jQuery(this).wc_product_gallery();
+                if ( 'function' === typeof jQuery.fn.wc_product_gallery ) { jQuery(this).wc_product_gallery(); } // WooCommerce gallery script is not loaded in the editor preview
             });
         });
         </script>
@@ -691,4 +703,4 @@ class TRAD_WOO_Product_Image extends Widget_Base {
 
 }
 
-Plugin::instance()->widgets_manager->register_widget_type(new TRAD_WOO_Product_Image());
+Plugin::instance()->widgets_manager->register(new TRAD_WOO_Product_Image());

@@ -152,178 +152,133 @@ document.addEventListener('DOMContentLoaded', function () {
    - Compares template name with what's currently shown
    - If different → smoothly updates the card in place (no reload)
    ============================================================ */
+/* ============================================================
+   "Templates Added" slider — dot navigation, auto-advance and a
+   live poll (every 30 s) that rebuilds the slider when the API
+   returns a different list. Data shape (window.taepTemplates and
+   the AJAX response): [{ title, desc, category, type, is_pro, link, thumb }]
+   @since 1.9.6 (the old poll expected a single { name } object and never updated)
+   ============================================================ */
 (function ($) {
     'use strict';
 
-    // Only run on the pro dashboard page
-    if ( typeof taepAdmin === 'undefined' ) return;
-    if ( ! document.getElementById('taep-template-card') ) return;
+    var card = document.getElementById('taep-template-card');
+    if ( ! card ) return;
 
-    var POLL_INTERVAL = 30000; // 30 seconds
-    var currentName   = ( document.getElementById('taep-tpl-name') || {} ).textContent || '';
+    var AUTO_DELAY    = 4000;  // 4 s auto-advance
+    var POLL_INTERVAL = 30000; // 30 s
+    var templates     = window.taepTemplates || [];
+    var currentIdx    = 0;
+    var autoTimer     = null;
 
-    function capitalize( str ) {
-        return str ? str.charAt(0).toUpperCase() + str.slice(1) : '';
+    function $id( id ) { return document.getElementById( id ); }
+    function capitalize( str ) { return str ? str.charAt(0).toUpperCase() + str.slice(1) : ''; }
+    function escHtml( str ) {
+        var d = document.createElement('div');
+        d.textContent = str == null ? '' : String( str );
+        return d.innerHTML;
     }
-
-    function buildDesc( name ) {
-        return 'A brand-new "' + name + '" template is now available in the Turbo Addons template library. Import it in one click and go live faster.';
+    function defaultDesc( title ) {
+        return 'A brand-new "' + ( title || '' ) + '" template is now available. Import it in one click and go live faster.';
     }
-
-    function flashCard() {
-        var card = document.getElementById('taep-template-card');
-        if ( ! card ) return;
-        card.classList.add('taep-card-updated');
-        setTimeout(function () { card.classList.remove('taep-card-updated'); }, 1200);
+    function signature( list ) {
+        return ( list || [] ).map(function ( t ) { return t.title + '|' + t.thumb; }).join('||');
     }
-
-    function updateCard( data ) {
-        var name     = data.name     || '';
-        var category = data.category || '';
-        var type     = data.type     || '';
-        var preview  = data.preview  || '#';
-        var thumb    = data.thumb    || '';
-        var isPro    = ( data.pro === 'on' );
-
-        // Thumbnail
-        var thumbEl = document.getElementById('taep-tpl-thumb');
-        if ( thumbEl && thumb ) {
-            thumbEl.src = thumb;
-            thumbEl.alt = name;
-        }
-
-        // PRO badge
-        var badgeEl = document.getElementById('taep-tpl-pro-badge');
-        if ( badgeEl ) badgeEl.style.display = isPro ? '' : 'none';
-
-        // Category pill
-        var catEl = document.getElementById('taep-tpl-category');
-        if ( catEl ) catEl.textContent = capitalize( category );
-
-        // Type pill
-        var typeEl = document.getElementById('taep-tpl-type');
-        if ( typeEl ) typeEl.textContent = capitalize( type );
-
-        // Name
-        var nameEl = document.getElementById('taep-tpl-name');
-        if ( nameEl ) nameEl.textContent = name;
-
-        // Description
-        var descEl = document.getElementById('taep-tpl-desc');
-        if ( descEl ) descEl.textContent = buildDesc( name );
-
-        // Preview button href
-        var previewBtn = document.getElementById('taep-tpl-preview-btn');
-        if ( previewBtn ) previewBtn.href = preview;
-
-        // Update tracked name
-        currentName = name;
-
-        // Flash the card to signal update
-        flashCard();
-    }
-
-    function poll() {
-        $.ajax({
-            url:      taepAdmin.ajaxUrl,
-            type:     'POST',
-            dataType: 'json',
-            data: {
-                action: 'taep_fetch_latest_template',
-                nonce:  taepAdmin.nonce,
-            },
-            success: function ( response ) {
-                if ( response.success && response.data && response.data.name ) {
-                    // Only update DOM if the template actually changed
-                    if ( response.data.name !== currentName ) {
-                        updateCard( response.data );
-                    }
-                }
-            },
-            // Silently ignore errors — next poll will retry
-        });
-    }
-
-    // Start polling after 5 s (let the page settle first)
-    setTimeout(function () {
-        poll(); // immediate first check
-        setInterval( poll, POLL_INTERVAL );
-    }, 5000);
-
-}(jQuery));
-
-
-/* ============================================================
-   Template Slider — dot navigation + auto-advance
-   ============================================================ */
-(function () {
-    'use strict';
-
-    var templates = window.taepTemplates || [];
-    if ( templates.length < 2 ) return; // nothing to slide
-
-    var currentIdx   = 0;
-    var autoTimer    = null;
-    var AUTO_DELAY   = 4000; // 4 s auto-advance
-
-    // DOM refs
-    var slides      = document.querySelectorAll('#taep-tpl-slides .taep-tpl-slide');
-    var dots        = document.querySelectorAll('#taep-tpl-dots .taep-tpl-dot');
-    var nameEl      = document.getElementById('taep-tpl-name');
-    var descEl      = document.getElementById('taep-tpl-desc');
-    var categoryEl  = document.getElementById('taep-tpl-category');
-    var typeEl      = document.getElementById('taep-tpl-type');
-    var previewBtn  = document.getElementById('taep-tpl-preview-btn');
-    var currentEl   = document.getElementById('taep-tpl-current');
 
     function goTo( idx ) {
+        if ( ! templates.length ) return;
         if ( idx < 0 ) idx = templates.length - 1;
         if ( idx >= templates.length ) idx = 0;
 
-        // Slides
-        slides.forEach(function (s, i) {
+        document.querySelectorAll('#taep-tpl-slides .taep-tpl-slide').forEach(function ( s, i ) {
             s.classList.toggle('active', i === idx);
         });
-
-        // Dots
-        dots.forEach(function (d, i) {
+        document.querySelectorAll('#taep-tpl-dots .taep-tpl-dot').forEach(function ( d, i ) {
             d.classList.toggle('active', i === idx);
         });
 
-        // Info panel
-        var tpl = templates[idx];
-        if ( nameEl )     nameEl.textContent     = tpl.title || '';
-        if ( descEl )     descEl.textContent     = tpl.desc  ||
-            'A brand-new "' + (tpl.title||'') + '" template is now available. Import it in one click and go live faster.';
-        if ( categoryEl ) categoryEl.textContent = tpl.category ? tpl.category.charAt(0).toUpperCase() + tpl.category.slice(1) : '';
-        if ( typeEl )     typeEl.textContent     = tpl.type     ? tpl.type.charAt(0).toUpperCase()     + tpl.type.slice(1)     : '';
-        if ( previewBtn ) previewBtn.href        = tpl.link || '#';
-        if ( currentEl )  currentEl.textContent  = idx + 1;
+        var tpl = templates[ idx ];
+        var nameEl = $id('taep-tpl-name'), descEl = $id('taep-tpl-desc'), catEl = $id('taep-tpl-category'),
+            typeEl = $id('taep-tpl-type'), prevEl = $id('taep-tpl-preview-btn'), curEl = $id('taep-tpl-current');
+        if ( nameEl ) nameEl.textContent = tpl.title || '';
+        if ( descEl ) descEl.textContent = tpl.desc || defaultDesc( tpl.title );
+        if ( catEl )  catEl.textContent  = capitalize( tpl.category );
+        if ( typeEl ) typeEl.textContent = capitalize( tpl.type );
+        if ( prevEl ) prevEl.href        = tpl.link || '#';
+        if ( curEl )  curEl.textContent  = idx + 1;
 
         currentIdx = idx;
     }
 
-    // Dot click
-    dots.forEach(function (dot) {
-        dot.addEventListener('click', function () {
-            resetAuto();
-            goTo( parseInt( dot.getAttribute('data-index'), 10 ) );
-        });
+    function startAuto() {
+        clearInterval( autoTimer );
+        if ( templates.length > 1 ) {
+            autoTimer = setInterval(function () { goTo( currentIdx + 1 ); }, AUTO_DELAY);
+        }
+    }
+
+    // Rebuild slides, dots and counter from a new list.
+    function rebuild( list ) {
+        templates = list;
+        window.taepTemplates = list;
+
+        var slidesEl = $id('taep-tpl-slides');
+        if ( slidesEl ) {
+            slidesEl.innerHTML = list.map(function ( t, i ) {
+                return '<div class="taep-tpl-slide' + ( i === 0 ? ' active' : '' ) + '" data-index="' + i + '">' +
+                    '<img src="' + escHtml( t.thumb ) + '" alt="' + escHtml( t.title ) + '" class="taep-tpl-slide-img">' +
+                    '<span class="taep-template-pro-badge">' + ( t.is_pro ? 'PRO' : 'FREE' ) + '</span>' +
+                    '</div>';
+            }).join('');
+        }
+        var dotsEl = $id('taep-tpl-dots');
+        if ( dotsEl ) {
+            dotsEl.innerHTML = list.map(function ( t, i ) {
+                return '<button class="taep-tpl-dot' + ( i === 0 ? ' active' : '' ) + '" data-index="' + i + '" aria-label="' + escHtml( t.title ) + '"></button>';
+            }).join('');
+            dotsEl.style.display = list.length > 1 ? '' : 'none';
+        }
+        var counterEl = $id('taep-tpl-counter'), totalEl = $id('taep-tpl-total');
+        if ( counterEl ) counterEl.style.display = list.length > 1 ? '' : 'none';
+        if ( totalEl ) totalEl.textContent = list.length;
+
+        goTo( 0 );
+        startAuto();
+        card.classList.add('taep-card-updated');
+        setTimeout(function () { card.classList.remove('taep-card-updated'); }, 1200);
+    }
+
+    // Dot click (delegated, so rebuilt dots keep working).
+    document.addEventListener('click', function ( e ) {
+        var dot = e.target.closest ? e.target.closest('#taep-tpl-dots .taep-tpl-dot') : null;
+        if ( ! dot ) return;
+        goTo( parseInt( dot.getAttribute('data-index'), 10 ) );
+        startAuto();
     });
 
-    // Auto-advance
-    function startAuto() {
-        autoTimer = setInterval(function () {
-            goTo( currentIdx + 1 );
-        }, AUTO_DELAY);
-    }
-    function resetAuto() {
-        clearInterval( autoTimer );
-        startAuto();
+    function poll() {
+        if ( typeof taepAdmin === 'undefined' ) return;
+        $.ajax({
+            url:      taepAdmin.ajaxUrl,
+            type:     'POST',
+            dataType: 'json',
+            data:     { action: 'taep_fetch_latest_template', nonce: taepAdmin.nonce },
+            success:  function ( response ) {
+                if ( response && response.success && Array.isArray( response.data ) && response.data.length &&
+                     signature( response.data ) !== signature( templates ) ) {
+                    rebuild( response.data );
+                }
+            }
+            // Errors are ignored; the next poll retries.
+        });
     }
 
     startAuto();
-}());
+    setTimeout(function () {
+        poll();
+        setInterval( poll, POLL_INTERVAL );
+    }, 5000);
+}(jQuery));
 
 
 /* ============================================================

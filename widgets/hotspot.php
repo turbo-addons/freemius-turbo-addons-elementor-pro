@@ -18,7 +18,23 @@ class TRAD_Hotspot_Widget extends Widget_Base {
     public function get_name() { return 'trad-hotspot'; }
     public function get_title() { return esc_html__( 'Image Hotspot', 'freemius-turbo-addons-elementor-pro' ); }
     public function get_icon() { return 'eicon-image-hotspot trad-icon'; }
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() { return ['turbo-addons-pro']; }
+
+    public function get_style_depends() {
+        return [ 'trad-hotspot-style' ];
+    }
+
+    public function get_script_depends() {
+        return [ 'trad-hotspot-script' ];
+    }
 
     protected function get_upsale_data() {
         return [
@@ -32,7 +48,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
         ];
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         /* ============================================================
          * CONTENT TAB - Section: Image
@@ -685,21 +701,7 @@ class TRAD_Hotspot_Widget extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
 
-        wp_enqueue_style(
-            'trad-hotspot-style',
-            TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/hotspot.css',
-            [],
-            filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/hotspot.css' ),
-            'all'
-        );
-
-        wp_enqueue_script(
-            'trad-hotspot-script',
-            TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/hotspot.js',
-            [ 'jquery', 'elementor-frontend' ],
-            filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/js/hotspot.js' ),
-            true
-        );
+        // Assets come from get_style_depends()/get_script_depends() (registered in helper.php).
 
         $image     = $settings['hotspot_image'];
         $img_size  = ! empty( $settings['hotspot_image_size'] ) ? $settings['hotspot_image_size'] : 'full';
@@ -824,4 +826,4 @@ class TRAD_Hotspot_Widget extends Widget_Base {
 
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new TRAD_Hotspot_Widget() );
+\Elementor\Plugin::instance()->widgets_manager->register( new TRAD_Hotspot_Widget() );

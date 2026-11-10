@@ -18,7 +18,23 @@ class Trad_Whatsapp_Widget extends Widget_Base {
     public function get_name() { return 'trad-whatsapp'; }
     public function get_title() { return esc_html__('WhatsApp', 'freemius-turbo-addons-elementor-pro'); }
     public function get_icon() { return 'eicon-commenting-o trad-icon'; }
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() { return ['turbo-addons-pro']; }
+
+    public function get_style_depends() {
+        return [ 'trad-whatsapp-style' ];
+    }
+
+    public function get_script_depends() {
+        return [ 'trad-whatsapp-script' ];
+    }
 
     protected function get_upsale_data() {
         return [
@@ -32,7 +48,7 @@ class Trad_Whatsapp_Widget extends Widget_Base {
         ];
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         /* ==========================================================
          *  WIDGET MODE
@@ -1207,4 +1223,4 @@ class Trad_Whatsapp_Widget extends Widget_Base {
     }
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new Trad_Whatsapp_Widget() );
+Plugin::instance()->widgets_manager->register( new Trad_Whatsapp_Widget() );

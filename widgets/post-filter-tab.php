@@ -23,11 +23,27 @@ class TRAD_Post_Filter_Tab extends Widget_Base {
         return 'eicon-kit-parts trad-icon';
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-pro'];
     }
 
-    protected function _register_controls() {
+    public function get_style_depends() {
+        return [ 'category-filter-tab_style' ];
+    }
+
+    public function get_script_depends() {
+        return [ 'category-filter-tab_script' ];
+    }
+
+    protected function register_controls() {
         $this->start_controls_section(
             'content_section',
             [
@@ -210,28 +226,6 @@ class TRAD_Post_Filter_Tab extends Widget_Base {
             ]
         );
         // tab width
-        $this->add_control(
-            'trad_advance_post_filter_tab_width',
-            [
-                'label'      => __('Tab Width', 'freemius-turbo-addons-elementor-pro'),
-                'type'       => Controls_Manager::SLIDER,
-                'size_units' => ['px', '%'],
-                'range'      => [
-                    'px' => [
-                        'min' => 10,
-                        'max' => 500,
-                        'step' => 10,
-                    ],
-                    '%' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                ],
-                'selectors'  => [
-                    '{{WRAPPER}} .trad-advance-post-filter-left-column' => 'width: {{SIZE}}{{UNIT}} !important;',
-                ],
-            ]
-        );
         
         // --------------------------tab background color///
         $this->add_control(
@@ -264,7 +258,7 @@ class TRAD_Post_Filter_Tab extends Widget_Base {
                     ],
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .trad-advance-post-filter-left-column' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .trad-advance-post-filter-left-column' => 'width: {{SIZE}}{{UNIT}} !important;',
                 ],
             ]
         );
@@ -1092,4 +1086,4 @@ class TRAD_Post_Filter_Tab extends Widget_Base {
 }
 
 // Register the widget
-Plugin::instance()->widgets_manager->register_widget_type(new TRAD_Post_Filter_Tab());
+Plugin::instance()->widgets_manager->register(new TRAD_Post_Filter_Tab());

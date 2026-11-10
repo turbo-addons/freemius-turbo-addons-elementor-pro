@@ -24,8 +24,24 @@ class TRAD_WOO_Product_Card extends Widget_Base {
         return 'eicon-single-product trad-icon';
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-woo-pro'];
+    }
+
+    public function get_style_depends() {
+        return [ 'trad-woo-product-card-style', 'trad-woo-pagination-style', 'trad-woo-product-all-style' ];
+    }
+
+    public function get_script_depends() {
+        return [ 'trad-woo-product-all-script' ];
     }
     
     protected function register_controls() {
@@ -1070,4 +1086,4 @@ $this->add_control(
 }
 
 // Register the widget
-Plugin::instance()->widgets_manager->register_widget_type(new TRAD_WOO_Product_Card());
+Plugin::instance()->widgets_manager->register(new TRAD_WOO_Product_Card());

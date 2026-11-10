@@ -28,8 +28,24 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
         return 'eicon-slider-device trad-icon';
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-pro'];
+    }
+
+    public function get_style_depends() {
+        return [ 'swiper', 'trad-turbo-pro-hero-slider-style' ];
+    }
+
+    public function get_script_depends() {
+        return [ 'swiper', 'trad-pro-hero-slider' ];
     }
 
     protected function register_controls() {
@@ -223,6 +239,33 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
+
+    // Show / hide Button One
+    $this->add_control(
+        'show_button_one',
+        [
+            'label'        => esc_html__( 'Show Button One', 'freemius-turbo-addons-elementor-pro' ),
+            'type'         => \Elementor\Controls_Manager::SWITCHER,
+            'label_on'     => esc_html__( 'Show', 'freemius-turbo-addons-elementor-pro' ),
+            'label_off'    => esc_html__( 'Hide', 'freemius-turbo-addons-elementor-pro' ),
+            'return_value' => 'yes',
+            'default'      => 'yes',
+        ]
+    );
+
+    // Show / hide Button Two
+    $this->add_control(
+        'show_button_two',
+        [
+            'label'        => esc_html__( 'Show Button Two', 'freemius-turbo-addons-elementor-pro' ),
+            'type'         => \Elementor\Controls_Manager::SWITCHER,
+            'label_on'     => esc_html__( 'Show', 'freemius-turbo-addons-elementor-pro' ),
+            'label_off'    => esc_html__( 'Hide', 'freemius-turbo-addons-elementor-pro' ),
+            'return_value' => 'yes',
+            'default'      => 'yes',
+        ]
+    );
+
     $this->add_responsive_control(
         'slide_btns_flex_direction',
         [
@@ -1101,6 +1144,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
                 'selectors' => [
                     '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-one' => 'width: {{SIZE}}{{UNIT}};',
                 ],
+                'condition' => [ 'show_button_one' => 'yes' ],
             ]
      );
 
@@ -1112,6 +1156,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
           'name'     => 'trad_turbo_hero_slider_btn1', 
           'label'    => esc_html__( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
           'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-one',
+          'condition' => [ 'show_button_one' => 'yes' ],
       ]
     );
 
@@ -1125,6 +1170,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
             'selectors' => [
                 '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-one' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [ 'show_button_one' => 'yes' ],
         ]
     );
 
@@ -1138,10 +1184,11 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
             'selectors' => [
                 '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-one' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [ 'show_button_one' => 'yes' ],
         ]
     );
 
-    $this->start_controls_tabs( 'trad_slider_main_button_style_tab' );
+    $this->start_controls_tabs( 'trad_slider_main_button_style_tab', [ 'condition' => [ 'show_button_one' => 'yes' ] ] );
     //  Controls tab For Normal
     $this->start_controls_tab(
         'trad_slider_main_button_normal_tab',
@@ -1274,6 +1321,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
                 'selectors' => [
                     '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-two' => 'width: {{SIZE}}{{UNIT}};',
                 ],
+                'condition' => [ 'show_button_two' => 'yes' ],
             ]
      );
 
@@ -1283,6 +1331,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
           'name'     => 'trad_turbo_hero_slider_btn2', 
           'label'    => esc_html__( 'Typography', 'freemius-turbo-addons-elementor-pro' ),
           'selector' => '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-two',
+          'condition' => [ 'show_button_two' => 'yes' ],
       ]
     );
 
@@ -1296,6 +1345,7 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
             'selectors' => [
                 '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-two' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [ 'show_button_two' => 'yes' ],
         ]
     );
     // Border Radius
@@ -1308,10 +1358,11 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
             'selectors' => [
                 '{{WRAPPER}} .trad_turbo_slider_pro_slider-button-two' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [ 'show_button_two' => 'yes' ],
         ]
     );
 
-    $this->start_controls_tabs( 'trad_slider_info_button_style_tab' );
+    $this->start_controls_tabs( 'trad_slider_info_button_style_tab', [ 'condition' => [ 'show_button_two' => 'yes' ] ] );
     //  Controls tab For Normal
     $this->start_controls_tab(
         'trad_slider_info_button_normal_tab',
@@ -1488,16 +1539,6 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
             ]
         );
 
-    $this->add_group_control(
-        Group_Control_Border::get_type(),
-        [
-            'name'     => 'hero_slider_navigation_btn_border',
-            'label'    => esc_html__( 'Border', 'freemius-turbo-addons-elementor-pro' ),
-            'selector' => 
-                '{{WRAPPER}} .trad_turbo_slider_pro_hero-slider .swiper-button-prev, 
-                {{WRAPPER}} .trad_turbo_slider_pro_hero-slider .swiper-button-next',
-        ]
-    );
     $this->add_group_control(
         Group_Control_Border::get_type(),
         [
@@ -1855,6 +1896,8 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
     protected function render() {
       $settings = $this->get_settings_for_display();
       $show_nav = isset( $settings['show_navigation_icons'] ) ? $settings['show_navigation_icons'] : 'yes';
+      $show_button_one = isset( $settings['show_button_one'] ) ? $settings['show_button_one'] : 'yes';
+      $show_button_two = isset( $settings['show_button_two'] ) ? $settings['show_button_two'] : 'yes';
 
       if (empty($settings['slides'])) {
           return; // Return if no slides are added.
@@ -1885,10 +1928,10 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
                                     <!-- <div class="trad_turbo_slider_pro_clearfix"></div> -->
 
                                     <div data-swiper-parallax="500" class="trad_turbo_slider_pro_slide-btns">
-                                      <?php if (!empty($slide['slide_button_one'])): ?>
+                                      <?php if ( 'yes' === $show_button_one && ! empty( $slide['slide_button_one'] ) ) : ?>
                                           <a href="<?php echo esc_url($slide['slide_button_one_url']['url']); ?>" class="trad_turbo_slider_pro_slider-button-one"><?php echo esc_html($slide['slide_button_one']); ?></a>
                                       <?php endif; ?>
-                                      <?php if (!empty($slide['slide_button_two'])): ?>
+                                      <?php if ( 'yes' === $show_button_two && ! empty( $slide['slide_button_two'] ) ) : ?>
                                           <a href="<?php echo esc_url($slide['slide_button_two_url']['url']); ?>" class="trad_turbo_slider_pro_slider-button-two"></i> <?php echo esc_html($slide['slide_button_two']); ?></a>
                                       <?php endif; ?>
                                     </div>
@@ -1925,76 +1968,14 @@ class TRAD_Turbo_Slider_Pro extends Widget_Base {
                                 Icons_Manager::render_icon( $settings['next_icon'], [ 'aria-hidden' => 'true' ] );
                             ?>
                     </div>
-            </div>
           <?php endif; ?>
+            </div>
       </section>
       <!-- end of hero slider -->
-      <script>
-            var swiperOptions = {
-                loop: true,
-                speed: 1000, // Control the speed of the overlap
-                autoplay: {
-                    delay: 5000, // Time between slides
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                on: {
-                    setTransition: function (speed) {
-                        var swiper = this;
-                        for (var i = 0; i < swiper.slides.length; i++) {
-                            var slide = swiper.slides[i];
-                            slide.style.transition = speed + 'ms';
-                        }
-                    },
-                    slideChangeTransitionStart: function () {
-                        var swiper = this;
-                        swiper.slides.forEach((slide, index) => {
-                            if (index === swiper.activeIndex) {
-                                slide.style.zIndex = 2; // Ensure the active slide is on top
-                                slide.querySelector('.slide-inner').style.transform =
-                                    'translateX(0)';
-                            } else {
-                                slide.style.zIndex = 1; // Keep the other slides below
-                            }
-                        });
-                    },
-                    slideChangeTransitionEnd: function () {
-                        var swiper = this;
-                        swiper.slides.forEach((slide, index) => {
-                            if (index !== swiper.activeIndex) {
-                                slide.style.transition = 'none';
-                                slide.querySelector('.slide-inner').style.transform =
-                                    'translateX(100%)'; // Reset the slide for the next transition
-                            }
-                        });
-                    },
-                },
-            };
-
-            jQuery(document).ready(function ($) {
-                var swiper = new Swiper('.trad_turbo_slider_pro_swiper-container', swiperOptions);
-            });
-
-            jQuery(document).ready(function ($) {
-                $('.slide-bg-image').each(function () {
-                    var bg = $(this).data('background');
-                    if (bg) {
-                        $(this).css('background-image', 'url(' + bg + ')');
-                    }
-                });
-            });
-      </script>
       <?php
   }
     
 }
 
 // Register the widget
-Plugin::instance()->widgets_manager->register_widget_type(new TRAD_Turbo_Slider_Pro());
+Plugin::instance()->widgets_manager->register(new TRAD_Turbo_Slider_Pro());

@@ -5,6 +5,32 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
+/**
+ * Whether this site has an active Turbo Addons Pro license (paid plan, trial,
+ * or a state where Freemius allows premium code).
+ *
+ * Used to hide Pro widgets from the editor panel and to block inserting Pro
+ * templates. It is NOT used to stop rendering: pages built while the license
+ * was active keep working after it expires.
+ *
+ * @since 1.9.6
+ * @return bool
+ */
+function trad_pro_is_license_active() {
+    static $active = null;
+    if ( null !== $active ) {
+        return $active;
+    }
+    $active = false;
+    if ( function_exists( 'taep_fs' ) ) {
+        $fs     = taep_fs();
+        $active = $fs->is_plan( 'pro', true ) || $fs->is_trial() || $fs->can_use_premium_code() || $fs->is_paying();
+    }
+    /** Filters the Turbo Addons Pro license state. */
+    $active = (bool) apply_filters( 'trad_pro_is_license_active', $active );
+    return $active;
+}
+
 function get_widget_pro_lists() {
     return [
         'timeline-story'                => 'timeline-story.php',
@@ -53,145 +79,106 @@ function get_widget_pro_lists() {
     ];
 }
 
-function trad_pro_enqueue_scripts_styles() {   
+/**
+ * Asset version: the file's modification time (cache-busts on every change),
+ * falling back to the plugin version. Never the server path.
+ *
+ * @since 1.9.6
+ * @param string $rel Path relative to the plugin root.
+ * @return string
+ */
+function trad_pro_asset_ver( $rel ) {
+    $file = TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . $rel;
+    return file_exists( $file ) ? (string) filemtime( $file ) : TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION;
+}
 
-    // Swiper slider CSS
-    wp_enqueue_style( 'trad-pro-swiper-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/vendor/swiper/swiper-bundle.min.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/vendor/swiper/swiper-bundle.min.css' ), 'all' );
-    // Swiper slider JS
-    // wp_enqueue_script( 'trad-pro-swiper-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/vendor/swiper/swiper-bundle.min.js', [], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
-    wp_enqueue_script( 'trad-pro-swiper-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/vendor/swiper/swiper-bundle.min.js', ['jquery'], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/vendor/swiper/swiper-bundle.min.js' ), true );
+/**
+ * Register (not enqueue) all front-end assets.
+ *
+ * Every widget declares the handles it needs in get_style_depends() /
+ * get_script_depends(), so Elementor loads a file only on pages that actually
+ * contain that widget (and loads all of them in the editor preview).
+ * Before 1.9.6 everything was enqueued on every page of the site.
+ *
+ * Removed in 1.9.6: GSAP + ScrollTrigger + ScrollToPlugin (gsap.min.js was
+ * missing and no widget used them), Owl Carousel (no Pro widget used it), the
+ * bundled Swiper 11 (Hero Slider now uses Elementor's own Swiper) and the
+ * empty review-template.js / flip-book.js files.
+ */
+function trad_pro_enqueue_scripts_styles() {
+    $url = TRAD_TURBO_ADDONS_PRO_PLUGIN_URL;
+    $css = 'assets/css/custom-css/';
+    $js  = 'assets/js/';
 
-    // progress bar css
-    wp_enqueue_style( 'progress-milestone-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/progress-bar.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/progress-bar.css' ), 'all' );
-    wp_enqueue_script( 'progress-milestone-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/progress-bar.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH, true );
-    
-    // Flip Box
-    wp_enqueue_style( 'three-d-flip-box-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/three-d-flipbox.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/three-d-flipbox.css' ), 'all' );
-    
-    // review template
-    wp_enqueue_style( 'review-template-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/review-template.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/review-template.css' ), 'all' );
-    wp_enqueue_script( 'review-template-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/review-template.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH, true );
+    $styles = [
+        'progress-milestone-style'        => $css . 'progress-bar.css',
+        'three-d-flip-box-style'          => $css . 'three-d-flipbox.css',
+        'review-template-style'           => $css . 'review-template.css',
+        'testimonial-template-style'      => $css . 'testimonial.css',
+        'three-d-carousel'                => $css . 'polygon3Dcarousel.css',
+        'timeline-story-style'            => $css . 'timeline-story.css',
+        'trad-category-post-count-style'  => $css . 'category-post-count.css',
+        'trad-list-icon_style'            => $css . 'list-icon.css',
+        'advance-featured-card_style'     => $css . 'advance-featured-card.css',
+        'trad-post-list_style'            => $css . 'post-list.css',
+        'category-filter-tab_style'       => $css . 'category-filter-tab.css',
+        'trad-image-vertical-scrolling'   => $css . 'image-vertical-scrolling.css',
+        'trad-woo-product-card-style'     => $css . 'woo-product-card.css',
+        'trad-turbo-pro-hero-slider-style'=> $css . 'turbo-pro-hero-slider.css',
+        'introjs-css'                     => 'assets/vendor/intro/introjs.min.css',
+        'trad-tuor-guide-style'           => $css . 'tuor-guide.css',
+        'trad-flip-book-style'            => $css . 'flip-book.css',
+        'trad-text-gradient-style'        => $css . 'text-gradient.css',
+        'trad-woo-pagination-style'       => $css . 'woo-product-pagination.css',
+        'trad-woo-category-style'         => $css . 'woo-category.css',
+        'trad-woo-min-cart-style'         => $css . 'woo-min-cart.css',
+        'trad-woo-product-all-style'      => $css . 'woo-product-all.css',
+        'trad-table-style'                => $css . 'trad-table.css',
+        'trad-advanced-search-style'      => $css . 'trad-advanced-search.css',
+        'trad-off-canvas-style'           => $css . 'trad-off-canvas.css',
+        'trad-whatsapp-style'             => $css . 'trad-whatsapp.css',
+        'trad-hotspot-style'              => $css . 'hotspot.css',
+    ];
+    foreach ( $styles as $handle => $rel ) {
+        wp_register_style( $handle, $url . $rel, [], trad_pro_asset_ver( $rel ), 'all' );
+    }
 
-    // testimonial template (JS is inline per-widget in templates)
-    wp_enqueue_style( 'testimonial-template-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/testimonial.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/testimonial.css' ), 'all' );
-    
-    // 3D Carousel
-    wp_enqueue_style( 'three-d-carousel', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/polygon3Dcarousel.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/polygon3Dcarousel.css' ), 'all' );
-    
-
-    // timeline story
-    wp_enqueue_style( 'timeline-story-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/timeline-story.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/timeline-story.css' ), 'all' );
-    
-    // Category Post Count
-    wp_enqueue_style( 'trad-category-post-count-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/category-post-count.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/category-post-count.css' ), 'all' );
-   
-    //list icon
-    wp_enqueue_style( 'trad-list-icon_style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/list-icon.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/list-icon.css' ), 'all' );
-
-    //Advance featured card
-    wp_enqueue_style( 'advance-featured-card_style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/advance-featured-card.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/advance-featured-card.css' ), 'all' );
-    
-    //post list
-    wp_enqueue_style( 'trad-post-list_style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/post-list.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/post-list.css' ), 'all' );
-    wp_enqueue_script(
-        'trad-post-list-script',
-        TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/postlist.js',
-        ['jquery'],
-        filemtime(TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/js/postlist.js'),
-        true
-    );
+    $scripts = [
+        'progress-milestone-script'         => [ $js . 'progress-bar.js', [ 'jquery' ] ],
+        'trad-post-list-script'             => [ $js . 'postlist.js', [ 'jquery' ] ],
+        'category-filter-tab_script'        => [ $js . 'category-filter-tab.js', [ 'jquery' ] ],
+        'trad-image-vertical-scroll-script' => [ $js . 'image_vertical-scroll.js', [ 'jquery' ] ],
+        'introjs-js'                        => [ 'assets/vendor/intro/intro.min.js', [] ],
+        'trad-guided-tour-js'               => [ $js . 'tuor-guide.js', [ 'jquery', 'introjs-js' ] ],
+        'trad-woo-min-cart-script'          => [ $js . 'woo-min-cart.js', [ 'jquery' ] ],
+        'trad-woo-product-all-script'       => [ $js . 'woo-product-all.js', [ 'jquery' ] ],
+        'trad-flip-box'                     => [ $js . 'flip-box.js', [ 'jquery' ] ],
+        'trad-table-script'                 => [ $js . 'trad-table.js', [ 'jquery' ] ],
+        'trad-advanced-search-script'       => [ $js . 'trad-advanced-search.js', [ 'jquery' ] ],
+        'trad-off-canvas'                   => [ $js . 'trad-off-canvas.js', [ 'jquery' ] ],
+        'trad-whatsapp-script'              => [ $js . 'trad-whatsapp.js', [ 'jquery', 'elementor-frontend' ] ],
+        'trad-hotspot-script'               => [ $js . 'hotspot.js', [ 'jquery', 'elementor-frontend' ] ],
+        'trad-pro-hero-slider'              => [ $js . 'hero-slider.js', [ 'jquery', 'elementor-frontend' ] ],
+    ];
+    // WP 6.9.1+ warns when a dependency is not registered yet (e.g. in the Elementor editor shell).
+    $has_frontend = wp_script_is( 'elementor-frontend', 'registered' );
+    foreach ( $scripts as $handle => $def ) {
+        $def[1] = $has_frontend ? $def[1] : array_values( array_diff( $def[1], [ 'elementor-frontend' ] ) );
+        wp_register_script( $handle, $url . $def[0], $def[1], trad_pro_asset_ver( $def[0] ), true );
+    }
 
     wp_localize_script(
         'trad-post-list-script',
-        'trad_ajax_obj', 
+        'trad_ajax_obj',
         [
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce'    => wp_create_nonce( 'trad_load_more_posts_nonce' ),
+            'ajax_url' => admin_url( 'admin-ajax.php' ),
+            'nonce'    => wp_create_nonce( 'trad_load_more_posts_nonce' ),
         ]
     );
-    
-    
-    //Advance post-filter
-    wp_enqueue_style( 'category-filter-tab_style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/category-filter-tab.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/category-filter-tab.css' ), 'all' );
-    wp_enqueue_script( 'category-filter-tab_script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/category-filter-tab.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH, true );
-
-    // image-vertical-scrolling
-    wp_enqueue_style( 'trad-image-vertical-scrolling', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/image-vertical-scrolling.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/image-vertical-scrolling.css' ), 'all' );
-    wp_enqueue_script( 'trad-image-vertical-scroll-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/image_vertical-scroll.js',[ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
-  
-  
-    //Woo Product Carousel
-    wp_enqueue_style( 'trad-woo-product-card-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/woo-product-card.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/woo-product-card.css' ), 'all' );
-
-    // Enqueue Owl Carousel CSS
-    wp_enqueue_style( 'owl-carousel-pro-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/vendor/owl/css/owl.carousel.min.css', [], '2.3.4', 'all' );
-
-    // Enqueue Owl Carousel theme CSS (depends on the main carousel CSS)
-    wp_enqueue_style( 'owl-carousel-theme-pro-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/vendor/owl/css/owl.theme.default.min.css', ['owl-carousel'], '2.3.4', 'all' );
-
-    wp_enqueue_script( 'owl-carousel-pro-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/vendor/owl/js/owl.carousel.min.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
-
-    // Swiper slider CSS
-    wp_enqueue_style( 'trad-turbo-pro-hero-slider-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/turbo-pro-hero-slider.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/turbo-pro-hero-slider.css' ), 'all' );
-
-    wp_enqueue_style( 'introjs-css', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/vendor/intro/introjs.min.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/vendor/intro/introjs.min.css' ), 'all' );
-    wp_enqueue_script( 'introjs-js', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/vendor/intro/intro.min.js', [], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
-    wp_enqueue_script( 'trad-guided-tour-js', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/tuor-guide.js', [ 'jquery', 'introjs-js' ], '1.0.0', true );
-    wp_enqueue_style( 'trad-tuor-guide-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/tuor-guide.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/tuor-guide.css' ), 'all' );
-
-    //Flip Book
-    wp_enqueue_style( 'trad-flip-book-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/flip-book.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/flip-book.css' ), 'all' );
-    wp_enqueue_script( 'trad-flip-book-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/flip-book.js',[ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
-
-    //Text Gradient
-    wp_enqueue_style( 'trad-text-gradient-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/text-gradient.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/text-gradient.css' ), 'all' );
-
-
-    //WOO Pagination
-    wp_enqueue_style( 'trad-woo-pagination-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/woo-product-pagination.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/woo-product-pagination.css' ), 'all' );
-
-    //WOO Category card
-    wp_enqueue_style( 'trad-woo-category-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/woo-category.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/woo-category.css' ), 'all' );
-
-    wp_enqueue_style( 'trad-woo-min-cart-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/woo-min-cart.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/woo-min-cart.css' ), 'all' );
-    wp_enqueue_script( 'trad-woo-min-cart-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/woo-min-cart.js',[ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
-   
-
-    wp_enqueue_script( 'gsap', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/vendor/gsap/gsap.min.js',[], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
-    wp_enqueue_script( 'scrolltrigger', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/vendor/scroll/ScrollTrigger.min.js',['gsap'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
-    wp_enqueue_script( 'scrolltoplugin', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/vendor/scroll/ScrollToPlugin.min.js',['gsap'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
-
-    //WOO Product ALL Style
-    wp_enqueue_style( 'trad-woo-product-all-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/woo-product-all.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/woo-product-all.css' ), 'all' );
-    // WOO Product ALL Script
-    wp_enqueue_script( 'trad-woo-product-all-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/woo-product-all.js',[ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
-    
-    wp_enqueue_script( 'trad-flip-box', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/flip-box.js', ['jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
-
-    //Table Widget
-    wp_enqueue_style( 'trad-table-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-table.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-table.css' ), 'all' );
-    wp_enqueue_script( 'trad-table-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/trad-table.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
-
-    //Advanced Search Widget
-    wp_enqueue_style( 'trad-advanced-search-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-advanced-search.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-advanced-search.css' ), 'all' );
-    wp_enqueue_script( 'trad-advanced-search-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/trad-advanced-search.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
     wp_localize_script( 'trad-advanced-search-script', 'tradSearchData', [
         'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-        'nonce'   => wp_create_nonce( 'trad_search_nonce' )
-    ]);
-
-    //Off-Canvas Widget
-    wp_enqueue_style( 'trad-off-canvas-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-off-canvas.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-off-canvas.css' ), 'all' );
-    wp_enqueue_script( 'trad-off-canvas', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/trad-off-canvas.js', [ 'jquery'], TRAD_TURBO_ADDONS_PRO_PLUGIN_VERSION, true );
-
-    // WhatsApp Widget
-    wp_enqueue_style( 'trad-whatsapp-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/trad-whatsapp.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/trad-whatsapp.css' ), 'all' );
-    wp_enqueue_script( 'trad-whatsapp-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/trad-whatsapp.js', [ 'jquery', 'elementor-frontend' ], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/js/trad-whatsapp.js' ), true );
-
-    // Image Hotspot Widget
-    wp_enqueue_style( 'trad-hotspot-style', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/css/custom-css/hotspot.css', [], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/css/custom-css/hotspot.css' ), 'all' );
-    wp_enqueue_script( 'trad-hotspot-script', TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'assets/js/hotspot.js', [ 'jquery', 'elementor-frontend' ], filemtime( TRAD_TURBO_ADDONS_PRO_PLUGIN_PATH . 'assets/js/hotspot.js' ), true );
-
+        'nonce'   => wp_create_nonce( 'trad_search_nonce' ),
+    ] );
 }
     
 

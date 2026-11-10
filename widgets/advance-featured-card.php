@@ -25,11 +25,23 @@ class TRAD_advance_featured_card extends Widget_Base {
         return 'eicon-background trad-icon'; 
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-pro']; // Change to your desired category
     }
+
+    public function get_style_depends() {
+        return [ 'advance-featured-card_style' ];
+    }
  
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->start_controls_section(
             'advance_featured_cardard',
             [
@@ -1063,4 +1075,4 @@ class TRAD_advance_featured_card extends Widget_Base {
     }
 }
 // Register the widget with Elementor.
-Plugin::instance()->widgets_manager->register_widget_type( new TRAD_advance_featured_card() );
+Plugin::instance()->widgets_manager->register( new TRAD_advance_featured_card() );

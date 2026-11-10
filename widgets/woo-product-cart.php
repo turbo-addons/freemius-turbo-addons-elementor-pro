@@ -15,7 +15,23 @@ class TRAD_WOO_Product_Cart_Button extends Widget_Base {
 	public function get_name()       { return 'trad_woo_product_cart_button'; }
 	public function get_title()      { return __( 'WOO Product Add to Cart', 'freemius-turbo-addons-elementor-pro' ); }
 	public function get_icon()       { return 'eicon-woo-cart trad-icon'; }
+	/**
+	 * Hidden from the editor panel without an active Pro license; existing
+	 * instances on pages keep rendering. @since 1.9.6
+	 */
+	public function show_in_panel() {
+	    return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+	}
+
 	public function get_categories() { return [ 'turbo-addons-woo-pro' ]; }
+
+    public function get_style_depends() {
+        return [ 'trad-woo-product-all-style' ];
+    }
+
+    public function get_script_depends() {
+        return [ 'jquery', 'trad-woo-product-all-script' ];
+    }
 
 	/* ===========================================================
 	 * CONTROLS
@@ -578,5 +594,5 @@ class TRAD_WOO_Product_Cart_Button extends Widget_Base {
 	}
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new TRAD_WOO_Product_Cart_Button() );
+Plugin::instance()->widgets_manager->register( new TRAD_WOO_Product_Cart_Button() );
 

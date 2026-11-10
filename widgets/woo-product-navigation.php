@@ -27,8 +27,24 @@ class TRAD_WOO_Product_Navigation extends Widget_Base {
         return 'eicon-post-navigation trad-icon';
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-woo-pro'];
+    }
+
+    public function get_style_depends() {
+        return [ 'trad-woo-product-all-style' ];
+    }
+
+    public function get_script_depends() {
+        return [ 'trad-woo-product-all-script' ];
     }
 
     protected function register_controls() {
@@ -109,7 +125,7 @@ class TRAD_WOO_Product_Navigation extends Widget_Base {
 
         // Next Icon (only show when type = icon)
         $this->add_control(
-            'trad_woo_product_navigation_next_text',
+            'trad_woo_product_navigation_next_icon',
             [
                 'label'       => __( 'Next Icon', 'freemius-turbo-addons-elementor-pro' ),
                 'type'        => Controls_Manager::ICONS,
@@ -955,7 +971,7 @@ class TRAD_WOO_Product_Navigation extends Widget_Base {
             <?php if ( $prev_post instanceof WP_Post ): ?>
                 <li class="trad-woo-product-navigation-link product-prev">
                     <a class="trad-woo-product-prev elementor-icon" href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" aria-label="Previous" tabindex="-1">
-                        <?php \Elementor\Icons_Manager::render_icon( $settings['trad_woo_product_navigation_prev_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                        <?php \Elementor\Icons_Manager::render_icon( $settings['trad_woo_product_navigation_prev_icon'] ?? [], [ 'aria-hidden' => 'true' ] ); ?>
                         <?php if ( !empty( $navigation_prev_text ) ) : ?>
                             <span><?php echo esc_html( $navigation_prev_text ); ?></span>
                         <?php endif; ?>
@@ -975,7 +991,7 @@ class TRAD_WOO_Product_Navigation extends Widget_Base {
                         <?php if ( !empty( $navigation_next_text ) ) : ?>
                             <span><?php echo esc_html( $navigation_next_text ); ?></span>
                         <?php endif; ?>
-                        <?php \Elementor\Icons_Manager::render_icon( $settings['trad_woo_product_navigation_next_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                        <?php \Elementor\Icons_Manager::render_icon( $settings['trad_woo_product_navigation_next_icon'] ?? [], [ 'aria-hidden' => 'true' ] ); ?>
                     </a>
                     <div class="dropdown product-thumbnail next-short-info">
                         <a title="<?php echo esc_html( get_the_title( $next_post->ID ) ); ?>" href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>">
@@ -993,4 +1009,4 @@ class TRAD_WOO_Product_Navigation extends Widget_Base {
 
 }
 
-Plugin::instance()->widgets_manager->register_widget_type(new TRAD_WOO_Product_Navigation());
+Plugin::instance()->widgets_manager->register(new TRAD_WOO_Product_Navigation());

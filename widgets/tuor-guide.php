@@ -25,12 +25,20 @@ class TRAD_Tuor_Guide_Pro extends Widget_Base {
         return 'eicon-notes trad-icon';
     }
 
+    /**
+     * Hidden from the editor panel without an active Pro license; existing
+     * instances on pages keep rendering. @since 1.9.6
+     */
+    public function show_in_panel() {
+        return function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active();
+    }
+
     public function get_categories() {
         return ['turbo-addons-pro'];
     }
 
     public function get_style_depends() {
-        return [ 'introjs-css' ];
+        return [ 'introjs-css', 'trad-tuor-guide-style' ];
     }
 
     public function get_script_depends() {
@@ -160,4 +168,4 @@ class TRAD_Tuor_Guide_Pro extends Widget_Base {
 }
 
 // Register the widget
-Plugin::instance()->widgets_manager->register_widget_type(new TRAD_Tuor_Guide_Pro());
+Plugin::instance()->widgets_manager->register(new TRAD_Tuor_Guide_Pro());

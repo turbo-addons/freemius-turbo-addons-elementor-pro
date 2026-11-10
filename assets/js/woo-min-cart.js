@@ -11,9 +11,9 @@
         var cartOverlay = exadAddCart.find( '.trad-woo-mini-cart-wrapper .trad-woo-cart-bag-fly-out-overlay' );
     
         if( 'hover' === cartVisibility ){
-            $( cartWrapper ).hover( function()  {
+            $( cartWrapper ).on( 'mouseenter', function() {
                 cartWrapper.addClass('hover-active');
-            }, function() {
+            }).on( 'mouseleave', function() {
                 cartWrapper.removeClass('hover-active');
             });
         }else if( 'click' === cartVisibility ){

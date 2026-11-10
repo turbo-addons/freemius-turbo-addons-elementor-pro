@@ -1,0 +1,14 @@
+# Files kept in git but never shipped in the release zip / WordPress.org SVN
+# (read by `wp dist-archive` and the 10up WordPress.org deploy action).
+.git
+.gitignore
+.gitattributes
+.distignore
+.claude
+.amazonq
+.kiro
+.instructions.md
+AGENTS.md
+CLAUDE.md
+*.zip
+node_modules

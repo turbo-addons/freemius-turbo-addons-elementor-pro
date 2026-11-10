@@ -4,8 +4,30 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+/**
+ * Load the free plugin's shared "Templates" tab (templates-tab.php). Loaded lazily
+ * because the Pro plugin is loaded before the free one.
+ *
+ * @since 1.9.6
+ * @return bool True when the Templates tab functions are available.
+ */
+function taep_load_templates_tab() {
+    if ( ! function_exists( 'trad_render_templates_tab' ) && defined( 'TRAD_TURBO_ADDONS_PLUGIN_PATH' ) ) {
+        $file = TRAD_TURBO_ADDONS_PLUGIN_PATH . 'admin/templates-tab.php';
+        if ( file_exists( $file ) ) {
+            require_once $file;
+        }
+    }
+    return function_exists( 'trad_render_templates_tab' );
+}
+
 // Enqueue necessary styles and scripts
 function turbo_addons_pro_admin_enqueue_styles_scripts() {
+    // Templates tab assets (shared with the free dashboard) — only on the Pro dashboard.
+    // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only page check.
+    if ( isset( $_GET['page'] ) && 'turbo_addons_pro' === sanitize_key( wp_unslash( $_GET['page'] ) ) && taep_load_templates_tab() ) {
+        trad_enqueue_templates_tab_assets();
+    }
     wp_enqueue_style(
         'taep-admin-style',
         TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'admin/assets/css/admin-style.css',
@@ -28,7 +50,81 @@ function turbo_addons_pro_admin_enqueue_styles_scripts() {
 }
 add_action( 'admin_enqueue_scripts', 'turbo_addons_pro_admin_enqueue_styles_scripts' );
 
-// ── AJAX handler: fetch latest template fresh from API (no cache) ──────────────
+// ── Latest templates ("Templates Added" slider) ─────────────────────────────────
+
+/**
+ * Latest templates from the Turbo Addons API, normalised for the dashboard slider.
+ *
+ * - Tolerates text printed before the JSON (the API currently prints a server
+ *   path before it, which made json_decode() fail and the slider fall back to
+ *   the static banner).
+ * - Pro flag comes from "type" (PRO/FREE); "batch" is a batch number, not a flag.
+ * - Cached for 1 hour; a failed request is remembered for 10 minutes so the
+ *   dashboard never waits on a down API on every load.
+ *
+ * @since 1.9.6
+ * @param bool $force Skip the cache (used by the live poll).
+ * @return array[] { title, desc, category, type, is_pro, link, thumb }
+ */
+function taep_get_latest_templates( $force = false ) {
+    $cache_key = 'taep_latest_templates_v2';
+    $fail_key  = 'taep_latest_templates_fail';
+
+    if ( ! $force ) {
+        $cached = get_transient( $cache_key );
+        if ( is_array( $cached ) && ! empty( $cached ) ) {
+            return $cached;
+        }
+        if ( get_transient( $fail_key ) ) {
+            return [];
+        }
+    }
+
+    $response = wp_remote_get( 'https://mt.turbo-addons.com/api/ta/v1/latest-template', [ 'timeout' => 8 ] );
+    if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
+        set_transient( $fail_key, 1, 10 * MINUTE_IN_SECONDS );
+        return [];
+    }
+
+    // Skip anything before the JSON (BOM, notices, stray output).
+    $body    = (string) wp_remote_retrieve_body( $response );
+    $body    = substr( $body, strcspn( $body, '[{' ) );
+    $decoded = json_decode( $body, true );
+    if ( ! is_array( $decoded ) || empty( $decoded ) ) {
+        set_transient( $fail_key, 1, 10 * MINUTE_IN_SECONDS );
+        return [];
+    }
+    $raw = isset( $decoded[0] ) ? $decoded : [ $decoded ];
+
+    $items = [];
+    foreach ( $raw as $tpl ) {
+        if ( ! is_array( $tpl ) ) {
+            continue;
+        }
+        $title = sanitize_text_field( $tpl['title'] ?? $tpl['name'] ?? '' );
+        if ( '' === $title ) {
+            continue;
+        }
+        $type    = sanitize_text_field( $tpl['type'] ?? '' );
+        $items[] = [
+            'title'    => $title,
+            'desc'     => sanitize_text_field( $tpl['description'] ?? '' ),
+            'category' => sanitize_text_field( $tpl['category'] ?? '' ),
+            'type'     => $type,
+            'is_pro'   => 'PRO' === strtoupper( $type ) || 'PRO' === strtoupper( (string) ( $tpl['batch'] ?? '' ) ) || 'on' === ( $tpl['pro'] ?? '' ),
+            'link'     => esc_url_raw( $tpl['link'] ?? $tpl['preview'] ?? '' ),
+            'thumb'    => esc_url_raw( $tpl['thumb'] ?? '' ),
+        ];
+    }
+
+    if ( $items ) {
+        set_transient( $cache_key, $items, HOUR_IN_SECONDS );
+        delete_transient( $fail_key );
+    }
+    return $items;
+}
+
+// ── AJAX: live poll from the dashboard (fresh from the API) ────────────────────
 function taep_ajax_fetch_latest_template() {
     check_ajax_referer( 'taep_fetch_template', 'nonce' );
 
@@ -36,39 +132,11 @@ function taep_ajax_fetch_latest_template() {
         wp_send_json_error( 'Unauthorized', 403 );
     }
 
-    $response = wp_remote_get(
-        'https://mt.turbo-addons.com/api/ta/v1/latest-template',
-        [ 'timeout' => 8, 'sslverify' => true ]
-    );
-
-    if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
-        wp_send_json_error( 'API unreachable' );
+    $items = taep_get_latest_templates( true );
+    if ( empty( $items ) ) {
+        wp_send_json_error( 'API unreachable or invalid response' );
     }
-
-    $data = json_decode( wp_remote_retrieve_body( $response ), true );
-
-    // API now returns an array of templates
-    if ( ! is_array( $data ) || empty( $data ) ) {
-        wp_send_json_error( 'Invalid response' );
-    }
-
-    // Normalise: accept both array-of-objects and single object
-    $templates = isset( $data[0] ) ? $data : [ $data ];
-
-    // Use first item's title as the cache pointer key
-    $first = $templates[0];
-    if ( empty( $first['title'] ) && empty( $first['name'] ) ) {
-        wp_send_json_error( 'Invalid response' );
-    }
-
-    // Update the pointer + data transients so next PHP render is also fresh
-    $pointer_key  = 'taep_tpl_pointer_v1';
-    $data_key_pfx = 'taep_tpl_data_';
-    $new_pointer  = md5( $first['title'] ?? $first['name'] );
-    set_transient( $data_key_pfx . $new_pointer, $templates, 6 * HOUR_IN_SECONDS );
-    set_transient( $pointer_key, $new_pointer, 1 * HOUR_IN_SECONDS );
-
-    wp_send_json_success( $templates );
+    wp_send_json_success( $items );
 }
 add_action( 'wp_ajax_taep_fetch_latest_template', 'taep_ajax_fetch_latest_template' );
 
@@ -152,6 +220,11 @@ function turbo_addons_pro_admin_page() {
                 <li class="taep-tab-link tab-link" data-tab="extension-tab">
                     <a href="#"><?php esc_html_e( 'Extension', 'freemius-turbo-addons-elementor-pro' ); ?></a>
                 </li>
+                <?php if ( taep_load_templates_tab() ) : ?>
+                <li class="taep-tab-link tab-link" data-tab="templates-tab">
+                    <a href="#"><?php esc_html_e( 'Templates', 'freemius-turbo-addons-elementor-pro' ); ?></a>
+                </li>
+                <?php endif; ?>
                 <!-- <li class="taep-tab-link tab-link" data-tab="premium-tab">
                     <a href="#"><?php esc_html_e( 'Go Premium', 'freemius-turbo-addons-elementor-pro' ); ?></a>
                 </li> -->
@@ -167,13 +240,13 @@ function turbo_addons_pro_admin_page() {
                 <!-- ---------------------------Section 1: What's New + New Templates ----------------->
                 <div class="taep-dashboard-sec-one">
                     <div class="taep-dashboard-sec-one-left">
-                        <h3 class="taep-dashboard-sub-heading"><?php esc_html_e( "What's New in Version 1.9.3", 'freemius-turbo-addons-elementor-pro' ); ?></h3>
+                        <h3 class="taep-dashboard-sub-heading"><?php esc_html_e( "What's New in Version 1.9.6", 'freemius-turbo-addons-elementor-pro' ); ?></h3>
                         <hr>
                         <div class="taep-updated-list">
                             <img src="<?php echo esc_url( TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'admin/assets/images/turbo-logo-update.webp' ); ?>" alt="<?php echo esc_attr( 'update icon' ); ?>">
                             <div class="taep-updated-list-typography">
-                                <h4><?php esc_html_e( 'Added Pro Widgets', 'freemius-turbo-addons-elementor-pro' ); ?></h4>
-                                <p><?php esc_html_e( 'WhatsApp Chat, Image Hotspot, Off-Canvas, Advanced Search Pro, CSV Table Builder', 'freemius-turbo-addons-elementor-pro' ); ?></p>
+                                <h4><?php esc_html_e( 'Faster Pages', 'freemius-turbo-addons-elementor-pro' ); ?></h4>
+                                <p><?php esc_html_e( 'Pro CSS and JS now load only on pages that use a Pro widget.', 'freemius-turbo-addons-elementor-pro' ); ?></p>
                             </div>
                         </div>
                         <hr>
@@ -181,16 +254,16 @@ function turbo_addons_pro_admin_page() {
                         <div class="taep-updated-list">
                             <img src="<?php echo esc_url( TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'admin/assets/images/turbo-logo-update.webp' ); ?>" alt="<?php echo esc_attr( 'update icon' ); ?>">
                             <div class="taep-updated-list-typography">
-                                <h4><?php esc_html_e( 'WooCommerce Support', 'freemius-turbo-addons-elementor-pro' ); ?></h4>
-                                <p><?php esc_html_e( 'Full custom single product page builder with 15+ WooCommerce widgets.', 'freemius-turbo-addons-elementor-pro' ); ?></p>
+                                <h4><?php esc_html_e( 'Your Pages Stay Safe', 'freemius-turbo-addons-elementor-pro' ); ?></h4>
+                                <p><?php esc_html_e( 'Pages built with Pro widgets keep working even if the license expires.', 'freemius-turbo-addons-elementor-pro' ); ?></p>
                             </div>
                         </div>
                         <hr>
                         <div class="taep-updated-list">
                             <img src="<?php echo esc_url( TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'admin/assets/images/turbo-logo-update.webp' ); ?>" alt="<?php echo esc_attr( 'update icon' ); ?>">
                             <div class="taep-updated-list-typography">
-                                <h4><?php esc_html_e( 'New Templates', 'freemius-turbo-addons-elementor-pro' ); ?></h4>
-                                <p><?php esc_html_e( 'Added 5 new modern templates - Sports, Degital Service, Vehicle etc.  ', 'freemius-turbo-addons-elementor-pro' ); ?></p>
+                                <h4><?php esc_html_e( 'Better Hero Slider', 'freemius-turbo-addons-elementor-pro' ); ?></h4>
+                                <p><?php esc_html_e( 'Built on Elementor\'s Swiper and works with several sliders on one page.', 'freemius-turbo-addons-elementor-pro' ); ?></p>
                             </div>
                         </div>
                         <hr>
@@ -198,40 +271,13 @@ function turbo_addons_pro_admin_page() {
                             <img src="<?php echo esc_url( TRAD_TURBO_ADDONS_PRO_PLUGIN_URL . 'admin/assets/images/turbo-logo-update.webp' ); ?>" alt="<?php echo esc_attr( 'update icon' ); ?>">
                             <div class="taep-updated-list-typography">
                                 <h4><?php esc_html_e( 'Updated', 'freemius-turbo-addons-elementor-pro' ); ?></h4>
-                                <p><?php esc_html_e( 'Tested and verified for full compatibility with Elementor 4.1.2', 'freemius-turbo-addons-elementor-pro' ); ?></p>
+                                <p><?php esc_html_e( 'Tested with WordPress 7.1, PHP 8.5 and Elementor 4.3; Freemius SDK 2.13.5.', 'freemius-turbo-addons-elementor-pro' ); ?></p>
                             </div>
                         </div>
                     </div>
 
                     <div class="taep-dashboard-sec-one-right">
-                        <?php
-                        // ── Cache key ──────────────────────────────────────────────────────────
-                        $api_url        = 'https://mt.turbo-addons.com/api/ta/v1/latest-template';
-                        $pointer_key    = 'taep_tpl_pointer_v1';
-                        $data_key_pfx   = 'taep_tpl_data_';
-
-                        // ── Fetch / serve from cache ───────────────────────────────────────────
-                        $templates     = null;
-                        $cached_pointer = get_transient( $pointer_key );
-                        if ( $cached_pointer ) {
-                            $templates = get_transient( $data_key_pfx . $cached_pointer );
-                        }
-
-                        if ( empty( $templates ) ) {
-                            $response = wp_remote_get( $api_url, [ 'timeout' => 8, 'sslverify' => true ] );
-                            if ( ! is_wp_error( $response ) && 200 === wp_remote_retrieve_response_code( $response ) ) {
-                                $decoded = json_decode( wp_remote_retrieve_body( $response ), true );
-                                if ( is_array( $decoded ) && ! empty( $decoded ) ) {
-                                    // Accept both array-of-objects and single object
-                                    $templates   = isset( $decoded[0] ) ? $decoded : [ $decoded ];
-                                    $first       = $templates[0];
-                                    $new_pointer = md5( $first['title'] ?? $first['name'] ?? 'turbo' );
-                                    set_transient( $data_key_pfx . $new_pointer, $templates, 6 * HOUR_IN_SECONDS );
-                                    set_transient( $pointer_key, $new_pointer, 1 * HOUR_IN_SECONDS );
-                                }
-                            }
-                        }
-                        ?>
+                        <?php $tpl_items = taep_get_latest_templates(); ?>
 
                         <!-- Panel header -->
                         <div class="taep-template-panel-header">
@@ -252,20 +298,7 @@ function turbo_addons_pro_admin_page() {
                         </div>
                         <hr>
 
-                        <?php if ( ! empty( $templates ) ) :
-                            // Sanitise all items
-                            $tpl_items = [];
-                            foreach ( $templates as $tpl ) {
-                                $tpl_items[] = [
-                                    'title'    => sanitize_text_field( $tpl['title']       ?? $tpl['name']    ?? '' ),
-                                    'desc'     => sanitize_text_field( $tpl['description'] ?? '' ),
-                                    'category' => sanitize_text_field( $tpl['category']    ?? '' ),
-                                    'type'     => sanitize_text_field( $tpl['type']        ?? '' ),
-                                    'batch'    => sanitize_text_field( $tpl['batch']       ?? $tpl['pro'] ?? '' ),
-                                    'link'     => esc_url( $tpl['link']    ?? $tpl['preview'] ?? '#' ),
-                                    'thumb'    => esc_url( $tpl['thumb']   ?? '' ),
-                                ];
-                            }
+                        <?php if ( ! empty( $tpl_items ) ) :
                             $first_tpl = $tpl_items[0];
                         ?>
 
@@ -281,7 +314,7 @@ function turbo_addons_pro_admin_page() {
                                         <img src="<?php echo esc_url( $tpl['thumb'] ); ?>"
                                              alt="<?php echo esc_attr( $tpl['title'] ); ?>"
                                              class="taep-tpl-slide-img">
-                                        <?php if ( strtoupper( trim( $tpl['batch'] ) ) === 'PRO' || $tpl['batch'] === 'on' ) : ?>
+                                        <?php if ( ! empty( $tpl['is_pro'] ) ) : ?>
                                             <span class="taep-template-pro-badge">PRO</span>
                                         <?php else : ?>
                                             <span class="taep-template-pro-badge">FREE</span>
@@ -291,15 +324,13 @@ function turbo_addons_pro_admin_page() {
                                 </div>
 
                                 <!-- Dot indicators -->
-                                <?php if ( count( $tpl_items ) > 1 ) : ?>
-                                <div class="taep-tpl-dots" id="taep-tpl-dots">
+                                <div class="taep-tpl-dots" id="taep-tpl-dots"<?php echo count( $tpl_items ) > 1 ? '' : ' style="display:none"'; ?>>
                                     <?php foreach ( $tpl_items as $idx => $tpl ) : ?>
                                     <button class="taep-tpl-dot <?php echo $idx === 0 ? 'active' : ''; ?>"
                                             data-index="<?php echo esc_attr( $idx ); ?>"
                                             aria-label="<?php echo esc_attr( $tpl['title'] ); ?>"></button>
                                     <?php endforeach; ?>
                                 </div>
-                                <?php endif; ?>
                             </div>
 
                             <!-- RIGHT: dynamic info (updates with slide) -->
@@ -331,14 +362,12 @@ function turbo_addons_pro_admin_page() {
                                 </p>
 
                                 <!-- Slide counter -->
-                                <?php if ( count( $tpl_items ) > 1 ) : ?>
-                                <div class="taep-tpl-counter">
+                                <div class="taep-tpl-counter" id="taep-tpl-counter"<?php echo count( $tpl_items ) > 1 ? '' : ' style="display:none"'; ?>>
                                     <span id="taep-tpl-current">1</span>
                                     <span class="taep-tpl-counter-sep">/</span>
                                     <span id="taep-tpl-total"><?php echo count( $tpl_items ); ?></span>
                                     <span class="taep-tpl-counter-label"><?php esc_html_e( 'templates', 'freemius-turbo-addons-elementor-pro' ); ?></span>
                                 </div>
-                                <?php endif; ?>
 
                                 <div class="taep-latest-template-actions">
                                     <a href="<?php echo esc_url( $first_tpl['link'] ); ?>" target="_blank" rel="noopener"
@@ -433,28 +462,59 @@ function turbo_addons_pro_admin_page() {
                         </div>
                     </div>
 
-                    <!-- ── Card 2: Pro Features Highlight ── -->
-                    <div class="taep-info-card taep-info-card--features">
-                        <div class="taep-info-card-gradient-header">
-                            <span class="taep-info-card-badge"><?php esc_html_e( 'PRO EXCLUSIVE', 'freemius-turbo-addons-elementor-pro' ); ?></span>
-                            <h3 class="taep-info-card-title taep-info-card-title--light"><?php esc_html_e( 'What Makes Pro Special', 'freemius-turbo-addons-elementor-pro' ); ?></h3>
-                        </div>
+                    <!-- ── Card 2: Turbo Guard (security) promo ── -->
+                    <?php
+                    // Button follows the plugin state: not installed → Install, installed → Activate,
+                    // active → Upgrade to Pro, Pro active → open its dashboard. @since 1.9.6
+                    $taep_tg_file     = 'turbo-guard/turbo-guard.php';
+                    $taep_tg_pro_file = 'turbo-guard-pro-premium/turbo-guard-pro.php';
+                    if ( ! function_exists( 'get_plugins' ) ) {
+                        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+                    }
+                    $taep_tg_plugins   = get_plugins();
+                    $taep_tg_installed = isset( $taep_tg_plugins[ $taep_tg_file ] );
+                    $taep_tg_active    = is_plugin_active( $taep_tg_file );
+                    $taep_tg_pro       = is_plugin_active( $taep_tg_pro_file );
+                    $taep_tg_page      = 'https://wp-turbo.com/turbo-guard/';
+                    $taep_tg_external  = false;
+
+                    if ( $taep_tg_active && $taep_tg_pro ) {
+                        $taep_tg_btn_url   = admin_url( 'admin.php?page=turbo-guard' );
+                        $taep_tg_btn_label = __( 'Open Security Dashboard', 'freemius-turbo-addons-elementor-pro' );
+                    } elseif ( $taep_tg_active ) {
+                        $taep_tg_btn_url   = $taep_tg_page;
+                        $taep_tg_btn_label = __( 'Upgrade to Pro', 'freemius-turbo-addons-elementor-pro' );
+                        $taep_tg_external  = true;
+                    } elseif ( $taep_tg_installed && current_user_can( 'activate_plugins' ) ) {
+                        $taep_tg_btn_url   = wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=' . rawurlencode( $taep_tg_file ) ), 'activate-plugin_' . $taep_tg_file );
+                        $taep_tg_btn_label = __( 'Activate Turbo Guard', 'freemius-turbo-addons-elementor-pro' );
+                    } elseif ( ! $taep_tg_installed && current_user_can( 'install_plugins' ) ) {
+                        $taep_tg_btn_url   = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=turbo-guard' ), 'install-plugin_turbo-guard' );
+                        $taep_tg_btn_label = __( 'Install Turbo Guard — Free', 'freemius-turbo-addons-elementor-pro' );
+                    } else {
+                        $taep_tg_btn_url   = $taep_tg_page;
+                        $taep_tg_btn_label = __( 'Learn More', 'freemius-turbo-addons-elementor-pro' );
+                        $taep_tg_external  = true;
+                    }
+                    ?>
+                    <div class="taep-info-card taep-info-card--guard">
                         <div class="taep-info-card-body">
-                            <div class="taep-feature-chips">
-                                <span class="taep-feature-chip">🛒 <?php esc_html_e( 'WooCommerce Builder', 'freemius-turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">🎠 <?php esc_html_e( '3D Carousel', 'freemius-turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">📄 <?php esc_html_e( 'PDF Flip Book', 'freemius-turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">🗺️ <?php esc_html_e( 'Tour Guide', 'freemius-turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">🔍 <?php esc_html_e( 'Advanced Search', 'freemius-turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">💬 <?php esc_html_e( 'WhatsApp Chat', 'freemius-turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">🎯 <?php esc_html_e( 'Image Hotspot', 'freemius-turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">📊 <?php esc_html_e( 'Dynamic Table', 'freemius-turbo-addons-elementor-pro' ); ?></span>
-                                <span class="taep-feature-chip">🦸 <?php esc_html_e( 'Hero Slider', 'freemius-turbo-addons-elementor-pro' ); ?></span>
+                            <div class="taep-guard-eyebrow">
+                                <svg class="taep-guard-shield" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 13.6-3.5-3.5 1.4-1.4 2.1 2.1 4.6-4.6 1.4 1.4-6 6Z"/></svg>
+                                <?php esc_html_e( 'Turbo Guard · Free security plugin', 'freemius-turbo-addons-elementor-pro' ); ?>
                             </div>
+                            <h3 class="taep-info-card-title taep-guard-title"><?php esc_html_e( 'Clean up malware and keep your site protected', 'freemius-turbo-addons-elementor-pro' ); ?></h3>
+                            <p class="taep-info-card-desc taep-guard-desc"><?php esc_html_e( 'Find hidden malware, remove it in one click and block attacks before they reach your site.', 'freemius-turbo-addons-elementor-pro' ); ?></p>
+                            <ul class="taep-guard-features">
+                                <li><strong><?php esc_html_e( 'Malware & backdoor scan', 'freemius-turbo-addons-elementor-pro' ); ?></strong> <span><?php esc_html_e( 'files + database', 'freemius-turbo-addons-elementor-pro' ); ?></span></li>
+                                <li><strong><?php esc_html_e( 'Japanese SEO spam cleanup', 'freemius-turbo-addons-elementor-pro' ); ?></strong></li>
+                                <li><strong><?php esc_html_e( 'Firewall', 'freemius-turbo-addons-elementor-pro' ); ?></strong> <span><?php esc_html_e( 'blocks bad bots & attacks', 'freemius-turbo-addons-elementor-pro' ); ?></span></li>
+                                <li><strong><?php esc_html_e( 'Login protection', 'freemius-turbo-addons-elementor-pro' ); ?></strong> <span><?php esc_html_e( 'brute-force + 2FA', 'freemius-turbo-addons-elementor-pro' ); ?></span></li>
+                            </ul>
                         </div>
                         <div class="taep-info-card-footer">
-                            <a href="https://turbo-addons.com/widgets/" target="_blank" rel="noopener" class="taep-info-card-btn taep-info-card-btn--purple">
-                                <?php esc_html_e( 'Explore All Widgets', 'freemius-turbo-addons-elementor-pro' ); ?> →
+                            <a href="<?php echo esc_url( $taep_tg_btn_url ); ?>"<?php echo $taep_tg_external ? ' target="_blank" rel="noopener"' : ''; ?> class="taep-info-card-btn taep-info-card-btn--guard">
+                                <?php echo esc_html( $taep_tg_btn_label ); ?> →
                             </a>
                         </div>
                     </div>
@@ -803,6 +863,20 @@ function turbo_addons_pro_admin_page() {
                     </form>
                 </div>
             </div>
+
+            <?php if ( taep_load_templates_tab() ) : ?>
+            <!-- Templates tab: same template browser as the free dashboard -->
+            <div id="templates-tab" class="taep-tab-content tab-content trad-dashboard-templates-tab <?php echo 'templates-tab' === $current_tab ? 'active' : ''; ?>">
+                <?php
+                trad_render_templates_tab(
+                    [
+                        // No "Upgrade Now" button for licensed Pro users.
+                        'show_upgrade' => ! ( function_exists( 'trad_pro_is_license_active' ) && trad_pro_is_license_active() ),
+                    ]
+                );
+                ?>
+            </div>
+            <?php endif; ?>
 
       </div><!-- .taep-addons-content -->
     </div><!-- .taep-wrap-dashboard -->
